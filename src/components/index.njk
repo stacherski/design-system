@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Components
+permalink: /components/
+---
+
+<article>
+  <header>
+    <h1>Components</h1>
+  </header>
+  <p>Browse all available web components below.</p>
+  <br/>
+  <div class="overview">
+  <ul>
+    {% for component in components %}
+      <li>
+        <a href="/components/{{ component.slug }}/">
+          <span>{{ component.name }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  </div>
+</article>

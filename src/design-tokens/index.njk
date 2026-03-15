@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Design Tokens
+permalink: /design-tokens/
+---
+
+<article>
+  <header>
+    <h1>Design Tokens</h1>
+  </header>
+  <p>Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes.</p>
+  <br/>
+
+  <div class="overview">
+    <ul>
+      {% for cat in tokenCategories %}
+        <li>
+          <a href="/design-tokens/{{ cat.slug | lower }}/">
+            <span>{{ cat.name }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>

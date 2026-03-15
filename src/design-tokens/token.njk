@@ -1,0 +1,11 @@
+---
+pagination:
+  data: tokenCategories
+  size: 1
+  alias: category
+permalink: "/design-tokens/{{ category.slug }}/"
+layout: layouts/token-category.njk
+eleventyComputed:
+  title: "{{ category.name }}"
+---
+

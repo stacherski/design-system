@@ -1,0 +1,105 @@
+---
+layout: layouts/base.njk
+---
+
+{% set componentExamples = examples | byComponent(component.name) %}
+{% set componentProps    = properties | byComponent(component.name) %}
+{% set componentEvents   = events | byComponent(component.name) %}
+
+<article>
+  <header>
+    <h1>{{ component.name }}</h1>
+  </header>
+
+  <article>
+    {% if component.description %}
+      <div class="component-page__description">{{ component.description | safe }}</div>
+    {% endif %}
+  </article>
+
+  <ts-tab-group>
+  {% if componentExamples.length %}
+    <ts-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</ts-tab>
+    <ts-tab-panel>
+      <div style="display: flex; justify-content: flex-end;">
+        <ts-table-actions data-table=".examples"></ts-table-actions>
+      </div>
+      <ts-table-sort omit="0" sort>
+        <table class="examples equal table">
+          <thead>
+            <tr>
+              <th>Example</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ex in componentExamples %}
+              <tr>
+                <td>{{ ex.example | safe }}</td>
+                <td>{{ ex.codeToken | safe }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </ts-table-sort>
+    </ts-tab-panel>
+  {% endif %}    
+  {% if componentProps.length %}
+    <ts-tab icon-name="list-ul">Properties ({{ componentProps.length }})</ts-tab>
+    <ts-tab-panel>
+      <div style="display: flex; justify-content: flex-end;">
+        <ts-table-actions data-table=".properties"></ts-table-actions>
+      </div>
+      <ts-table-sort sort>
+        <table class="properties equal table">
+          <thead>
+            <tr>
+              <th>Property name</th>
+              <th>Description</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prop in componentProps %}
+              <tr>
+                <td>{{ prop.name }}</td>
+                <td>{{ prop.descriptionText | safe }}</td>
+                <td>{{ prop.propertyType }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </ts-table-sort>
+    </ts-tab-panel>
+  {% endif %}
+  {% if componentEvents.length %}
+    <ts-tab icon-name="clock">Events ({{ componentEvents.length }})</ts-tab>
+     <ts-tab-panel>
+      <div style="display: flex; justify-content: flex-end;">
+        <ts-table-actions data-table=".events"></ts-table-actions>
+      </div>
+      <ts-table-sort sort>
+        <table class="events equal table">
+          <thead>
+            <tr>
+              <th>Event name</th>
+              <th>Description</th>
+              <th>Example value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ev in componentEvents %}
+              <tr>
+                <td>{{ ev.name }}</td>
+                <td>{{ ev.description | safe }}</td>
+                <td>{{ ev.exampleValue }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </ts-table-sort>
+    </ts-tab-panel>
+  {% endif %}    
+  </ts-tab-group>
+
+</atricle>

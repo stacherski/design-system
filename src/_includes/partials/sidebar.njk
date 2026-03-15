@@ -1,0 +1,51 @@
+    <ul>
+      <li level="1" {% if page.url and page.url.startsWith('/design-tokens') %}active{% endif %}>
+        <div class="l1 wrapper">
+          <a href="/design-tokens/">
+            <span><ts-icon size="default"></ts-icon>Design Tokens</span>
+          </a>
+          
+        </div>
+        <div>
+          <ul>
+          {% for cat in tokenCategories %}
+            <li level="2" {% if page.url and page.url.startsWith('/design-tokens/{{ cat.slug | lower }}') %}active{% endif %}>
+              <div class="l2 wrapper">
+                <a href="/design-tokens/{{ cat.slug | lower }}/">
+                  <span>
+                    <ts-icon name="--ts-icon-arrow-right" size="m"></ts-icon>
+                    {{ cat.name | replace("-", " ") }}
+                  </span>
+                </a>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+    </li>
+
+    <li level="1" {% if page.url and page.url.startsWith('/components') %}active{% endif %}>
+        <div class="l1 wrapper">
+          <a href="/components/">
+            <span><ts-icon size="default"></ts-icon>Components</span>
+          </a>
+          
+        </div>
+        <div>
+          <ul>
+          {% for cat in components %}
+            <li level="2" page-url="/components/{{cat.slug | lower }}/" {% if page.url and page.url.startsWith('/components/{{ cat.slug | lower }}/') %}active{% endif %}>
+              <div class="l2 wrapper">
+                <a href="/components/{{ cat.slug | lower }}/">
+                  <span>
+                    <ts-icon name="--ts-icon-arrow-right" size="m"></ts-icon>
+                    {{ cat.name | replace("-", " ") }}
+                  </span>
+                </a>
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+    </li>
+    </ul>

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Icons",
+    "slug": "icons"
+  },
+  {
+    "name": "Colors",
+    "slug": "colors"
+  },
+  {
+    "name": "Border-Radius",
+    "slug": "border-radius"
+  },
+  {
+    "name": "Size",
+    "slug": "size"
+  },
+  {
+    "name": "Space",
+    "slug": "space"
+  },
+  {
+    "name": "Ratio",
+    "slug": "ratio"
+  },
+  {
+    "name": "Time",
+    "slug": "time"
+  },
+  {
+    "name": "Font-Size",
+    "slug": "font-size"
+  },
+  {
+    "name": "Font-Family",
+    "slug": "font-family"
+  },
+  {
+    "name": "Line-Height",
+    "slug": "line-height"
+  },
+  {
+    "name": "Z-Index",
+    "slug": "z-index"
+  }
+]

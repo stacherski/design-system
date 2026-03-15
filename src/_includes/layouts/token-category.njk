@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+
+{% set categoryTokens = tokens | byCategory(category.slug | lower) %}
+
+<article class="token-category-page-asdkajhsd">
+
+  <header>
+    <h1>{{ category.name | replace("-", " ") }}</h1>
+  </header>
+
+  
+  <ts-table-sort omit="0" sort filter>
+  <table class="examples equal table">
+  <thead>
+  <tr>
+  <th>Example</th>
+  <th>Name</th>
+  <th>Code</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for token in categoryTokens %}
+  <tr>
+  <td>{{ token.example | safe }}</td>
+  <td><h3>{{ token.name | safe }}</h3>{{ token.description | safe }}</td>
+  <td>{{ token.tokenCode | safe }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+  </ts-table-sort>
+
+</article>

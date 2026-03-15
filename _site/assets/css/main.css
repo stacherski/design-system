@@ -1,0 +1,11 @@
+@font-face {
+  font-family: NunitoRegular;
+  src: url('/assets/fonts/9d978062-5648-4fc1-886c-1194ecafbf1b.woff') format('woff');
+  font-display: swap
+}
+
+@font-face {
+  font-family: NunitoBold;
+  src: url('/assets/fonts/49622d19-a95b-4e50-b8dc-b058e5459817.woff') format('woff');
+  font-display: swap
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+      {% if title %}{{ title }} — {% endif %}Tangora Design System</title>
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="stylesheet" href="/assets/css/components.css"/>
+    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/components.js"></script>
+  </head>
+  <body>
+    <div layout>
+      <nav>
+        <div class="search">
+          <ts-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U" ></ts-search-menu>
+        </div>
+
+        {% include "partials/sidebar.njk" %}
+        <div class="layoutbox clock" id="layoutbox4">
+          <ts-dot-matrix-clock size="10px"></ts-dot-matrix-clock>
+        </div>
+      </nav>
+
+      <section content>
+        {{ content | safe }}
+      </section>
+    </div>
+
+    <div class="menu-btn">
+      <ts-class-toggle target-element="[layout] nav|.menu-overlay" target-class="navopen|overlayopen" button-class="btn btn-transparent" icon-name="bars"></ts-class-toggle>
+    </div>
+    <div class="menu-overlay"></div>
+  </body>
+</html>
