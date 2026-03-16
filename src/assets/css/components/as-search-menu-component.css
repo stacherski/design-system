@@ -1,0 +1,242 @@
+as-search-menu {
+    tabindex: 0;
+    font-size: var(--as-font-size-m);
+}
+
+as-search-menu button[popovertarget] {
+    --button-background: var(--as-color-background-button-weak);
+    cursor: pointer;
+}
+
+as-search-menu button[popovertarget]:HOVER {
+    background-color: var(--as-color-background-button);
+}
+
+as-search-menu button[popovertarget]:is(:ACTIVE, :FOCUS) {
+    background-color: var(--as-color-background-button-strong);
+}
+
+as-search-menu [popover] {
+    --background-color: var(--as-color-background-panel);
+    --width: 500px;
+    --height: 400px;
+    --z-index: 1000;
+    --border-radius: var(--as-border-radius-m);
+    /*--box-shadow: 0 0 var(--as-size-xxl) rgb(0 0 0 /.1);*/
+    --box-shadow: var(--as-box-shadow);
+    --border-color: var(--as-color-border-panel);
+
+    position: fixed;
+    margin-inline-start: var(--left, calc(50dvw - var(--width)/2));
+    margin-block-start: var(--top, calc(50dvh - var(--height)/2));
+
+    inset: 0;
+    padding: 0;
+    z-index: var(--z-index);
+    max-width: var(--width);
+    width: auto;
+    max-height: var(--height);
+    height: auto;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+
+    opacity: 0;
+    transform: translateY(2em);
+    transition: all var(--as-time-xs) ease-out;
+    overflow: hidden;
+}
+
+as-search-menu [popover] input[type="search"] {
+    appearance: none;
+    display: block;
+    margin: none;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    border-block-end-color: var(--border-color);
+    border-block-end-width: var(--as-size-thin);
+    border-block-end-style: solid;
+    padding-block: var(--as-space-m);
+    padding-inline: var(--as-space-m);
+    background-color: var(--background-color);
+    z-index: 2;
+    position: sticky;
+    top: 0;
+    inset: 0 0 auto 0;
+    outline: none;
+    color: var(--as-color-text-weak);
+}
+
+as-search-menu [popover] input[type="search"]::placeholder {
+    color: var(--as-color-text-neutral);
+}
+
+as-search-menu [popover] .recent {
+    display: flex;
+    gap: var(--as-space-s);
+    line-height: 1.3;
+    font-size: inherit;
+    text-decoration: none;
+    color: var(--as-color-text-button-inverted);
+    padding-inline: var(--as-space-m);
+    padding-block: var(--as-space-s);
+    background-color: var(--as-color-background);
+    justify-content: space-between;
+    align-items: center;
+}
+
+as-search-menu [popover] section {
+    position: relative;
+    height: calc(100% - 6.3125rem);
+    overflow-y: auto;
+}
+
+as-search-menu [popover] section .section {
+    position: relative;
+}
+
+as-search-menu [popover] section .command {
+    --background-color: var(--as-color-background-panel);
+    --outline-width: var(--as-size-s);
+
+    display: flex;
+    gap: var(--as-space-s);
+    line-height: 1.3;
+    font-size: inherit;
+    text-decoration: none;
+    color: var(--as-color-text-button-inverted);
+    padding-inline: var(--as-space-m);
+    padding-block: var(--as-space-m);
+    border-block-end-color: var(--border-color);
+    border-block-end-width: var(--as-size-thin);
+    border-block-end-style: solid;
+
+    border-inline-start-color: transparent;
+    border-inline-start-width: var(--outline-width);
+    border-inline-start-style: solid;
+
+    background-color: var(--background-color);
+
+    align-items: center;
+}
+
+as-search-menu [popover] section .command .keys {
+    --box-shadow: var(--box-shadow);
+    margin-inline-start: auto;
+    display: flex;
+    gap: var(--as-space-s);
+}
+
+as-search-menu [popover] section .command .keys code {
+    line-height: 1;
+    padding-inline: var(--as-space-xs);
+    padding-block: var(--as-space-xs);
+    border-color: var(--border-color);
+    border-width: var(--as-size-thin);
+    border-style: solid;
+    border-radius: var(--as-border-radius);
+    background-color: var(--as-color-text-button);
+    /*box-shadow: var(--box-shadow);*/
+    font-size: var(--as-font-size-xs);
+}
+
+as-search-menu [popover] section .command:HOVER {
+    --background-color: var(--as-color-background-nav-weak);
+    color: var(--as-color-text-button-inverted);
+}
+
+as-search-menu [popover] section .command:is(:ACTIVE, :FOCUS) {
+    --background-color: var(--as-color-background-nav-weak);
+    --outline-color: var(--as-color-background-button-weak);
+
+    color: var(--as-color-text-button-inverted);
+    outline: none;
+    border-inline-start-color: var(--outline-color);
+    border-inline-start-width: var(--outline-width);
+    border-inline-start-style: solid;
+}
+
+as-search-menu [popover] section .heading {
+    font-size: var(--as-font-size-s);
+    font-family: var(--as-font-bold);
+    color: var(--as-color-background-panel);
+    padding-inline: var(--as-space-m);
+    padding-block: var(--as-space-s);
+    margin-block: 0;
+    line-height: 1;
+    font-weight: 400;
+    background-color: var(--as-color-accent-weak);
+    position: sticky;
+    top: 0;
+    z-index: var(--as-index-masked);
+}
+
+as-search-menu [popover] section .nohits {
+    padding-inline: var(--as-space-m);
+    padding-block: var(--as-space-s);
+}
+
+as-search-menu [popover] section .nohits h4 {
+    font-size: var(--as-font-size-l);
+    color: var(--as-color-text);
+}
+
+as-search-menu [popover] section .nohits p {
+    font-size: var(--as-font-size-m);
+    color: var(--as-color-text-weak);
+}
+
+as-search-menu [popover] footer {
+    position: sticky;
+    bottom: 0;
+    margin-block-start: auto;
+    background-color: var(--as-color-background-panel);
+}
+
+as-search-menu [popover] footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--as-space-m);
+    list-style: none;
+    line-height: 1;
+    align-items: center;
+    padding-inline: var(--as-space-m);
+    padding-block: var(--as-space-m);
+}
+
+as-search-menu [popover] footer ul li {
+    font-size: var(--as-font-size-xs);
+    color: var(--as-color-text-weak);
+    display: inline-flex;
+    gap: var(--as-space-xs);
+    align-items: center;
+}
+
+as-search-menu [popover] footer ul li code {
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--as-color-text);
+}
+
+as-search-menu [popover] footer .move {
+    cursor: move;
+}
+
+as-search-menu [popover]:popover-open {
+    display: block;
+}
+
+as-search-menu [popover].bump {
+    transition: all var(--as-time-xs) ease-out;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+as-search-menu [popover]::backdrop {
+    height: auto;
+    background-color: rgb(80 80 80 /.1);
+}

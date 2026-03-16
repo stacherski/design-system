@@ -1,0 +1,124 @@
+as-select-multiple {
+    --color-active: var(--as-color-accent);
+    --color-active-darker: var(--as-color-accent);
+    --color-active-dark: var(--as-color-accent-strong);
+    --color-inactive: var(--as-color-text-neutral);
+    --color-white: var(--as-color-text-button);
+    --color-placeholder: var(--as-color-text-neutral);
+    --size: var(--as-size);
+    display: block;
+    width: 100%;
+    font-size: var(--as-font-size-m);
+}
+
+as-select-multiple [wrapper] {
+    position: relative;
+    display: block;
+}
+
+as-select-multiple [trigger] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--as-space-xs);
+    width: 100%;
+    min-height: var(--as-size-xl);
+    border: var(--as-size-thin) solid var(--color-inactive);
+    border-radius: var(--as-border-radius);
+    padding-inline: var(--as-space-s);
+    padding-block: var(--as-space-s);
+    background-color: var(--color-white);
+    cursor: pointer;
+    text-align: left;
+    font-size: inherit;
+    /*position-area: bottom span-right;*/
+}
+
+as-select-multiple [placeholder],
+as-select-multiple [more] {
+    color: var(--color-inactive);
+}
+
+as-select-multiple [selected] {
+    position: relative;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+as-select-multiple [dropdown] {
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0;
+    inset: unset;
+    margin-block-start: var(--as-space-xs);
+    position: absolute;
+    z-index: var(--as-index-popout);
+    transition: all var(--as-time-xs) ease-out;
+    transition-behavior: allow-discrete;
+    transform: translateY(var(--as-space-m));
+    transition-delay: 10ms;
+    scale: 0.95;
+    opacity: 0;
+    border-radius: var(--as-border-radius-s);
+    border: var(--as-size-thin) solid var(--as-color-border-panel);
+    background-color: var(--as-color-background);
+    box-shadow: var(--as-box-shadow);
+    max-width: var(--width);
+    width: 100%;
+    position-area: bottom span-right;
+}
+
+as-select-multiple [popover]:popover-open {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+
+    @starting-style {
+        transform: translateY(var(--as-space-m));
+        opacity: 0;
+        scale: .95;
+    }
+}
+
+as-select-multiple [search] {
+    display: block;
+    position: static;
+    width: 100%;
+    padding-inline: var(--as-space-s);
+    padding-block: var(--as-space-s);
+    border: none;
+    border-bottom: 1px solid var(--color-inactive);
+    outline: none;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    z-index: 2;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+as-select-multiple [options-list] {
+    --lines: 6;
+    --font-size: var(--as-font-size-m);
+    --line-height: var(--as-line-height-base);
+    --border-width: var(--as-size-thin);
+    --padding-block: var(--as-space-s);
+    max-height: calc(var(--lines) *(var(--font-size) * var(--line-height) + 2 * var(--padding-block) + var(--border-width)));
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+as-select-multiple [option] {
+    padding-inline: var(--as-space-s);
+    padding-block: var(--padding-block);
+    border-block-end: var(--border-width) solid var(--as-color-border-panel);
+    cursor: pointer;
+    font-size: var(--font-size);
+    line-height: var(--line-height)
+}
+
+as-select-multiple [option][focused],
+as-select-multiple [option]:hover {
+    background-color: var(--as-color-border-panel);
+    outline: none;
+}

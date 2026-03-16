@@ -9,7 +9,8 @@
     "examplesCount": 1,
     "propertiesCount": 4,
     "eventsCount": 0,
-    "componentJS": "as-carousel-component.js"
+    "componentJS": "as-carousel-component.js",
+    "componentCSS": "as-carousel-component.css"
   },
   {
     "id": "12",
@@ -21,7 +22,8 @@
     "examplesCount": 3,
     "propertiesCount": 3,
     "eventsCount": 2,
-    "componentJS": "as-character-counter-component.js"
+    "componentJS": "as-char-counter-component.js",
+    "componentCSS": "as-char-counter-component.css"
   },
   {
     "id": "21",
@@ -33,7 +35,8 @@
     "examplesCount": 5,
     "propertiesCount": 7,
     "eventsCount": 0,
-    "componentJS": "as-class-toggle-component.js"
+    "componentJS": "as-class-toggle-component.js",
+    "componentCSS": "as-class-toggle-component.css"
   },
   {
     "id": "15",
@@ -45,7 +48,8 @@
     "examplesCount": 1,
     "propertiesCount": 3,
     "eventsCount": 0,
-    "componentJS": "as-command-menu-component.js"
+    "componentJS": "as-command-menu-component.js",
+    "componentCSS": "as-command-menu-component.css"
   },
   {
     "id": "27",
@@ -57,7 +61,8 @@
     "examplesCount": 1,
     "propertiesCount": 0,
     "eventsCount": 0,
-    "componentJS": "as-contrast-checker-component.js"
+    "componentJS": "as-contrast-checker-component.js",
+    "componentCSS": "as-contrast-checker-component.css"
   },
   {
     "id": "14",
@@ -69,7 +74,8 @@
     "examplesCount": 3,
     "propertiesCount": 6,
     "eventsCount": 5,
-    "componentJS": "as-date-picker-component.js"
+    "componentJS": "as-date-picker-component.js",
+    "componentCSS": "as-date-picker-component.css"
   },
   {
     "id": "22",
@@ -81,7 +87,8 @@
     "examplesCount": 3,
     "propertiesCount": 3,
     "eventsCount": 0,
-    "componentJS": "as-dot-matrix-clock-component.js"
+    "componentJS": "as-dot-matrix-clock-component.js",
+    "componentCSS": "as-dot-matrix-clock-component.css"
   },
   {
     "id": "17",
@@ -93,7 +100,8 @@
     "examplesCount": 6,
     "propertiesCount": 3,
     "eventsCount": 5,
-    "componentJS": "as-drawer-component.js"
+    "componentJS": "as-drawer-component.js",
+    "componentCSS": "as-drawer-component.css"
   },
   {
     "id": "11",
@@ -105,7 +113,8 @@
     "examplesCount": 1,
     "propertiesCount": 7,
     "eventsCount": 2,
-    "componentJS": "as-form-validation-component.js"
+    "componentJS": "as-form-validation-component.js",
+    "componentCSS": "as-form-validation-component.css"
   },
   {
     "id": "19",
@@ -117,7 +126,8 @@
     "examplesCount": 6,
     "propertiesCount": 9,
     "eventsCount": 0,
-    "componentJS": "as-gauge-component.js"
+    "componentJS": "as-gauge-component.js",
+    "componentCSS": "as-gauge-component.css"
   },
   {
     "id": "24",
@@ -129,7 +139,8 @@
     "examplesCount": 2,
     "propertiesCount": 11,
     "eventsCount": 0,
-    "componentJS": "as-graph-component.js"
+    "componentJS": "as-graph-component.js",
+    "componentCSS": "as-graph-component.css"
   },
   {
     "id": "1",
@@ -141,7 +152,8 @@
     "examplesCount": 9,
     "propertiesCount": 8,
     "eventsCount": 0,
-    "componentJS": "as-icon-component.js"
+    "componentJS": "as-icon-component.js",
+    "componentCSS": "as-icon-component.css"
   },
   {
     "id": "7",
@@ -153,7 +165,8 @@
     "examplesCount": 1,
     "propertiesCount": 5,
     "eventsCount": 3,
-    "componentJS": "as-panel-component.js"
+    "componentJS": "as-panel-component.js",
+    "componentCSS": "as-panel-component.css"
   },
   {
     "id": "6",
@@ -165,7 +178,8 @@
     "examplesCount": 4,
     "propertiesCount": 5,
     "eventsCount": 3,
-    "componentJS": "as-popout-component.js"
+    "componentJS": "as-popout-component.js",
+    "componentCSS": "as-popout-component.css"
   },
   {
     "id": "20",
@@ -177,7 +191,8 @@
     "examplesCount": 6,
     "propertiesCount": 4,
     "eventsCount": 0,
-    "componentJS": "as-relative-time-component.js"
+    "componentJS": "as-relative-time-component.js",
+    "componentCSS": "as-relative-time-component.css"
   },
   {
     "id": "26",
@@ -189,7 +204,8 @@
     "examplesCount": 1,
     "propertiesCount": 0,
     "eventsCount": 0,
-    "componentJS": "as-svg-to-base64-component.js"
+    "componentJS": "as-svg-to-base64-component.js",
+    "componentCSS": "as-svg-to-base64-component.css"
   },
   {
     "id": "16",
@@ -201,7 +217,8 @@
     "examplesCount": 1,
     "propertiesCount": 11,
     "eventsCount": 0,
-    "componentJS": "as-search-menu-component.js"
+    "componentJS": "as-search-menu-component.js",
+    "componentCSS": "as-search-menu-component.css"
   },
   {
     "id": "3",
@@ -213,7 +230,8 @@
     "examplesCount": 1,
     "propertiesCount": 0,
     "eventsCount": 6,
-    "componentJS": "as-select-component.js"
+    "componentJS": "as-select-component.js",
+    "componentCSS": "as-select-component.css"
   },
   {
     "id": "5",
@@ -225,7 +243,8 @@
     "examplesCount": 2,
     "propertiesCount": 1,
     "eventsCount": 3,
-    "componentJS": "as-select2range-component.js"
+    "componentJS": "as-select2range-component.js",
+    "componentCSS": "as-select2range-component.css"
   },
   {
     "id": "4",
@@ -237,7 +256,8 @@
     "examplesCount": 2,
     "propertiesCount": 1,
     "eventsCount": 6,
-    "componentJS": "as-select-multiple-component.js"
+    "componentJS": "as-select-multiple-component.js",
+    "componentCSS": "as-select-multiple-component.css"
   },
   {
     "id": "13",
@@ -249,7 +269,8 @@
     "examplesCount": 2,
     "propertiesCount": 2,
     "eventsCount": 2,
-    "componentJS": "as-show-hide-password-component.js"
+    "componentJS": "as-show-hide-password-component.js",
+    "componentCSS": "as-show-hide-password-component.css"
   },
   {
     "id": "28",
@@ -273,7 +294,8 @@
     "examplesCount": 1,
     "propertiesCount": 1,
     "eventsCount": 2,
-    "componentJS": "as-tab-group-component.js"
+    "componentJS": "as-tab-group-component.js",
+    "componentCSS": "as-tab-group-component.css"
   },
   {
     "id": "9",
@@ -285,7 +307,8 @@
     "examplesCount": 1,
     "propertiesCount": 2,
     "eventsCount": 6,
-    "componentJS": "as-table-actions-component.js"
+    "componentJS": "as-table-actions-component.js",
+    "componentCSS": "as-table-actions-component.css"
   },
   {
     "id": "8",
@@ -297,7 +320,8 @@
     "examplesCount": 1,
     "propertiesCount": 4,
     "eventsCount": 6,
-    "componentJS": "as-table-sort-component.js"
+    "componentJS": "as-table-sort-component.js",
+    "componentCSS": "as-table-sort-component.css"
   },
   {
     "id": "2",

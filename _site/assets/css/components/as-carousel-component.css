@@ -1,0 +1,63 @@
+as-carousel {
+    display: block;
+}
+
+as-carousel>div {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+as-carousel>div>*:not(.controls) {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+    transition-timing-function: ease-out;
+}
+
+as-carousel>div>*:not(.controls)>* {
+    display: block;
+    background-color: #800;
+    width: calc(3 * var(--as-size-xxxl));
+    aspect-ratio: 2/1;
+    flex-shrink: 0;
+    color: var(--as-color-text-button);
+    padding: var(--as-space-l);
+    align-content: center;
+    text-align: center;
+    position: relative;
+    opacity: 1;
+    border-radius: var(--as-border-radius-l);
+}
+
+as-carousel>div>.controls {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--as-space-l);
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+as-carousel>div>.controls button {
+    appearance: none;
+    cursor: pointer;
+}
+
+as-carousel .slider {
+    margin-block-end: var(--as-space-l);
+}
+
+@media screen and (max-width: 30rem) {
+    as-carousel>div>* :not(.controls)>* {
+        width: calc(100% - 3rem);
+    }
+}

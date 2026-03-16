@@ -1,0 +1,144 @@
+@property --gauge-value {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+as-gauge div:first-child {
+    --stop: calc(1% * var(--ratio) * var(--gauge-value));
+    --_thumb: var(--thumb, #080);
+    --_track: var(--track, #ddd);
+    display: grid;
+    place-items: center;
+    width: var(--size);
+    aspect-ratio: 1/1;
+    background-color: var(--_thumb);
+    background-image: conic-gradient(var(--_thumb) var(--stop), var(--_track) var(--stop));
+    border-radius: var(--size);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: --gauge-value var(--speed, 1) ease-out;
+    clip-path: var(--path);
+}
+
+as-gauge[half] div:first-child {
+    --stop: calc(.5% * var(--ratio) * var(--gauge-value));
+    --_thumb: var(--thumb, #080);
+    --_track: var(--track, #ddd);
+    display: grid;
+    place-items: center;
+    width: var(--size);
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    background-image: conic-gradient(var(--_thumb) var(--stop), var(--_track) var(--stop), var(--_track) 180deg, transparent 180deg, transparent 360deg);
+    border-radius: var(--size);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: --gauge-value var(--speed, 1) ease-out;
+    rotate: -90deg;
+    clip-path: var(--path);
+}
+
+as-gauge[reverse] div:first-child {
+    --stop-reverse: calc(100% - var(--stop));
+    background-image: conic-gradient(var(--_track) var(--stop-reverse), var(--_thumb) var(--stop-reverse));
+}
+
+as-gauge[half][reverse] div:first-child {
+    --stop: calc(.5% * var(--ratio) * var(--gauge-value));
+    --stop-reverse: calc(50% - var(--stop));
+    --_thumb: var(--thumb, #080);
+    --_track: var(--track, #ddd);
+    display: grid;
+    place-items: center;
+    width: var(--size);
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    background-image: conic-gradient(var(--_track) var(--stop-reverse), var(--_thumb) var(--stop-reverse), var(--_thumb) 180deg, transparent 180deg, transparent 360deg);
+    border-radius: var(--size);
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: --gauge-value var(--speed, 1) ease-out;
+    rotate: -90deg;
+    clip-path: var(--path);
+}
+
+as-gauge div:last-child {
+    --font-bold: var(--as-font-bold);
+    display: grid;
+    place-items: center;
+    width: var(--size);
+    border-radius: var(--size);
+    aspect-ratio: 1/1;
+    position: relative;
+    z-index: 1;
+    margin-block-start: calc(-1 * var(--size));
+}
+
+as-gauge[half] div:last-child {
+    --font-bold: var(--as-font-bold);
+    display: grid;
+    place-items: start center;
+    width: var(--size);
+    border-radius: var(--size);
+    aspect-ratio: 2/1;
+    position: relative;
+    z-index: 1;
+    margin-block-start: calc(-1 * var(--size));
+}
+
+as-gauge div:last-child:after {
+    content: attr(data-value);
+    font-family: var(--font-bold);
+    font-size: calc(.4 * var(--size));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    aspect-ratio: 1/1;
+    background-color: var(--color-bg);
+    border-radius: inherit;
+}
+
+as-gauge[half] div:last-child:after {
+    font-size: calc(.15 * var(--size));
+    align-items: end;
+    width: 100%;
+    aspect-ratio: 2/1;
+    background-color: transparent;
+}
+
+as-gauge[showmax] div:last-child:before {
+    content: 'of ' attr(data-max);
+    font-family: var(--font-bold);
+    font-size: calc(.1 * var(--size));
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--_thumb);
+    white-space: nowrap;
+}
+
+as-gauge[half][showmax] div:last-child:before {
+    content: 'of ' attr(data-max);
+    font-family: var(--font-bold);
+    font-size: calc(.1 * var(--size));
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--_thumb);
+    white-space: nowrap;
+    line-height: 1;
+}
+
+as-gauge[half][showmax] div:last-child:after {
+    align-items: center;
+}

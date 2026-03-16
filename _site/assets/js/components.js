@@ -562,12 +562,6 @@ var require_as_command_menu_component = __commonJS({
   }
 });
 
-// src/assets/js/components/as-command-menu-options-locale-component.js
-var require_as_command_menu_options_locale_component = __commonJS({
-  "src/assets/js/components/as-command-menu-options-locale-component.js"() {
-  }
-});
-
 // src/assets/js/components/as-contrast-checker-component.js
 var require_as_contrast_checker_component = __commonJS({
   "src/assets/js/components/as-contrast-checker-component.js"() {
@@ -4275,7 +4269,6 @@ var import_as_carousel_component = __toESM(require_as_carousel_component());
 var import_as_char_counter_component = __toESM(require_as_char_counter_component());
 var import_as_class_toggle_component = __toESM(require_as_class_toggle_component());
 var import_as_command_menu_component = __toESM(require_as_command_menu_component());
-var import_as_command_menu_options_locale_component = __toESM(require_as_command_menu_options_locale_component());
 var import_as_contrast_checker_component = __toESM(require_as_contrast_checker_component());
 var import_as_contrast_component = __toESM(require_as_contrast_component());
 var import_as_copy_component = __toESM(require_as_copy_component());

@@ -103,11 +103,20 @@ layout: layouts/base.njk
     <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
       <ul>
-        <li>
-          <a class="btn btn-outline" download="{{ component.componentJS }}" href="/assets/js/components/{{ component.componentJS }}">
-            <as-icon name="document-lines"></as-icon>
-            {{ component.componentJS }}</a>
-        </li>
+        {% if component.componentJS %}
+          <li>
+            <a class="btn btn-transparent" download="{{ component.componentJS }}" href="/assets/js/components/{{ component.componentJS }}">
+              <as-icon name="document-lines"></as-icon>
+              {{ component.componentJS }}</a>
+          </li>
+        {% endif %}
+        {% if component.componentCSS %}
+          <li>
+            <a class="btn btn-transparent" download="{{ component.componentCSS }}" href="/assets/css/components/{{ component.componentCSS }}">
+              <as-icon name="document-lines"></as-icon>
+              {{ component.componentCSS }}</a>
+          </li>
+        {% endif %}
       </ul>
     </as-tab-panel>
   </as-tab-group>
