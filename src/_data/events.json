@@ -4,7 +4,7 @@
     "guid": "711270d5-2b9f-42c7-bc51-96f3728ad9b2",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:created",
+    "name": "as-select:created",
     "description": "Fired when component is rendered. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"created\"}"
   },
@@ -13,7 +13,7 @@
     "guid": "4b651a81-5b6a-4e14-be92-3066983106e8",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:updated",
+    "name": "as-select:updated",
     "description": "Fired when component receives [updated] attribute. This should happen each time &lt;SELECT&gt; element within is being updated with JS. [updated] attribute on the component forces re-render of the component. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"updated\"}"
   },
@@ -22,7 +22,7 @@
     "guid": "924d08ae-347f-4501-ba64-d8310597e4d0",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:selected",
+    "name": "as-select:selected",
     "description": "Fired when option is selected. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"selected\", option: \"Acid\"}"
   },
@@ -31,7 +31,7 @@
     "guid": "7be2d267-222e-49ff-845a-5551333681b2",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:show",
+    "name": "as-select:show",
     "description": "Fired when dropdown is shown. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"show\"}"
   },
@@ -40,7 +40,7 @@
     "guid": "b2275dde-f7d8-4476-b6bf-b813a7f09489",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:hide",
+    "name": "as-select:hide",
     "description": "Fired when dropdown is hid. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"hide\"}"
   },
@@ -49,7 +49,7 @@
     "guid": "07316ebc-bd36-45e6-bbaf-4f8d71e88126",
     "componentName": "Select",
     "componentSlug": "select",
-    "name": "ts-select:search",
+    "name": "as-select:search",
     "description": "Fired when user start typing within component's &lt;INPUT&gt; element. Has detail object.",
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"search\", searchword: \"Lorem ipsum\"}"
   },
@@ -58,7 +58,7 @@
     "guid": "89f4c93d-3c0c-4c32-b57f-977623e9f6a7",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:created",
+    "name": "as-select-multiple:created",
     "description": "Fired when component is rendered. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"created\"}"
   },
@@ -67,7 +67,7 @@
     "guid": "e306b093-804f-4f4d-9944-a94a314ddb65",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:show",
+    "name": "as-select-multiple:show",
     "description": "Fired when dropdown is shown. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"show\"}"
   },
@@ -76,7 +76,7 @@
     "guid": "4b1cc177-49a4-44c6-ad1c-815364e33fbc",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:hide",
+    "name": "as-select-multiple:hide",
     "description": "Fired when dropdown is hid. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"hide\"}"
   },
@@ -85,7 +85,7 @@
     "guid": "d3919151-47f9-4eeb-9153-640771bf12ce",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:selected",
+    "name": "as-select-multiple:selected",
     "description": "Fired when option is selected. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"selected\", name: \"Arsenic\", value: \"1\"}"
   },
@@ -94,7 +94,7 @@
     "guid": "b6764708-da4e-45a3-838e-9011467d010e",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:deselected",
+    "name": "as-select-multiple:deselected",
     "description": "Fired when option is deselected. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"deselected\", name: \"Spider venom\", value: \"4\"}"
   },
@@ -103,7 +103,7 @@
     "guid": "34421f0d-5d9c-46b0-9e9a-a53b03fb98f4",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
-    "name": "ts-select-multiple:search",
+    "name": "as-select-multiple:search",
     "description": "Fired when user start typing within component's &lt;INPUT&gt; element. Has detail object.",
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"search\", searchword: \"acid\"}"
   },
@@ -112,7 +112,7 @@
     "guid": "2e2b3332-1fb0-4701-9858-d4eb2e758296",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
-    "name": "ts-select2range:created",
+    "name": "as-select2range:created",
     "description": "Fired when component is rendered. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"created\"}"
   },
@@ -121,7 +121,7 @@
     "guid": "61da642d-2eda-419f-8ce0-2f98f2e5546a",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
-    "name": "ts-select2range:created",
+    "name": "as-select2range:created",
     "description": "Fired when component is not created due to element not being &lt;SELECT multiple&gt;. Throws console error. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"not-created\"}"
   },
@@ -130,7 +130,7 @@
     "guid": "113dc108-7644-4ff7-9172-c00a76d1839b",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
-    "name": "ts-select2range:selected",
+    "name": "as-select2range:selected",
     "description": "Fired when option is selected. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"selected\", name: \"Arsenic\", value: \"1\"}"
   },
@@ -139,7 +139,7 @@
     "guid": "f9ff848d-9b77-4f18-b321-115782c5381f",
     "componentName": "Popout",
     "componentSlug": "popout",
-    "name": "ts-popout:created",
+    "name": "as-popout:created",
     "description": "Fired when component is rendered. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"created\"}"
   },
@@ -148,7 +148,7 @@
     "guid": "183235db-6e9c-472e-9db2-ffc98c95a76f",
     "componentName": "Popout",
     "componentSlug": "popout",
-    "name": "ts-popout:toggle",
+    "name": "as-popout:toggle",
     "description": "Fired when popout is opened. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: \"open\"}"
   },
@@ -157,7 +157,7 @@
     "guid": "fd55a95b-e8c1-4d12-a826-8cd49ddc0621",
     "componentName": "Popout",
     "componentSlug": "popout",
-    "name": "ts-popout:toggle",
+    "name": "as-popout:toggle",
     "description": "Fired when popout is closed. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: \"close\"}"
   },
@@ -166,7 +166,7 @@
     "guid": "77d9ebaf-1299-4abe-9604-803038a71800",
     "componentName": "Panel",
     "componentSlug": "panel",
-    "name": "ts-panel:created",
+    "name": "as-panel:created",
     "description": "Fired when component is rendered. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\"}"
   },
@@ -175,7 +175,7 @@
     "guid": "032d3e39-a2fb-410d-a95e-a29dfeeabc03",
     "componentName": "Panel",
     "componentSlug": "panel",
-    "name": "ts-panel:toggle",
+    "name": "as-panel:toggle",
     "description": "Fired when component has toggled. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: 'open'}"
   },
@@ -184,7 +184,7 @@
     "guid": "7b1e8d3c-fbf3-4ad7-9682-decdfe3fe43b",
     "componentName": "Panel",
     "componentSlug": "panel",
-    "name": "ts-panel:toggle",
+    "name": "as-panel:toggle",
     "description": "Fired when component has toggled. Has detail object.",
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: 'closed'}"
   },
@@ -193,7 +193,7 @@
     "guid": "76f5ac79-8211-4e38-ab93-6af75c520bcc",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:created",
+    "name": "as-table-sort:created",
     "description": "Fired when component is created. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"created\"}"
   },
@@ -202,7 +202,7 @@
     "guid": "cef9ed03-b463-4776-a207-660a7bd66054",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:created",
+    "name": "as-table-sort:created",
     "description": "Fired when component detects that there's no table to work with within component. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"not-created\"}"
   },
@@ -211,7 +211,7 @@
     "guid": "e6546dcf-5c30-477e-ac47-40c7e55f5852",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:sorted",
+    "name": "as-table-sort:sorted",
     "description": "Fired when any of the columns is being sorted. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"sorted\", column: \"PropID\", direction: \"desc\"}"
   },
@@ -220,7 +220,7 @@
     "guid": "bc65d582-dc61-4556-9ec7-c481f5762e13",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:sorted",
+    "name": "as-table-sort:sorted",
     "description": "Fired when sorting is being reset to default. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"delete\"}"
   },
@@ -229,7 +229,7 @@
     "guid": "8ab457ed-a3e9-4ee0-ab2c-b7de55d8eab8",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:filtered",
+    "name": "as-table-sort:filtered",
     "description": "Fired when any of the columns is being filtered. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"filtered\", column: \"PropID\", searchword: \"p00\"}"
   },
@@ -238,7 +238,7 @@
     "guid": "1b509649-f942-41b7-a30c-9e5f85f0da15",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
-    "name": "ts-table-sort:filtered",
+    "name": "as-table-sort:filtered",
     "description": "Fired when filters are being set to default. Has detail object.",
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"delete\"}"
   },
@@ -247,25 +247,16 @@
     "guid": "1ceedb19-e284-418f-b962-c088fe39f71c",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:popover",
+    "name": "as-table-actions:popover",
     "description": "Fired when popover with action buttons is opened. Has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", state: \"open\"}"
-  },
-  {
-    "id": "29",
-    "guid": "5cad1b82-ffbf-4e0a-a8d7-a91a56461ab1",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "ts-page-reader:loaded",
-    "description": "Fired when Page reader successfully fetches and displays data.",
-    "exampleValue": "{component: 'listaction', pageid: 162, recordid: 23, layoutpageid: '-10000002'}<br/><br/>{component: 'displaypage', pageid: 271}"
   },
   {
     "id": "30",
     "guid": "701ec16e-639b-45d8-9085-fbbfbd51e883",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:popover",
+    "name": "as-table-actions:popover",
     "description": "Fired when popover with action buttons is closed. Has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", state: \"close\"}"
   },
@@ -274,7 +265,7 @@
     "guid": "5a2389d4-46bd-4da3-a990-de52cc9551b5",
     "componentName": "Drawer",
     "componentSlug": "drawer",
-    "name": "ts-drawer:created",
+    "name": "as-drawer:created",
     "description": "Fired when component is instantiated, has detail object.",
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
@@ -283,7 +274,7 @@
     "guid": "cdf21577-aed6-481a-a5ab-add1c97d9724",
     "componentName": "Drawer",
     "componentSlug": "drawer",
-    "name": "ts-drawer:before-open",
+    "name": "as-drawer:before-open",
     "description": "Fired when component is about to be opened, has detail object.",
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
@@ -292,7 +283,7 @@
     "guid": "9230cb2d-1544-441e-9f9e-13e39d960232",
     "componentName": "Drawer",
     "componentSlug": "drawer",
-    "name": "ts-drawer:after-open",
+    "name": "as-drawer:after-open",
     "description": "Fired when component has finished opening and transition time has elapsed, has detail object.",
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
@@ -301,7 +292,7 @@
     "guid": "d1821b1e-dddf-4588-98e5-1e7e57d3da46",
     "componentName": "Drawer",
     "componentSlug": "drawer",
-    "name": "ts-drawer:before-close",
+    "name": "as-drawer:before-close",
     "description": "Fired when component is about to be closed, has detail object.",
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
@@ -310,7 +301,7 @@
     "guid": "f54c68b2-a88f-4c9f-94bf-8e82c23bdc23",
     "componentName": "Drawer",
     "componentSlug": "drawer",
-    "name": "ts-drawer:after-close",
+    "name": "as-drawer:after-close",
     "description": "Fired when component has finished closing and transition time has elapsed, has detail object.",
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
@@ -319,7 +310,7 @@
     "guid": "171dc729-0574-4f02-9061-edfd0ed59c4b",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:download",
+    "name": "as-table-actions:download",
     "description": "Fired when COPY button is clicked, has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"copy\", data: \"[tab separated table data]\"}"
   },
@@ -328,7 +319,7 @@
     "guid": "40c771dc-14c9-47a7-96ce-5cf300e63532",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:download",
+    "name": "as-table-actions:download",
     "description": "Fired when MD button is clicked, has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"md\", data: \"[markdown data]\"}"
   },
@@ -337,7 +328,7 @@
     "guid": "1da3b6ed-7ef7-45d9-a8be-55b040a5a79f",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:download",
+    "name": "as-table-actions:download",
     "description": "Fired when XLS button is clicked, has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"xls\", data: \"[XLS data]\"}"
   },
@@ -346,7 +337,7 @@
     "guid": "d3effb26-d32b-4c6f-be29-24eca9288777",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
-    "name": "ts-table-actions:download",
+    "name": "as-table-actions:download",
     "description": "Fired when CSV button is clicked, has detail object.",
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"csv\", data: \"[CSV data]\"}"
   },
@@ -355,7 +346,7 @@
     "guid": "6b20d9e7-7c69-42de-ab0f-1481ae28c7b5",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "name": "ts-date-picker:created",
+    "name": "as-date-picker:created",
     "description": "Fires when date picker component is created. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
@@ -364,7 +355,7 @@
     "guid": "1356c5bf-73d5-4faa-b3ef-8eba8f4a04e0",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "name": "ts-date-picker:breakpoint",
+    "name": "as-date-picker:breakpoint",
     "description": "Fires when date picker checks breakpoint value to modify component behaviour. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"desktop\"}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"mobile\"}"
   },
@@ -373,7 +364,7 @@
     "guid": "59502c30-8baa-438e-a948-c71a92365683",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "name": "ts-date-picker:open",
+    "name": "as-date-picker:open",
     "description": "Fires when calendar popout is shown. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
@@ -382,7 +373,7 @@
     "guid": "ec11de19-7ddf-4adb-b57a-ca5d4b530a75",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "name": "ts-date-picker:closed",
+    "name": "as-date-picker:closed",
     "description": "Fires when calendar popout is closed. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
@@ -391,7 +382,7 @@
     "guid": "0155c754-bee1-44f2-96e1-169d1b5bccaa",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "name": "ts-date-picker:changed",
+    "name": "as-date-picker:changed",
     "description": "Fires when user picks another date. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"day\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"month\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"year\"]}"
   },
@@ -400,7 +391,7 @@
     "guid": "0ba0df52-cdf6-4356-83ad-152ccbfa9ae5",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
-    "name": "ts-tab-group:created",
+    "name": "as-tab-group:created",
     "description": "Fired when component is instantiated. Has detail object.",
     "exampleValue": "{id: \"a\", tabs: \"b1,c1,d1,e1\"}"
   },
@@ -409,7 +400,7 @@
     "guid": "84e08295-e362-4e9d-a9df-51566ddadefd",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
-    "name": "ts-show-hide-password:show",
+    "name": "as-show-hide-password:show",
     "description": "Fires when password is shown. Has no detail object.",
     "exampleValue": ""
   },
@@ -418,7 +409,7 @@
     "guid": "6d53875e-51a4-48aa-87dd-9b8289da431c",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
-    "name": "ts-show-hide-password:hide",
+    "name": "as-show-hide-password:hide",
     "description": "Fires when password is hidden. Has no detail object.",
     "exampleValue": ""
   },
@@ -427,7 +418,7 @@
     "guid": "d76e2d43-317b-4d2a-94a1-89d50b45d312",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
-    "name": "ts-tab-group:selected",
+    "name": "as-tab-group:selected",
     "description": "Fired when component tab is clicked and selected. Has detail object.",
     "exampleValue": "{id: \"a\", tab: \"b1\"}"
   },
@@ -436,7 +427,7 @@
     "guid": "efa4d0c9-8624-463c-af5b-acb7df51be69",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
-    "name": "ts-char-counter:created",
+    "name": "as-char-counter:created",
     "description": "Fired when component is created. Has detail object.",
     "exampleValue": "{id: \"ccf267d0-2775-4c59-8766-5a627e8b5bf3\", fieldid: \"#mytextarea\"}"
   },
@@ -445,7 +436,7 @@
     "guid": "05608572-d93a-4937-b1e6-dd6ca66b199e",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
-    "name": "ts-char-counter:count",
+    "name": "as-char-counter:count",
     "description": "Fired when count changes",
     "exampleValue": "{id: \"ccf267d0-2775-4c59-8766-5a627e8b5bf3\", fieldid: \"#mytextarea\", chars: 17, texts: 1}"
   },
@@ -454,7 +445,7 @@
     "guid": "e4bdfc39-d978-4fac-a1f6-beebf7d99d6f",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
-    "name": "ts-form-validation:success",
+    "name": "as-form-validation:success",
     "description": "Fired when field validation returns no error. Has detail object.",
     "exampleValue": "{fieldid: 'myemail'}"
   },
@@ -463,7 +454,7 @@
     "guid": "806b8906-10bd-455f-a7e5-eb34dae57c8a",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
-    "name": "ts-form-validation:error",
+    "name": "as-form-validation:error",
     "description": "Fired when field validation error. Has detail object",
     "exampleValue": "{fieldid: 'myemail', type: 'valueMissing', message: 'This field is required'}"
   }

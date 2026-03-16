@@ -124,33 +124,11 @@
     "id": "1",
     "guid": "fced669e-3f95-4048-8108-fac85ce338a5",
     "name": "Icon",
-    "description": "<p>Icon component makes it easy to place icons images in various places (e.g. within text <ts-icon name=\"pen\" color=\"--ts-color-status-error\"></ts-icon> or <button class=\"btn\"><ts-icon name=\"clone\"></ts-icon> button</button> ) where each icon can have different size, image, size, accessibility label and can be a variation of the original icon image by flipping it in X/Y axis.</p>",
+    "description": "<p>Icon component makes it easy to place icons images in various places (e.g. within text <as-icon name=\"pen\" color=\"--as-color-status-error\"></as-icon> or <button class=\"btn\"><as-icon name=\"clone\"></as-icon> button</button> ) where each icon can have different size, image, size, accessibility label and can be a variation of the original icon image by flipping it in X/Y axis.</p>",
     "slug": "icon",
     "pageurl": "FCED669E-3F95-4048-8108-FAC85CE338A5",
     "examplesCount": 9,
     "propertiesCount": 8,
-    "eventsCount": 0
-  },
-  {
-    "id": "18",
-    "guid": "9962d57c-fb7d-4052-a790-a82de9485e46",
-    "name": "Page Reader",
-    "description": "<p>Page Reader is a component that allow to fetch any Tangora page content by ID and display it in any place on page that invokes the component. Fetch is done using bits of code used by Tangora Lightbox, but unlike Lightbox it does display content inline.</p><p>Page Reader component also allows to be used with Tangora's built-in listpaction.aspx component, useful for fetching data from linked lists when building page details.</p>",
-    "slug": "page-reader",
-    "pageurl": "9962D57C-FB7D-4052-A790-A82DE9485E46",
-    "examplesCount": 3,
-    "propertiesCount": 7,
-    "eventsCount": 1
-  },
-  {
-    "id": "25",
-    "guid": "9c58e9e9-cb88-400c-b924-a2b6ceec0640",
-    "name": "Pagination",
-    "description": "<p>This component adds unsupported view for Tangora own list navigation. It actually replaces built-in navigation mergefield, while using its URL parameters to navigate through records (pagenumberXXX).</p><p>Requirements are to disable records auto-fetch and set fixed number of records to be shown at once. This number is important as it is passed to a component to make calculations (see&nbsp;<b>data-page-size</b>).</p>",
-    "slug": "pagination",
-    "pageurl": "9C58E9E9-CB88-400C-B924-A2B6CEEC0640",
-    "examplesCount": 1,
-    "propertiesCount": 3,
     "eventsCount": 0
   },
   {
@@ -267,7 +245,7 @@
     "id": "10",
     "guid": "9816af1c-2b64-481b-8467-8accf361bd45",
     "name": "Tab Group",
-    "description": "Tabs is a view often used in record details to display related information and actions. The only working component there is the &lt;ts-tab-group&gt; which holds all the logic. Elements inside &lt;ts-tab&gt; &amp; &lt;ts-tab-panel&gt; are only there as placeholders (though tabs logic uses these), these might be added later as full-blown components.",
+    "description": "Tabs is a view often used in record details to display related information and actions. The only working component there is the &lt;as-tab-group&gt; which holds all the logic. Elements inside &lt;as-tab&gt; &amp; &lt;as-tab-panel&gt; are only there as placeholders (though tabs logic uses these), these might be added later as full-blown components.",
     "slug": "tab-group",
     "pageurl": "9816AF1C-2B64-481B-8467-8ACCF361BD45",
     "examplesCount": 1,

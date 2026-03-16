@@ -14,12 +14,12 @@
     <div layout>
       <nav>
         <div class="search">
-          <ts-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U" ></ts-search-menu>
+          <as-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U" ></as-search-menu>
         </div>
 
         {% include "partials/sidebar.njk" %}
         <div class="layoutbox clock" id="layoutbox4">
-          <ts-dot-matrix-clock size="10px"></ts-dot-matrix-clock>
+          <as-dot-matrix-clock size="10px"></as-dot-matrix-clock>
         </div>
       </nav>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="menu-btn">
-      <ts-class-toggle target-element="[layout] nav|.menu-overlay" target-class="navopen|overlayopen" button-class="btn btn-transparent" icon-name="bars"></ts-class-toggle>
+      <as-class-toggle target-element="[layout] nav|.menu-overlay" target-class="navopen|overlayopen" button-class="btn btn-transparent" icon-name="bars"></as-class-toggle>
     </div>
     <div class="menu-overlay"></div>
   </body>

@@ -1,12 +1,6 @@
-/* TANGORA CSS */
-// RESOURCE #1 BEGIN
-
-// RESOURCE #1 END
-// RESOURCE #61 BEGIN
-// register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-icon') === undefined) {
-        class TSIconElement extends HTMLElement {
+    if (window.customElements.get('as-icon') === undefined) {
+        class ASIconElement extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -17,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.isIconVar = this.icon.indexOf('--') > -1 ? true : false
 
                 this.hasColor = this.hasAttribute('color') && this.getAttribute('color').length >= 3
-                this.color = this.hasColor ? this.getAttribute('color') : '--ts-color-accent'
+                this.color = this.hasColor ? this.getAttribute('color') : '--as-color-accent'
                 this.isColorVar = this.color.indexOf('--') > -1 ? true : false
 
                 this.isImage = this.hasAttribute('image') ? true : false
@@ -45,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             render() {
-                this.style.setProperty('--icon', this.isIconVar ? `var(${this.icon})` : `var(--ts-icon-${this.icon})`)
+                this.style.setProperty('--icon', this.isIconVar ? `var(${this.icon})` : `var(--as-icon-${this.icon})`)
 
                 if (this.hasColor)
                     this.style.setProperty('--color-icon', this.isColorVar ? `var(${this.color})` : `${this.color}`)
 
-                this.style.setProperty('--size', `var(--ts-size-${this.size})`)
+                this.style.setProperty('--size', `var(--as-size-${this.size})`)
 
                 if (this.label !== undefined)
                     this.setAttribute('aria-label', this.label)
@@ -63,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.isImage) {
                     const image = document.createElement('img')
                     const customProps = window.getComputedStyle(document.documentElement)
-                    const name = this.isIconVar ? `${this.icon}` : `--ts-icon-${this.icon}`
+                    const name = this.isIconVar ? `${this.icon}` : `--as-icon-${this.icon}`
                     let data = customProps.getPropertyValue(name).replace('url(', '').replace(')', '').replaceAll('\\', '')
                     image.src = data
                     this.append(image)
@@ -76,15 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.ready = true
             }
         }
-        window.customElements.define("ts-icon", TSIconElement)
+        window.customElements.define("as-icon", ASIconElement)
     }
 })
 // RESOURCE #61 END
 // RESOURCE #109 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-table-actions') === undefined) {
-        class TSTableActions extends HTMLElement {
+    if (window.customElements.get('as-table-actions') === undefined) {
+        class ASTableActions extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -111,17 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // render Table Actions structure
                 this.innerHTML = `
-                    <ts-popout popout-id="pop_${this.tableActionsId}" button-text="${this.settings.button}" button-icon="--ts-icon-dots" popout-position="bottom" popout-align="span-left">
-                    <div style="display: grid; gap: var(--ts-space-xs);">
-                        <button class="btn" data-action="csv" title="Download as CSV"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download CSV</button>
-                        <button class="btn" data-action="excel" title="Download as Excel"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download XLS</button>
-                        <button class="btn" data-action="md" title="Download as Markdown"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download MD</button>
-                        <button class="btn" data-action="copy" title="Copy"><ts-icon name="--ts-icon-clone" size="m"></ts-icon>Copy as text</button>
+                    <as-popout popout-id="pop_${this.tableActionsId}" button-text="${this.settings.button}" button-icon="--as-icon-dots" popout-position="bottom" popout-align="span-left">
+                    <div style="display: grid; gap: var(--as-space-xs);">
+                        <button class="btn" data-action="csv" title="Download as CSV"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download CSV</button>
+                        <button class="btn" data-action="excel" title="Download as Excel"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download XLS</button>
+                        <button class="btn" data-action="md" title="Download as Markdown"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download MD</button>
+                        <button class="btn" data-action="copy" title="Copy"><as-icon name="--as-icon-clone" size="m"></as-icon>Copy as text</button>
                     </div>
-                    </ts-popout>
+                    </as-popout>
                 `
 
-                document.addEventListener('ts-popout:created', e => {
+                document.addEventListener('as-popout:created', e => {
                     setTimeout(() => {
                         if (e.detail.id === `pop_${this.tableActionsId}`) {
                             this.buttonMD = this.querySelector('button[data-action="md"]')
@@ -136,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }, 1)
 
-                    document.addEventListener('ts-popout:toggle', e => this.broadcastEvent('ts-table-actions:popover', { id: this.tableActionsId, state: e.detail.state }))
+                    document.addEventListener('as-popout:toggle', e => this.broadcastEvent('as-table-actions:popover', { id: this.tableActionsId, state: e.detail.state }))
                     this.ready = true
                 })
             }
@@ -179,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('CSV file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'csv', data: csvContent })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'csv', data: csvContent })
             }
 
             downloadEXCEL(e) {
@@ -219,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('XLS file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'xls', data: html })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'xls', data: html })
             }
 
             downloadMD(e) {
@@ -249,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('MD file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'md', data: markdown })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'md', data: markdown })
             }
 
             copy(e) {
@@ -265,10 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 navigator.clipboard.writeText(text)
                     .then(() => {
-                        this.buttonCOPY.firstChild.setAttribute('new-name', '--ts-icon-checkmark')
+                        this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-checkmark')
                         //buttonCOPY.classList.add('active')
                         setTimeout(() => {
-                            this.buttonCOPY.firstChild.setAttribute('new-name', '--ts-icon-clone')
+                            this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-clone')
                             this.buttonCOPY.classList.remove('active')
                         }, 1000)
                     })
@@ -276,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 new Toast('Table copied!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'copy', data: text })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'copy', data: text })
             }
 
             isEmpty(obj) {
@@ -293,15 +287,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-table-actions", TSTableActions)
+        window.customElements.define("as-table-actions", ASTableActions)
     }
 })
 // RESOURCE #109 END
 // RESOURCE #68 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-select') === undefined) {
-        class TSSelectElement extends HTMLElement {
+    if (window.customElements.get('as-select') === undefined) {
+        class ASSelectElement extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -313,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.select = this.querySelector('select')
 
                 if (!this.select) {
-                    throw new Error('Invalid element within ts-select, expected <SELECT> element')
+                    throw new Error('Invalid element within as-select, expected <SELECT> element')
                     this.ready = true
                     return
                 }
@@ -329,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             attributeChangedCallback(name, oldValue, newValue) {
                 if (name === 'updated' && oldValue === null) {
-                    this.broadcastEvent('ts-select:updated', { id: this.selectId, action: 'updated' }, false)
+                    this.broadcastEvent('as-select:updated', { id: this.selectId, action: 'updated' }, false)
                     this.tsSelectWrapper.remove()
                     this.tsSelectDropdown.remove()
                     this.icon.remove()
@@ -340,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             init() {
-                this.broadcastEvent('ts-select:created', { id: this.selectId, action: 'created' }, false)
+                this.broadcastEvent('as-select:created', { id: this.selectId, action: 'created' }, false)
                 if (this.ready)
                     return
                 this.createUI()
@@ -350,8 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
             createUI() {
                 this.tsSelectWrapper = document.createElement('div')
 
-                this.icon = document.createElement('ts-icon')
-                this.icon.setAttribute('name', '--ts-icon-caret-down')
+                this.icon = document.createElement('as-icon')
+                this.icon.setAttribute('name', '--as-icon-caret-down')
 
                 this.tsSelectTrigger = document.createElement('input')
                 this.tsSelectTrigger.setAttribute('popovertarget', this.selectId)
@@ -414,20 +408,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.calculateSelectDropdownPosition()
                 this.tsSelectDropdown.showPopover()
                 this.dropdownShown = true
-                this.broadcastEvent('ts-select:show', { id: this.selectId, action: 'show' }, false)
+                this.broadcastEvent('as-select:show', { id: this.selectId, action: 'show' }, false)
             }
 
             hideDropdown(e) {
                 this.tsSelectDropdown.hidePopover()
                 this.dropdownShown = false
                 this.options = []
-                this.broadcastEvent('ts-select:hide', { id: this.selectId, action: 'hide' }, false)
+                this.broadcastEvent('as-select:hide', { id: this.selectId, action: 'hide' }, false)
             }
 
             setSelectTriggerValue() {
                 if (this.select.options.length > 0) {
                     this.tsSelectTrigger.value = this.select.options[this.select.options.selectedIndex].text
-                    this.broadcastEvent('ts-select:selected', { id: this.selectId, action: 'selected', option: this.select.options[this.select.options.selectedIndex].text }, false)
+                    this.broadcastEvent('as-select:selected', { id: this.selectId, action: 'selected', option: this.select.options[this.select.options.selectedIndex].text }, false)
                 }
             }
 
@@ -472,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e !== null && e.type == 'input' && (e.code != 'ArrowDown' || e.code != 'ArrowUp')) {
                     this.index = 0
                     let searchword = e.target.value.toLowerCase()
-                    this.broadcastEvent('ts-select:search', { id: this.selectId, action: 'search', searchword: searchword }, false)
+                    this.broadcastEvent('as-select:search', { id: this.selectId, action: 'search', searchword: searchword }, false)
                     this.options = this.options.filter(option => option.text.toLowerCase().includes(searchword))
                     if (this.options.length == 1)
                         this.querySelector(`li[data-index="${this.options[0].index}"]`)
@@ -547,14 +541,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-select", TSSelectElement)
+        window.customElements.define("as-select", ASSelectElement)
     }
 })
 // RESOURCE #68 END
 // RESOURCE #60 BEGIN
-window.TS = window.TS || {}
+window.AS = window.AS || {}
 
-if (!window.TS.Toast) {
+if (!window.AS.Toast) {
     class Toast {
         constructor(message, options) {
             this.message = message
@@ -585,7 +579,7 @@ if (!window.TS.Toast) {
             toast.style.setProperty('--delay', Math.round(this.timeout / 1000) + 's')
             this.toastWrapper.prepend(toast)
 
-            const gauge = document.createElement('ts-gauge')
+            const gauge = document.createElement('as-gauge')
             gauge.textContent = Math.round(this.timeout / 1000)
             gauge.setAttribute('size', 1.5)
             gauge.setAttribute('delay', 0)
@@ -595,7 +589,7 @@ if (!window.TS.Toast) {
             if (this.sticky) {
                 toast.style.animationName = 'unset'
                 const close = document.createElement('button')
-                const icon = document.createElement('ts-icon')
+                const icon = document.createElement('as-icon')
                 icon.setAttribute('name', 'plus')
                 icon.setAttribute('rotate', '45deg')
                 close.append(icon)
@@ -619,12 +613,12 @@ if (!window.TS.Toast) {
 
     }
 
-    window.TS.Toast = Toast
+    window.AS.Toast = Toast
     window.Toast = Toast
 }
 
-if (!window.TS.TSCopy) {
-    class TSCopy {
+if (!window.AS.ASCopy) {
+    class ASCopy {
         constructor(el) {
             this.el = el
             el.__myWidgetInstance = this
@@ -641,12 +635,12 @@ if (!window.TS.TSCopy) {
         }
     }
 
-    window.TS.TSCopy = TSCopy
-    window.TSCopy = TSCopy
+    window.AS.ASCopy = ASCopy
+    window.ASCopy = ASCopy
 }
 
-if (!window.TS.TSContrast) {
-    class TSContrast {
+if (!window.AS.ASContrast) {
+    class ASContrast {
         constructor(el, colours) {
             this.el = el
             this.colours = colours | []
@@ -842,57 +836,54 @@ if (!window.TS.TSContrast) {
 
     }
 
-    window.TS.TSContrast = TSContrast
-    window.TSContrast = TSContrast
+    window.AS.ASContrast = ASContrast
+    window.ASContrast = ASContrast
 
     const boxes = document.querySelectorAll('.colorbox:not(.exclude)')
     const colours = [
-        '--ts-color-accent',
-        '--ts-color-accent-strong',
-        '--ts-color-accent-weak',
-        '--ts-color-text',
-        '--ts-color-text-strong',
-        '--ts-color-text-weak',
-        '--ts-color-text-neutral',
-        '--ts-color-background-button',
-        '--ts-color-background-button-strong',
-        '--ts-color-background-button-weak',
-        '--ts-color-text-button',
-        '--ts-color-text-nav',
-        '--ts-color-text-nav-active',
-        '--ts-color-status-warning',
-        '--ts-color-status-warning-strong',
-        '--ts-color-status-warning-weak',
-        '--ts-color-status-error',
-        '--ts-color-status-error-strong',
-        '--ts-color-status-error-weak',
-        '--ts-color-status-success',
-        '--ts-color-status-success-strong',
-        '--ts-color-status-success-weak',
-        '--ts-color-status-neutral',
-        '--ts-color-status-neutral-strong',
-        '--ts-color-status-neutral-weak'
+        '--as-color-accent',
+        '--as-color-accent-strong',
+        '--as-color-accent-weak',
+        '--as-color-text',
+        '--as-color-text-strong',
+        '--as-color-text-weak',
+        '--as-color-text-neutral',
+        '--as-color-background-button',
+        '--as-color-background-button-strong',
+        '--as-color-background-button-weak',
+        '--as-color-text-button',
+        '--as-color-text-nav',
+        '--as-color-text-nav-active',
+        '--as-color-status-warning',
+        '--as-color-status-warning-strong',
+        '--as-color-status-warning-weak',
+        '--as-color-status-error',
+        '--as-color-status-error-strong',
+        '--as-color-status-error-weak',
+        '--as-color-status-success',
+        '--as-color-status-success-strong',
+        '--as-color-status-success-weak',
+        '--as-color-status-neutral',
+        '--as-color-status-neutral-strong',
+        '--as-color-status-neutral-weak'
     ]
     boxes.forEach(box => {
-        const contrast = new TSContrast(box, colours)
+        const contrast = new ASContrast(box, colours)
     })
 
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('.token, .layouts legend .item').forEach(token => token.__myWidgetInstance ? null : new TSCopy(token))
+        document.querySelectorAll('.token, .layouts legend .item').forEach(token => token.__myWidgetInstance ? null : new ASCopy(token))
     })
-    document.addEventListener('ts-page-reader:loaded', () => {
-        document.querySelectorAll('.token').forEach(token => token.__myWidgetInstance ? null : new TSCopy(token))
-    })
-    document.addEventListener('ts-svg-to-base:generated', () => {
-        document.querySelectorAll('.token').forEach(token => token.__myWidgetInstance ? null : new TSCopy(token))
+    document.addEventListener('as-svg-to-base:generated', () => {
+        document.querySelectorAll('.token').forEach(token => token.__myWidgetInstance ? null : new ASCopy(token))
     })
 }
 // RESOURCE #60 END
 // RESOURCE #67 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-relative-time') === undefined) {
-        class TSRelativeTimeElement extends HTMLElement {
+    if (window.customElements.get('as-relative-time') === undefined) {
+        class ASRelativeTimeElement extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -1048,15 +1039,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }
-        window.customElements.define("ts-relative-time", TSRelativeTimeElement)
+        window.customElements.define("as-relative-time", ASRelativeTimeElement)
     }
 })
 // RESOURCE #67 END
 // RESOURCE #70 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-date-picker') === undefined) {
-        class TSDatePickerElement extends HTMLElement {
+    if (window.customElements.get('as-date-picker') === undefined) {
+        class ASDatePickerElement extends HTMLElement {
             connectedCallback() {
                 queueMicrotask(() => {
                     this.datePickerId = crypto.randomUUID()
@@ -1089,8 +1080,8 @@ document.addEventListener('DOMContentLoaded', () => {
             render() {
                 this.icon = document.createElement('button')
                 this.icon.setAttribute('type', 'button')
-                const c = document.createElement('ts-icon')
-                c.setAttribute('name', '--ts-icon-calendar')
+                const c = document.createElement('as-icon')
+                c.setAttribute('name', '--as-icon-calendar')
                 c.setAttribute('size', 'l')
                 this.icon.setAttribute('popovertarget', this.datePickerId)
                 this.icon.style.setProperty('anchor-name', `--${this.datePickerId}`)
@@ -1112,16 +1103,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.monthPrev.setAttribute('month', '')
                 this.monthPrev.setAttribute('size', 'm')
                 this.monthPrev.classList.add('btn')
-                const p = document.createElement('ts-icon')
-                p.setAttribute('name', '--ts-icon-chevron-left')
+                const p = document.createElement('as-icon')
+                p.setAttribute('name', '--as-icon-chevron-left')
                 this.monthPrev.append(p)
 
                 this.monthNext = document.createElement('button')
                 this.monthNext.setAttribute('month', '')
                 this.monthNext.setAttribute('size', 'm')
                 this.monthNext.classList.add('btn')
-                const n = document.createElement('ts-icon')
-                n.setAttribute('name', '--ts-icon-chevron-right')
+                const n = document.createElement('as-icon')
+                n.setAttribute('name', '--as-icon-chevron-right')
                 this.monthNext.append(n)
 
 
@@ -1138,13 +1129,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.bindEvents()
 
-                this.broadcastEvent('ts-date-picker:created', { id: this.datePickerId })
+                this.broadcastEvent('as-date-picker:created', { id: this.datePickerId })
             }
 
             populateYearSelect(span = 10) {
                 const fragment = new DocumentFragment
                 const currentYear = new Date().getFullYear()
-                const tsSelect = document.createElement('ts-select')
+                const tsSelect = document.createElement('as-select')
                 tsSelect.setAttribute('year', '')
                 this.selectYear = document.createElement('select')
                 let index = 0
@@ -1166,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             populateMonthSelect() {
                 const fragment = new DocumentFragment
                 const currentMonth = Number(this.date.split('-')[1]) - 1
-                const tsSelect = document.createElement('ts-select')
+                const tsSelect = document.createElement('as-select')
                 tsSelect.setAttribute('month', '')
                 this.selectMonth = document.createElement('select')
                 for (let m = 1; m <= 12; m++) {
@@ -1269,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.selectYear.dispatchEvent(new Event('change', { bubbles: true }))
                 }
                 this.onKey()
-                this.broadcastEvent('ts-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['day'] })
+                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['day'] })
 
             }
 
@@ -1293,7 +1284,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.calendarContent.append(this.renderCalendar(this.date))
                 this.focusSelected()
                 this.onKey()
-                this.broadcastEvent('ts-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['month'] })
+                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['month'] })
             }
 
             yearSelectChange() {
@@ -1306,7 +1297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.calendarContent.append(this.renderCalendar(this.date))
                 this.focusSelected()
                 this.onKey()
-                this.broadcastEvent('ts-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['year'] })
+                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['year'] })
             }
 
             bindEvents() {
@@ -1331,7 +1322,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
 
                 this.calendarWrapper.addEventListener('toggle', e => {
-                    this.broadcastEvent(`ts-date-picker:${e.newState}`, { id: this.datePickerId })
+                    this.broadcastEvent(`as-date-picker:${e.newState}`, { id: this.datePickerId })
                 })
 
                 this.input.addEventListener('keydown', this.manualDate.bind(this))
@@ -1350,13 +1341,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.icon.style.display = 'none'
                     this.input.setAttribute('type', 'date')
                     this.input.value = this.date
-                    this.broadcastEvent('ts-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'mobile' })
+                    this.broadcastEvent('as-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'mobile' })
                 }
                 else {
                     this.icon.style.display = 'inline'
                     this.input.setAttribute('type', 'text')
                     this.input.value = this.reverse ? this.reverseDate(this.date) : this.date
-                    this.broadcastEvent('ts-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'desktop' })
+                    this.broadcastEvent('as-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'desktop' })
                 }
             }
 
@@ -1440,15 +1431,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.dispatchEvent(cEvent)
             }
         }
-        window.customElements.define("ts-date-picker", TSDatePickerElement)
+        window.customElements.define("as-date-picker", ASDatePickerElement)
     }
 })
 
 
-class TSDatePicker {
+class ASDatePicker {
     constructor(el) {
         const elParent = el.parentNode
-        const picker = document.createElement('ts-date-picker')
+        const picker = document.createElement('as-date-picker')
         elParent.insertBefore(picker, el)
         picker.append(el)
     }
@@ -1457,8 +1448,8 @@ class TSDatePicker {
 // RESOURCE #74 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-dot-matrix-clock') === undefined) {
-        class TSDotMatrixClock extends HTMLElement {
+    if (window.customElements.get('as-dot-matrix-clock') === undefined) {
+        class ASDotMatrixClock extends HTMLElement {
 
             connectedCallback() {
                 // Clock ID
@@ -1542,15 +1533,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }
-        window.customElements.define("ts-dot-matrix-clock", TSDotMatrixClock)
+        window.customElements.define("as-dot-matrix-clock", ASDotMatrixClock)
     }
 })
 // RESOURCE #74 END
 // RESOURCE #77 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-select2range') === undefined) {
-        class TSSelect2Range extends HTMLElement {
+    if (window.customElements.get('as-select2range') === undefined) {
+        class ASSelect2Range extends HTMLElement {
             connectedCallback() {
                 // Initialize
                 this.init()
@@ -1560,13 +1551,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.body = document.querySelector('body')
                 this.select = this.querySelector('select')
                 if (!this.select) {
-                    throw new Error('Invalid element within ts-select, expected <SELECT> element')
-                    this.broadcastEvent('ts-select2range:created', { id: this.selectId, action: 'not-created' })
+                    throw new Error('Invalid element within as-select, expected <SELECT> element')
+                    this.broadcastEvent('as-select2range:created', { id: this.selectId, action: 'not-created' })
                     return
                 }
                 this.createUI()
                 this.addEventListeners()
-                this.broadcastEvent('ts-select2range:created', { id: this.selectId, action: 'created' })
+                this.broadcastEvent('as-select2range:created', { id: this.selectId, action: 'created' })
             }
 
             createUI() {
@@ -1612,7 +1603,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.calculateThumbPosition()
                 this.displaySelectedOption()
                 this.select.dispatchEvent(new Event('change', { bubbles: true }))
-                this.broadcastEvent('ts-select2range:selected', { id: this.selectId, action: 'selected', name: this.select.options[this.select.selectedIndex].text, value: this.select.options[this.select.selectedIndex].value })
+                this.broadcastEvent('as-select2range:selected', { id: this.selectId, action: 'selected', name: this.select.options[this.select.selectedIndex].text, value: this.select.options[this.select.selectedIndex].value })
             }
 
             calculateThumbPosition() {
@@ -1650,7 +1641,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-select2range", TSSelect2Range)
+        window.customElements.define("as-select2range", ASSelect2Range)
     }
 })
 // RESOURCE #77 END
@@ -1658,8 +1649,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // RESOURCE #80 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-select-multiple') === undefined) {
-        class TSSelectMultiple extends HTMLElement {
+    if (window.customElements.get('as-select-multiple') === undefined) {
+        class ASSelectMultiple extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -1671,11 +1662,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.select = this.querySelector('select[multiple]')
                 if (!this.select) {
-                    this.broadcastEvent('ts-select-multiple:created', {
+                    this.broadcastEvent('as-select-multiple:created', {
                         id: this.selectId,
                         action: 'not-created'
                     })
-                    console.error('No <select multiple> found inside <ts-select-multiple>.')
+                    console.error('No <select multiple> found inside <as-select-multiple>.')
                     return
                 }
 
@@ -1737,7 +1728,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.append(frag)
 
                 this.updateView()
-                this.broadcastEvent('ts-select-multiple:created', {
+                this.broadcastEvent('as-select-multiple:created', {
                     id: this.selectId,
                     action: 'created'
                 })
@@ -1779,7 +1770,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (opt) opt.selected = false
                         this.updateView()
                         this.select.dispatchEvent(new Event('change'))
-                        this.broadcastEvent('ts-select-multiple:deselected', {
+                        this.broadcastEvent('as-select-multiple:deselected', {
                             id: this.selectId,
                             action: 'deselected',
                             name: opt.text,
@@ -1798,7 +1789,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (opt) opt.selected = true
                     this.updateView()
                     this.select.dispatchEvent(new Event('change'))
-                    this.broadcastEvent('ts-select-multiple:selected', {
+                    this.broadcastEvent('as-select-multiple:selected', {
                         id: this.selectId,
                         action: 'selected',
                         name: opt.text,
@@ -1811,7 +1802,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.populateDropdown(val)
                     // Keep focus stable
                     this.searchInput.focus()
-                    this.broadcastEvent('ts-select-multiple:search', {
+                    this.broadcastEvent('as-select-multiple:search', {
                         id: this.selectId,
                         action: 'search',
                         searchword: val
@@ -1840,7 +1831,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (opt) opt.selected = true
                             this.updateView()
                             this.select.dispatchEvent(new Event('change'))
-                            this.broadcastEvent('ts-select-multiple:selected', {
+                            this.broadcastEvent('as-select-multiple:selected', {
                                 id: this.selectId,
                                 action: 'selected',
                                 name: opt.text,
@@ -1856,7 +1847,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
 
                 this.dropdown.addEventListener('toggle', e => {
-                    this.broadcastEvent('ts-select-multiple:show', {
+                    this.broadcastEvent('as-select-multiple:show', {
                         id: this.selectId,
                         action: 'show'
                     })
@@ -1914,8 +1905,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.setAttribute('data-value', opt.value)
                         btn.textContent = opt.text
 
-                        const icon = document.createElement('ts-icon')
-                        icon.setAttribute('name', '--ts-icon-plus')
+                        const icon = document.createElement('as-icon')
+                        icon.setAttribute('name', '--as-icon-plus')
                         icon.setAttribute('rotate', '45deg')
                         btn.append(icon)
 
@@ -1943,7 +1934,7 @@ document.addEventListener('DOMContentLoaded', () => {
             closeDropdown() {
                 this.dropdown.hidden = true
                 this.trigger.setAttribute('aria-expanded', 'false')
-                this.broadcastEvent('ts-select-multiple:hide', {
+                this.broadcastEvent('as-select-multiple:hide', {
                     id: this.selectId,
                     action: 'hide'
                 })
@@ -1970,15 +1961,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-select-multiple", TSSelectMultiple)
+        window.customElements.define("as-select-multiple", ASSelectMultiple)
     }
 })
 // RESOURCE #80 END
 // RESOURCE #86 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-gauge') === undefined) {
-        class TSGauge extends HTMLElement {
+    if (window.customElements.get('as-gauge') === undefined) {
+        class ASGauge extends HTMLElement {
             connectedCallback() {
                 /// default options
                 this.settings = {}
@@ -1989,8 +1980,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.settings.speed = this.getAttribute('speed') || 1
                 this.settings.delay = this.getAttribute('delay') || 1000
                 this.settings.basesize = this.getAttribute('basesize') || window.getComputedStyle(document.querySelector('body')).fontSize.replace('px', '')
-                this.settings.thumb = this.getAttribute('thumb') || '--ts-color-status-success'
-                this.settings.track = this.getAttribute('track') || '--ts-color-text-neutral'
+                this.settings.thumb = this.getAttribute('thumb') || '--as-color-status-success'
+                this.settings.track = this.getAttribute('track') || '--as-color-text-neutral'
                 this.settings.bg = this.getAttribute('bg') || 'transparent'
                 this.settings.path = `path("M${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .12}A${this.settings.basesize * this.settings.size * .38},${this.settings.basesize * this.settings.size * .38},0,1,0,${this.settings.basesize * this.settings.size * .88},${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .38},${this.settings.basesize * this.settings.size * .38},0,0,0,${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .12}M${this.settings.basesize * this.settings.size * .5},0A${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .5},0,1,1,0,${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .5},${this.settings.basesize * this.settings.size * .5},0,0,1,${this.settings.basesize * this.settings.size * .5},0Z")`
                 ///
@@ -2035,15 +2026,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, this.settings.delay)
             }
         }
-        window.customElements.define("ts-gauge", TSGauge)
+        window.customElements.define("as-gauge", ASGauge)
     }
 })
 // RESOURCE #86 END
 // RESOURCE #88 BEGIN
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-carousel')) return
+    if (window.customElements.get('as-carousel')) return
 
-    class TSCarousel extends HTMLElement {
+    class ASCarousel extends HTMLElement {
         static get observedAttributes() {
             return ['gap', 'delay', 'speed']
         }
@@ -2066,7 +2057,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this._onPointerUp = this.dragEnd.bind(this)
             this._onWheel = this.dragStart.bind(this)
 
-            this.carouselId = this.getAttribute('id') || 'ts-carousel-' + crypto.randomUUID()
+            this.carouselId = this.getAttribute('id') || 'as-carousel-' + crypto.randomUUID()
             if (!this.getAttribute('id')) this.setAttribute('id', this.carouselId)
 
             this.slideIdentifier = this.getAttribute('slideid') || 'item'
@@ -2081,8 +2072,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="slider">
                     ${content}
                     <div class="controls">
-                        <button class="btn"><ts-icon name="arrow-right" flip-x></ts-icon>Prev</button>
-                        <button class="btn">Next<ts-icon name="arrow-right"></ts-icon></button>
+                        <button class="btn"><as-icon name="arrow-right" flip-x></as-icon>Prev</button>
+                        <button class="btn">Next<as-icon name="arrow-right"></as-icon></button>
                     </div>
                 </div>
                 <button class="btn" id="playpause">Play</button>
@@ -2162,7 +2153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplay() {
             this.autorotate = true
             this.autoRotate(1, this.delay)
-            this.dispatchEvent(new CustomEvent('ts-carousel:play', { bubbles: true }))
+            this.dispatchEvent(new CustomEvent('as-carousel:play', { bubbles: true }))
         }
 
         pause() {
@@ -2170,7 +2161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(this.rotateInterval)
             clearTimeout(this.autostart)
             this.playpausebutton.textContent = 'Play'
-            this.dispatchEvent(new CustomEvent('ts-carousel:pause', { bubbles: true }))
+            this.dispatchEvent(new CustomEvent('as-carousel:pause', { bubbles: true }))
         }
 
         abortInertia() {
@@ -2312,15 +2303,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.customElements.define('ts-carousel', TSCarousel)
+    window.customElements.define('as-carousel', ASCarousel)
 })
 
 // RESOURCE #88 END
 // RESOURCE #90 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-form-validation') === undefined) {
-        class TSFormValidationElement extends HTMLElement {
+    if (window.customElements.get('as-form-validation') === undefined) {
+        class ASFormValidationElement extends HTMLElement {
             #input
             #errorMessage
 
@@ -2339,9 +2330,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // if the input field is NOT valid dsplay error messages
                 if (this.#input && !this.#input.validity.valid) {
                     this.#errorMessage.textContent = this.#customErrorMessage[this.#getFirstInvalid(this.#input.validity)];
-                    this.broadcastEvent('ts-form-validation:error', { fieldid: this.#input.id, type: this.#getFirstInvalid(this.#input.validity), message: this.#customErrorMessage[this.#getFirstInvalid(this.#input.validity)] })
+                    this.broadcastEvent('as-form-validation:error', { fieldid: this.#input.id, type: this.#getFirstInvalid(this.#input.validity), message: this.#customErrorMessage[this.#getFirstInvalid(this.#input.validity)] })
                 } else
-                    this.broadcastEvent('ts-form-validation:success', { fieldid: this.#input.id })
+                    this.broadcastEvent('as-form-validation:success', { fieldid: this.#input.id })
             }
 
             #getFirstInvalid(validityState) {
@@ -2407,15 +2398,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(cEvent)
             }
         }
-        window.customElements.define("ts-form-validation", TSFormValidationElement)
+        window.customElements.define("as-form-validation", ASFormValidationElement)
     }
 })
 // RESOURCE #90 END
 // RESOURCE #92 BEGIN
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-graph')) return
+    if (window.customElements.get('as-graph')) return
 
-    class TSGraph extends HTMLElement {
+    class ASGraph extends HTMLElement {
         // Specify observed attributes for detecting changes
         static get observedAttributes() {
             return ["data-data"];
@@ -2487,21 +2478,21 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <button class="btn minusone" tabindex="0">-1</button>
                                 <div class="select">
                                     <label for="resolution_${this.graphId}">Chart size</label>
-                                    <ts-select>
+                                    <as-select>
                                         <select id="resolution_${this.graphId}" class="resolution"></select>
-                                    </ts-select>
+                                    </as-select>
                                 </div>
                                 <button class="btn plusone" tabindex="0">+1</button>
                             </div>
                             <div>
                                 <div class="select">
                                     <label for="charttype_${this.graphId}">Chart type</label>
-                                    <ts-select>
+                                    <as-select>
                                         <select id="charttype_${this.graphId}" class="charttype">
                                             <option value="1">Columns chart</option>
                                             <option value="2">Pie chart</option>
                                         </select>
-                                    </ts-select>
+                                    </as-select>
                                 </div>
                             </div>
                             <div>
@@ -2528,7 +2519,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.recalculateSVGPoints()
             })
 
-            this.addEventListener('ts-graph:drawcomplete', (e) => {
+            this.addEventListener('as-graph:drawcomplete', (e) => {
                 this.removeAttribute('busy')
             })
         }
@@ -2564,7 +2555,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div>
                                     <input type="checkbox" id="showdatatable_${this.graphId}"/>
                                     <label tabindex="0" for="showdatatable_${this.graphId}">Show data table</label>
-                                    <ts-table-actions data-table="datatable_${this.graphId}"></ts-table-actions>
+                                    <as-table-actions data-table="datatable_${this.graphId}"></as-table-actions>
                                 </div>
                             </div>
                             <ul class="legend"></ul>
@@ -2597,7 +2588,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div>
                                     <input type="checkbox" id="showdatatable_${this.graphId}"/>
                                     <label tabindex="0" for="showdatatable_${this.graphId}">Show data table</label>
-                                    <ts-table-actions data-table="datatable_${this.graphId}"></ts-table-actions>
+                                    <as-table-actions data-table="datatable_${this.graphId}"></as-table-actions>
                                 </div>
                             </div>
                             <table id="datatable_${this.graphId}" class="table">
@@ -2734,7 +2725,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.btnNextOne.addEventListener('click', e => {
                 e.preventDefault()
                 if (!this.freeze) {
-                    this.resolutionSelect.closest('ts-select').setAttribute('updated', '')
+                    this.resolutionSelect.closest('as-select').setAttribute('updated', '')
                     this.chartArea.setAttribute('animate', '')
                     this.index += 1
                     clearTimeout(this.prevTimeout)
@@ -2845,7 +2836,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // we are starting indexing from 1 so we need to remove empty option at options[0]
             this.resolutionSelect.options[0].remove()
 
-            this.resolutionSelect.closest('ts-select').setAttribute('updated', '')
+            this.resolutionSelect.closest('as-select').setAttribute('updated', '')
 
             if (this.chartType != 3)
                 this.updateButtonStates()
@@ -3144,7 +3135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             path.setAttribute('d', this.generateSmoothPath(this.convertPercentagePointsToPixels(this.points, svgWidth, svgHeight)))
 
             /// Create & emit custom event
-            const cEvent = new CustomEvent("ts-graph:drawcomplete",
+            const cEvent = new CustomEvent("as-graph:drawcomplete",
                 {
                     detail:
                     {
@@ -3301,7 +3292,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             /// Create & emit custom event
-            const cEvent = new CustomEvent("ts-graph:drawcomplete",
+            const cEvent = new CustomEvent("as-graph:drawcomplete",
                 {
                     detail:
                     {
@@ -3356,14 +3347,14 @@ document.addEventListener('DOMContentLoaded', () => {
             getData(file)
         }
     }
-    window.customElements.define("ts-graph", TSGraph)
+    window.customElements.define("as-graph", ASGraph)
 })
 // RESOURCE #92 END
 // RESOURCE #55 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-command-menu') === undefined) {
-        class TSCommandMenu extends HTMLElement {
+    if (window.customElements.get('as-command-menu') === undefined) {
+        class ASCommandMenu extends HTMLElement {
 
             connectedCallback() {
                 // command menu ID
@@ -3408,10 +3399,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <section></section>
                         <footer>
                             <ul>
-                                <li><ts-icon name="--ts-icon-arrows-up-down" size="m"></ts-icon> ${this.locale.navigate}</li>
-                                <li><ts-icon name="--ts-icon-enter" size="m"></ts-icon> ${this.locale.select}</li>
-                                <li><ts-icon name="--ts-icon-escape" size="m"></ts-icon> ${this.locale.dismiss}</li>
-                                <li><ts-icon name="--ts-icon-arrows-move" size="m"></ts-icon> ${this.locale.drag}</li>
+                                <li><as-icon name="--as-icon-arrows-up-down" size="m"></as-icon> ${this.locale.navigate}</li>
+                                <li><as-icon name="--as-icon-enter" size="m"></as-icon> ${this.locale.select}</li>
+                                <li><as-icon name="--as-icon-escape" size="m"></as-icon> ${this.locale.dismiss}</li>
+                                <li><as-icon name="--as-icon-arrows-move" size="m"></as-icon> ${this.locale.drag}</li>
                             </ul>
                         </footer>
                     </dialog>
@@ -3573,8 +3564,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             optKeys.append(shortcut)
                         })
 
-                        const icon = document.createElement('ts-icon')
-                        icon.setAttribute('name', '--ts-icon-arrow-right')
+                        const icon = document.createElement('as-icon')
+                        icon.setAttribute('name', '--as-icon-arrow-right')
                         icon.setAttribute('size', 'm')
 
                         opt.prepend(icon)
@@ -3605,16 +3596,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
         }
-        window.customElements.define("ts-command-menu", TSCommandMenu)
+        window.customElements.define("as-command-menu", ASCommandMenu)
     }
 })
 // RESOURCE #55 END
 // RESOURCE #97 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-show-hide-password') === undefined) {
+    if (window.customElements.get('as-show-hide-password') === undefined) {
 
-        class TSShowHidePassword extends HTMLElement {
+        class ASShowHidePassword extends HTMLElement {
 
             connectedCallback() {
                 this.buttonLabels = this.hasAttribute('labels') ? this.getAttribute('labels').split(',') : ['Show', 'Hide']
@@ -3631,7 +3622,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.showhide.setAttribute('tabindex', '-1')
                     this.showhide.classList.add('btn')
                     if (this.icons) {
-                        this.icon = document.createElement('ts-icon')
+                        this.icon = document.createElement('as-icon')
                         this.icon.setAttribute('name', this.icons[0])
                         this.icon.setAttribute('label', this.buttonLabels[0])
                         this.showhide.append(this.icon)
@@ -3643,7 +3634,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 catch (error) {
                     throw new Error('Input is not of type password')
-                    this.broadcastEvent('ts-show-hide-password:error', { fieldid: this.password.id })
+                    this.broadcastEvent('as-show-hide-password:error', { fieldid: this.password.id })
                 }
             }
 
@@ -3656,7 +3647,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         this.icon.setAttribute('aria-label', this.buttonLabels[1])
                     } else
                         this.showhide.textContent = this.buttonLabels[1]
-                    this.broadcastEvent('ts-show-hide-password:show', { fieldid: this.password.id })
+                    this.broadcastEvent('as-show-hide-password:show', { fieldid: this.password.id })
                 } else {
                     this.password.type = 'password'
                     if (this.icons) {
@@ -3664,7 +3655,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         this.icon.setAttribute('aria-label', this.buttonLabels[0])
                     } else
                         this.showhide.textContent = this.buttonLabels[0]
-                    this.broadcastEvent('ts-show-hide-password:hide', { fieldid: this.password.id })
+                    this.broadcastEvent('as-show-hide-password:hide', { fieldid: this.password.id })
                 }
                 this.showhide.toggleAttribute('hide')
             }
@@ -3688,183 +3679,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         }
-        window.customElements.define("ts-show-hide-password", TSShowHidePassword)
+        window.customElements.define("as-show-hide-password", ASShowHidePassword)
     }
 })
 // RESOURCE #97 END
-// RESOURCE #99 BEGIN
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-page-reader') === undefined) {
-        class TSPageReader extends HTMLElement {
-            connectedCallback() {
-                this.pageID = this.getAttribute('page-id') || null;
-                this.recordID = this.getAttribute('record-id') || null
-                this.layoutpageID = this.getAttribute('layoutpage-id') || null
-                this.componentType = this.getAttribute('component-type') || 'displaypage'
-
-                this.pageTemplateBypass = this.hasAttribute('pagetemplatebypass') ? 1 : 0
-                this.params = this.getAttribute('params')
-                this.scripts = this.hasAttribute('scripts')
-                this.delay = this.hasAttribute('delay') ? Number(this.getAttribute('number')) * 1000 : 1000
-                if (this.pageID) {
-                    this.broadcastEvent('ts-page-reader:before-load', { pageid: this.pageID })
-                    this.innerHTML = this.getAttribute('loading-message') || 'Loading...'
-
-                    if (this.componentType === 'displaypage')
-                        this.fetchPage()
-                    if (this.componentType === 'listaction')
-                        this.fetchList()
-                    return
-                }
-            }
-            fetchPage() {
-                this.URL = `/displaypage.ashx?id=${this.pageID}&pagetemplatebypass=${this.pageTemplateBypass}&${this.params}`
-                this.settings = {
-                    url: this.URL, async: false, type: 'GET'
-                }
-                this.result = $ts.ajax(this.settings, false)
-                this.componentParts = this.result.split('x#x|x#x')
-                this.scriptReferences = this.componentParts[0].split('#|#|#')
-                this.inlineScripts = this.componentParts[1].split('#|#|#')
-                this.cssReferences = this.componentParts[2].split('#|#|#')
-                this.cssBlock = this.componentParts[3]
-                const head = document.querySelector('head')
-                if (this.scripts && this.scriptReferences.length > 0)
-                    this.scriptReferences.forEach((script, index) => {
-                        if (!document.querySelector(`script[id='script_${this.pageID}_${index}']`)) {
-                            const newScript = document.createElement('script')
-                            newScript.setAttribute('type', 'text/javascript')
-                            newScript.setAttribute('id', `script_${this.pageID}_${index}`)
-                            newScript.innerHTML = $ts.ajax({
-                                url: script, async: false, type: 'GET'
-                            })
-                            head.appendChild(newScript)
-                        }
-                    });
-
-                if (this.cssBlock !== '') {
-                    const newStyles = document.createElement('style')
-                    newStyles.setAttribute('type', 'text/css')
-                    newStyles.innerHTML = this.cssBlock
-                    head.appendChild(newStyles)
-                }
-                if (this.componentParts[4]) {
-                    setTimeout(() => {
-                        this.innerHTML = this.componentParts[4]
-                        if (this.scripts && this.inlineScripts) {
-                            this.inlineScripts.forEach(script => {
-                                const newScript = document.createElement('script')
-                                newScript.setAttribute('type', 'text/javascript')
-                                newScript.setAttribute('defer', '')
-                                newScript.innerHTML = script
-                                this.appendChild(newScript)
-                                //eval(script)
-                            })
-                        }
-
-                        this.broadcastEvent('ts-page-reader:loaded', { component: this.componentType, pageid: this.pageID })
-                    }, this.delay)
-                }
-
-            }
-
-
-            fetchList() {
-                this.URL = `/listaction.ashx?action=getdetails&pageid=${this.pageID}&recordid=${this.recordID}&layoutpageid=${this.layoutpageID}`
-                this.settings = {
-                    url: this.URL, async: false, type: 'GET'
-                }
-                this.result = $ts.ajax(this.settings, false)
-                this.componentParts = this.result.split('#|#|#')
-                this.HTML = this.componentParts[0]
-                this.cssBlock = this.componentParts[1]
-                this.scriptReferences = this.componentParts[2]
-
-                const head = document.querySelector('head')
-                if (this.scripts && this.scriptReferences) {
-                    if (!document.querySelector(`script[id='script_${this.pageID}_0']`)) {
-                        const newScript = document.createElement('script')
-                        newScript.setAttribute('type', 'text/javascript')
-                        newScript.setAttribute('id', `script_${this.pageID}_0`)
-                        newScript.innerHTML = $ts.ajax({
-                            url: script, async: false, type: 'GET'
-                        })
-                        head.appendChild(newScript)
-                    }
-                }
-
-                if (this.cssBlock !== '') {
-                    const newStyles = document.createElement('style')
-                    newStyles.setAttribute('type', 'text/css')
-                    newStyles.innerHTML = this.cssBlock
-                    head.appendChild(newStyles)
-                }
-                if (this.HTML) {
-                    setTimeout(() => {
-                        this.innerHTML = this.HTML
-                        this.broadcastEvent('ts-page-reader:loaded', { component: this.componentType, pageid: this.pageID, recordid: this.recordID, layoutpageid: this.layoutpageID })
-                    }, this.delay)
-                }
-
-            }
-            isEmpty(obj) {
-                for (const prop in obj) {
-                    if (Object.hasOwn(obj, prop))
-                        return false;
-                }
-                return true;
-            }
-
-            broadcastEvent(name, detail = {}) {
-                const cEvent = (this.isEmpty(detail)) ? new CustomEvent(name, { bubbles: true }) : new CustomEvent(name, { detail: detail, bubbles: true })
-                this.dispatchEvent(cEvent)
-            }
-        }
-        window.customElements.define("ts-page-reader", TSPageReader)
-    }
-});
-// RESOURCE #99 END
 // RESOURCE #101 BEGIN
+
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-search-menu') === undefined) {
+    if (window.customElements.get('as-search-menu') === undefined) {
         class TSSearchMenu extends HTMLElement {
 
             connectedCallback() {
-                // when using keydown & keyup events
-                // make sure component has focus and use this.active flag
-                // to handle when these events should be fired
-
-                this.tabindex = 0
-                this.active = false
-
-                this.addEventListener('focusin', () => this.active = true)
-                this.addEventListener('focusout', () => this.active = false)
-
                 // command menu ID
                 this.searchMenuId = this.getAttribute("id") || crypto.randomUUID()
                 if (!this.getAttribute("id"))
-                    this.setAttribute("id", this.searchMenuId)
+                    this.setAttribute("id", this.commandMenuId)
 
 
-                this.keys = this.hasAttribute('keys') ? this.getAttribute('keys').split('+') : ["Meta", "U"]
+                this.keys = this.getAttribute('keys').split('+') || ["Meta", "U"]
 
                 this.isMac = navigator.userAgent.indexOf('Mac OS') > 0 ? true : false
 
                 this.active = false
 
                 this.method = this.getAttribute('method') || 'post'
-                this.action = this.getAttribute('action') || 'action=search&searchmethod=0&search='
-                this.searchpageid = this.getAttribute('search-page-id') || '267'
-                this.buttonClass = this.getAttribute('button-class') || 'btn btn-outline'
+                this.action = this.getAttribute('action') || '/components/search-menu?action=search&searchmethod=0&search='
                 this.placeholder = this.getAttribute('placeholder') || 'Search for...'
                 this.navigate = this.getAttribute('navigate') || 'Navigate'
                 this.enter = this.getAttribute('enter') || 'Select'
                 this.dismiss = this.getAttribute('dismiss') || 'Dismiss'
                 this.drag = this.getAttribute('drag') || 'Hold & drag'
                 this.hint = this.getAttribute('hint') || 'Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.'
-                this.nohits = this.getAttribute('nohits') || 'No recent search queries matches...'
-                this.recentSearches = sessionStorage.getItem('tsRecentSearches') ? new Set(sessionStorage.getItem('tsRecentSearches').split(',')) : new Set;
+                this.nohits = this.getAttribute('nohits') || 'No recent search matches your query, but... there\'s no timelike present to search for something!'
+                this.recentSearches = JSON.parse(sessionStorage.getItem('asRecentSearches')) || [];
                 this.filteredSearches = [...this.recentSearches]
                 // initialize
                 this.init()
@@ -3876,24 +3724,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             init() {
-                //<form method="${this.method}" action="${this.action}">
                 this.innerHTML =
                     `
-                    <button class="${this.buttonClass}" btn-menu popovertarget="menu-${this.searchMenuId}">Search (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</button>
+                    <button class="btn" btn-menu popovertarget="menu-${this.searchMenuId}">Search (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</button>
                     <dialog id="menu-${this.searchMenuId}" popover>
-                        <form action="javascript:void(0);" method="post">
+                        <form method="${this.method}" action="${this.action}">
                             <input type="search" name="search" placeholder="${this.placeholder}"/>
                         </form>
-                        <section searching hidden>Searching</section>
-                        <section results></section>
-                        ${this.recentSearches.size ? '<div class="recent">Recent searches <button btn-clear class="btn">Clear</button></div>' : ''}
-                        <section searches></section>
+                        ${this.recentSearches.length ? '<div class="recent">Recent searches <button btn-clear class="btn">Clear</button></div>' : ''}
+                        <section></section>
                         <footer>
                             <ul>
-                                <li><ts-icon name="--ts-icon-arrows-up-down" size="m"></ts-icon> ${this.navigate}</li>
-                                <li><ts-icon name="--ts-icon-enter" size="m"></ts-icon> ${this.enter}</li>
-                                <li><ts-icon name="--ts-icon-escape" size="m"></ts-icon> ${this.dismiss}</li>
-                                <li><ts-icon name="--ts-icon-arrows-move" size="m"></ts-icon> ${this.drag}</li>
+                                <li><as-icon name="--as-icon-arrows-up-down" size="m"></as-icon> ${this.navigate}</li>
+                                <li><as-icon name="--as-icon-enter" size="m"></as-icon> ${this.enter}</li>
+                                <li><as-icon name="--as-icon-escape" size="m"></as-icon> ${this.dismiss}</li>
+                                <li><as-icon name="--as-icon-arrows-move" size="m"></as-icon> ${this.drag}</li>
                             </ul>
                         </footer>
                     </dialog>
@@ -3904,10 +3749,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.form = this.querySelector('form')
                 this.search = this.querySelector('[type="search"]')
-
-                this.section = this.querySelector('section[searches]')
-                this.searching = this.querySelector('section[searching]')
-                this.results = this.querySelector('section[results]')
             }
 
             registerDrag() {
@@ -3935,73 +3776,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
 
                 document.addEventListener('pointerup', e => {
-                    this.popoverWrapper.style.transition = 'unset'
-                    this.popoverWrapper.style.opacity = 'unset'
-                    this.popoverWrapper.style.pointerEvents = 'unset'
+                    this.popoverWrapper.attributeStyleMap.delete('transition')
+                    this.popoverWrapper.attributeStyleMap.delete('opacity')
+                    this.popoverWrapper.attributeStyleMap.delete('pointer-events')
                     this.isDragged = false
+
                 })
 
             }
 
+            calculatePosition() {
+                console.log(this.popoverWrapper.getBoundingClientRect())
+            }
+
             registerKeys() {
+                this.addEventListener('focusin', () => this.active = true)
+                this.addEventListener('focusout', () => this.active = false)
+
                 const keyMap = []
                 document.addEventListener('keydown', e => {
-                    if (!this.active) return
+                    //if (!this.active) return
+                    console.log('key', e.code)
                     keyMap.push(e.code.replace('Left', '').replace('Right', '').replace('Key', '').replace('Digit', ''))
                     this.decodeCommand(keyMap, e)
                 })
 
                 document.addEventListener('keyup', e => {
-                    if (!this.active) return
+                    //if (!this.active) return
                     keyMap.splice(0, keyMap.length)
                 })
 
                 this.search.addEventListener('input', e => this.filterCommands(e.target.value))
-
-                this.form.addEventListener('submit', e => {
-                    e.preventDefault()
-                    this.saveSearch(this.search.value)
-                })
+                this.form.addEventListener('submit', e => this.saveSearch)
                 if (this.btns.clear)
                     this.btns.clear.addEventListener('click', e => this.clearSearches())
-
-                document.addEventListener('ts-page-reader:before-load', () => {
-                    this.searching.toggleAttribute('hidden')
-                    this.results.toggleAttribute('hidden')
-                })
-                document.addEventListener('ts-page-reader:loaded', () => {
-                    setTimeout(() => {
-                        this.searching.toggleAttribute('hidden')
-                        this.results.toggleAttribute('hidden')
-                        //this.results.scrollIntoView({behavior: "smooth",block: "top"})
-                    }, 500)
-                    const resultsLinks = this.results.querySelectorAll('a')
-                    resultsLinks.forEach(link => {
-                        const newLink = new URL(link.href).searchParams.get('url').replace('/', '')
-                        link.href = `/${newLink}`
-                    })
-                    this.render()
-                })
             }
 
-            saveSearch(val) {
-                if (!val || val == '') return
+            uniqueArray(a) {
+                return [...new Set(a.map(o => JSON.stringify(o)))].map(s => JSON.parse(s))
+            }
 
-                this.recentSearches.add(val)
-                sessionStorage.setItem('tsRecentSearches', Array.from(this.recentSearches).join(','))
-                this.fetchSearchResults(val)
+            saveSearch() {
+                if (this.search.value !== '') {
+                    this.recentSearches.push({ searchTerm: `${this.search.value}` })
+                    sessionStorage.setItem('asRecentSearches', JSON.stringify(this.uniqueArray(this.recentSearches)))
+                }
+                this.form.submit()
             }
 
             clearSearches() {
-                this.filteredSearches = []
-                this.recentSearches = new Set()
-                sessionStorage.setItem('tsRecentSearches', '')
+                this.filteredSearches = this.recentSearches = []
+
+                sessionStorage.setItem('asRecentSearches', JSON.stringify(this.recentSearches))
                 this.render()
             }
 
             filterCommands(searchText) {
-                this.filteredSearches = [...this.recentSearches].filter(option => {
-                    return option.includes(searchText.toLowerCase())
+                this.filteredSearches = this.recentSearches.filter(option => {
+                    return option.searchTerm.includes(searchText.toLowerCase())
                 })
                 this.render()
             }
@@ -4017,7 +3849,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (isKey('Enter')) {
-                    evt.target.classList.contains('term') ? this.saveSearch(evt.target.textContent) : evt.target.querySelector('a').click()
+                    this.search.value = evt.target.textContent
+                    this.saveSearch()
                 }
                 // close when Esc key is pressed
                 if (isKey('Escape'))
@@ -4027,36 +3860,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     evt.preventDefault()
                     this.navigateOptions(keyMap[0].replace('Arrow', ''))
                 }
+
             }
 
             registerPopoverToggle() {
-                this.pop = false
                 this.popoverWrapper = this.querySelector('[popover]')
                 this.popoverWrapper.addEventListener('toggle', e => {
                     this.popoverWrapper.classList.toggle('bump')
-                    this.pop = !this.pop
-                    if (!this.pop) {
-                        this.results.innerHTML = ''
-                        this.search.value = ''
-                    }
                 })
             }
 
-            fetchSearchResults(term) {
-                this.results.innerHTML = ''
-                this.search.value = term
-                const searchResults = document.createElement('ts-page-reader')
-                searchResults.setAttribute('pagetemplatebypass', '')
-                searchResults.setAttribute('page-id', this.searchpageid)
-                searchResults.setAttribute('params', `${this.action}${encodeURIComponent(term)}`)
-
-                this.results.append(searchResults)
-
-
-
-            }
 
             render() {
+                //this.commandsHeadings()
+                this.section = this.querySelector('section')
                 // reset before re-render
                 this.section.innerHTML = ''
 
@@ -4080,19 +3897,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         const c = document.createElement('a')
                         c.setAttribute('tabindex', -1)
                         c.classList.add('command')
-                        c.classList.add('term')
-                        c.textContent = heading
+                        c.textContent = heading.searchTerm
                         c.addEventListener('click', () => {
-                            this.search.value = heading
-                            this.saveSearch(heading)
+                            this.search.value = heading.searchTerm
+                            this.saveSearch()
+                            //this.form.submit()
                         })
                         sec.append(c)
+
                     })
                 }
+
             }
 
             navigateOptions(dir) {
-                const options = this.querySelectorAll('.command')
+                const options = this.section.querySelectorAll('.command')
                 if (dir == 'Down') {
                     this.index++
                     if (this.index > options.length - 1)
@@ -4103,21 +3922,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (this.index < 0)
                         this.index = options.length - 1
                 }
+
                 options.forEach((option, index) => {
                     if (index === this.index)
                         option.focus()
                 })
+
             }
         }
-        window.customElements.define("ts-search-menu", TSSearchMenu)
+        window.customElements.define("as-search-menu", TSSearchMenu)
     }
 })
 // RESOURCE #101 END
 // RESOURCE #102 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-drawer') === undefined) {
-        class TSDrawer extends HTMLElement {
+    if (window.customElements.get('as-drawer') === undefined) {
+        class ASDrawer extends HTMLElement {
             connectedCallback() {
                 // Drawer ID
                 this.drawerId = this.getAttribute("id") || crypto.randomUUID()
@@ -4132,7 +3953,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.settings.transitionTime = this.getAttribute('transition-time') || 400
                 ///
                 this.settings.content = this.innerHTML
-                this.broadcastEvent('ts-drawer:created', { id: this.drawerId, position: this.settings.position })
+                this.broadcastEvent('as-drawer:created', { id: this.drawerId, position: this.settings.position })
                 this.render()
             }
 
@@ -4140,12 +3961,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // render Drawer structure
                 this.innerHTML = `
                     <button opendrawer class="btn btn__solid_primary">${this.settings.button}</button>
-                    <div hidden class="ts-drawer ${this.settings.position}" role="dialog" data-id="${this.drawerId}">${this.settings.content}<!--<button class="btn" closedrawer><ts-icon name="--ts-icon-times-solid"></ts-icon> Close</button>--></div>
+                    <div hidden class="as-drawer ${this.settings.position}" role="dialog" data-id="${this.drawerId}">${this.settings.content}<!--<button class="btn" closedrawer><as-icon name="--as-icon-times-solid"></as-icon> Close</button>--></div>
                 `
-                this.style.setProperty('--ts-drawer-transition-time', `${this.settings.transitionTime}ms`)
+                this.style.setProperty('--as-drawer-transition-time', `${this.settings.transitionTime}ms`)
                 this.openbutton = this.querySelector('button[opendrawer]')
                 //this.closebutton = this.querySelector('button[closedrawer]')
-                this.drawer = this.querySelector('.ts-drawer')
+                this.drawer = this.querySelector('.as-drawer')
 
                 this.body = document.querySelector('body')
                 this.bindEvents()
@@ -4157,10 +3978,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             openDrawer() {
-                this.broadcastEvent('ts-drawer:before-open', { id: this.drawerId, position: this.settings.position })
+                this.broadcastEvent('as-drawer:before-open', { id: this.drawerId, position: this.settings.position })
                 //// OVERLAY
                 this.overlay = document.createElement('div');
-                this.overlay.classList.add('ts-overlay');
+                this.overlay.classList.add('as-overlay');
                 this.overlay.setAttribute('data-id', this.drawerId);
                 this.body.appendChild(this.overlay);
                 this.overlay.addEventListener('click', e => this.closeDrawer());
@@ -4175,15 +3996,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1)
                 }, this.settings.delay)
 
-                setTimeout(() => this.broadcastEvent('ts-drawer:after-open', { id: this.drawerId, position: this.settings.position }), this.settings.transitionTime)
+                setTimeout(() => this.broadcastEvent('as-drawer:after-open', { id: this.drawerId, position: this.settings.position }), this.settings.transitionTime)
 
             }
             closeDrawer() {
-                this.broadcastEvent('ts-drawer:before-close', { id: this.drawerId, position: this.settings.position })
+                this.broadcastEvent('as-drawer:before-close', { id: this.drawerId, position: this.settings.position })
                 this.drawer.removeAttribute('data-state')
                 this.overlay.removeAttribute('data-state')
                 this.overlay.addEventListener('transitionend', e => e.target.remove())
-                setTimeout(() => this.broadcastEvent('ts-drawer:after-close', { id: this.drawerId, position: this.settings.position }), this.settings.transitionTime)
+                setTimeout(() => this.broadcastEvent('as-drawer:after-close', { id: this.drawerId, position: this.settings.position }), this.settings.transitionTime)
             }
 
             isEmpty(obj) {
@@ -4200,15 +4021,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // register new custom element
-        window.customElements.define("ts-drawer", TSDrawer)
+        window.customElements.define("as-drawer", ASDrawer)
     }
 })
 // RESOURCE #102 END
 // RESOURCE #103 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-svg-to-base') === undefined) {
-        class TSSVG2Base64Element extends HTMLElement {
+    if (window.customElements.get('as-svg-to-base') === undefined) {
+        class ASSVG2Base64Element extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
                     <div class="data-line">
@@ -4221,7 +4042,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="data-line">
                         <label>CSS variable name</label>
-                        <input type="text" placeholder="--ts-icon-telephone">
+                        <input type="text" placeholder="--as-icon-telephone">
                     </div>
                     <button class="btn" type="button">Generate</button>
                     <div class="data-list">
@@ -4284,7 +4105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.preview.style.webkitMaskSize = 'contain'
 
                 new Toast('Code generated!')
-                this.broadcastEvent('ts-svg-to-base:generated')
+                this.broadcastEvent('as-svg-to-base:generated')
             }
 
             isEmpty(obj) {
@@ -4300,14 +4121,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.dispatchEvent(cEvent)
             }
         }
-        window.customElements.define("ts-svg-to-base", TSSVG2Base64Element)
+        window.customElements.define("as-svg-to-base", ASSVG2Base64Element)
     }
 })
 // RESOURCE #103 END
 // RESOURCE #105 BEGIN
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-pagination') === undefined) {
-        class TSPagination extends HTMLElement {
+    if (window.customElements.get('as-pagination') === undefined) {
+        class ASPagination extends HTMLElement {
             connectedCallback() {
                 this.settings = {}
                 this.settings.total = this.getAttribute('data-total')
@@ -4396,8 +4217,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 a.classList.add(`${(dir > 0) ? 'next' : 'prev'}`)
                 a.setAttribute('aria-label', `${(dir > 0) ? this.settings.paginationText[5] : this.settings.paginationText[4]}`)
                 a.setAttribute('href', link)
-                const icon = document.createElement('ts-icon')
-                icon.setAttribute('name', '--ts-icon-arrow-right')
+                const icon = document.createElement('as-icon')
+                icon.setAttribute('name', '--as-icon-arrow-right')
                 if (dir < 0)
                     icon.setAttribute('flip-x', '')
                 //a.textContent = (dir > 0) ? '→' : '←'
@@ -4407,15 +4228,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // register new custom element
-        window.customElements.define("ts-pagination", TSPagination)
+        window.customElements.define("as-pagination", ASPagination)
     }
 });
 // RESOURCE #105 END
 // RESOURCE #107 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-popout') === undefined) {
-        class TSPopoutElement extends HTMLElement {
+    if (window.customElements.get('as-popout') === undefined) {
+        class ASPopoutElement extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -4443,14 +4264,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.removeAttribute('hidden')
                 // render Popout structure
                 this.innerHTML = `
-                    <button style="anchor-name: --${this.popoutId}" popovertarget="${this.popoutId}" class="${this.settings.buttonClass}">${this.settings.buttonText}${this.settings.hasIcon ? '<ts-icon name=' + this.settings.buttonIcon + '></ts-icon>' : ''}</button>
+                    <button style="anchor-name: --${this.popoutId}" popovertarget="${this.popoutId}" class="${this.settings.buttonClass}">${this.settings.buttonText}${this.settings.hasIcon ? '<as-icon name=' + this.settings.buttonIcon + '></as-icon>' : ''}</button>
                     <div popover id="${this.popoutId}" style="position-anchor: --${this.popoutId};"></div>
                 `
 
                 this.querySelector('[popover]').addEventListener('toggle', e => {
-                    (e.newState === 'open') ? this.broadcastEvent('ts-popout:toggle', { id: this.popoutId, state: 'open' }) : this.broadcastEvent('ts-popout:toggle', { id: this.popoutId, state: 'close' })
+                    (e.newState === 'open') ? this.broadcastEvent('as-popout:toggle', { id: this.popoutId, state: 'open' }) : this.broadcastEvent('as-popout:toggle', { id: this.popoutId, state: 'close' })
                 })
-                this.broadcastEvent('ts-popout:created', { id: this.popoutId })
+                this.broadcastEvent('as-popout:created', { id: this.popoutId })
 
                 const popover = this.querySelector('[popover]')
                 this.settings.content.forEach(node => popover.appendChild(node))
@@ -4472,7 +4293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // register new custom element
-        window.customElements.define("ts-popout", TSPopoutElement)
+        window.customElements.define("as-popout", ASPopoutElement)
     }
 })
 
@@ -4480,8 +4301,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // RESOURCE #109 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-table-actions') === undefined) {
-        class TSTableActions extends HTMLElement {
+    if (window.customElements.get('as-table-actions') === undefined) {
+        class ASTableActions extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -4508,17 +4329,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // render Table Actions structure
                 this.innerHTML = `
-                    <ts-popout popout-id="pop_${this.tableActionsId}" button-text="${this.settings.button}" button-icon="--ts-icon-dots" popout-position="bottom" popout-align="span-left">
-                    <div style="display: grid; gap: var(--ts-space-xs);">
-                        <button class="btn" data-action="csv" title="Download as CSV"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download CSV</button>
-                        <button class="btn" data-action="excel" title="Download as Excel"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download XLS</button>
-                        <button class="btn" data-action="md" title="Download as Markdown"><ts-icon name="--ts-icon-paperclip" size="m"></ts-icon>Download MD</button>
-                        <button class="btn" data-action="copy" title="Copy"><ts-icon name="--ts-icon-clone" size="m"></ts-icon>Copy as text</button>
+                    <as-popout popout-id="pop_${this.tableActionsId}" button-text="${this.settings.button}" button-icon="--as-icon-dots" popout-position="bottom" popout-align="span-left">
+                    <div style="display: grid; gap: var(--as-space-xs);">
+                        <button class="btn" data-action="csv" title="Download as CSV"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download CSV</button>
+                        <button class="btn" data-action="excel" title="Download as Excel"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download XLS</button>
+                        <button class="btn" data-action="md" title="Download as Markdown"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download MD</button>
+                        <button class="btn" data-action="copy" title="Copy"><as-icon name="--as-icon-clone" size="m"></as-icon>Copy as text</button>
                     </div>
-                    </ts-popout>
+                    </as-popout>
                 `
 
-                document.addEventListener('ts-popout:created', e => {
+                document.addEventListener('as-popout:created', e => {
                     setTimeout(() => {
                         if (e.detail.id === `pop_${this.tableActionsId}`) {
                             this.buttonMD = this.querySelector('button[data-action="md"]')
@@ -4533,7 +4354,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }, 1)
 
-                    document.addEventListener('ts-popout:toggle', e => this.broadcastEvent('ts-table-actions:popover', { id: this.tableActionsId, state: e.detail.state }))
+                    document.addEventListener('as-popout:toggle', e => this.broadcastEvent('as-table-actions:popover', { id: this.tableActionsId, state: e.detail.state }))
                     this.ready = true
                 })
             }
@@ -4576,7 +4397,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('CSV file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'csv', data: csvContent })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'csv', data: csvContent })
             }
 
             downloadEXCEL(e) {
@@ -4616,7 +4437,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('XLS file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'xls', data: html })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'xls', data: html })
             }
 
             downloadMD(e) {
@@ -4646,7 +4467,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 URL.revokeObjectURL(url)
                 new Toast('MD file download started!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'md', data: markdown })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'md', data: markdown })
             }
 
             copy(e) {
@@ -4662,10 +4483,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 navigator.clipboard.writeText(text)
                     .then(() => {
-                        this.buttonCOPY.firstChild.setAttribute('new-name', '--ts-icon-checkmark')
+                        this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-checkmark')
                         //buttonCOPY.classList.add('active')
                         setTimeout(() => {
-                            this.buttonCOPY.firstChild.setAttribute('new-name', '--ts-icon-clone')
+                            this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-clone')
                             this.buttonCOPY.classList.remove('active')
                         }, 1000)
                     })
@@ -4673,7 +4494,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 new Toast('Table copied!', { type: 'info' })
                 //// Dispatch custom event
-                this.broadcastEvent('ts-table-actions:download', { id: this.tableActionsId, type: 'copy', data: text })
+                this.broadcastEvent('as-table-actions:download', { id: this.tableActionsId, type: 'copy', data: text })
             }
 
             isEmpty(obj) {
@@ -4690,15 +4511,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-table-actions", TSTableActions)
+        window.customElements.define("as-table-actions", ASTableActions)
     }
 })
 // RESOURCE #109 END
 // RESOURCE #115 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-char-counter') === undefined) {
-        class TSCharCounter extends HTMLElement {
+    if (window.customElements.get('as-char-counter') === undefined) {
+        class ASCharCounter extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -4724,8 +4545,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.textLength = 140
 
                 this.innerHTML = `
-                    <div><ts-icon name="font" size="m"></ts-icon><span class="chars">0</span></div>
-                    <div><ts-icon name="envelope-solid" size="m"></ts-icon><span class="texts">1</span></div>
+                    <div><as-icon name="font" size="m"></as-icon><span class="chars">0</span></div>
+                    <div><as-icon name="envelope-solid" size="m"></as-icon><span class="texts">1</span></div>
                 `
 
                 this.input.addEventListener('input', e => this.count())
@@ -4735,7 +4556,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.count()
 
-                this.broadcastEvent('ts-char-counter:created', { id: this.charCounterId, fieldid: this.getAttribute('data-input') })
+                this.broadcastEvent('as-char-counter:created', { id: this.charCounterId, fieldid: this.getAttribute('data-input') })
                 this.ready = true
 
             }
@@ -4747,7 +4568,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.chars.innerHTML = chars
                 this.texts.innerHTML = texts
 
-                this.broadcastEvent('ts-char-counter:count', { id: this.charCounterId, fieldid: this.getAttribute('data-input'), chars: chars, texts: texts })
+                this.broadcastEvent('as-char-counter:count', { id: this.charCounterId, fieldid: this.getAttribute('data-input'), chars: chars, texts: texts })
             }
 
             isEmpty(obj) {
@@ -4763,14 +4584,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-char-counter", TSCharCounter)
+        window.customElements.define("as-char-counter", ASCharCounter)
     }
 })
 // RESOURCE #115 END
 // RESOURCE #120 BEGIN
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-panel') === undefined) {
-        class TSPanelElement extends HTMLElement {
+    if (window.customElements.get('as-panel') === undefined) {
+        class ASPanelElement extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -4805,7 +4626,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return
 
                 this.panelBody = this.querySelector(`${this.settings.bodyClass}`)
-                this.icon = document.createElement('ts-icon')
+                this.icon = document.createElement('as-icon')
                 this.icon.setAttribute('name', `${this.settings.iconName}`)
                 this.icon.setAttribute('size', 'l')
 
@@ -4815,7 +4636,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.rotateIcon()
 
                 this.ready = true
-                this.broadcastEvent('ts-panel:created', { id: this.panelId })
+                this.broadcastEvent('as-panel:created', { id: this.panelId })
             }
 
             addListeners() {
@@ -4827,12 +4648,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.target.innerWidth > this.settings.breakpoint) {
                     this.removeAttribute('hide')
                     this.rotateIcon()
-                    this.broadcastEvent('ts-panel:toggle', { id: this.panelId, state: 'open' })
+                    this.broadcastEvent('as-panel:toggle', { id: this.panelId, state: 'open' })
                     return
                 }
                 if (e.target.innerWidth < this.settings.breakpoint) {
                     this.setAttribute('hide', '')
-                    this.broadcastEvent('ts-panel:toggle', { id: this.panelId, state: 'closed' })
+                    this.broadcastEvent('as-panel:toggle', { id: this.panelId, state: 'closed' })
                 }
 
                 this.rotateIcon()
@@ -4841,7 +4662,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             toggleContent() {
                 this.toggleAttribute('hide')
-                setTimeout(() => this.broadcastEvent('ts-panel:toggle', { id: this.panelId, state: this.hasAttribute('hide') ? 'closed' : 'open' }), 1)
+                setTimeout(() => this.broadcastEvent('as-panel:toggle', { id: this.panelId, state: this.hasAttribute('hide') ? 'closed' : 'open' }), 1)
                 setTimeout(() => this.rotateIcon(), 1)
             }
 
@@ -4864,7 +4685,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // register new custom element
-        window.customElements.define("ts-panel", TSPanelElement)
+        window.customElements.define("as-panel", ASPanelElement)
     }
 })
 
@@ -4872,8 +4693,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // RESOURCE #124 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-class-toggle') === undefined) {
-        class TSClassToggle extends HTMLElement {
+    if (window.customElements.get('as-class-toggle') === undefined) {
+        class ASClassToggle extends HTMLElement {
             connectedCallback() {
                 // Table Actions ID
                 this.classToggleId = crypto.randomUUID()
@@ -4896,12 +4717,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             init() {
                 this.innerHTML = `
-                    <button class="${this.buttonClass}">${this.buttonText}${this.iconName ? '<ts-icon name="' + this.iconName + '"></ts-icon>' : ''}</button>
+                    <button class="${this.buttonClass}">${this.buttonText}${this.iconName ? '<as-icon name="' + this.iconName + '"></as-icon>' : ''}</button>
                 `
                 setTimeout(() => {
                     this.button = this.querySelector('button')
                     this.button.addEventListener('click', this.toggleClasses.bind(this))
-                    this.icon = this.button.querySelector('ts-icon')
+                    this.icon = this.button.querySelector('as-icon')
                     this.toggleClasses()
                 }, 1)
 
@@ -4941,15 +4762,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         }
-        window.customElements.define("ts-class-toggle", TSClassToggle)
+        window.customElements.define("as-class-toggle", ASClassToggle)
     }
 })
 // RESOURCE #124 END
 // RESOURCE #110 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-contrast-checker') === undefined) {
-        class TSContrastChecker extends HTMLElement {
+    if (window.customElements.get('as-contrast-checker') === undefined) {
+        class ASContrastChecker extends HTMLElement {
             connectedCallback() {
                 this.text = this.getAttribute('text') || this.innerText || 'Lorem ipsum dolor sit amet'
 
@@ -5213,15 +5034,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
         // register new custom element
-        window.customElements.define("ts-contrast-checker", TSContrastChecker)
+        window.customElements.define("as-contrast-checker", ASContrastChecker)
     }
 })
 // RESOURCE #110 END
 // RESOURCE #83 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-table-sort') === undefined) {
-        class TSTableSort extends HTMLElement {
+    if (window.customElements.get('as-table-sort') === undefined) {
+        class ASTableSort extends HTMLElement {
             constructor() {
                 super()
                 this.ready = false
@@ -5248,7 +5069,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.table = this.querySelector('table')
                 if (!this.table) {
                     throw new Error("No <table> element within component.")
-                    this.broadcastEvent('ts-table-sort:created', { id: this.componentId, action: 'not-created' })
+                    this.broadcastEvent('as-table-sort:created', { id: this.componentId, action: 'not-created' })
                     return
                 }
 
@@ -5292,8 +5113,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             btn.setAttribute('sort', '')
                             btn.addEventListener('click', this.sortTable.bind(this, btn, index))
 
-                            const icon = document.createElement('ts-icon')
-                            icon.setAttribute('name', '--ts-icon-arrows-up-down')
+                            const icon = document.createElement('as-icon')
+                            icon.setAttribute('name', '--as-icon-arrows-up-down')
                             icon.setAttribute('size', 'm')
                             btn.append(icon)
                             wrapper.append(label, btn)
@@ -5309,7 +5130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             input.addEventListener('input', e => {
                                 heading.searchWord = e.target.value
                                 this.filterTable()
-                                this.broadcastEvent('ts-table-sort:filtered', { id: this.componentId, action: 'filtered', column: this.tableHeadings[index].textContent, searchword: heading.searchWord })
+                                this.broadcastEvent('as-table-sort:filtered', { id: this.componentId, action: 'filtered', column: this.tableHeadings[index].textContent, searchword: heading.searchWord })
                             })
                             input.addEventListener('search', e => {
                                 heading.searchWord = e.target.value
@@ -5327,7 +5148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.footer = this.querySelector('tfoot td>div')
                 this.setFooter()
 
-                this.broadcastEvent('ts-table-sort:created', { id: this.componentId, action: 'created' })
+                this.broadcastEvent('as-table-sort:created', { id: this.componentId, action: 'created' })
                 this.ready = true
             }
             sortTable(btn, index = 0) {
@@ -5335,14 +5156,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 //const btns = this.querySelectorAll('button[sort]')
                 const btns = this.table.tHead.querySelectorAll('button[sort]')
                 btns.forEach(btn => {
-                    btn.firstChild.setAttribute('new-name', '--ts-icon-arrows-up-down')
+                    btn.firstChild.setAttribute('new-name', '--as-icon-arrows-up-down')
                 })
                 const asc = this.tableHeadings[index].asc = !this.tableHeadings[index].asc
 
                 if (asc)
-                    btn.firstChild.setAttribute('new-name', '--ts-icon-sort-up')
+                    btn.firstChild.setAttribute('new-name', '--as-icon-sort-up')
                 else
-                    btn.firstChild.setAttribute('new-name', '--ts-icon-sort-down')
+                    btn.firstChild.setAttribute('new-name', '--as-icon-sort-down')
                 btn.setAttribute('active', '')
                 //let rows = [...this.querySelectorAll('table tbody tr')]
 
@@ -5371,7 +5192,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.setFooter()
 
                 console.log(this.tableHeadings)
-                this.broadcastEvent('ts-table-sort:sorted', { id: this.componentId, action: 'sorted', column: this.tableHeadings[index].textContent, direction: (asc) ? 'asc' : 'desc' })
+                this.broadcastEvent('as-table-sort:sorted', { id: this.componentId, action: 'sorted', column: this.tableHeadings[index].textContent, direction: (asc) ? 'asc' : 'desc' })
             }
             resetDir(index) {
                 // reset heading.asc property so it always sorts ASC when clicked first time
@@ -5408,8 +5229,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resetSortBtn = document.createElement('button')
                     resetSortBtn.textContent = 'Reset sorting'
                     resetSortBtn.onclick = this.deleteSorting.bind(this)
-                    const icon = document.createElement('ts-icon')
-                    icon.setAttribute('name', '--ts-icon-trashcan')
+                    const icon = document.createElement('as-icon')
+                    icon.setAttribute('name', '--as-icon-trashcan')
                     icon.setAttribute('size', 'm')
                     resetSortBtn.append(icon)
                     this.footer.append(resetSortBtn)
@@ -5418,8 +5239,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resetFiltersBtn = document.createElement('button')
                     resetFiltersBtn.textContent = 'Delete filters'
                     resetFiltersBtn.onclick = this.deleteFilters.bind(this)
-                    const icon = document.createElement('ts-icon')
-                    icon.setAttribute('name', '--ts-icon-trashcan')
+                    const icon = document.createElement('as-icon')
+                    icon.setAttribute('name', '--as-icon-trashcan')
                     icon.setAttribute('size', 'm')
                     resetFiltersBtn.append(icon)
                     this.footer.append(resetFiltersBtn)
@@ -5454,7 +5275,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.tableBody.append(fragment)
                 }
                 this.setFooter()
-                this.broadcastEvent('ts-table-sort:filtering', { id: this.componentId, action: 'delete' })
+                this.broadcastEvent('as-table-sort:filtering', { id: this.componentId, action: 'delete' })
             }
             deleteSorting() {
                 this.tableHeadings.forEach((heading, index) => {
@@ -5462,7 +5283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading.asc = undefined
                         const btn = heading.querySelector('button')
                         //btn.textContent = '↑↓'
-                        btn.firstChild.setAttribute('new-name', '--ts-icon-arrows-up-down')
+                        btn.firstChild.setAttribute('new-name', '--as-icon-arrows-up-down')
                     }
                 })
                 this.hasSorts = false
@@ -5478,7 +5299,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 this.setFooter()
 
-                this.broadcastEvent('ts-table-sort:sort', { id: this.componentId, action: 'delete' })
+                this.broadcastEvent('as-table-sort:sort', { id: this.componentId, action: 'delete' })
             }
             isNumber(n) {
                 return n !== null && n !== '' && !isNaN(Number(n))
@@ -5507,15 +5328,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return Array.from(this.table.tHead?.rows[0]?.cells ?? [])
             }
         }
-        window.customElements.define("ts-table-sort", TSTableSort)
+        window.customElements.define("as-table-sort", ASTableSort)
     }
 })
 
 // RESOURCE #83 END
 // RESOURCE #126 BEGIN
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-tab') === undefined) {
-        class TSTab extends HTMLElement {
+    if (window.customElements.get('as-tab') === undefined) {
+        class ASTab extends HTMLElement {
 
             constructor() {
                 super()
@@ -5535,7 +5356,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             init() {
                 if (this.iconName.length > 0) {
-                    const icon = document.createElement('ts-icon')
+                    const icon = document.createElement('as-icon')
                     icon.setAttribute('name', this.iconName)
                     this.prepend(icon)
                 }
@@ -5545,7 +5366,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // register new custom element
-        window.customElements.define("ts-tab", TSTab)
+        window.customElements.define("as-tab", ASTab)
     }
 })
 // RESOURCE #126 END
@@ -5646,9 +5467,9 @@ const options = [
 ]
 // RESOURCE #58 END
 // RESOURCE #127 BEGIN
-if (window.customElements.get('ts-tab-group') === undefined) {
+if (window.customElements.get('as-tab-group') === undefined) {
 
-    class TSTabGroup extends HTMLElement {
+    class ASTabGroup extends HTMLElement {
 
         constructor() {
             super()
@@ -5664,9 +5485,9 @@ if (window.customElements.get('ts-tab-group') === undefined) {
 
         init() {
             // Use :scope to limit to DIRECT children only.
-            // Without this, a nested ts-tab-group's tabs would also be matched.
-            this.tabs = this.querySelectorAll(':scope > ts-tab')
-            this.panels = this.querySelectorAll(':scope > ts-tab-panel')
+            // Without this, a nested as-tab-group's tabs would also be matched.
+            this.tabs = this.querySelectorAll(':scope > as-tab')
+            this.panels = this.querySelectorAll(':scope > as-tab-panel')
 
             this.hasSelected = false
             this.combined = []
@@ -5707,7 +5528,7 @@ if (window.customElements.get('ts-tab-group') === undefined) {
             })
 
             if (!this.ready) {
-                this.broadcastEvent('ts-tab-group:created', {
+                this.broadcastEvent('as-tab-group:created', {
                     id: this.tabGroupId,
                     tabs: this.combined.map(t => t.tab.id).join(',')
                 })
@@ -5730,7 +5551,7 @@ if (window.customElements.get('ts-tab-group') === undefined) {
             set.panel.removeAttribute('hidden')
             this.currentTab = set.index
 
-            this.broadcastEvent('ts-tab-group:selected', {
+            this.broadcastEvent('as-tab-group:selected', {
                 id: this.tabGroupId,
                 tab: set.tab.id
             })
@@ -5748,14 +5569,14 @@ if (window.customElements.get('ts-tab-group') === undefined) {
         }
     }
 
-    window.customElements.define('ts-tab-group', TSTabGroup)
+    window.customElements.define('as-tab-group', ASTabGroup)
 }
 // RESOURCE #127 END
 // RESOURCE #103 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-svg-to-base') === undefined) {
-        class TSSVG2Base64Element extends HTMLElement {
+    if (window.customElements.get('as-svg-to-base') === undefined) {
+        class ASSVG2Base64Element extends HTMLElement {
             connectedCallback() {
                 this.innerHTML = `
                     <div class="data-line">
@@ -5768,7 +5589,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="data-line">
                         <label>CSS variable name</label>
-                        <input type="text" placeholder="--ts-icon-telephone">
+                        <input type="text" placeholder="--as-icon-telephone">
                     </div>
                     <button class="btn" type="button">Generate</button>
                     <div class="data-list">
@@ -5831,7 +5652,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.preview.style.webkitMaskSize = 'contain'
 
                 new Toast('Code generated!')
-                this.broadcastEvent('ts-svg-to-base:generated')
+                this.broadcastEvent('as-svg-to-base:generated')
             }
 
             isEmpty(obj) {
@@ -5847,15 +5668,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.dispatchEvent(cEvent)
             }
         }
-        window.customElements.define("ts-svg-to-base", TSSVG2Base64Element)
+        window.customElements.define("as-svg-to-base", ASSVG2Base64Element)
     }
 })
 // RESOURCE #103 END
 // RESOURCE #110 BEGIN
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-contrast-checker') === undefined) {
-        class TSContrastChecker extends HTMLElement {
+    if (window.customElements.get('as-contrast-checker') === undefined) {
+        class ASContrastChecker extends HTMLElement {
             connectedCallback() {
                 this.text = this.getAttribute('text') || this.innerText || 'Lorem ipsum dolor sit amet'
 
@@ -6119,15 +5940,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
         // register new custom element
-        window.customElements.define("ts-contrast-checker", TSContrastChecker)
+        window.customElements.define("as-contrast-checker", ASContrastChecker)
     }
 })
 // RESOURCE #110 END
 
 // register new custom element
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('ts-search-menu') === undefined) {
-        class TSSearchMenu extends HTMLElement {
+    if (window.customElements.get('as-search-menu') === undefined) {
+        class ASSearchMenu extends HTMLElement {
 
             connectedCallback() {
                 // command menu ID
@@ -6174,10 +5995,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <section></section>
                         <footer>
                             <ul>
-                                <li><ts-icon name="--ts-icon-arrows-up-down" size="m"></ts-icon> ${this.navigate}</li>
-                                <li><ts-icon name="--ts-icon-enter" size="m"></ts-icon> ${this.enter}</li>
-                                <li><ts-icon name="--ts-icon-escape" size="m"></ts-icon> ${this.dismiss}</li>
-                                <li><ts-icon name="--ts-icon-arrows-move" size="m"></ts-icon> ${this.drag}</li>
+                                <li><as-icon name="--as-icon-arrows-up-down" size="m"></as-icon> ${this.navigate}</li>
+                                <li><as-icon name="--as-icon-enter" size="m"></as-icon> ${this.enter}</li>
+                                <li><as-icon name="--as-icon-escape" size="m"></as-icon> ${this.dismiss}</li>
+                                <li><as-icon name="--as-icon-arrows-move" size="m"></as-icon> ${this.drag}</li>
                             </ul>
                         </footer>
                     </dialog>
@@ -6369,6 +6190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
         }
-        window.customElements.define("ts-search-menu", TSSearchMenu)
+        window.customElements.define("as-search-menu", ASSearchMenu)
     }
 })

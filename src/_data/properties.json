@@ -5,10 +5,10 @@
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "name",
-    "description": "Name of the icon either as CSS var (e.g. --ts-icon-document-solid) or without --ts-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string.",
+    "description": "Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string.",
     "propertyType": "string",
     "optional": "No",
-    "descriptionText": "<b>Required:</b> Name of the icon either as CSS var (e.g. --ts-icon-document-solid) or without --ts-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string."
+    "descriptionText": "<b>Required:</b> Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string."
   },
   {
     "id": "2",
@@ -27,10 +27,10 @@
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "color",
-    "description": "Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--ts-color-text</b>",
+    "description": "Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b>",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--ts-color-text</b>"
+    "descriptionText": "<b>Optional:</b> Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b>"
   },
   {
     "id": "4",
@@ -203,10 +203,10 @@
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "icon-name",
-    "description": "When present icon name is passed to &lt;ts-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--ts-icon-plus</b>.",
+    "description": "When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>.",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present icon name is passed to &lt;ts-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--ts-icon-plus</b>."
+    "descriptionText": "<b>Optional:</b> When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>."
   },
   {
     "id": "20",
@@ -291,10 +291,10 @@
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
     "name": "selected",
-    "description": "When present within &lt;ts-tab&gt; declaration marks active tab. If no of the &lt;ts-tab&gt; elements has selected attribute by default first tab is set to selected.",
+    "description": "When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected.",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present within &lt;ts-tab&gt; declaration marks active tab. If no of the &lt;ts-tab&gt; elements has selected attribute by default first tab is set to selected."
+    "descriptionText": "<b>Optional:</b> When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected."
   },
   {
     "id": "105",
@@ -682,83 +682,6 @@
     "descriptionText": "<b>Optional:</b> defines drawer opening/close transition time, defaults to 400ms"
   },
   {
-    "id": "67",
-    "guid": "a8d30732-1f02-40c3-b6e8-decdc316ee17",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "component-type",
-    "description": "component type defining where Page Reader will fetch data from. Allowed keywords are: displaypage, listaction. Defaults to <b>displaypage</b>",
-    "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> component type defining where Page Reader will fetch data from. Allowed keywords are: displaypage, listaction. Defaults to <b>displaypage</b>"
-  },
-  {
-    "id": "68",
-    "guid": "d7ca2c3a-4277-45c7-b2ba-e6d27b84814e",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "page-id",
-    "description": "ID of the page we want content to be fetched from.",
-    "propertyType": "number",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> ID of the page we want content to be fetched from."
-  },
-  {
-    "id": "69",
-    "guid": "1f646a90-d6ff-4e5f-a936-859bac32d957",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "record-id",
-    "description": "<b>[for listaction]</b> record ID of the page to fetch data from.",
-    "propertyType": "number",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> <b>[for listaction]</b> record ID of the page to fetch data from."
-  },
-  {
-    "id": "70",
-    "guid": "2fe5d18d-6601-42a6-b312-d42a874a6c93",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "layoutpage-id",
-    "description": "<b>[for listaction]</b> layoutpage ID.",
-    "propertyType": "number",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> <b>[for listaction]</b> layoutpage ID."
-  },
-  {
-    "id": "71",
-    "guid": "db0ac603-1256-4212-936d-32c8389bae27",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "pagetemplatebypass",
-    "description": "when present none of the CSS styles or scripts that are used by page layout are imported.",
-    "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present none of the CSS styles or scripts that are used by page layout are imported."
-  },
-  {
-    "id": "72",
-    "guid": "c3ad8752-debb-466d-aebb-60fa2f95eac0",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "scripts",
-    "description": "when present it allow component code to process scripts definitions passed from fetched page.",
-    "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present it allow component code to process scripts definitions passed from fetched page."
-  },
-  {
-    "id": "73",
-    "guid": "b183b558-9e78-471b-afbb-4b64e7fc5771",
-    "componentName": "Page Reader",
-    "componentSlug": "page-reader",
-    "name": "params",
-    "description": "when present it allow component code to add parameters to fetched page. Useful for e.g. passing some filtering parameters to a list page. Params attribute is e.g. used with&nbsp;Search menu&nbsp;component to fetch results from search page based on user input.",
-    "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present it allow component code to add parameters to fetched page. Useful for e.g. passing some filtering parameters to a list page. Params attribute is e.g. used with&nbsp;Search menu&nbsp;component to fetch results from search page based on user input."
-  },
-  {
     "id": "57",
     "guid": "2549a19b-5423-460c-9962-bd718db4bcd9",
     "componentName": "Gauge",
@@ -786,10 +709,10 @@
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "thumb",
-    "description": "value defines thumb colour, if omitted it defaults to <b>--ts-color-status-success</b>",
+    "description": "value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b>",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines thumb colour, if omitted it defaults to <b>--ts-color-status-success</b>"
+    "descriptionText": "<b>Optional:</b> value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b>"
   },
   {
     "id": "60",
@@ -797,10 +720,10 @@
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "track",
-    "description": "value defines track colour, if omitted it defaults to <b>--ts-color-text-neutral</b>",
+    "description": "value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b>",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines track colour, if omitted it defaults to <b>--ts-color-text-neutral</b>"
+    "descriptionText": "<b>Optional:</b> value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b>"
   },
   {
     "id": "61",
@@ -962,10 +885,10 @@
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "icon-name",
-    "description": "icon name, when present generated button will contain trailing &lt;ts-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>.",
+    "description": "icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>.",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> icon name, when present generated button will contain trailing &lt;ts-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>."
+    "descriptionText": "<b>Optional:</b> icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>."
   },
   {
     "id": "48",
@@ -1215,9 +1138,9 @@
     "componentName": "Tab",
     "componentSlug": "tab",
     "name": "icon-name",
-    "description": "When present defines name of the &lt;TS-ICON&gt; element created on the left of tab name. Name follow Icon component rules.",
+    "description": "When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules.",
     "propertyType": "string",
     "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines name of the &lt;TS-ICON&gt; element created on the left of tab name. Name follow Icon component rules."
+    "descriptionText": "<b>Optional:</b> When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules."
   }
 ]

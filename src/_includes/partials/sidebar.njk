@@ -2,7 +2,7 @@
       <li level="1" {% if page.url and page.url.startsWith('/design-tokens') %}active{% endif %}>
         <div class="l1 wrapper">
           <a href="/design-tokens/">
-            <span><ts-icon size="default"></ts-icon>Design Tokens</span>
+            <span><as-icon size="default"></as-icon>Design Tokens</span>
           </a>
           
         </div>
@@ -13,7 +13,7 @@
               <div class="l2 wrapper">
                 <a href="/design-tokens/{{ cat.slug | lower }}/">
                   <span>
-                    <ts-icon name="--ts-icon-arrow-right" size="m"></ts-icon>
+                    <as-icon name="--as-icon-arrow-right" size="m"></as-icon>
                     {{ cat.name | replace("-", " ") }}
                   </span>
                 </a>
@@ -27,7 +27,7 @@
     <li level="1" {% if page.url and page.url.startsWith('/components') %}active{% endif %}>
         <div class="l1 wrapper">
           <a href="/components/">
-            <span><ts-icon size="default"></ts-icon>Components</span>
+            <span><as-icon size="default"></as-icon>Components</span>
           </a>
           
         </div>
@@ -38,7 +38,7 @@
               <div class="l2 wrapper">
                 <a href="/components/{{ cat.slug | lower }}/">
                   <span>
-                    <ts-icon name="--ts-icon-arrow-right" size="m"></ts-icon>
+                    <as-icon name="--as-icon-arrow-right" size="m"></as-icon>
                     {{ cat.name | replace("-", " ") }}
                   </span>
                 </a>

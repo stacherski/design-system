@@ -14,8 +14,8 @@ function navigation() {
   const navLinksLevelTwo = document.querySelectorAll('nav div.l2.wrapper')
 
   navLinksLevelOne.forEach(link => {
-    const icon = document.createElement('ts-icon')
-    icon.setAttribute('name', '--ts-icon-caret-up')
+    const icon = document.createElement('as-icon')
+    icon.setAttribute('name', '--as-icon-caret-up')
     icon.setAttribute('size', 'l')
     link.append(icon)
 

@@ -17,14 +17,14 @@ layout: layouts/base.njk
     {% endif %}
   </article>
 
-  <ts-tab-group>
+  <as-tab-group>
   {% if componentExamples.length %}
-    <ts-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</ts-tab>
-    <ts-tab-panel>
+    <as-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</as-tab>
+    <as-tab-panel>
       <div style="display: flex; justify-content: flex-end;">
-        <ts-table-actions data-table=".examples"></ts-table-actions>
+        <as-table-actions data-table=".examples"></as-table-actions>
       </div>
-      <ts-table-sort omit="0" sort>
+      <as-table-sort omit="0" sort>
         <table class="examples equal table">
           <thead>
             <tr>
@@ -41,16 +41,16 @@ layout: layouts/base.njk
             {% endfor %}
           </tbody>
         </table>
-      </ts-table-sort>
-    </ts-tab-panel>
+      </as-table-sort>
+    </as-tab-panel>
   {% endif %}    
   {% if componentProps.length %}
-    <ts-tab icon-name="list-ul">Properties ({{ componentProps.length }})</ts-tab>
-    <ts-tab-panel>
+    <as-tab icon-name="list-ul">Properties ({{ componentProps.length }})</as-tab>
+    <as-tab-panel>
       <div style="display: flex; justify-content: flex-end;">
-        <ts-table-actions data-table=".properties"></ts-table-actions>
+        <as-table-actions data-table=".properties"></as-table-actions>
       </div>
-      <ts-table-sort sort>
+      <as-table-sort sort>
         <table class="properties equal table">
           <thead>
             <tr>
@@ -69,16 +69,16 @@ layout: layouts/base.njk
             {% endfor %}
           </tbody>
         </table>
-      </ts-table-sort>
-    </ts-tab-panel>
+      </as-table-sort>
+    </as-tab-panel>
   {% endif %}
   {% if componentEvents.length %}
-    <ts-tab icon-name="clock">Events ({{ componentEvents.length }})</ts-tab>
-     <ts-tab-panel>
+    <as-tab icon-name="clock">Events ({{ componentEvents.length }})</as-tab>
+     <as-tab-panel>
       <div style="display: flex; justify-content: flex-end;">
-        <ts-table-actions data-table=".events"></ts-table-actions>
+        <as-table-actions data-table=".events"></as-table-actions>
       </div>
-      <ts-table-sort sort>
+      <as-table-sort sort>
         <table class="events equal table">
           <thead>
             <tr>
@@ -97,9 +97,9 @@ layout: layouts/base.njk
             {% endfor %}
           </tbody>
         </table>
-      </ts-table-sort>
-    </ts-tab-panel>
+      </as-table-sort>
+    </as-tab-panel>
   {% endif %}    
-  </ts-tab-group>
+  </as-tab-group>
 
 </atricle>
