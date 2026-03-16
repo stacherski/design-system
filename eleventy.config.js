@@ -1,5 +1,10 @@
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
+const fs = require('fs')
+const path = require('path')
+const esbuild = require('esbuild')
+const componentsDir = "src/assets/js/components"
+
 module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -44,6 +49,43 @@ module.exports = function (eleventyConfig) {
     const categories = require("./src/_data/tokenCategories.json");
     return categories;
   });
+
+  const componentsDir = "src/assets/js/components"
+
+  eleventyConfig.addCollection("components", () => {
+    return fs.readdirSync(componentsDir)
+      .filter(f => f.endsWith("-component.js"))
+  })
+
+  eleventyConfig.addWatchTarget(componentsDir)
+
+  eleventyConfig.on("eleventy.before", async ({ runMode }) => {
+
+    const files = fs.readdirSync(componentsDir)
+      .filter(f => f.endsWith("-component.js"))
+
+    const imports = files
+      .map(f => `import "./${f}"`)
+      .join("\n")
+
+    fs.mkdirSync("_site/assets", { recursive: true })
+
+    await esbuild.build({
+      stdin: {
+        contents: imports,
+        resolveDir: componentsDir,
+        sourcefile: "components-entry.js"
+      },
+      bundle: true,
+      outfile: "_site/assets/js/components.js",
+      format: "esm",
+      minify: runMode === "build",
+      sourcemap: runMode !== "build"
+    })
+
+  })
+
+  eleventyConfig.addWatchTarget("src/assets/js/components")
 
   return {
     dir: {

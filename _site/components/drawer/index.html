@@ -477,148 +477,157 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-drawer><p>Content</p></as-drawer></td>
+                  <td><code class="token icon">&lt;as-drawer&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-drawer position="left" button-text="Open from left"><p>Content</p></as-drawer></td>
+                  <td><code class="token icon">&lt;as-drawer position="left" button-text="Open from left"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-drawer position="top" button-text="Open from top"><p>Content</p></as-drawer></td>
+                  <td><code class="token icon">&lt;as-drawer position="top" button-text="Open from top"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-drawer position="right" button-text="Open from right"><p>Content</p></as-drawer></td>
+                  <td><code class="token icon">&lt;as-drawer position="right" button-text="Open from right"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-drawer position="center" button-text="Open at center"><p>Content</p></as-drawer></td>
+                  <td><code class="token icon">&lt;as-drawer position="center" button-text="Open at center"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>position</td>
+                  <td><b>Optional:</b> value that marks the position from which drawer will show. defaults to 'bottom'</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>button-text</td>
+                  <td><b>Optional:</b> text on the button that opens up drawer</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>transition-time</td>
+                  <td><b>Optional:</b> defines drawer opening/close transition time, defaults to 400ms</td>
+                  <td>number</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-drawer:created</td>
+                  <td>Fired when component is instantiated, has detail object.</td>
+                  <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-drawer:before-open</td>
+                  <td>Fired when component is about to be opened, has detail object.</td>
+                  <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-drawer:after-open</td>
+                  <td>Fired when component has finished opening and transition time has elapsed, has detail object.</td>
+                  <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-drawer:before-close</td>
+                  <td>Fired when component is about to be closed, has detail object.</td>
+                  <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-drawer:after-close</td>
+                  <td>Fired when component has finished closing and transition time has elapsed, has detail object.</td>
+                  <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-drawer><p>Content</p></as-drawer></td>
-                <td><code class="token icon">&lt;as-drawer&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-drawer position="left" button-text="Open from left"><p>Content</p></as-drawer></td>
-                <td><code class="token icon">&lt;as-drawer position="left" button-text="Open from left"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-drawer position="top" button-text="Open from top"><p>Content</p></as-drawer></td>
-                <td><code class="token icon">&lt;as-drawer position="top" button-text="Open from top"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-drawer position="right" button-text="Open from right"><p>Content</p></as-drawer></td>
-                <td><code class="token icon">&lt;as-drawer position="right" button-text="Open from right"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-drawer position="center" button-text="Open at center"><p>Content</p></as-drawer></td>
-                <td><code class="token icon">&lt;as-drawer position="center" button-text="Open at center"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-drawer-component.js" href="/assets/js/components/as-drawer-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-drawer-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (3)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>position</td>
-                <td><b>Optional:</b> value that marks the position from which drawer will show. defaults to 'bottom'</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>button-text</td>
-                <td><b>Optional:</b> text on the button that opens up drawer</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>transition-time</td>
-                <td><b>Optional:</b> defines drawer opening/close transition time, defaults to 400ms</td>
-                <td>number</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (5)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-drawer:created</td>
-                <td>Fired when component is instantiated, has detail object.</td>
-                <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-drawer:before-open</td>
-                <td>Fired when component is about to be opened, has detail object.</td>
-                <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-drawer:after-open</td>
-                <td>Fired when component has finished opening and transition time has elapsed, has detail object.</td>
-                <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-drawer:before-close</td>
-                <td>Fired when component is about to be closed, has detail object.</td>
-                <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-drawer:after-close</td>
-                <td>Fired when component has finished closing and transition time has elapsed, has detail object.</td>
-                <td>{id: &quot;b69f4038-c222-401c-927d-5f1e0e3101bc&quot;, position: &quot;bottom&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

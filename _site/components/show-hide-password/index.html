@@ -477,109 +477,118 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><div class="data-line"><label for="password1">Password</label><as-show-hide-password id="a"><input value="test1234" id="password1" name="password1" type="password"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:show', e=>{   console.log(e.detail); new Toast('Password 1 shown')});document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 1 hidden')})</script></td>
+                  <td><code class="token icon">&lt;as-show-hide-password&gt;[input element]&lt;/as-show-hide-password&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><div class="data-line"><label for="password2">Password</label><as-show-hide-password id="b" labels="Vis,Skjul" icons="--as-icon-eye,--as-icon-eye-slash" event-prefix="as-show-hide"><input value="test1234" id="password2" name="password2" type="password"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:show', e=>{    console.log(e.detail);new Toast('Password 2 shown')});document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 2 hidden')})</script></td>
+                  <td><code class="token icon">&lt;as-show-hide-password labels="Vis,Skjul" icons="--as-icon-eye,--as-icon-eye-slash" event-prefix="as-show-hide"&gt;[input element]&lt;/as-show-hide-password&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>labels</td>
+                  <td><b>Optional:</b> Coma separated list that defines button labels for show &amp; hide states. Defaults are <b>Show, Hide</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>icons</td>
+                  <td><b>Optional:</b> Coma separated list of CSS variable names of icons to be displayed instead of text labels. Text labels are instead used as aria-label values for the icons. Icon names  order in the parameter is "<b>show, hide</b>"</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-show-hide-password:show</td>
+                  <td>Fires when password is shown. Has no detail object.</td>
+                  <td></td>
+                </tr>
+              
+                <tr>
+                  <td>as-show-hide-password:hide</td>
+                  <td>Fires when password is hidden. Has no detail object.</td>
+                  <td></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><div class="data-line"><label for="password1">Password</label><as-show-hide-password id="a"><input value="test1234" id="password1" name="password1" type="password"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:show', e=>{   console.log(e.detail); new Toast('Password 1 shown')});document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 1 hidden')})</script></td>
-                <td><code class="token icon">&lt;as-show-hide-password&gt;[input element]&lt;/as-show-hide-password&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><div class="data-line"><label for="password2">Password</label><as-show-hide-password id="b" labels="Vis,Skjul" icons="--as-icon-eye,--as-icon-eye-slash" event-prefix="as-show-hide"><input value="test1234" id="password2" name="password2" type="password"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:show', e=>{    console.log(e.detail);new Toast('Password 2 shown')});document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 2 hidden')})</script></td>
-                <td><code class="token icon">&lt;as-show-hide-password labels="Vis,Skjul" icons="--as-icon-eye,--as-icon-eye-slash" event-prefix="as-show-hide"&gt;[input element]&lt;/as-show-hide-password&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-show-hide-password-component.js" href="/assets/js/components/as-show-hide-password-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-show-hide-password-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (2)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>labels</td>
-                <td><b>Optional:</b> Coma separated list that defines button labels for show &amp; hide states. Defaults are <b>Show, Hide</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>icons</td>
-                <td><b>Optional:</b> Coma separated list of CSS variable names of icons to be displayed instead of text labels. Text labels are instead used as aria-label values for the icons. Icon names  order in the parameter is "<b>show, hide</b>"</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (2)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-show-hide-password:show</td>
-                <td>Fires when password is shown. Has no detail object.</td>
-                <td></td>
-              </tr>
-            
-              <tr>
-                <td>as-show-hide-password:hide</td>
-                <td>Fires when password is hidden. Has no detail object.</td>
-                <td></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

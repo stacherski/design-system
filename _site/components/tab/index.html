@@ -477,70 +477,79 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-tab>Tab name</as-tab></td>
+                  <td><code class="token icon">&lt;as-tab&gt;Tab name&lt;/as-tab&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-tab icon-name="plus">Tab name with icon</as-tab></td>
+                  <td><code class="token icon">&lt;as-tab icon-name="plus"&gt;Tab name with icon&lt;/as-tab&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>icon-name</td>
+                  <td><b>Optional:</b> When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-tab>Tab name</as-tab></td>
-                <td><code class="token icon">&lt;as-tab&gt;Tab name&lt;/as-tab&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-tab icon-name="plus">Tab name with icon</as-tab></td>
-                <td><code class="token icon">&lt;as-tab icon-name="plus"&gt;Tab name with icon&lt;/as-tab&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-tab-component.js" href="/assets/js/components/as-tab-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-tab-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (1)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>icon-name</td>
-                <td><b>Optional:</b> When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

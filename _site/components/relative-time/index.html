@@ -477,103 +477,112 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-relative-time>08-12-2025</as-relative-time></td>
+                  <td><code class="token icon">&lt;as-relative-time&gt;08-12-2025&lt;/as-relative-time&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-relative-time disabled>08-12-2026</as-relative-time></td>
+                  <td><code class="token icon">&lt;as-relative-time disabled&gt;08-12-2026&lt;/as-relative-time&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-relative-time>2025-12-18T13:00</as-relative-time></td>
+                  <td><code class="token icon">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><div style="display: flex; gap: var(--as-space-s); align-items: center;"><as-icon size="l" name="--as-icon-calendar"></as-icon><as-relative-time>2025-12-18T13:00</as-relative-time></div></td>
+                  <td><code class="token icon">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-relative-time notime>2025-12-18T13:00</as-relative-time></td>
+                  <td><code class="token icon">&lt;as-relative-time notime&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (4)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>datetime</td>
+                  <td><b>Optional:</b> date &amp; time can be inserted as attribute value.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>notime</td>
+                  <td><b>Optional:</b> when present date time value displays only date part.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>update</td>
+                  <td><b>Optional:</b> numeric value in minutes on how often relative time text should update with a new value. Omitted means no relative time updates.</td>
+                  <td>number</td>
+                </tr>
+              
+                <tr>
+                  <td>disabled</td>
+                  <td><b>Optional:</b> when attribute is present actual date is displayed as default. Users can still click on the component to get relative time value.</td>
+                  <td>none</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-relative-time>08-12-2025</as-relative-time></td>
-                <td><code class="token icon">&lt;as-relative-time&gt;08-12-2025&lt;/as-relative-time&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-relative-time disabled>08-12-2026</as-relative-time></td>
-                <td><code class="token icon">&lt;as-relative-time disabled&gt;08-12-2026&lt;/as-relative-time&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-relative-time>2025-12-18T13:00</as-relative-time></td>
-                <td><code class="token icon">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><div style="display: flex; gap: var(--as-space-s); align-items: center;"><as-icon size="l" name="--as-icon-calendar"></as-icon><as-relative-time>2025-12-18T13:00</as-relative-time></div></td>
-                <td><code class="token icon">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-relative-time notime>2025-12-18T13:00</as-relative-time></td>
-                <td><code class="token icon">&lt;as-relative-time notime&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-relative-time-component.js" href="/assets/js/components/as-relative-time-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-relative-time-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (4)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>datetime</td>
-                <td><b>Optional:</b> date &amp; time can be inserted as attribute value.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>notime</td>
-                <td><b>Optional:</b> when present date time value displays only date part.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>update</td>
-                <td><b>Optional:</b> numeric value in minutes on how often relative time text should update with a new value. Omitted means no relative time updates.</td>
-                <td>number</td>
-              </tr>
-            
-              <tr>
-                <td>disabled</td>
-                <td><b>Optional:</b> when attribute is present actual date is displayed as default. Users can still click on the component to get relative time value.</td>
-                <td>none</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

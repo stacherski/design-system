@@ -477,109 +477,118 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-select2range><select id="one"><option>Pick your poison</option><option value="1">Arsenic</option><option value="2">Cyanide</option><option value="3">Acid</option><option value="4">Spider venom</option><option value="5">Bleach</option><option value="6">Methyl Alcohol</option></select></as-select2range><br><script>document.querySelector('select#one').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
+                  <td><code class="token icon">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-select2range><select id="two"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option></select></as-select2range><br><script>document.querySelector('select#two').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
+                  <td><code class="token icon">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size</td>
+                  <td><b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-select2range:created</td>
+                  <td>Fired when component is rendered. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;created&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select2range:created</td>
+                  <td>Fired when component is not created due to element not being &lt;SELECT multiple&gt;. Throws console error. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;not-created&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select2range:selected</td>
+                  <td>Fired when option is selected. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;selected&quot;, name: &quot;Arsenic&quot;, value: &quot;1&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-select2range><select id="one"><option>Pick your poison</option><option value="1">Arsenic</option><option value="2">Cyanide</option><option value="3">Acid</option><option value="4">Spider venom</option><option value="5">Bleach</option><option value="6">Methyl Alcohol</option></select></as-select2range><br><script>document.querySelector('select#one').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
-                <td><code class="token icon">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-select2range><select id="two"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option></select></as-select2range><br><script>document.querySelector('select#two').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
-                <td><code class="token icon">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-select2range-component.js" href="/assets/js/components/as-select2range-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-select2range-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (1)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>size</td>
-                <td><b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (3)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-select2range:created</td>
-                <td>Fired when component is rendered. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;created&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select2range:created</td>
-                <td>Fired when component is not created due to element not being &lt;SELECT multiple&gt;. Throws console error. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;not-created&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select2range:selected</td>
-                <td>Fired when option is selected. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, action: &quot;selected&quot;, name: &quot;Arsenic&quot;, value: &quot;1&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

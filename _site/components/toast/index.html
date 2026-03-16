@@ -477,58 +477,67 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><button class="btn" onclick="new Toast('This is neutral message.')">Neutral</button></td>
+                  <td><code class="token icon">new Toast('This is neutral message.')</code></td>
+                </tr>
+              
+                <tr>
+                  <td><button class="btn" onclick="new Toast('This is info message.',{type:'info'})"><as-icon name="--as-icon-user-tie"></as-icon>Info</button></td>
+                  <td><code class="token icon">new Toast('This is info message.',{type:'info'})</code></td>
+                </tr>
+              
+                <tr>
+                  <td><button class="btn" onclick="new Toast('This is warning message.',{type:'warning'})"><as-icon name="--as-icon-exclamation"></as-icon>Warning</button></td>
+                  <td><code class="token icon">new Toast('This is warning message.',{type:'warning'})"</code></td>
+                </tr>
+              
+                <tr>
+                  <td><button class="btn" onclick="new Toast('This is error message.',{type:'error',sticky:true})"><as-icon image name="--as-icon-shutter" size="default"></as-icon>Error</button></td>
+                  <td><code class="token icon">new Toast('This is error message.',{type:'error',sticky:true})"</code></td>
+                </tr>
+              
+                <tr>
+                  <td><button class="btn" onclick="new Toast('This is success message.',{type:'success',timeout:10000})"><as-icon name="pie-chart"></as-icon>Success</button></td>
+                  <td><code class="token icon">new Toast('This is success message.',{type:'success',timeout:10000})"</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><button class="btn" onclick="new Toast('This is neutral message.')">Neutral</button></td>
-                <td><code class="token icon">new Toast('This is neutral message.')</code></td>
-              </tr>
-            
-              <tr>
-                <td><button class="btn" onclick="new Toast('This is info message.',{type:'info'})"><as-icon name="--as-icon-user-tie"></as-icon>Info</button></td>
-                <td><code class="token icon">new Toast('This is info message.',{type:'info'})</code></td>
-              </tr>
-            
-              <tr>
-                <td><button class="btn" onclick="new Toast('This is warning message.',{type:'warning'})"><as-icon name="--as-icon-exclamation"></as-icon>Warning</button></td>
-                <td><code class="token icon">new Toast('This is warning message.',{type:'warning'})"</code></td>
-              </tr>
-            
-              <tr>
-                <td><button class="btn" onclick="new Toast('This is error message.',{type:'error',sticky:true})"><as-icon image name="--as-icon-shutter" size="default"></as-icon>Error</button></td>
-                <td><code class="token icon">new Toast('This is error message.',{type:'error',sticky:true})"</code></td>
-              </tr>
-            
-              <tr>
-                <td><button class="btn" onclick="new Toast('This is success message.',{type:'success',timeout:10000})"><as-icon name="pie-chart"></as-icon>Success</button></td>
-                <td><code class="token icon">new Toast('This is success message.',{type:'success',timeout:10000})"</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-toast-component.js" href="/assets/js/components/as-toast-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-toast-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

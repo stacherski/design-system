@@ -477,77 +477,86 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-command-menu options="options" keys="Meta+K" locale="locale"></as-command-menu></td>
+                  <td><code class="token icon">&lt;as-command-menu options="options" keys="Meta+K" locale="locale"&gt;&lt;/as-command-menu&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>options</td>
+                  <td><b>Required:</b> Name of the JS variable that holds array of options objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Example of option object:<br/><code class="icon token">{<br/>title: "Mine aftaler",<br/>keywords: "alle mine aftaler",<br/>shortcut: "Alt+A",<br/>section: "Sager",<br/>handler: () =&gt; {<br/>setTimeout(() =&gt; location.href = "https://google.com"}, 100)<br/>}<br/>}</code><br/>Command menu allow to search by typing option name. Search is performed on text from <b>title</b> and <b>keywords</b> keys</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>locale</td>
+                  <td><b>Required:</b> Name of the JS variable that holds locale objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Locale object:<br/><code class="icon token">{<br/> navigate: "Navigate",<br/> select: "Select",<br/> dismiss: "Dismiss",<br/> drag: "Hold &amp; drag",<br/> reset: "Reset",<br/> open: "Menu",<br/> placeholder: "Type a command or search...",<br/> nohits: "No results for",<br/> hint: "Search tips: some search terms require an exact match. Try typing the entire command name, or use a different word or phrase."<br/>}</code></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>keys</td>
+                  <td><b>Required:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks)</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-command-menu options="options" keys="Meta+K" locale="locale"></as-command-menu></td>
-                <td><code class="token icon">&lt;as-command-menu options="options" keys="Meta+K" locale="locale"&gt;&lt;/as-command-menu&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-command-menu-component.js" href="/assets/js/components/as-command-menu-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-command-menu-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (3)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>options</td>
-                <td><b>Required:</b> Name of the JS variable that holds array of options objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Example of option object:<br/><code class="icon token">{<br/>title: "Mine aftaler",<br/>keywords: "alle mine aftaler",<br/>shortcut: "Alt+A",<br/>section: "Sager",<br/>handler: () =&gt; {<br/>setTimeout(() =&gt; location.href = "https://google.com"}, 100)<br/>}<br/>}</code><br/>Command menu allow to search by typing option name. Search is performed on text from <b>title</b> and <b>keywords</b> keys</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>locale</td>
-                <td><b>Required:</b> Name of the JS variable that holds locale objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Locale object:<br/><code class="icon token">{<br/> navigate: "Navigate",<br/> select: "Select",<br/> dismiss: "Dismiss",<br/> drag: "Hold &amp; drag",<br/> reset: "Reset",<br/> open: "Menu",<br/> placeholder: "Type a command or search...",<br/> nohits: "No results for",<br/> hint: "Search tips: some search terms require an exact match. Try typing the entire command name, or use a different word or phrase."<br/>}</code></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>keys</td>
-                <td><b>Required:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks)</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

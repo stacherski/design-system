@@ -477,125 +477,134 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U"></as-search-menu></td>
+                  <td><code class="token icon">&lt;as-search-menu method="post" action="action=search&searchmethod=0&search=" placeholder="Search site for..." keys="Meta+U"&gt;&lt;/as-search-menu&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (11)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>action</td>
+                  <td><b>Required:</b> defines actual action link to perform search. Must include URL param for search term at the end of the string. Link must be an actual page that can perform search.<br/>Example:<br/><br/><code class="token icon">action=search&amp;searchmethod=0&amp;search=</code></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>search-page-id</td>
+                  <td><b>Required:</b> defines search page ID</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>method</td>
+                  <td><b>Optional:</b> defines form method, defaults to <b>post</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>keys</td>
+                  <td><b>Optional:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks), defaults to '<b>Meta+U</b>'</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>placeholder</td>
+                  <td><b>Optional:</b> defines form method, defaults to <b>post</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>nohits</td>
+                  <td><b>Optional:</b> defines text for when typing the search term does not return any recent search, defaults to <b>No recent search queries matches...</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>hint</td>
+                  <td><b>Optional:</b> defines text shown when typing the search term does not return any recent search, defaults to <b>Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>navigate</td>
+                  <td><b>Optional:</b> defines text shown in footer for the first info icon, defaults to <b>Navigate</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>enter</td>
+                  <td><b>Optional:</b> defines text shown in footer for the second info icon, defaults to <b>Select</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>dismiss</td>
+                  <td><b>Optional:</b> defines text shown in footer for the third info icon, defaults to <b>Dismiss</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>drag</td>
+                  <td><b>Optional:</b> defines text shown in footer for the fourth info icon, defaults to <b>Hold &amp; drag.</b></td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U"></as-search-menu></td>
-                <td><code class="token icon">&lt;as-search-menu method="post" action="action=search&searchmethod=0&search=" placeholder="Search site for..." keys="Meta+U"&gt;&lt;/as-search-menu&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-search-menu-component.js" href="/assets/js/components/as-search-menu-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-search-menu-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (11)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>action</td>
-                <td><b>Required:</b> defines actual action link to perform search. Must include URL param for search term at the end of the string. Link must be an actual page that can perform search.<br/>Example:<br/><br/><code class="token icon">action=search&amp;searchmethod=0&amp;search=</code></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>search-page-id</td>
-                <td><b>Required:</b> defines search page ID</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>method</td>
-                <td><b>Optional:</b> defines form method, defaults to <b>post</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>keys</td>
-                <td><b>Optional:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks), defaults to '<b>Meta+U</b>'</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>placeholder</td>
-                <td><b>Optional:</b> defines form method, defaults to <b>post</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>nohits</td>
-                <td><b>Optional:</b> defines text for when typing the search term does not return any recent search, defaults to <b>No recent search queries matches...</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>hint</td>
-                <td><b>Optional:</b> defines text shown when typing the search term does not return any recent search, defaults to <b>Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>navigate</td>
-                <td><b>Optional:</b> defines text shown in footer for the first info icon, defaults to <b>Navigate</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>enter</td>
-                <td><b>Optional:</b> defines text shown in footer for the second info icon, defaults to <b>Select</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>dismiss</td>
-                <td><b>Optional:</b> defines text shown in footer for the third info icon, defaults to <b>Dismiss</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>drag</td>
-                <td><b>Optional:</b> defines text shown in footer for the fourth info icon, defaults to <b>Hold &amp; drag.</b></td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

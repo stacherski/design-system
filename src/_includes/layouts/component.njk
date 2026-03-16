@@ -3,8 +3,8 @@ layout: layouts/base.njk
 ---
 
 {% set componentExamples = examples | byComponent(component.name) %}
-{% set componentProps    = properties | byComponent(component.name) %}
-{% set componentEvents   = events | byComponent(component.name) %}
+{% set componentProps = properties | byComponent(component.name) %}
+{% set componentEvents = events | byComponent(component.name) %}
 
 <article>
   <header>
@@ -18,88 +18,98 @@ layout: layouts/base.njk
   </article>
 
   <as-tab-group>
-  {% if componentExamples.length %}
-    <as-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</as-tab>
+    {% if componentExamples.length %}
+      <as-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for ex in componentExamples %}
+                <tr>
+                  <td>{{ ex.example | safe }}</td>
+                  <td>{{ ex.codeToken | safe }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    {% endif %}
+    {% if componentProps.length %}
+      <as-tab icon-name="list-ul">Properties ({{ componentProps.length }})</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for prop in componentProps %}
+                <tr>
+                  <td>{{ prop.name }}</td>
+                  <td>{{ prop.descriptionText | safe }}</td>
+                  <td>{{ prop.propertyType }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    {% endif %}
+    {% if componentEvents.length %}
+      <as-tab icon-name="clock">Events ({{ componentEvents.length }})</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for ev in componentEvents %}
+                <tr>
+                  <td>{{ ev.name }}</td>
+                  <td>{{ ev.description | safe }}</td>
+                  <td>{{ ev.exampleValue }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    {% endif %}
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for ex in componentExamples %}
-              <tr>
-                <td>{{ ex.example | safe }}</td>
-                <td>{{ ex.codeToken | safe }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="{{ component.componentJS }}" href="/assets/js/components/{{ component.componentJS }}">
+            <as-icon name="document-lines"></as-icon>
+            {{ component.componentJS }}</a>
+        </li>
+      </ul>
     </as-tab-panel>
-  {% endif %}    
-  {% if componentProps.length %}
-    <as-tab icon-name="list-ul">Properties ({{ componentProps.length }})</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for prop in componentProps %}
-              <tr>
-                <td>{{ prop.name }}</td>
-                <td>{{ prop.descriptionText | safe }}</td>
-                <td>{{ prop.propertyType }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  {% endif %}
-  {% if componentEvents.length %}
-    <as-tab icon-name="clock">Events ({{ componentEvents.length }})</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for ev in componentEvents %}
-              <tr>
-                <td>{{ ev.name }}</td>
-                <td>{{ ev.description | safe }}</td>
-                <td>{{ ev.exampleValue }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  {% endif %}    
   </as-tab-group>
 
-</atricle>
+</article>

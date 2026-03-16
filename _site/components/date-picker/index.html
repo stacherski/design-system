@@ -477,156 +477,165 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-date-picker yearspan="30"><input id="mydate2" type="text" placeholder="YYYY-MM-DD" value="2025-11-05"/></as-date-picker></td>
+                  <td><code class="token icon">&lt;as-date-picker&gt;[text input]&lt;/as-date-picker&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-date-picker reverse locale="da-DK" yearspan="30"><input id="mydate" type="text"/></as-date-picker></td>
+                  <td><code class="token icon">&lt;as-date-picker reverse locale="da-DK"&gt;[text input]&lt;/as-date-picker&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-date-picker disabled reverse locale="da-DK" yearspan="30"><input id="mydate" type="text" value="{system.date}"/></as-date-picker></td>
+                  <td><code class="token icon">&lt;as-date-picker disabled reverse locale="da-DK"&gt;[text input]&lt;/as-date-picker&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (6)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>yearspan</td>
+                  <td><b>Optional:</b> When present allow to define number of years that will be available within calendar year select that stretch into past and future plus current year. Defaults to <b>20</b>.</td>
+                  <td>number</td>
+                </tr>
+              
+                <tr>
+                  <td>breakpoint</td>
+                  <td><b>Optional:</b> Allows to define viewport breakpoint in pixels below which date picker component will turn off calendar and calendar buton and make text input a <b>type="date"</b> to allow system date pickers to work. Above breakpoint date picker returns to default behaviour.<br/><br/>You can "hack" displaying one or the other by setting up breakpoint to 0 to always show component's calendar or to be high value (e.g. 20000) to make sure date picker fall back to system default. Defaults to <b>800</b></td>
+                  <td>number</td>
+                </tr>
+              
+                <tr>
+                  <td>locale</td>
+                  <td><b>Optional:</b> When present allow to overwrite page lang attribute settings. This is used to generate month names in calendar month select and day names. If date picker locale attribute is not present or no lang attribute is present it <b>defaults to 'en'</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>placeholder</td>
+                  <td><b>Optional:</b> This is placeholder of the input field. Can be passed within input field attributes, or in this case within component attributes. If non of these are present it <b>defaults to current date</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>reverse</td>
+                  <td><b>Optional:</b> Internally date picker component operates on date in ISO format (YYYY-DD-MMT00:00) but if for some reason date display is needed in DD-MM-YYYY format then reverse attribute can be used to make it so.</td>
+                  <td>param</td>
+                </tr>
+              
+                <tr>
+                  <td>disabled</td>
+                  <td><b>Optional:</b> when present disables date picker from user input entirely.</td>
+                  <td>param</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-date-picker:created</td>
+                  <td>Fires when date picker component is created. Has detail object.</td>
+                  <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-date-picker:breakpoint</td>
+                  <td>Fires when date picker checks breakpoint value to modify component behaviour. Has detail object.</td>
+                  <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, breakpoint: &quot;desktop&quot;}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, breakpoint: &quot;mobile&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-date-picker:open</td>
+                  <td>Fires when calendar popout is shown. Has detail object.</td>
+                  <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-date-picker:closed</td>
+                  <td>Fires when calendar popout is closed. Has detail object.</td>
+                  <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-date-picker:changed</td>
+                  <td>Fires when user picks another date. Has detail object.</td>
+                  <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;day&quot;]}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;month&quot;]}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;year&quot;]}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-date-picker yearspan="30"><input id="mydate2" type="text" placeholder="YYYY-MM-DD" value="2025-11-05"/></as-date-picker></td>
-                <td><code class="token icon">&lt;as-date-picker&gt;[text input]&lt;/as-date-picker&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-date-picker reverse locale="da-DK" yearspan="30"><input id="mydate" type="text"/></as-date-picker></td>
-                <td><code class="token icon">&lt;as-date-picker reverse locale="da-DK"&gt;[text input]&lt;/as-date-picker&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-date-picker disabled reverse locale="da-DK" yearspan="30"><input id="mydate" type="text" value="{system.date}"/></as-date-picker></td>
-                <td><code class="token icon">&lt;as-date-picker disabled reverse locale="da-DK"&gt;[text input]&lt;/as-date-picker&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-date-picker-component.js" href="/assets/js/components/as-date-picker-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-date-picker-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (6)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>yearspan</td>
-                <td><b>Optional:</b> When present allow to define number of years that will be available within calendar year select that stretch into past and future plus current year. Defaults to <b>20</b>.</td>
-                <td>number</td>
-              </tr>
-            
-              <tr>
-                <td>breakpoint</td>
-                <td><b>Optional:</b> Allows to define viewport breakpoint in pixels below which date picker component will turn off calendar and calendar buton and make text input a <b>type="date"</b> to allow system date pickers to work. Above breakpoint date picker returns to default behaviour.<br/><br/>You can "hack" displaying one or the other by setting up breakpoint to 0 to always show component's calendar or to be high value (e.g. 20000) to make sure date picker fall back to system default. Defaults to <b>800</b></td>
-                <td>number</td>
-              </tr>
-            
-              <tr>
-                <td>locale</td>
-                <td><b>Optional:</b> When present allow to overwrite page lang attribute settings. This is used to generate month names in calendar month select and day names. If date picker locale attribute is not present or no lang attribute is present it <b>defaults to 'en'</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>placeholder</td>
-                <td><b>Optional:</b> This is placeholder of the input field. Can be passed within input field attributes, or in this case within component attributes. If non of these are present it <b>defaults to current date</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>reverse</td>
-                <td><b>Optional:</b> Internally date picker component operates on date in ISO format (YYYY-DD-MMT00:00) but if for some reason date display is needed in DD-MM-YYYY format then reverse attribute can be used to make it so.</td>
-                <td>param</td>
-              </tr>
-            
-              <tr>
-                <td>disabled</td>
-                <td><b>Optional:</b> when present disables date picker from user input entirely.</td>
-                <td>param</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (5)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-date-picker:created</td>
-                <td>Fires when date picker component is created. Has detail object.</td>
-                <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-date-picker:breakpoint</td>
-                <td>Fires when date picker checks breakpoint value to modify component behaviour. Has detail object.</td>
-                <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, breakpoint: &quot;desktop&quot;}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, breakpoint: &quot;mobile&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-date-picker:open</td>
-                <td>Fires when calendar popout is shown. Has detail object.</td>
-                <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-date-picker:closed</td>
-                <td>Fires when calendar popout is closed. Has detail object.</td>
-                <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-date-picker:changed</td>
-                <td>Fires when user picks another date. Has detail object.</td>
-                <td>{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;day&quot;]}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;month&quot;]}&lt;/br&gt;&lt;/br&gt;{id: &quot;9a42cd92-e064-4f3d-986f-4166f3708559&quot;, date: &quot;2025-11-01&quot;, changed: [&quot;year&quot;]}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

@@ -477,98 +477,107 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-tab-group><as-tab icon-name="inbox">Overview</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name="message">Messages</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab selected icon-name="star">Images</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name="list-ul">Log</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel></as-tab-group></td>
+                  <td><code class="token icon">&lt;as-tab-group&gt;<br>  &lt;as-tab icon-name="inbox"&gt;Overview&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab icon-name="message"&gt;Messages&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab selected icon-name="star"&gt;Images&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab selected icon-name="list-ul"&gt;Log&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>&lt;/as-tab-group&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>selected</td>
+                  <td><b>Optional:</b> When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-tab-group:created</td>
+                  <td>Fired when component is instantiated. Has detail object.</td>
+                  <td>{id: &quot;a&quot;, tabs: &quot;b1,c1,d1,e1&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-tab-group:selected</td>
+                  <td>Fired when component tab is clicked and selected. Has detail object.</td>
+                  <td>{id: &quot;a&quot;, tab: &quot;b1&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-tab-group><as-tab icon-name="inbox">Overview</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name="message">Messages</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab selected icon-name="star">Images</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name="list-ul">Log</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel></as-tab-group></td>
-                <td><code class="token icon">&lt;as-tab-group&gt;<br>  &lt;as-tab icon-name="inbox"&gt;Overview&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab icon-name="message"&gt;Messages&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab selected icon-name="star"&gt;Images&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>  &lt;as-tab selected icon-name="list-ul"&gt;Log&lt;/as-tab&gt;<br>  &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>&lt;/as-tab-group&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-tab-group-component.js" href="/assets/js/components/as-tab-group-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-tab-group-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (1)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>selected</td>
-                <td><b>Optional:</b> When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (2)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-tab-group:created</td>
-                <td>Fired when component is instantiated. Has detail object.</td>
-                <td>{id: &quot;a&quot;, tabs: &quot;b1,c1,d1,e1&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-tab-group:selected</td>
-                <td>Fired when component tab is clicked and selected. Has detail object.</td>
-                <td>{id: &quot;a&quot;, tab: &quot;b1&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

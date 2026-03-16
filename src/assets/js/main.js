@@ -1,11 +1,3 @@
-/**
- * main.js
- * Replace / extend this file with the actual design system JS bundle.
- *
- * Included here: simple tab-switching for the component detail pages.
- */
-
-// RESOURCE #79 BEGIN 
 document.addEventListener('DOMContentLoaded', navigation)
 
 function navigation() {
@@ -25,4 +17,5 @@ function navigation() {
 
   })
 }
-// RESOURCE #79 END
+
+window.AS = window.AS || {}

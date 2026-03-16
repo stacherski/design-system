@@ -477,137 +477,146 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (7)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (7)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-icon name="pen" size="xxxl" color="--as-color-status-error" label="There's been an error"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon name="pen" size="xxxl" color="--as-color-status-error" label="There's been an error"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon name="user" size="xxl" color="--as-color-status-success"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon name="user" size="xxl" color="--as-color-status-success"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon name="paperclip" size="xl" color="blue"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon name="paperclip" size="xl" color="blue"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon name="--as-icon-document-signature" size="xl" color="#BADA55"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon name="--as-icon-document-signature" size="xl" color="#BADA55"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon flip-y></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon flip-y&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon rotate="2.25turn"></as-icon><as-icon rotate="-37deg"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon rotate="2.25turn"&gt;&lt;/as-icon&gt;&lt;as-icon rotate="-37deg"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-icon image name="shutter" flip-x size="xxxl" rotate="-37deg"></as-icon></td>
+                  <td><code class="token icon">&lt;as-icon image name="shutter" flip-x size="xxxl" rotate="-37deg"&gt;&lt;/as-icon&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (8)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><b>Required:</b> Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>size</td>
+                  <td><b>Optional:</b> Size of the icon component. Defaults to size "m"</td>
+                  <td>xs | s | m | default | l | xl | xxl | xxxl</td>
+                </tr>
+              
+                <tr>
+                  <td>color</td>
+                  <td><b>Optional:</b> Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>label</td>
+                  <td><b>Optional:</b> An accessible label for the icon. If no label is supplied, the icon is hidden from assistive technology.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>flip-x</td>
+                  <td><b>Optional:</b> Flips icon image horizontally.&nbsp;Can be used together with [flip-y] property.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>flip-y</td>
+                  <td><b>Optional:</b> Flips icon image vertically. Can be used together with [flip-x] property.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>rotate</td>
+                  <td><b>Optional:</b> Rotates icon by whatever angle is specified. Numeric value can be in [deg], [turns] or [rad]. Can be a negative value. Unit must be specified.</td>
+                  <td>number + unit</td>
+                </tr>
+              
+                <tr>
+                  <td>image</td>
+                  <td><b>Optional:</b> When present renders icon as image element. Useful when we SVG's we hold as CSS variables were multi-colour initially.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-icon name="pen" size="xxxl" color="--as-color-status-error" label="There's been an error"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon name="pen" size="xxxl" color="--as-color-status-error" label="There's been an error"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon name="user" size="xxl" color="--as-color-status-success"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon name="user" size="xxl" color="--as-color-status-success"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon name="paperclip" size="xl" color="blue"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon name="paperclip" size="xl" color="blue"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon name="--as-icon-document-signature" size="xl" color="#BADA55"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon name="--as-icon-document-signature" size="xl" color="#BADA55"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon flip-y></as-icon></td>
-                <td><code class="token icon">&lt;as-icon flip-y&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon rotate="2.25turn"></as-icon><as-icon rotate="-37deg"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon rotate="2.25turn"&gt;&lt;/as-icon&gt;&lt;as-icon rotate="-37deg"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-icon image name="shutter" flip-x size="xxxl" rotate="-37deg"></as-icon></td>
-                <td><code class="token icon">&lt;as-icon image name="shutter" flip-x size="xxxl" rotate="-37deg"&gt;&lt;/as-icon&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-icon-component.js" href="/assets/js/components/as-icon-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-icon-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (8)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>name</td>
-                <td><b>Required:</b> Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>size</td>
-                <td><b>Optional:</b> Size of the icon component. Defaults to size "m"</td>
-                <td>xs | s | m | default | l | xl | xxl | xxxl</td>
-              </tr>
-            
-              <tr>
-                <td>color</td>
-                <td><b>Optional:</b> Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>label</td>
-                <td><b>Optional:</b> An accessible label for the icon. If no label is supplied, the icon is hidden from assistive technology.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>flip-x</td>
-                <td><b>Optional:</b> Flips icon image horizontally.&nbsp;Can be used together with [flip-y] property.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>flip-y</td>
-                <td><b>Optional:</b> Flips icon image vertically. Can be used together with [flip-x] property.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>rotate</td>
-                <td><b>Optional:</b> Rotates icon by whatever angle is specified. Numeric value can be in [deg], [turns] or [rad]. Can be a negative value. Unit must be specified.</td>
-                <td>number + unit</td>
-              </tr>
-            
-              <tr>
-                <td>image</td>
-                <td><b>Optional:</b> When present renders icon as image element. Useful when we SVG's we hold as CSS variables were multi-colour initially.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

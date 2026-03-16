@@ -477,83 +477,92 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-carousel style="margin-block: var(--as-space-l);" hidden gap="14" speed="400" delay="3" slideid="item"><br><ul><br>  <li item>Slide 0</li><br>  <li item>Slide 1</li><br>  <li item>Slide 2</li><br>  <li item>Slide 3</li><br>  <li item>Slide 4</li><br>  <li item>Slide 5</li><br>  <li item>Slide 6</li><br>  <li item>Slide 7</li><br>  <li item>Slide 8</li><br>  <li item>Slide 9</li><br>  <li item>Slide 10</li><br>  <li item>Slide 11</li><br></ul></as-carousel></td>
+                  <td><code class="token icon">&lt;as-carousel hidden gap="14" speed="400" delay="3" slideid="item"&gt;[slides]&lt;/as-carousel&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (4)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>slideid</td>
+                  <td><b>Optional:</b> parameter name used as slide element identifier, defaults to <b>item</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>speed</td>
+                  <td><b>Optional:</b> define slide animation speed in [ms], defaults to <b>400</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>delay</td>
+                  <td><b>Optional:</b> define slide animation delay in [ms], defaults to <b>3</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>gap</td>
+                  <td><b>Optional:</b> reflects gap between slides, should match CSS gap property, defaults to <b>14</b></td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-carousel style="margin-block: var(--as-space-l);" hidden gap="14" speed="400" delay="3" slideid="item"><br><ul><br>  <li item>Slide 0</li><br>  <li item>Slide 1</li><br>  <li item>Slide 2</li><br>  <li item>Slide 3</li><br>  <li item>Slide 4</li><br>  <li item>Slide 5</li><br>  <li item>Slide 6</li><br>  <li item>Slide 7</li><br>  <li item>Slide 8</li><br>  <li item>Slide 9</li><br>  <li item>Slide 10</li><br>  <li item>Slide 11</li><br></ul></as-carousel></td>
-                <td><code class="token icon">&lt;as-carousel hidden gap="14" speed="400" delay="3" slideid="item"&gt;[slides]&lt;/as-carousel&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-carousel-component.js" href="/assets/js/components/as-carousel-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-carousel-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (4)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>slideid</td>
-                <td><b>Optional:</b> parameter name used as slide element identifier, defaults to <b>item</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>speed</td>
-                <td><b>Optional:</b> define slide animation speed in [ms], defaults to <b>400</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>delay</td>
-                <td><b>Optional:</b> define slide animation delay in [ms], defaults to <b>3</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>gap</td>
-                <td><b>Optional:</b> reflects gap between slides, should match CSS gap property, defaults to <b>14</b></td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

@@ -477,128 +477,137 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><table class="table" id="testtable"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table><br><as-table-actions data-table="testtable"></as-table-actions></td>
+                  <td><code class="token icon">&lt;as-table-actions data-table="testtable"&gt;&lt;/as-table-actions&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>data-table</td>
+                  <td><b>Required:</b> ID or class name of the table to attach actions to.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>button-text</td>
+                  <td><b>Optional:</b> When present defines table Actions component button text. Defaults to <b>Options</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (6)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-table-actions:popover</td>
+                  <td>Fired when popover with action buttons is opened. Has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, state: &quot;open&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-actions:popover</td>
+                  <td>Fired when popover with action buttons is closed. Has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, state: &quot;close&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-actions:download</td>
+                  <td>Fired when COPY button is clicked, has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;copy&quot;, data: &quot;[tab separated table data]&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-actions:download</td>
+                  <td>Fired when MD button is clicked, has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;md&quot;, data: &quot;[markdown data]&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-actions:download</td>
+                  <td>Fired when XLS button is clicked, has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;xls&quot;, data: &quot;[XLS data]&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-actions:download</td>
+                  <td>Fired when CSV button is clicked, has detail object.</td>
+                  <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;csv&quot;, data: &quot;[CSV data]&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><table class="table" id="testtable"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table><br><as-table-actions data-table="testtable"></as-table-actions></td>
-                <td><code class="token icon">&lt;as-table-actions data-table="testtable"&gt;&lt;/as-table-actions&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-table-actions-component.js" href="/assets/js/components/as-table-actions-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-table-actions-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (2)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>data-table</td>
-                <td><b>Required:</b> ID or class name of the table to attach actions to.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>button-text</td>
-                <td><b>Optional:</b> When present defines table Actions component button text. Defaults to <b>Options</b>.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (6)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-table-actions:popover</td>
-                <td>Fired when popover with action buttons is opened. Has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, state: &quot;open&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-actions:popover</td>
-                <td>Fired when popover with action buttons is closed. Has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, state: &quot;close&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-actions:download</td>
-                <td>Fired when COPY button is clicked, has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;copy&quot;, data: &quot;[tab separated table data]&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-actions:download</td>
-                <td>Fired when MD button is clicked, has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;md&quot;, data: &quot;[markdown data]&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-actions:download</td>
-                <td>Fired when XLS button is clicked, has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;xls&quot;, data: &quot;[XLS data]&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-actions:download</td>
-                <td>Fired when CSV button is clicked, has detail object.</td>
-                <td>{id: &quot;53935d58-9511-493c-9a6b-d54dd73b44d8&quot;, type: &quot;csv&quot;, data: &quot;[CSV data]&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

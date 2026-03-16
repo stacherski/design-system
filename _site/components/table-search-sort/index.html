@@ -477,140 +477,149 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-table-sort sort filter><table class="table"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table></as-table-sort></td>
+                  <td><code class="token icon">&lt;as-table-sort sort filter columns="PropID,Tenant,Street" omit="2"&gt;[table HTML Element]&lt;/as-table-sort&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (4)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>sort</td>
+                  <td><b>Optional:</b> If present sorting functionality is enabled.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>filter</td>
+                  <td><b>Optional:</b> If present filtering functionality is enabled.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>columns</td>
+                  <td><b>Optional:</b> Coma separated list of column names to replace existing table &lt;THEAD&gt; cell labels, in the order written. If there are no &lt;THEAD&gt; on the table this parameter must be provided.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>omit</td>
+                  <td><b>Optional:</b> Coma separated list of column indexes to be omitted when enabling sorting &amp; filtering functionality. Starts from 0</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (6)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-table-sort:created</td>
+                  <td>Fired when component is created. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;created&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-sort:created</td>
+                  <td>Fired when component detects that there's no table to work with within component. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;not-created&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-sort:sorted</td>
+                  <td>Fired when any of the columns is being sorted. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;sorted&quot;, column: &quot;PropID&quot;, direction: &quot;desc&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-sort:sorted</td>
+                  <td>Fired when sorting is being reset to default. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;delete&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-sort:filtered</td>
+                  <td>Fired when any of the columns is being filtered. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;filtered&quot;, column: &quot;PropID&quot;, searchword: &quot;p00&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-table-sort:filtered</td>
+                  <td>Fired when filters are being set to default. Has detail object.</td>
+                  <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;delete&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-table-sort sort filter><table class="table"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table></as-table-sort></td>
-                <td><code class="token icon">&lt;as-table-sort sort filter columns="PropID,Tenant,Street" omit="2"&gt;[table HTML Element]&lt;/as-table-sort&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-table-sort-component.js" href="/assets/js/components/as-table-sort-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-table-sort-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (4)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>sort</td>
-                <td><b>Optional:</b> If present sorting functionality is enabled.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>filter</td>
-                <td><b>Optional:</b> If present filtering functionality is enabled.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>columns</td>
-                <td><b>Optional:</b> Coma separated list of column names to replace existing table &lt;THEAD&gt; cell labels, in the order written. If there are no &lt;THEAD&gt; on the table this parameter must be provided.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>omit</td>
-                <td><b>Optional:</b> Coma separated list of column indexes to be omitted when enabling sorting &amp; filtering functionality. Starts from 0</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (6)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-table-sort:created</td>
-                <td>Fired when component is created. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;created&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-sort:created</td>
-                <td>Fired when component detects that there's no table to work with within component. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;not-created&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-sort:sorted</td>
-                <td>Fired when any of the columns is being sorted. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;sorted&quot;, column: &quot;PropID&quot;, direction: &quot;desc&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-sort:sorted</td>
-                <td>Fired when sorting is being reset to default. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;delete&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-sort:filtered</td>
-                <td>Fired when any of the columns is being filtered. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;filtered&quot;, column: &quot;PropID&quot;, searchword: &quot;p00&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-table-sort:filtered</td>
-                <td>Fired when filters are being set to default. Has detail object.</td>
-                <td>{id: &quot;ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c&quot;, action: &quot;delete&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

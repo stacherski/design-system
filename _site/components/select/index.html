@@ -477,95 +477,104 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><div><as-select style="width: 100%;"><select id="test"><option value="0">Pick your poison</option><option value="1">Arsenic</option><option value="2">Cyanide</option><option value="3">Acid</option><option value="4" selected>Spider venom</option><option value="5">Bleach</option><option value="6">Methyl Alcohol</option></select></as-select></div><br><script>document.querySelector('select#test').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
+                  <td><code class="token icon">&lt;as-select&gt;[select element]&lt;/as-select&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    
+      <as-tab icon-name="clock">Events (6)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-select:created</td>
+                  <td>Fired when component is rendered. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;created&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select:updated</td>
+                  <td>Fired when component receives [updated] attribute. This should happen each time &lt;SELECT&gt; element within is being updated with JS. [updated] attribute on the component forces re-render of the component. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;updated&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select:selected</td>
+                  <td>Fired when option is selected. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;selected&quot;, option: &quot;Acid&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select:show</td>
+                  <td>Fired when dropdown is shown. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;show&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select:hide</td>
+                  <td>Fired when dropdown is hid. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;hide&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-select:search</td>
+                  <td>Fired when user start typing within component's &lt;INPUT&gt; element. Has detail object.</td>
+                  <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;search&quot;, searchword: &quot;Lorem ipsum&quot;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><div><as-select style="width: 100%;"><select id="test"><option value="0">Pick your poison</option><option value="1">Arsenic</option><option value="2">Cyanide</option><option value="3">Acid</option><option value="4" selected>Spider venom</option><option value="5">Bleach</option><option value="6">Methyl Alcohol</option></select></as-select></div><br><script>document.querySelector('select#test').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script></td>
-                <td><code class="token icon">&lt;as-select&gt;[select element]&lt;/as-select&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-select-component.js" href="/assets/js/components/as-select-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-select-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-  
-    <as-tab icon-name="clock">Events (6)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-select:created</td>
-                <td>Fired when component is rendered. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;created&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select:updated</td>
-                <td>Fired when component receives [updated] attribute. This should happen each time &lt;SELECT&gt; element within is being updated with JS. [updated] attribute on the component forces re-render of the component. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;updated&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select:selected</td>
-                <td>Fired when option is selected. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;selected&quot;, option: &quot;Acid&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select:show</td>
-                <td>Fired when dropdown is shown. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;show&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select:hide</td>
-                <td>Fired when dropdown is hid. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;hide&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-select:search</td>
-                <td>Fired when user start typing within component's &lt;INPUT&gt; element. Has detail object.</td>
-                <td>{id: &quot;286d68e7-d6ad-4440-b94b-ba29bb1e5552&quot;, action: &quot;search&quot;, searchword: &quot;Lorem ipsum&quot;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

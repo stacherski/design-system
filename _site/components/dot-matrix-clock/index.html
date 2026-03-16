@@ -477,87 +477,96 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-dot-matrix-clock></as-dot-matrix-clock></td>
+                  <td><code class="token icon">&lt;as-dot-matrix-clock&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-dot-matrix-clock size="--as-size-xxl" digit-color="--as-color-accent-strong" digit-bg="--as-color-status-warning-strong"></as-dot-matrix-clock></td>
+                  <td><code class="token icon">&lt;as-dot-matrix-clock size="--as-size-xxl" digit-color="--as-color-accent-strong" digit-bg="--as-color-status-warning-strong"&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-dot-matrix-clock size="40px" digit-bg="--as-color-background-nav-weak" digit-color="--as-color-status-warning-strong"></as-dot-matrix-clock></td>
+                  <td><code class="token icon">&lt;as-dot-matrix-clock size="40px" digit-bg="--as-color-background-nav-weak" digit-color="--as-color-status-warning-strong"&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size</td>
+                  <td><b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>digit-bg</td>
+                  <td><b>Optional:</b> digit dot background</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>digit-color</td>
+                  <td><b>Optional:</b> digit character color</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-dot-matrix-clock></as-dot-matrix-clock></td>
-                <td><code class="token icon">&lt;as-dot-matrix-clock&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-dot-matrix-clock size="--as-size-xxl" digit-color="--as-color-accent-strong" digit-bg="--as-color-status-warning-strong"></as-dot-matrix-clock></td>
-                <td><code class="token icon">&lt;as-dot-matrix-clock size="--as-size-xxl" digit-color="--as-color-accent-strong" digit-bg="--as-color-status-warning-strong"&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-dot-matrix-clock size="40px" digit-bg="--as-color-background-nav-weak" digit-color="--as-color-status-warning-strong"></as-dot-matrix-clock></td>
-                <td><code class="token icon">&lt;as-dot-matrix-clock size="40px" digit-bg="--as-color-background-nav-weak" digit-color="--as-color-status-warning-strong"&gt;&lt;/as-dot-matrix-clock&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-dot-matrix-clock-component.js" href="/assets/js/components/as-dot-matrix-clock-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-dot-matrix-clock-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (3)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>size</td>
-                <td><b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>digit-bg</td>
-                <td><b>Optional:</b> digit dot background</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>digit-color</td>
-                <td><b>Optional:</b> digit character color</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

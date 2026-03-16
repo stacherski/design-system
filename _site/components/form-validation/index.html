@@ -477,134 +477,143 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><div style="display: grid; gap: var(--as-space-m);" class="form"><form><as-form-validation type-mismatch="Dette felt er af den forkerte type" class="data-line"><label for="myemail">Email</label><input id="myemail" type="email" required//></as-form-validation><as-form-validation class="data-line"><label for="mytextarea">My textarea (min length 20 characters)</label><textarea id="mytextarea" minlength="20"></textarea></as-form-validation><button class="btn" type="submit">Submit</button></form></div><br><script>document.addEventListener('as-form-validation:error', e=>{    new Toast(`${e.detail.fieldid} -> ${e.detail.message}`)});document.addEventListener('as-form-validation:success', e=>{    new Toast(`${e.detail.fieldid} validated successfully!`)})</script></td>
+                  <td><code class="token icon">&lt;as-form-validation type-mismatch="Dette felt er af den forkerte type"&gt;[form input / form textarea]&lt;/as-form-validation&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (7)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>value-missing</td>
+                  <td><b>Optional:</b> defaults to <b>"This field is required"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>too-long</td>
+                  <td><b>Optional:</b> defaults to <b>"This field is too long"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>too-short</td>
+                  <td><b>Optional:</b> defaults to <b>"This field is too short"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>range-overflow</td>
+                  <td><b>Optional:</b> defaults to <b>"This field has a number that is too big"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>range-underflow</td>
+                  <td><b>Optional:</b> defaults to <b>"This field has a number that is too small"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>type-mismatch</td>
+                  <td><b>Optional:</b> defaults to <b>"This field is the wrong type"</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>pattern-mismatch</td>
+                  <td><b>Optional:</b> defaults to <b>"This fields value does not match the pattern"</b></td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-form-validation:success</td>
+                  <td>Fired when field validation returns no error. Has detail object.</td>
+                  <td>{fieldid: &#39;myemail&#39;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-form-validation:error</td>
+                  <td>Fired when field validation error. Has detail object</td>
+                  <td>{fieldid: &#39;myemail&#39;, type: &#39;valueMissing&#39;, message: &#39;This field is required&#39;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><div style="display: grid; gap: var(--as-space-m);" class="form"><form><as-form-validation type-mismatch="Dette felt er af den forkerte type" class="data-line"><label for="myemail">Email</label><input id="myemail" type="email" required//></as-form-validation><as-form-validation class="data-line"><label for="mytextarea">My textarea (min length 20 characters)</label><textarea id="mytextarea" minlength="20"></textarea></as-form-validation><button class="btn" type="submit">Submit</button></form></div><br><script>document.addEventListener('as-form-validation:error', e=>{    new Toast(`${e.detail.fieldid} -> ${e.detail.message}`)});document.addEventListener('as-form-validation:success', e=>{    new Toast(`${e.detail.fieldid} validated successfully!`)})</script></td>
-                <td><code class="token icon">&lt;as-form-validation type-mismatch="Dette felt er af den forkerte type"&gt;[form input / form textarea]&lt;/as-form-validation&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-form-validation-component.js" href="/assets/js/components/as-form-validation-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-form-validation-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (7)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>value-missing</td>
-                <td><b>Optional:</b> defaults to <b>"This field is required"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>too-long</td>
-                <td><b>Optional:</b> defaults to <b>"This field is too long"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>too-short</td>
-                <td><b>Optional:</b> defaults to <b>"This field is too short"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>range-overflow</td>
-                <td><b>Optional:</b> defaults to <b>"This field has a number that is too big"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>range-underflow</td>
-                <td><b>Optional:</b> defaults to <b>"This field has a number that is too small"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>type-mismatch</td>
-                <td><b>Optional:</b> defaults to <b>"This field is the wrong type"</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>pattern-mismatch</td>
-                <td><b>Optional:</b> defaults to <b>"This fields value does not match the pattern"</b></td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (2)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-form-validation:success</td>
-                <td>Fired when field validation returns no error. Has detail object.</td>
-                <td>{fieldid: &#39;myemail&#39;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-form-validation:error</td>
-                <td>Fired when field validation error. Has detail object</td>
-                <td>{fieldid: &#39;myemail&#39;, type: &#39;valueMissing&#39;, message: &#39;This field is required&#39;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

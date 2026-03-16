@@ -8,7 +8,8 @@
     "pageurl": "9D34D340-84D4-41B2-9C78-702E9DAC0B08",
     "examplesCount": 1,
     "propertiesCount": 4,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-carousel-component.js"
   },
   {
     "id": "12",
@@ -19,7 +20,8 @@
     "pageurl": "A41151B1-3483-4F40-90D9-AD90ECCF17B4",
     "examplesCount": 3,
     "propertiesCount": 3,
-    "eventsCount": 2
+    "eventsCount": 2,
+    "componentJS": "as-character-counter-component.js"
   },
   {
     "id": "21",
@@ -30,7 +32,8 @@
     "pageurl": "C1C22CE6-64FC-4C66-8671-449C2BBA1597",
     "examplesCount": 5,
     "propertiesCount": 7,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-class-toggle-component.js"
   },
   {
     "id": "15",
@@ -41,7 +44,8 @@
     "pageurl": "0B84DF2F-65E7-4E9A-9927-044EF0487A7F",
     "examplesCount": 1,
     "propertiesCount": 3,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-command-menu-component.js"
   },
   {
     "id": "27",
@@ -52,7 +56,8 @@
     "pageurl": "F4A3E8D2-6D18-43BF-B321-C5DAAAB522A5",
     "examplesCount": 1,
     "propertiesCount": 0,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-contrast-checker-component.js"
   },
   {
     "id": "14",
@@ -63,7 +68,8 @@
     "pageurl": "D9F2C8C0-23D9-4741-AECE-DBFDEE6E1987",
     "examplesCount": 3,
     "propertiesCount": 6,
-    "eventsCount": 5
+    "eventsCount": 5,
+    "componentJS": "as-date-picker-component.js"
   },
   {
     "id": "22",
@@ -74,7 +80,8 @@
     "pageurl": "F11FE852-FC69-4190-A71F-35A9D9BA309D",
     "examplesCount": 3,
     "propertiesCount": 3,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-dot-matrix-clock-component.js"
   },
   {
     "id": "17",
@@ -85,7 +92,8 @@
     "pageurl": "C5255BC6-525E-4912-A637-257E5FF05AFF",
     "examplesCount": 6,
     "propertiesCount": 3,
-    "eventsCount": 5
+    "eventsCount": 5,
+    "componentJS": "as-drawer-component.js"
   },
   {
     "id": "11",
@@ -96,7 +104,8 @@
     "pageurl": "868247AA-386A-4733-9CCB-97D31EE6C02A",
     "examplesCount": 1,
     "propertiesCount": 7,
-    "eventsCount": 2
+    "eventsCount": 2,
+    "componentJS": "as-form-validation-component.js"
   },
   {
     "id": "19",
@@ -107,7 +116,8 @@
     "pageurl": "8B364944-EE91-4EA3-8B64-50BF43ED023E",
     "examplesCount": 6,
     "propertiesCount": 9,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-gauge-component.js"
   },
   {
     "id": "24",
@@ -118,7 +128,8 @@
     "pageurl": "67B3C3D8-3B76-492A-A904-E391D3064DEF",
     "examplesCount": 2,
     "propertiesCount": 11,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-graph-component.js"
   },
   {
     "id": "1",
@@ -129,7 +140,8 @@
     "pageurl": "FCED669E-3F95-4048-8108-FAC85CE338A5",
     "examplesCount": 9,
     "propertiesCount": 8,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-icon-component.js"
   },
   {
     "id": "7",
@@ -140,7 +152,8 @@
     "pageurl": "387826BD-A89B-46B4-B103-AB21F61C3F24",
     "examplesCount": 1,
     "propertiesCount": 5,
-    "eventsCount": 3
+    "eventsCount": 3,
+    "componentJS": "as-panel-component.js"
   },
   {
     "id": "6",
@@ -151,7 +164,8 @@
     "pageurl": "0235A3CE-D701-44DF-A641-2DF31C518C11",
     "examplesCount": 4,
     "propertiesCount": 5,
-    "eventsCount": 3
+    "eventsCount": 3,
+    "componentJS": "as-popout-component.js"
   },
   {
     "id": "20",
@@ -162,7 +176,8 @@
     "pageurl": "C9FA3103-118A-425C-A4DB-88BE108D8F51",
     "examplesCount": 6,
     "propertiesCount": 4,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-relative-time-component.js"
   },
   {
     "id": "26",
@@ -173,7 +188,8 @@
     "pageurl": "10BA987B-E017-4696-8D30-7E6D4D709D64",
     "examplesCount": 1,
     "propertiesCount": 0,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-svg-to-base64-component.js"
   },
   {
     "id": "16",
@@ -184,7 +200,8 @@
     "pageurl": "421AA21F-1A22-41A6-A877-87EED4597825",
     "examplesCount": 1,
     "propertiesCount": 11,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-search-menu-component.js"
   },
   {
     "id": "3",
@@ -195,7 +212,8 @@
     "pageurl": "3C494E56-83DB-402F-B660-740CA955D2C0",
     "examplesCount": 1,
     "propertiesCount": 0,
-    "eventsCount": 6
+    "eventsCount": 6,
+    "componentJS": "as-select-component.js"
   },
   {
     "id": "5",
@@ -206,7 +224,8 @@
     "pageurl": "05B3DDE7-C1B6-4F78-AA62-801104A9A49C",
     "examplesCount": 2,
     "propertiesCount": 1,
-    "eventsCount": 3
+    "eventsCount": 3,
+    "componentJS": "as-select2range-component.js"
   },
   {
     "id": "4",
@@ -217,7 +236,8 @@
     "pageurl": "00C7E34A-9F5C-46FA-8201-A3BD2547229D",
     "examplesCount": 2,
     "propertiesCount": 1,
-    "eventsCount": 6
+    "eventsCount": 6,
+    "componentJS": "as-select-multiple-component.js"
   },
   {
     "id": "13",
@@ -228,7 +248,8 @@
     "pageurl": "C1E0FF71-9022-4BBC-8A01-D0A3AF1FB42C",
     "examplesCount": 2,
     "propertiesCount": 2,
-    "eventsCount": 2
+    "eventsCount": 2,
+    "componentJS": "as-show-hide-password-component.js"
   },
   {
     "id": "28",
@@ -239,7 +260,8 @@
     "pageurl": "C29AA33C-C98D-44D6-89DB-B142D6BFAC9C",
     "examplesCount": 2,
     "propertiesCount": 1,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-tab-component.js"
   },
   {
     "id": "10",
@@ -250,7 +272,8 @@
     "pageurl": "9816AF1C-2B64-481B-8467-8ACCF361BD45",
     "examplesCount": 1,
     "propertiesCount": 1,
-    "eventsCount": 2
+    "eventsCount": 2,
+    "componentJS": "as-tab-group-component.js"
   },
   {
     "id": "9",
@@ -261,7 +284,8 @@
     "pageurl": "B2B8DA7F-F189-4795-9475-C87B7724B177",
     "examplesCount": 1,
     "propertiesCount": 2,
-    "eventsCount": 6
+    "eventsCount": 6,
+    "componentJS": "as-table-actions-component.js"
   },
   {
     "id": "8",
@@ -272,7 +296,8 @@
     "pageurl": "8A75DB95-F3EB-46D3-AE67-CF4F80FE4EB8",
     "examplesCount": 1,
     "propertiesCount": 4,
-    "eventsCount": 6
+    "eventsCount": 6,
+    "componentJS": "as-table-sort-component.js"
   },
   {
     "id": "2",
@@ -283,6 +308,7 @@
     "pageurl": "5CC49ADE-6748-42C9-AD8C-5A41CF644AD2",
     "examplesCount": 5,
     "propertiesCount": 0,
-    "eventsCount": 0
+    "eventsCount": 0,
+    "componentJS": "as-toast-component.js"
   }
 ]

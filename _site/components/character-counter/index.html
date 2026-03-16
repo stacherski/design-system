@@ -477,120 +477,129 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><div class="data-line"><textarea id="mytextarea">This text length is already counted</textarea></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter no-messages data-input="#mytextarea"></as-char-counter></div></td>
+                  <td><code class="token icon">&lt;as-char-counter no-messages data-input="#mytextarea"&gt;&lt;/as-char-counter&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><div class="data-line"><input type="text" class="myinput" value="This text length is already counted"/></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter data-input=".myinput"></as-char-counter></div></td>
+                  <td><code class="token icon">&lt;as-char-counter data-input=".myinput"&gt;&lt;/as-char-counter&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><div class="data-line"><input type="text" class="myinput2" value="This text length is already counted"/></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter no-count data-input=".myinput2"></as-char-counter></div></td>
+                  <td><code class="token icon">&lt;as-char-counter no-count data-input=".myinput2"&gt;&lt;/as-char-counter&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>data-input</td>
+                  <td><b>Required:</b> ID or class name of the textarea or input element to perform count on.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>no-messages</td>
+                  <td><b>Optional:</b> hides messages count.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>no-count</td>
+                  <td><b>Optional:</b> hides characters count.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (2)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-char-counter:created</td>
+                  <td>Fired when component is created. Has detail object.</td>
+                  <td>{id: &quot;ccf267d0-2775-4c59-8766-5a627e8b5bf3&quot;, fieldid: &quot;#mytextarea&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-char-counter:count</td>
+                  <td>Fired when count changes</td>
+                  <td>{id: &quot;ccf267d0-2775-4c59-8766-5a627e8b5bf3&quot;, fieldid: &quot;#mytextarea&quot;, chars: 17, texts: 1}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><div class="data-line"><textarea id="mytextarea">This text length is already counted</textarea></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter no-messages data-input="#mytextarea"></as-char-counter></div></td>
-                <td><code class="token icon">&lt;as-char-counter no-messages data-input="#mytextarea"&gt;&lt;/as-char-counter&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><div class="data-line"><input type="text" class="myinput" value="This text length is already counted"/></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter data-input=".myinput"></as-char-counter></div></td>
-                <td><code class="token icon">&lt;as-char-counter data-input=".myinput"&gt;&lt;/as-char-counter&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><div class="data-line"><input type="text" class="myinput2" value="This text length is already counted"/></div><br><div style="margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;"><as-char-counter no-count data-input=".myinput2"></as-char-counter></div></td>
-                <td><code class="token icon">&lt;as-char-counter no-count data-input=".myinput2"&gt;&lt;/as-char-counter&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-character-counter-component.js" href="/assets/js/components/as-character-counter-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-character-counter-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (3)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>data-input</td>
-                <td><b>Required:</b> ID or class name of the textarea or input element to perform count on.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>no-messages</td>
-                <td><b>Optional:</b> hides messages count.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>no-count</td>
-                <td><b>Optional:</b> hides characters count.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (2)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-char-counter:created</td>
-                <td>Fired when component is created. Has detail object.</td>
-                <td>{id: &quot;ccf267d0-2775-4c59-8766-5a627e8b5bf3&quot;, fieldid: &quot;#mytextarea&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-char-counter:count</td>
-                <td>Fired when count changes</td>
-                <td>{id: &quot;ccf267d0-2775-4c59-8766-5a627e8b5bf3&quot;, fieldid: &quot;#mytextarea&quot;, chars: 17, texts: 1}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

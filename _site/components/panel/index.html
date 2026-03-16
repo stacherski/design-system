@@ -477,128 +477,137 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (1)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-panel id="test"><div class="panel"><div class="panel-heading">Panel heading</div><div class="panel-body columns"><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div></div></div></as-panel><br></td>
+                  <td><code class="token icon">&lt;as-panel&gt;[content]&lt;/as-panel&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>breakpoint</td>
+                  <td><b>Optional:</b> Defines mobile breakpoint in pixels, defaults to 520.</td>
+                  <td>number</td>
+                </tr>
+              
+                <tr>
+                  <td>heading-class</td>
+                  <td><b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-heading</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>body-class</td>
+                  <td><b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-body</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>icon-name</td>
+                  <td><b>Optional:</b> When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>rotate</td>
+                  <td><b>Optional:</b> When present defines direction and angle of the icon rotation when component is toggled between states (fold-in &amp; fold out). Defaults to&nbsp;<b>-45deg</b>.</td>
+                  <td>direction+value+unit</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="clock">Events (3)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".events"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="events equal table">
+            <thead>
+              <tr>
+                <th>Event name</th>
+                <th>Description</th>
+                <th>Example value</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>as-panel:created</td>
+                  <td>Fired when component is rendered. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-panel:toggle</td>
+                  <td>Fired when component has toggled. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, state: &#39;open&#39;}</td>
+                </tr>
+              
+                <tr>
+                  <td>as-panel:toggle</td>
+                  <td>Fired when component has toggled. Has detail object.</td>
+                  <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, state: &#39;closed&#39;}</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-panel id="test"><div class="panel"><div class="panel-heading">Panel heading</div><div class="panel-body columns"><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div></div></div></as-panel><br></td>
-                <td><code class="token icon">&lt;as-panel&gt;[content]&lt;/as-panel&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-panel-component.js" href="/assets/js/components/as-panel-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-panel-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (5)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>breakpoint</td>
-                <td><b>Optional:</b> Defines mobile breakpoint in pixels, defaults to 520.</td>
-                <td>number</td>
-              </tr>
-            
-              <tr>
-                <td>heading-class</td>
-                <td><b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-heading</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>body-class</td>
-                <td><b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-body</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>icon-name</td>
-                <td><b>Optional:</b> When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>rotate</td>
-                <td><b>Optional:</b> When present defines direction and angle of the icon rotation when component is toggled between states (fold-in &amp; fold out). Defaults to&nbsp;<b>-45deg</b>.</td>
-                <td>direction+value+unit</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-  
-    <as-tab icon-name="clock">Events (3)</as-tab>
-     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".events"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="events equal table">
-          <thead>
-            <tr>
-              <th>Event name</th>
-              <th>Description</th>
-              <th>Example value</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>as-panel:created</td>
-                <td>Fired when component is rendered. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-panel:toggle</td>
-                <td>Fired when component has toggled. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, state: &#39;open&#39;}</td>
-              </tr>
-            
-              <tr>
-                <td>as-panel:toggle</td>
-                <td>Fired when component has toggled. Has detail object.</td>
-                <td>{id: &quot;79d95b10-ecc4-42ca-b893-8e23b01f17da&quot;, state: &#39;closed&#39;}</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

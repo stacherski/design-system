@@ -477,121 +477,130 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (5)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-class-toggle button-class="btn btn-outline" button-text="Toggle" target-element=".test" target-class="open" target-state="true" icon-name="pen" icon-rotate="1turn"></as-class-toggle><br><div class="test">Lorem ipsum</div><br><style> .test    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
+                  <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-outline" button-text="Toggle" target-element=".test" target-class="open" target-state="true" icon-name="pen" icon-rotate="1turn"&gt;&lt;/as-class-toggle&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-class-toggle button-class="btn btn-warning" button-text="Make it pop" target-element=".test2" target-class="open2" icon-name="plus" icon-rotate="0.125turn"></as-class-toggle><br><div class="test2">I will pop</div><br><style> .test2    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open2    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
+                  <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-warning" button-text="Make it pop" target-element=".test2" target-class="open2" icon-name="plus" icon-rotate="0.125turn"&gt;&lt;/as-class-toggle&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-class-toggle button-class="btn btn-error" button-text="Make it pop twice" target-element=".test5|.test6" target-class="open5|open5" icon-name="--as-icon-pie-chart" icon-rotate="1turn"></as-class-toggle><br><div class="test5">I will pop first!</div><br><div class="test6">No, I will pop first!</div><br><style> .test5,    .test6    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open5    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
+                  <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-error" button-text="Make it pop twice" target-element=".test5|.test6" target-class="open5|open5" icon-name="--as-icon-pie-chart" icon-rotate="1turn"&gt;&lt;/as-class-toggle&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-class-toggle button-class="btn btn-success" button-text="I'm a lonely button" target-element=".test3" target-class="open3"></as-class-toggle><br><div class="test3">C'mon baby!</div><br><style> .test3    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open3    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
+                  <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-success" button-text="I'm a lonely button" target-element=".test3" target-class="open3"&gt;&lt;/as-class-toggle&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-class-toggle button-class="btn btn-transparent" target-element=".test4" target-class=".open4" icon-name="--as-icon-star" icon-rotate="3turn"></as-class-toggle><br><div class="test4">I'm a star!!!</div><br><style> .test4    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open4    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
+                  <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-transparent" target-element=".test4" target-class=".open4" icon-name="--as-icon-star" icon-rotate="3turn"&gt;&lt;/as-class-toggle&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (7)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>target-element</td>
+                  <td><b>Required:</b> Pipe '|' separated element list to toggle classes on. Accept any proper CSS selector.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>target-class</td>
+                  <td><b>Required:</b> Pipe '|' separated&nbsp;class names (with or without leading dot) to be toggled on target-element elements.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>target-state</td>
+                  <td><b>Optional:</b> when <b>true</b> target-element initiates with target-class applied.</td>
+                  <td>boolean</td>
+                </tr>
+              
+                <tr>
+                  <td>button-text</td>
+                  <td><b>Optional:</b> text for the button</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>button-class</td>
+                  <td><b>Optional:</b> Space separated class names list to be used on the generated button</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>icon-name</td>
+                  <td><b>Optional:</b> icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href="/Design-Tokens/Icons" class="inlinelink">here</a>.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>icon-rotate</td>
+                  <td><b>Optional:</b> when present it will rotate icon when target-element has target-class applied.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-class-toggle button-class="btn btn-outline" button-text="Toggle" target-element=".test" target-class="open" target-state="true" icon-name="pen" icon-rotate="1turn"></as-class-toggle><br><div class="test">Lorem ipsum</div><br><style> .test    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
-                <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-outline" button-text="Toggle" target-element=".test" target-class="open" target-state="true" icon-name="pen" icon-rotate="1turn"&gt;&lt;/as-class-toggle&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-class-toggle button-class="btn btn-warning" button-text="Make it pop" target-element=".test2" target-class="open2" icon-name="plus" icon-rotate="0.125turn"></as-class-toggle><br><div class="test2">I will pop</div><br><style> .test2    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open2    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
-                <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-warning" button-text="Make it pop" target-element=".test2" target-class="open2" icon-name="plus" icon-rotate="0.125turn"&gt;&lt;/as-class-toggle&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-class-toggle button-class="btn btn-error" button-text="Make it pop twice" target-element=".test5|.test6" target-class="open5|open5" icon-name="--as-icon-pie-chart" icon-rotate="1turn"></as-class-toggle><br><div class="test5">I will pop first!</div><br><div class="test6">No, I will pop first!</div><br><style> .test5,    .test6    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open5    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
-                <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-error" button-text="Make it pop twice" target-element=".test5|.test6" target-class="open5|open5" icon-name="--as-icon-pie-chart" icon-rotate="1turn"&gt;&lt;/as-class-toggle&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-class-toggle button-class="btn btn-success" button-text="I'm a lonely button" target-element=".test3" target-class="open3"></as-class-toggle><br><div class="test3">C'mon baby!</div><br><style> .test3    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open3    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
-                <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-success" button-text="I'm a lonely button" target-element=".test3" target-class="open3"&gt;&lt;/as-class-toggle&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-class-toggle button-class="btn btn-transparent" target-element=".test4" target-class=".open4" icon-name="--as-icon-star" icon-rotate="3turn"></as-class-toggle><br><div class="test4">I'm a star!!!</div><br><style> .test4    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open4    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style></td>
-                <td><code class="token icon">&lt;as-class-toggle button-class="btn btn-transparent" target-element=".test4" target-class=".open4" icon-name="--as-icon-star" icon-rotate="3turn"&gt;&lt;/as-class-toggle&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-class-toggle-component.js" href="/assets/js/components/as-class-toggle-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-class-toggle-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (7)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>target-element</td>
-                <td><b>Required:</b> Pipe '|' separated element list to toggle classes on. Accept any proper CSS selector.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>target-class</td>
-                <td><b>Required:</b> Pipe '|' separated&nbsp;class names (with or without leading dot) to be toggled on target-element elements.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>target-state</td>
-                <td><b>Optional:</b> when <b>true</b> target-element initiates with target-class applied.</td>
-                <td>boolean</td>
-              </tr>
-            
-              <tr>
-                <td>button-text</td>
-                <td><b>Optional:</b> text for the button</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>button-class</td>
-                <td><b>Optional:</b> Space separated class names list to be used on the generated button</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>icon-name</td>
-                <td><b>Optional:</b> icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href="/Design-Tokens/Icons" class="inlinelink">here</a>.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>icon-rotate</td>
-                <td><b>Optional:</b> when present it will rotate icon when target-element has target-class applied.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 

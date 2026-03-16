@@ -477,138 +477,147 @@
   </article>
 
   <as-tab-group>
-  
-    <as-tab icon-name="inbox" selected>Examples (6)</as-tab>
+    
+      <as-tab icon-name="inbox" selected>Examples (6)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".examples"></as-table-actions>
+        </div>
+        <as-table-sort omit="0" sort>
+          <table class="examples equal table">
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><as-gauge>30</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge&gt;30&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-gauge showmax reverse size="8" max="150" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="500">50</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge showmax reverse size="8" max="150" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="500"&gt;50&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-gauge showmax size="7" max="123" bg="--as-color-background-nav-weak" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="750">55</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge showmax size="7" max="123" bg="--as-color-background-nav-weak" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="750"&gt;55&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-gauge showmax half size="8" max="150" thumb="--as-color-status-error-weak" speed="5" delay="500">73</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge showmax half size="8" max="150" thumb="--as-color-status-error-weak" speed="5" delay="500"&gt;73&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-gauge showmax reverse half size="12" max="150" thumb="--as-color-status-success-weak" speed="1" delay="1500">107</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge showmax reverse half size="12" max="150" thumb="--as-color-status-success-weak" speed="1" delay="1500"&gt;107&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-gauge half size="3" max="100" thumb="--as-color-status-success-weak" speed="2" delay="500">67</as-gauge></td>
+                  <td><code class="token icon">&lt;as-gauge half size="3" max="100" thumb="--as-color-status-success-weak" speed="2" delay="500"&gt;67&lt;/as-gauge&gt;</code></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+      <as-tab icon-name="list-ul">Properties (9)</as-tab>
+      <as-tab-panel>
+        <div style="display: flex; justify-content: flex-end;">
+          <as-table-actions data-table=".properties"></as-table-actions>
+        </div>
+        <as-table-sort sort>
+          <table class="properties equal table">
+            <thead>
+              <tr>
+                <th>Property name</th>
+                <th>Description</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size</td>
+                  <td><b>Optional:</b> value defines size of the gauge in EM units, default value is <b>3</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>showmax</td>
+                  <td><b>Optional:</b> if present gauge is displaying <b>max</b> value defined within max parameter</td>
+                  <td>param</td>
+                </tr>
+              
+                <tr>
+                  <td>thumb</td>
+                  <td><b>Optional:</b> value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>track</td>
+                  <td><b>Optional:</b> value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>bg</td>
+                  <td><b>Optional:</b> value defines background colour of the gauge element colour, if omitted it defaults to <b>transparent</b></td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>reverse</td>
+                  <td><b>Optional:</b> if present it animates value thumb counterclockwise.</td>
+                  <td>param</td>
+                </tr>
+              
+                <tr>
+                  <td>half</td>
+                  <td><b>Optional:</b> if present gauge is displayed as half circle.</td>
+                  <td>param</td>
+                </tr>
+              
+                <tr>
+                  <td>delay</td>
+                  <td><b>Optional:</b> defines delay before animation of the thumb value starts, in milliseconds. If omitted it defaults to <b>1000</b>. For no delay and instant animation start use <b>0</b> as param value.</td>
+                  <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>speed</td>
+                  <td><b>Optional:</b> defines time in which thumb reaches set value, in seconds. If omitted it defaults to <b>1</b>. To make gauge thumb appear instantly use <b>0</b> as param value.</td>
+                  <td>string</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </as-table-sort>
+      </as-tab-panel>
+    
+    
+    <as-tab icon-name="document-lines">Files</as-tab>
     <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".examples"></as-table-actions>
-      </div>
-      <as-table-sort omit="0" sort>
-        <table class="examples equal table">
-          <thead>
-            <tr>
-              <th>Example</th>
-              <th>Code</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td><as-gauge>30</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge&gt;30&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-gauge showmax reverse size="8" max="150" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="500">50</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge showmax reverse size="8" max="150" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="500"&gt;50&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-gauge showmax size="7" max="123" bg="--as-color-background-nav-weak" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="750">55</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge showmax size="7" max="123" bg="--as-color-background-nav-weak" track="--as-color-status-warning" thumb="--as-color-accent-strong" speed="5" delay="750"&gt;55&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-gauge showmax half size="8" max="150" thumb="--as-color-status-error-weak" speed="5" delay="500">73</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge showmax half size="8" max="150" thumb="--as-color-status-error-weak" speed="5" delay="500"&gt;73&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-gauge showmax reverse half size="12" max="150" thumb="--as-color-status-success-weak" speed="1" delay="1500">107</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge showmax reverse half size="12" max="150" thumb="--as-color-status-success-weak" speed="1" delay="1500"&gt;107&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-              <tr>
-                <td><as-gauge half size="3" max="100" thumb="--as-color-status-success-weak" speed="2" delay="500">67</as-gauge></td>
-                <td><code class="token icon">&lt;as-gauge half size="3" max="100" thumb="--as-color-status-success-weak" speed="2" delay="500"&gt;67&lt;/as-gauge&gt;</code></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
+      <ul>
+        <li>
+          <a class="btn btn-outline" download="as-gauge-component.js" href="/assets/js/components/as-gauge-component.js">
+            <as-icon name="document-lines"></as-icon>
+            as-gauge-component.js</a>
+        </li>
+      </ul>
     </as-tab-panel>
-      
-  
-    <as-tab icon-name="list-ul">Properties (9)</as-tab>
-    <as-tab-panel>
-      <div style="display: flex; justify-content: flex-end;">
-        <as-table-actions data-table=".properties"></as-table-actions>
-      </div>
-      <as-table-sort sort>
-        <table class="properties equal table">
-          <thead>
-            <tr>
-              <th>Property name</th>
-              <th>Description</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>size</td>
-                <td><b>Optional:</b> value defines size of the gauge in EM units, default value is <b>3</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>showmax</td>
-                <td><b>Optional:</b> if present gauge is displaying <b>max</b> value defined within max parameter</td>
-                <td>param</td>
-              </tr>
-            
-              <tr>
-                <td>thumb</td>
-                <td><b>Optional:</b> value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>track</td>
-                <td><b>Optional:</b> value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>bg</td>
-                <td><b>Optional:</b> value defines background colour of the gauge element colour, if omitted it defaults to <b>transparent</b></td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>reverse</td>
-                <td><b>Optional:</b> if present it animates value thumb counterclockwise.</td>
-                <td>param</td>
-              </tr>
-            
-              <tr>
-                <td>half</td>
-                <td><b>Optional:</b> if present gauge is displayed as half circle.</td>
-                <td>param</td>
-              </tr>
-            
-              <tr>
-                <td>delay</td>
-                <td><b>Optional:</b> defines delay before animation of the thumb value starts, in milliseconds. If omitted it defaults to <b>1000</b>. For no delay and instant animation start use <b>0</b> as param value.</td>
-                <td>string</td>
-              </tr>
-            
-              <tr>
-                <td>speed</td>
-                <td><b>Optional:</b> defines time in which thumb reaches set value, in seconds. If omitted it defaults to <b>1</b>. To make gauge thumb appear instantly use <b>0</b> as param value.</td>
-                <td>string</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </as-table-sort>
-    </as-tab-panel>
-  
-      
   </as-tab-group>
 
-</atricle>
-
+</article>
       </section>
     </div>
 
