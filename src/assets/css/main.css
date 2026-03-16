@@ -9,3 +9,15 @@
   src: url('/assets/fonts/49622d19-a95b-4e50-b8dc-b058e5459817.woff') format('woff');
   font-display: swap
 }
+
+@font-face {
+  font-family: NunitoRegularItalic;
+  src: url('/assets/fonts/c7e3cbc4-1f3f-47d6-a57b-463ce486fe91.woff') format('woff');
+  font-display: swap
+}
+
+@font-face {
+  font-family: NunitoBoldItalic;
+  src: url('/assets/fonts/db0dc6f6-4e11-4888-bc50-e6a16720d77f.woff') format('woff');
+  font-display: swap
+}

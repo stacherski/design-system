@@ -63,24 +63,6 @@
     "codeToken": "<code class=\"token icon\">&lt;ts-icon image name=\"shutter\" flip-x size=\"xxxl\" rotate=\"-37deg\"&gt;&lt;/ts-icon&gt;</code>"
   },
   {
-    "id": "78",
-    "guid": "d215395d-9908-40a5-9f12-4c6ce960b48c",
-    "componentName": "Icon",
-    "componentSlug": "icon",
-    "example": "test",
-    "code": "test",
-    "codeToken": "<code class=\"token icon\">test</code>"
-  },
-  {
-    "id": "79",
-    "guid": "dd03b20d-4123-4497-b729-e4ca8f506282",
-    "componentName": "Icon",
-    "componentSlug": "icon",
-    "example": "",
-    "code": "",
-    "codeToken": "<code class=\"token icon\"></code>"
-  },
-  {
     "id": "8",
     "guid": "5bc08533-d559-4d34-952c-b84df5454d99",
     "componentName": "Toast",
