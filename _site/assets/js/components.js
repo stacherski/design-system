@@ -2547,6 +2547,7 @@ var require_as_popout_component = __commonJS({
               this.setHidden(popover2);
               if (this.settings.isInline)
                 popover2.removeAttribute("popover");
+              else popover2.setAttribute("popover", "");
             });
             window.addEventListener("resize", (e) => {
               this.settings.isInline = this.isBelowBreakpoint();

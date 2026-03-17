@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (this.settings.isInline)
                         popover.removeAttribute('popover')
+                    else popover.setAttribute('popover', '')
                 })
 
                 window.addEventListener('resize', e => {
