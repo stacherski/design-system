@@ -63,7 +63,13 @@ layout: layouts/base.njk
               {% for prop in componentProps %}
                 <tr>
                   <td>{{ prop.name }}</td>
-                  <td>{{ prop.descriptionText | safe }}</td>
+                  <td>
+                    {% if prop.optional == 'Yes' %}
+                      <b>Optional:</b>
+                    {% endif %}
+                    {% if prop.optional == 'No' %}
+                      <b>Required:</b>
+                    {% endif %}{{ prop.description | safe }}</td>
                   <td>{{ prop.propertyType }}</td>
                 </tr>
               {% endfor %}

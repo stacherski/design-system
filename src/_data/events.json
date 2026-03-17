@@ -1,7 +1,5 @@
 [
   {
-    "id": "1",
-    "guid": "711270d5-2b9f-42c7-bc51-96f3728ad9b2",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:created",
@@ -9,8 +7,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"created\"}"
   },
   {
-    "id": "2",
-    "guid": "4b651a81-5b6a-4e14-be92-3066983106e8",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:updated",
@@ -18,8 +14,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"updated\"}"
   },
   {
-    "id": "3",
-    "guid": "924d08ae-347f-4501-ba64-d8310597e4d0",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:selected",
@@ -27,8 +21,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"selected\", option: \"Acid\"}"
   },
   {
-    "id": "4",
-    "guid": "7be2d267-222e-49ff-845a-5551333681b2",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:show",
@@ -36,8 +28,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"show\"}"
   },
   {
-    "id": "5",
-    "guid": "b2275dde-f7d8-4476-b6bf-b813a7f09489",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:hide",
@@ -45,8 +35,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"hide\"}"
   },
   {
-    "id": "6",
-    "guid": "07316ebc-bd36-45e6-bbaf-4f8d71e88126",
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:search",
@@ -54,8 +42,6 @@
     "exampleValue": "{id: \"286d68e7-d6ad-4440-b94b-ba29bb1e5552\", action: \"search\", searchword: \"Lorem ipsum\"}"
   },
   {
-    "id": "7",
-    "guid": "89f4c93d-3c0c-4c32-b57f-977623e9f6a7",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:created",
@@ -63,8 +49,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"created\"}"
   },
   {
-    "id": "8",
-    "guid": "e306b093-804f-4f4d-9944-a94a314ddb65",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:show",
@@ -72,8 +56,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"show\"}"
   },
   {
-    "id": "9",
-    "guid": "4b1cc177-49a4-44c6-ad1c-815364e33fbc",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:hide",
@@ -81,8 +63,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"hide\"}"
   },
   {
-    "id": "10",
-    "guid": "d3919151-47f9-4eeb-9153-640771bf12ce",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:selected",
@@ -90,8 +70,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"selected\", name: \"Arsenic\", value: \"1\"}"
   },
   {
-    "id": "11",
-    "guid": "b6764708-da4e-45a3-838e-9011467d010e",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:deselected",
@@ -99,8 +77,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"deselected\", name: \"Spider venom\", value: \"4\"}"
   },
   {
-    "id": "12",
-    "guid": "34421f0d-5d9c-46b0-9e9a-a53b03fb98f4",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "as-select-multiple:search",
@@ -108,8 +84,6 @@
     "exampleValue": "{id: \"94899fa0-8732-4e35-b419-9aa93360865b\", action: \"search\", searchword: \"acid\"}"
   },
   {
-    "id": "13",
-    "guid": "2e2b3332-1fb0-4701-9858-d4eb2e758296",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "name": "as-select2range:created",
@@ -117,8 +91,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"created\"}"
   },
   {
-    "id": "14",
-    "guid": "61da642d-2eda-419f-8ce0-2f98f2e5546a",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "name": "as-select2range:created",
@@ -126,8 +98,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"not-created\"}"
   },
   {
-    "id": "15",
-    "guid": "113dc108-7644-4ff7-9172-c00a76d1839b",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "name": "as-select2range:selected",
@@ -135,8 +105,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"selected\", name: \"Arsenic\", value: \"1\"}"
   },
   {
-    "id": "16",
-    "guid": "f9ff848d-9b77-4f18-b321-115782c5381f",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "as-popout:created",
@@ -144,8 +112,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", action: \"created\"}"
   },
   {
-    "id": "17",
-    "guid": "183235db-6e9c-472e-9db2-ffc98c95a76f",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "as-popout:toggle",
@@ -153,8 +119,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: \"open\"}"
   },
   {
-    "id": "18",
-    "guid": "fd55a95b-e8c1-4d12-a826-8cd49ddc0621",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "as-popout:toggle",
@@ -162,8 +126,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: \"close\"}"
   },
   {
-    "id": "19",
-    "guid": "77d9ebaf-1299-4abe-9604-803038a71800",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "as-panel:created",
@@ -171,8 +133,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\"}"
   },
   {
-    "id": "20",
-    "guid": "032d3e39-a2fb-410d-a95e-a29dfeeabc03",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "as-panel:toggle",
@@ -180,8 +140,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: 'open'}"
   },
   {
-    "id": "21",
-    "guid": "7b1e8d3c-fbf3-4ad7-9682-decdfe3fe43b",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "as-panel:toggle",
@@ -189,8 +147,6 @@
     "exampleValue": "{id: \"79d95b10-ecc4-42ca-b893-8e23b01f17da\", state: 'closed'}"
   },
   {
-    "id": "22",
-    "guid": "76f5ac79-8211-4e38-ab93-6af75c520bcc",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:created",
@@ -198,8 +154,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"created\"}"
   },
   {
-    "id": "23",
-    "guid": "cef9ed03-b463-4776-a207-660a7bd66054",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:created",
@@ -207,8 +161,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"not-created\"}"
   },
   {
-    "id": "24",
-    "guid": "e6546dcf-5c30-477e-ac47-40c7e55f5852",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:sorted",
@@ -216,8 +168,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"sorted\", column: \"PropID\", direction: \"desc\"}"
   },
   {
-    "id": "25",
-    "guid": "bc65d582-dc61-4556-9ec7-c481f5762e13",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:sorted",
@@ -225,8 +175,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"delete\"}"
   },
   {
-    "id": "26",
-    "guid": "8ab457ed-a3e9-4ee0-ab2c-b7de55d8eab8",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:filtered",
@@ -234,8 +182,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"filtered\", column: \"PropID\", searchword: \"p00\"}"
   },
   {
-    "id": "27",
-    "guid": "1b509649-f942-41b7-a30c-9e5f85f0da15",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "as-table-sort:filtered",
@@ -243,8 +189,6 @@
     "exampleValue": "{id: \"ba6fdbe1-f6c0-4af9-baef-af9aa4fa6a5c\", action: \"delete\"}"
   },
   {
-    "id": "28",
-    "guid": "1ceedb19-e284-418f-b962-c088fe39f71c",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:popover",
@@ -252,8 +196,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", state: \"open\"}"
   },
   {
-    "id": "30",
-    "guid": "701ec16e-639b-45d8-9085-fbbfbd51e883",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:popover",
@@ -261,8 +203,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", state: \"close\"}"
   },
   {
-    "id": "31",
-    "guid": "5a2389d4-46bd-4da3-a990-de52cc9551b5",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "as-drawer:created",
@@ -270,8 +210,6 @@
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
   {
-    "id": "32",
-    "guid": "cdf21577-aed6-481a-a5ab-add1c97d9724",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "as-drawer:before-open",
@@ -279,8 +217,6 @@
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
   {
-    "id": "33",
-    "guid": "9230cb2d-1544-441e-9f9e-13e39d960232",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "as-drawer:after-open",
@@ -288,8 +224,6 @@
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
   {
-    "id": "34",
-    "guid": "d1821b1e-dddf-4588-98e5-1e7e57d3da46",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "as-drawer:before-close",
@@ -297,8 +231,6 @@
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
   {
-    "id": "35",
-    "guid": "f54c68b2-a88f-4c9f-94bf-8e82c23bdc23",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "as-drawer:after-close",
@@ -306,8 +238,6 @@
     "exampleValue": "{id: \"b69f4038-c222-401c-927d-5f1e0e3101bc\", position: \"bottom\"}"
   },
   {
-    "id": "36",
-    "guid": "171dc729-0574-4f02-9061-edfd0ed59c4b",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:download",
@@ -315,8 +245,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"copy\", data: \"[tab separated table data]\"}"
   },
   {
-    "id": "37",
-    "guid": "40c771dc-14c9-47a7-96ce-5cf300e63532",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:download",
@@ -324,8 +252,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"md\", data: \"[markdown data]\"}"
   },
   {
-    "id": "38",
-    "guid": "1da3b6ed-7ef7-45d9-a8be-55b040a5a79f",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:download",
@@ -333,8 +259,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"xls\", data: \"[XLS data]\"}"
   },
   {
-    "id": "39",
-    "guid": "d3effb26-d32b-4c6f-be29-24eca9288777",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "as-table-actions:download",
@@ -342,8 +266,6 @@
     "exampleValue": "{id: \"53935d58-9511-493c-9a6b-d54dd73b44d8\", type: \"csv\", data: \"[CSV data]\"}"
   },
   {
-    "id": "40",
-    "guid": "6b20d9e7-7c69-42de-ab0f-1481ae28c7b5",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:created",
@@ -351,8 +273,6 @@
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
   {
-    "id": "41",
-    "guid": "1356c5bf-73d5-4faa-b3ef-8eba8f4a04e0",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:breakpoint",
@@ -360,8 +280,6 @@
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"desktop\"}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"mobile\"}"
   },
   {
-    "id": "42",
-    "guid": "59502c30-8baa-438e-a948-c71a92365683",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:open",
@@ -369,8 +287,6 @@
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
   {
-    "id": "43",
-    "guid": "ec11de19-7ddf-4adb-b57a-ca5d4b530a75",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:closed",
@@ -378,8 +294,6 @@
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
   {
-    "id": "44",
-    "guid": "0155c754-bee1-44f2-96e1-169d1b5bccaa",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:changed",
@@ -387,8 +301,6 @@
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"day\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"month\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"year\"]}"
   },
   {
-    "id": "45",
-    "guid": "0ba0df52-cdf6-4356-83ad-152ccbfa9ae5",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
     "name": "as-tab-group:created",
@@ -396,8 +308,6 @@
     "exampleValue": "{id: \"a\", tabs: \"b1,c1,d1,e1\"}"
   },
   {
-    "id": "46",
-    "guid": "84e08295-e362-4e9d-a9df-51566ddadefd",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "name": "as-show-hide-password:show",
@@ -405,8 +315,6 @@
     "exampleValue": ""
   },
   {
-    "id": "47",
-    "guid": "6d53875e-51a4-48aa-87dd-9b8289da431c",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "name": "as-show-hide-password:hide",
@@ -414,8 +322,6 @@
     "exampleValue": ""
   },
   {
-    "id": "48",
-    "guid": "d76e2d43-317b-4d2a-94a1-89d50b45d312",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
     "name": "as-tab-group:selected",
@@ -423,8 +329,6 @@
     "exampleValue": "{id: \"a\", tab: \"b1\"}"
   },
   {
-    "id": "49",
-    "guid": "efa4d0c9-8624-463c-af5b-acb7df51be69",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "as-char-counter:created",
@@ -432,8 +336,6 @@
     "exampleValue": "{id: \"ccf267d0-2775-4c59-8766-5a627e8b5bf3\", fieldid: \"#mytextarea\"}"
   },
   {
-    "id": "50",
-    "guid": "05608572-d93a-4937-b1e6-dd6ca66b199e",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "as-char-counter:count",
@@ -441,8 +343,6 @@
     "exampleValue": "{id: \"ccf267d0-2775-4c59-8766-5a627e8b5bf3\", fieldid: \"#mytextarea\", chars: 17, texts: 1}"
   },
   {
-    "id": "51",
-    "guid": "e4bdfc39-d978-4fac-a1f6-beebf7d99d6f",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "as-form-validation:success",
@@ -450,8 +350,6 @@
     "exampleValue": "{fieldid: 'myemail'}"
   },
   {
-    "id": "52",
-    "guid": "806b8906-10bd-455f-a7e5-eb34dae57c8a",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "as-form-validation:error",

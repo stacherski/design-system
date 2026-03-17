@@ -1,7 +1,5 @@
 [
   {
-    "id": "1",
-    "guid": "202275a4-01a3-47d9-aa6b-a9f23fb27c40",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"pen\" size=\"xxxl\" color=\"--as-color-status-error\" label=\"There's been an error\"></as-icon>",
@@ -9,8 +7,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon name=\"pen\" size=\"xxxl\" color=\"--as-color-status-error\" label=\"There's been an error\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "2",
-    "guid": "2b5fecbd-35d0-4c9f-bc34-623ea69fb8eb",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"user\" size=\"xxl\" color=\"--as-color-status-success\"></as-icon>",
@@ -18,8 +14,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon name=\"user\" size=\"xxl\" color=\"--as-color-status-success\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "3",
-    "guid": "107b9ad2-5372-4e92-ab5c-ea7b4972f086",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"paperclip\" size=\"xl\" color=\"blue\"></as-icon>",
@@ -27,8 +21,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon name=\"paperclip\" size=\"xl\" color=\"blue\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "4",
-    "guid": "9b58b2d7-5008-4e5a-b26c-34bb840cfe18",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"--as-icon-document-signature\" size=\"xl\" color=\"#BADA55\"></as-icon>",
@@ -36,8 +28,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon name=\"--as-icon-document-signature\" size=\"xl\" color=\"#BADA55\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "5",
-    "guid": "9729ba82-443c-4a24-ae0d-07365692acb5",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon flip-y></as-icon>",
@@ -45,8 +35,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon flip-y&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "6",
-    "guid": "57896346-3237-4530-87b0-1bb3239be6f5",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon rotate=\"2.25turn\"></as-icon><as-icon rotate=\"-37deg\"></as-icon>",
@@ -54,8 +42,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon rotate=\"2.25turn\"&gt;&lt;/as-icon&gt;&lt;as-icon rotate=\"-37deg\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "7",
-    "guid": "b9d64c0c-421f-42c4-a566-c9eab5c9c94b",
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon image name=\"shutter\" flip-x size=\"xxxl\" rotate=\"-37deg\"></as-icon>",
@@ -63,8 +49,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-icon image name=\"shutter\" flip-x size=\"xxxl\" rotate=\"-37deg\"&gt;&lt;/as-icon&gt;</code>"
   },
   {
-    "id": "8",
-    "guid": "5bc08533-d559-4d34-952c-b84df5454d99",
     "componentName": "Toast",
     "componentSlug": "toast",
     "example": "<button class=\"btn\" onclick=\"new Toast('This is neutral message.')\">Neutral</button>",
@@ -72,8 +56,6 @@
     "codeToken": "<code class=\"token icon\">new Toast('This is neutral message.')</code>"
   },
   {
-    "id": "9",
-    "guid": "f3373f60-36f0-45f4-89c5-b5ee7e64bbc3",
     "componentName": "Toast",
     "componentSlug": "toast",
     "example": "<button class=\"btn\" onclick=\"new Toast('This is info message.',{type:'info'})\"><as-icon name=\"--as-icon-user-tie\"></as-icon>Info</button>",
@@ -81,8 +63,6 @@
     "codeToken": "<code class=\"token icon\">new Toast('This is info message.',{type:'info'})</code>"
   },
   {
-    "id": "10",
-    "guid": "0d3fb1f1-5d8a-4ee2-a39f-85e4dedbffca",
     "componentName": "Toast",
     "componentSlug": "toast",
     "example": "<button class=\"btn\" onclick=\"new Toast('This is warning message.',{type:'warning'})\"><as-icon name=\"--as-icon-exclamation\"></as-icon>Warning</button>",
@@ -90,8 +70,6 @@
     "codeToken": "<code class=\"token icon\">new Toast('This is warning message.',{type:'warning'})\"</code>"
   },
   {
-    "id": "11",
-    "guid": "7a5c93a4-bd04-4547-93d1-fbe8d036f5fd",
     "componentName": "Toast",
     "componentSlug": "toast",
     "example": "<button class=\"btn\" onclick=\"new Toast('This is error message.',{type:'error',sticky:true})\"><as-icon image name=\"--as-icon-shutter\" size=\"default\"></as-icon>Error</button>",
@@ -99,8 +77,6 @@
     "codeToken": "<code class=\"token icon\">new Toast('This is error message.',{type:'error',sticky:true})\"</code>"
   },
   {
-    "id": "12",
-    "guid": "9176b53d-9eec-4033-9bd7-cd0bfe042c08",
     "componentName": "Toast",
     "componentSlug": "toast",
     "example": "<button class=\"btn\" onclick=\"new Toast('This is success message.',{type:'success',timeout:10000})\"><as-icon name=\"pie-chart\"></as-icon>Success</button>",
@@ -108,8 +84,6 @@
     "codeToken": "<code class=\"token icon\">new Toast('This is success message.',{type:'success',timeout:10000})\"</code>"
   },
   {
-    "id": "13",
-    "guid": "515807cb-4a5e-4b5e-bc84-b43ad0569e42",
     "componentName": "Select",
     "componentSlug": "select",
     "example": "<div><as-select style=\"width: 100%;\"><select id=\"test\"><option value=\"0\">Pick your poison</option><option value=\"1\">Arsenic</option><option value=\"2\">Cyanide</option><option value=\"3\">Acid</option><option value=\"4\" selected>Spider venom</option><option value=\"5\">Bleach</option><option value=\"6\">Methyl Alcohol</option></select></as-select></div><br><script>document.querySelector('select#test').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script>",
@@ -117,8 +91,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-select&gt;[select element]&lt;/as-select&gt;</code>"
   },
   {
-    "id": "14",
-    "guid": "a6461f9f-730d-439e-873d-6f28434450c3",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "example": "<div><as-select-multiple style=\"width: 100%;\"><select multiple id=\"test\"><option value=\"0\">Pick your poison</option><option value=\"1\">Arsenic</option><option value=\"2\" selected>Cyanide</option><option value=\"3\">Acid</option><option value=\"4\" selected>Spider venom</option><option value=\"5\">Bleach</option><option value=\"6\">Methyl Alcohol</option></select></as-select-multiple></div><br><script>document.querySelector('select#test').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script>",
@@ -126,8 +98,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-select-multiple&gt;[select multiple element]&lt;/as-select-multiple&gt;</code>"
   },
   {
-    "id": "15",
-    "guid": "58f15da6-9474-444f-be38-ebc09c93ce5c",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "example": "<div><as-select-multiple locale=\"V\u00e6lg flere muligheder|S\u00f8g...|mere\" class=\"test2\"><select multiple id=\"test2\"><option value=\"0\">Pick your poison</option><option value=\"1\">Arsenic</option><option value=\"2\" selected>Cyanide</option><option value=\"3\">Acid</option><option value=\"4\" selected>Spider venom</option><option value=\"5\">Bleach</option><option value=\"6\">Methyl Alcohol</option></select></as-select-multiple></div>",
@@ -135,8 +105,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-select-multiple locale=\"V\u00e6lg flere muligheder|S\u00f8g...|mere\"&gt;[select multiple element]&lt;/as-select-multiple&gt;</code>"
   },
   {
-    "id": "16",
-    "guid": "4b3f73da-cb70-48c4-abf4-daa3b402a7c4",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "example": "<as-select2range><select id=\"one\"><option>Pick your poison</option><option value=\"1\">Arsenic</option><option value=\"2\">Cyanide</option><option value=\"3\">Acid</option><option value=\"4\">Spider venom</option><option value=\"5\">Bleach</option><option value=\"6\">Methyl Alcohol</option></select></as-select2range><br><script>document.querySelector('select#one').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script>",
@@ -144,8 +112,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code>"
   },
   {
-    "id": "17",
-    "guid": "cc93abc2-cbc8-40e6-a91f-68f0ff17ea9a",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "example": "<as-select2range><select id=\"two\"><option value=\"0\">0</option><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\" selected>4</option><option value=\"5\">5</option></select></as-select2range><br><script>document.querySelector('select#two').addEventListener('change',e=>{    new Toast('Option ' + e.target.options[e.target.selectedIndex].text + ' selected')})</script>",
@@ -153,8 +119,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-select2range&gt;[select element]&lt;/as-select2range&gt;</code>"
   },
   {
-    "id": "18",
-    "guid": "45de2f79-4769-4ac2-97fe-b74b17af884c",
     "componentName": "Popout",
     "componentSlug": "popout",
     "example": "<as-popout hidden popout-id=\"mypopout\" button-text=\"Toggle\" button-class=\"btn\" popout-position=\"top\" popout-align=\"span-left\"><p>Popout content that is longer. Popout is top positioned, right aligned and spans to the left.</p></as-popout>",
@@ -162,8 +126,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-popout popout-id=\"mypopout\" button-text=\"Toggle\" button-class=\"btn\" popout-position=\"top\" popout-align=\"span-left\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
   {
-    "id": "19",
-    "guid": "8c2bee36-d06e-409f-8c20-10a20b1f2a14",
     "componentName": "Popout",
     "componentSlug": "popout",
     "example": "<as-popout hidden button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><div style=\"display: grid; gap: var(--as-space-xs);\"><button class=\"btn\" onclick=\"new Toast('Case closed!',{type:'info'})\">Close case<as-icon name=\"plus\" rotate=\"45deg\"></as-icon></button><button class=\"btn\" onclick=\"new Toast('Case archived!',{type:'warning'})\">Archive case<as-icon name=\"times-solid\"></as-icon></button><button class=\"btn\" onclick=\"new Toast('Case deleted!',{type:'success', sticky: true})\">Delete case<as-icon name=\"trashcan\"></as-icon></button></div></as-popout>",
@@ -171,8 +133,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-popout button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
   {
-    "id": "20",
-    "guid": "36abddd1-4dee-40f5-a35d-befc4058b66b",
     "componentName": "Popout",
     "componentSlug": "popout",
     "example": "<as-popout popout-id=\"filters-test\" button-text=\"Toggle filters\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><br><div style=\"display: flex; gap: var(--as-space-xs);\"><div class=\"data-line\"><label for=\"form-status\">Status</label><as-select><select id=\"form-status\" name=\"form-status\"><option>All</option><option value=\"1\">Active</option><option value=\"2\">Closed</option><option value=\"3\">Deleted</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-admin\">Administrator</label><as-select><select id=\"form-admin\" name=\"form-admin\"><option>All</option><option value=\"1\">Andrzej Stacherski</option><option value=\"2\">Yahor Siarhei</option><option value=\"3\">Szymon Struty\u0144ski</option><option value=\"4\">Pia Kristensen</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-date\">Date</label><as-date-picker><input id=\"form-date\" type=\"text\" placeholder=\"YYYY-MM-DD\" value=\"2025-11-05\"/></as-date-picker></div><br><div class=\"data-line\"><button style=\"align-self: end;\" class=\"btn\"><as-icon name=\"search\"></as-icon> Search</button></div></div></as-popout><br><style>as-popout[popout-id=\"filters-test\"] > [popover]{    max-width: unset;    width: fit-content;}</style>",
@@ -180,8 +140,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-popout popout-id=\"filters-test\" button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
   {
-    "id": "22",
-    "guid": "e879c3ae-9516-46e9-b300-a9c626ed1e3d",
     "componentName": "Panel",
     "componentSlug": "panel",
     "example": "<as-panel id=\"test\"><div class=\"panel\"><div class=\"panel-heading\">Panel heading</div><div class=\"panel-body columns\"><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div></div></div></as-panel><br>",
@@ -189,8 +147,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-panel&gt;[content]&lt;/as-panel&gt;</code>"
   },
   {
-    "id": "23",
-    "guid": "32e8b8a7-90a8-4380-91c6-4783959dee29",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "example": "<as-table-sort sort filter><table class=\"table\"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table></as-table-sort>",
@@ -198,8 +154,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-table-sort sort filter columns=\"PropID,Tenant,Street\" omit=\"2\"&gt;[table HTML Element]&lt;/as-table-sort&gt;</code>"
   },
   {
-    "id": "50",
-    "guid": "f272a361-6fc5-4f27-bace-0917f3f9c4d8",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "example": "<table class=\"table\" id=\"testtable\"><thead><tr><th>Property ID</th><th>Owner</th><th>Address</th></tr></thead><tbody><tr><td>P001</td><td>John Smith</td><td>12 Oak St</td></tr><tr><td>P002</td><td>Mary Johnson</td><td>45 Maple Ave</td></tr><tr><td>P003</td><td>James Lee</td><td>78 Pine Rd</td></tr><tr><td>P004</td><td>Linda Brown</td><td>34 Cedar St</td></tr><tr><td>P005</td><td>Michael Davis</td><td>89 Elm St</td></tr><tr><td>P006</td><td>Patricia Wilson</td><td>23 Birch Ln</td></tr><tr><td>P007</td><td>Robert Miller</td><td>56 Willow Dr</td></tr><tr><td>P008</td><td>Jennifer Taylor</td><td>101 Cherry Blvd</td></tr><tr><td>P009</td><td>William Moore</td><td>67 Poplar Ct</td></tr><tr><td>P010</td><td>Elizabeth Anderson</td><td>22 Spruce Way</td></tr></tbody></table><br><as-table-actions data-table=\"testtable\"></as-table-actions>",
@@ -207,8 +161,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-table-actions data-table=\"testtable\"&gt;&lt;/as-table-actions&gt;</code>"
   },
   {
-    "id": "67",
-    "guid": "ef51c5f5-d24d-4869-af3a-b6d6a8e0e3ec",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
     "example": "<as-tab-group><as-tab icon-name=\"inbox\">Overview</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name=\"message\">Messages</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab selected icon-name=\"star\">Images</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel><as-tab icon-name=\"list-ul\">Log</as-tab><as-tab-panel><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id ante nisl. Nulla ac purus imperdiet ligula mollis lobortis quis sed nunc. Vivamus eu blandit mauris, vel fringilla nisl. Vestibulum quis sapien non quam euismod feugiat et eu dolor. Maecenas tincidunt at arcu ac ultrices. Maecenas placerat lorem vel risus cursus ultricies. Sed dictum mauris porta lectus commodo, non iaculis nisi rhoncus. Nam sit amet erat risus. Etiam nisl massa, facilisis eget eleifend nec, vehicula vitae lectus. Vestibulum ullamcorper felis et bibendum feugiat. Integer ante nisi, mattis et libero non, laoreet placerat metus.</p></as-tab-panel></as-tab-group>",
@@ -216,8 +168,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-tab-group&gt;<br>\u00a0 &lt;as-tab icon-name=\"inbox\"&gt;Overview&lt;/as-tab&gt;<br>\u00a0 &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>\u00a0 &lt;as-tab icon-name=\"message\"&gt;Messages&lt;/as-tab&gt;<br>\u00a0 &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>\u00a0 &lt;as-tab selected icon-name=\"star\"&gt;Images&lt;/as-tab&gt;<br>\u00a0 &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>\u00a0 &lt;as-tab selected icon-name=\"list-ul\"&gt;Log&lt;/as-tab&gt;<br>\u00a0 &lt;as-tab-panel&gt;[tab content]&lt;/as-tab-panel&gt;<br>&lt;/as-tab-group&gt;</code>"
   },
   {
-    "id": "73",
-    "guid": "72736dae-56d4-4bc0-95bb-53c01b29e9cc",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "example": "<div style=\"display: grid; gap: var(--as-space-m);\" class=\"form\"><form><as-form-validation type-mismatch=\"Dette felt er af den forkerte type\" class=\"data-line\"><label for=\"myemail\">Email</label><input id=\"myemail\" type=\"email\" required//></as-form-validation><as-form-validation class=\"data-line\"><label for=\"mytextarea\">My textarea (min length 20 characters)</label><textarea id=\"mytextarea\" minlength=\"20\"></textarea></as-form-validation><button class=\"btn\" type=\"submit\">Submit</button></form></div><br><script>document.addEventListener('as-form-validation:error', e=>{    new Toast(`${e.detail.fieldid} -> ${e.detail.message}`)});document.addEventListener('as-form-validation:success', e=>{    new Toast(`${e.detail.fieldid} validated successfully!`)})</script>",
@@ -225,8 +175,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-form-validation type-mismatch=\"Dette felt er af den forkerte type\"&gt;[form input / form textarea]&lt;/as-form-validation&gt;</code>"
   },
   {
-    "id": "70",
-    "guid": "fed5eda5-f4c1-40fe-a07d-e46711796e2b",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "example": "<div class=\"data-line\"><textarea id=\"mytextarea\">This text length is already counted</textarea></div><br><div style=\"margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;\"><as-char-counter no-messages data-input=\"#mytextarea\"></as-char-counter></div>",
@@ -234,8 +182,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-char-counter no-messages data-input=\"#mytextarea\"&gt;&lt;/as-char-counter&gt;</code>"
   },
   {
-    "id": "71",
-    "guid": "cdc13349-15ea-4e9d-8ffa-7b036635f985",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "example": "<div class=\"data-line\"><input type=\"text\" class=\"myinput\" value=\"This text length is already counted\"/></div><br><div style=\"margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;\"><as-char-counter data-input=\".myinput\"></as-char-counter></div>",
@@ -243,8 +189,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-char-counter data-input=\".myinput\"&gt;&lt;/as-char-counter&gt;</code>"
   },
   {
-    "id": "72",
-    "guid": "52de79eb-46c0-49f6-b1f6-3b8e57d8bf6c",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "example": "<div class=\"data-line\"><input type=\"text\" class=\"myinput2\" value=\"This text length is already counted\"/></div><br><div style=\"margin-block-start: var(--as-space-m); display: flex; justify-content: flex-end;\"><as-char-counter no-count data-input=\".myinput2\"></as-char-counter></div>",
@@ -252,8 +196,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-char-counter no-count data-input=\".myinput2\"&gt;&lt;/as-char-counter&gt;</code>"
   },
   {
-    "id": "68",
-    "guid": "5491dba0-abfe-46a3-92b0-2cd8965eff0c",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "example": "<div class=\"data-line\"><label for=\"password1\">Password</label><as-show-hide-password id=\"a\"><input value=\"test1234\" id=\"password1\" name=\"password1\" type=\"password\"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:show', e=>{   console.log(e.detail); new Toast('Password 1 shown')});document.querySelector('as-show-hide-password#a').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 1 hidden')})</script>",
@@ -261,8 +203,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-show-hide-password&gt;[input element]&lt;/as-show-hide-password&gt;</code>"
   },
   {
-    "id": "69",
-    "guid": "5edd73b2-93cd-4eea-b8ff-0bfd772eb9ab",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "example": "<div class=\"data-line\"><label for=\"password2\">Password</label><as-show-hide-password id=\"b\" labels=\"Vis,Skjul\" icons=\"--as-icon-eye,--as-icon-eye-slash\" event-prefix=\"as-show-hide\"><input value=\"test1234\" id=\"password2\" name=\"password2\" type=\"password\"/></as-show-hide-password></div><br><script>document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:show', e=>{    console.log(e.detail);new Toast('Password 2 shown')});document.querySelector('as-show-hide-password#b').addEventListener('as-show-hide-password:hide', e=>{    console.log(e.detail);new Toast('Password 2 hidden')})</script>",
@@ -270,8 +210,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-show-hide-password labels=\"Vis,Skjul\" icons=\"--as-icon-eye,--as-icon-eye-slash\" event-prefix=\"as-show-hide\"&gt;[input element]&lt;/as-show-hide-password&gt;</code>"
   },
   {
-    "id": "64",
-    "guid": "e80f1c75-2d5e-4258-b3f4-b1dc08fca5da",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "example": "<as-date-picker yearspan=\"30\"><input id=\"mydate2\" type=\"text\" placeholder=\"YYYY-MM-DD\" value=\"2025-11-05\"/></as-date-picker>",
@@ -279,8 +217,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-date-picker&gt;[text input]&lt;/as-date-picker&gt;</code>"
   },
   {
-    "id": "65",
-    "guid": "c794622b-9581-4d08-bb36-2b91e3be8901",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "example": "<as-date-picker reverse locale=\"da-DK\" yearspan=\"30\"><input id=\"mydate\" type=\"text\"/></as-date-picker>",
@@ -288,8 +224,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-date-picker reverse locale=\"da-DK\"&gt;[text input]&lt;/as-date-picker&gt;</code>"
   },
   {
-    "id": "66",
-    "guid": "96c3423c-9ba4-4918-9be4-771ec59cf8e1",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "example": "<as-date-picker disabled reverse locale=\"da-DK\" yearspan=\"30\"><input id=\"mydate\" type=\"text\" value=\"{system.date}\"/></as-date-picker>",
@@ -297,8 +231,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-date-picker disabled reverse locale=\"da-DK\"&gt;[text input]&lt;/as-date-picker&gt;</code>"
   },
   {
-    "id": "61",
-    "guid": "c6193796-0b34-4b86-9dc3-77ddc1ad3257",
     "componentName": "Command menu",
     "componentSlug": "command-menu",
     "example": "<as-command-menu options=\"options\" keys=\"Meta+K\" locale=\"locale\"></as-command-menu>",
@@ -306,8 +238,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-command-menu options=\"options\" keys=\"Meta+K\" locale=\"locale\"&gt;&lt;/as-command-menu&gt;</code>"
   },
   {
-    "id": "60",
-    "guid": "bce7fcc7-0bec-433f-957a-2ed7a4c19ac8",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "example": "<as-search-menu method=\"post\" action=\"action=search&amp;searchmethod=0&amp;search=\" search-page-id=\"267\" placeholder=\"Search site for...\" keys=\"Meta+U\"></as-search-menu>",
@@ -315,8 +245,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-search-menu method=\"post\" action=\"action=search&searchmethod=0&search=\" placeholder=\"Search site for...\" keys=\"Meta+U\"&gt;&lt;/as-search-menu&gt;</code>"
   },
   {
-    "id": "54",
-    "guid": "ede1467c-fe03-4e23-a57d-5b0df6bde1bd",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "example": "<as-drawer><p>Content</p></as-drawer>",
@@ -324,8 +252,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-drawer&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code>"
   },
   {
-    "id": "55",
-    "guid": "2c527ccf-955b-44f7-bf31-cc2ce48ecaa0",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "example": "<as-drawer position=\"left\" button-text=\"Open from left\"><p>Content</p></as-drawer>",
@@ -333,8 +259,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-drawer position=\"left\" button-text=\"Open from left\"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code>"
   },
   {
-    "id": "57",
-    "guid": "3e412f96-e240-43b3-934e-2e0e416dbf50",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "example": "<as-drawer position=\"top\" button-text=\"Open from top\"><p>Content</p></as-drawer>",
@@ -342,8 +266,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-drawer position=\"top\" button-text=\"Open from top\"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code>"
   },
   {
-    "id": "58",
-    "guid": "0daaafb2-a7db-425a-adc9-964b6395aa7f",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "example": "<as-drawer position=\"right\" button-text=\"Open from right\"><p>Content</p></as-drawer>",
@@ -351,8 +273,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-drawer position=\"right\" button-text=\"Open from right\"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code>"
   },
   {
-    "id": "59",
-    "guid": "d325ff65-3eb5-4d51-9fc7-1e83fbd50825",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "example": "<as-drawer position=\"center\" button-text=\"Open at center\"><p>Content</p></as-drawer>",
@@ -360,8 +280,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-drawer position=\"center\" button-text=\"Open at center\"&gt;&lt;p&gt;Content&lt;/p&gt;&lt;/as-drawer&gt;</code>"
   },
   {
-    "id": "44",
-    "guid": "73cdcd3c-0922-46e0-877d-21d00a1a2004",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge>30</as-gauge>",
@@ -369,8 +287,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge&gt;30&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "45",
-    "guid": "56e0c9a8-2df7-4b21-91f4-948995b0564a",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge showmax reverse size=\"8\" max=\"150\" track=\"--as-color-status-warning\" thumb=\"--as-color-accent-strong\" speed=\"5\" delay=\"500\">50</as-gauge>",
@@ -378,8 +294,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge showmax reverse size=\"8\" max=\"150\" track=\"--as-color-status-warning\" thumb=\"--as-color-accent-strong\" speed=\"5\" delay=\"500\"&gt;50&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "46",
-    "guid": "17a8eb24-faf6-4468-8518-1b166ea359b0",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge showmax size=\"7\" max=\"123\" bg=\"--as-color-background-nav-weak\" track=\"--as-color-status-warning\" thumb=\"--as-color-accent-strong\" speed=\"5\" delay=\"750\">55</as-gauge>",
@@ -387,8 +301,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge showmax size=\"7\" max=\"123\" bg=\"--as-color-background-nav-weak\" track=\"--as-color-status-warning\" thumb=\"--as-color-accent-strong\" speed=\"5\" delay=\"750\"&gt;55&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "47",
-    "guid": "60785aa7-1701-4304-b7b3-a168e41e869d",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge showmax half size=\"8\" max=\"150\" thumb=\"--as-color-status-error-weak\" speed=\"5\" delay=\"500\">73</as-gauge>",
@@ -396,8 +308,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge showmax half size=\"8\" max=\"150\" thumb=\"--as-color-status-error-weak\" speed=\"5\" delay=\"500\"&gt;73&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "48",
-    "guid": "89a5a4cc-8f6d-4cbb-919f-d4cd8d797aa5",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge showmax reverse half size=\"12\" max=\"150\" thumb=\"--as-color-status-success-weak\" speed=\"1\" delay=\"1500\">107</as-gauge>",
@@ -405,8 +315,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge showmax reverse half size=\"12\" max=\"150\" thumb=\"--as-color-status-success-weak\" speed=\"1\" delay=\"1500\"&gt;107&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "49",
-    "guid": "f1af3787-b1cd-4938-bf8c-50096f7d0e94",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "example": "<as-gauge half size=\"3\" max=\"100\" thumb=\"--as-color-status-success-weak\" speed=\"2\" delay=\"500\">67</as-gauge>",
@@ -414,8 +322,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-gauge half size=\"3\" max=\"100\" thumb=\"--as-color-status-success-weak\" speed=\"2\" delay=\"500\"&gt;67&lt;/as-gauge&gt;</code>"
   },
   {
-    "id": "38",
-    "guid": "68c6aec9-cc6d-4476-873f-d0f7864750cf",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "example": "<as-relative-time>08-12-2025</as-relative-time>",
@@ -423,8 +329,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-relative-time&gt;08-12-2025&lt;/as-relative-time&gt;</code>"
   },
   {
-    "id": "40",
-    "guid": "fdac256c-888a-4768-9944-b9c17a474755",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "example": "<as-relative-time disabled>08-12-2026</as-relative-time>",
@@ -432,8 +336,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-relative-time disabled&gt;08-12-2026&lt;/as-relative-time&gt;</code>"
   },
   {
-    "id": "41",
-    "guid": "00be0d2b-06d2-4616-9a8a-1801382ef3cf",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "example": "<as-relative-time>2025-12-18T13:00</as-relative-time>",
@@ -441,8 +343,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code>"
   },
   {
-    "id": "42",
-    "guid": "ee1463c2-3898-466b-afb0-7166a47bc377",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "example": "<div style=\"display: flex; gap: var(--as-space-s); align-items: center;\"><as-icon size=\"l\" name=\"--as-icon-calendar\"></as-icon><as-relative-time>2025-12-18T13:00</as-relative-time></div>",
@@ -450,8 +350,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-relative-time&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code>"
   },
   {
-    "id": "43",
-    "guid": "ffed86d3-a3c3-47b7-8785-63bc0920f2e9",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "example": "<as-relative-time notime>2025-12-18T13:00</as-relative-time>",
@@ -459,8 +357,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-relative-time notime&gt;2025-12-18T13:00&lt;/as-relative-time&gt;</code>"
   },
   {
-    "id": "33",
-    "guid": "5eeb29f5-1570-4fe1-8846-7e4917c5dc6d",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "example": "<as-class-toggle button-class=\"btn btn-outline\" button-text=\"Toggle\" target-element=\".test\" target-class=\"open\" target-state=\"true\" icon-name=\"pen\" icon-rotate=\"1turn\"></as-class-toggle><br><div class=\"test\">Lorem ipsum</div><br><style> .test    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style>",
@@ -468,8 +364,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-class-toggle button-class=\"btn btn-outline\" button-text=\"Toggle\" target-element=\".test\" target-class=\"open\" target-state=\"true\" icon-name=\"pen\" icon-rotate=\"1turn\"&gt;&lt;/as-class-toggle&gt;</code>"
   },
   {
-    "id": "34",
-    "guid": "cd363f9b-b17f-48d7-ae64-603576d1498a",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "example": "<as-class-toggle button-class=\"btn btn-warning\" button-text=\"Make it pop\" target-element=\".test2\" target-class=\"open2\" icon-name=\"plus\" icon-rotate=\"0.125turn\"></as-class-toggle><br><div class=\"test2\">I will pop</div><br><style> .test2    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open2    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style>",
@@ -477,8 +371,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-class-toggle button-class=\"btn btn-warning\" button-text=\"Make it pop\" target-element=\".test2\" target-class=\"open2\" icon-name=\"plus\" icon-rotate=\"0.125turn\"&gt;&lt;/as-class-toggle&gt;</code>"
   },
   {
-    "id": "35",
-    "guid": "a6053ff0-0b8b-49da-8805-89e68b09bd3a",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "example": "<as-class-toggle button-class=\"btn btn-error\" button-text=\"Make it pop twice\" target-element=\".test5|.test6\" target-class=\"open5|open5\" icon-name=\"--as-icon-pie-chart\" icon-rotate=\"1turn\"></as-class-toggle><br><div class=\"test5\">I will pop first!</div><br><div class=\"test6\">No, I will pop first!</div><br><style> .test5,    .test6    {        width: 0;        height: 0;        padding: 0;        overflow: hidden;        opacity: 0;        margin-block-start: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open5    {        opacity: 1;        width: auto;        height: auto;        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style>",
@@ -486,8 +378,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-class-toggle button-class=\"btn btn-error\" button-text=\"Make it pop twice\" target-element=\".test5|.test6\" target-class=\"open5|open5\" icon-name=\"--as-icon-pie-chart\" icon-rotate=\"1turn\"&gt;&lt;/as-class-toggle&gt;</code>"
   },
   {
-    "id": "36",
-    "guid": "c3112007-13cf-4317-a2dd-54d333885e3d",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "example": "<as-class-toggle button-class=\"btn btn-success\" button-text=\"I'm a lonely button\" target-element=\".test3\" target-class=\"open3\"></as-class-toggle><br><div class=\"test3\">C'mon baby!</div><br><style> .test3    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open3    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style>",
@@ -495,8 +385,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-class-toggle button-class=\"btn btn-success\" button-text=\"I'm a lonely button\" target-element=\".test3\" target-class=\"open3\"&gt;&lt;/as-class-toggle&gt;</code>"
   },
   {
-    "id": "37",
-    "guid": "18edf897-ccf3-4590-9f82-bce1917249cb",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "example": "<as-class-toggle button-class=\"btn btn-transparent\" target-element=\".test4\" target-class=\".open4\" icon-name=\"--as-icon-star\" icon-rotate=\"3turn\"></as-class-toggle><br><div class=\"test4\">I'm a star!!!</div><br><style> .test4    {        margin-block-start: var(--as-space-l);        padding: var(--as-space-l);        border-radius: var(--as-border-radius);        background-color: var(--as-color-background-nav);        transition: all var(--as-time-s);        color: var(--as-color-accent)    }    .open4    {        padding: var(--as-space-xl);        border-radius: var(--as-border-radius-m);        background-color: var(--as-color-accent);        color: var(--as-color-text-button)    }<br></style>",
@@ -504,8 +392,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-class-toggle button-class=\"btn btn-transparent\" target-element=\".test4\" target-class=\".open4\" icon-name=\"--as-icon-star\" icon-rotate=\"3turn\"&gt;&lt;/as-class-toggle&gt;</code>"
   },
   {
-    "id": "30",
-    "guid": "ab3488d6-6359-47e2-93ec-d33d76db39bc",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "example": "<as-dot-matrix-clock></as-dot-matrix-clock>",
@@ -513,8 +399,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-dot-matrix-clock&gt;&lt;/as-dot-matrix-clock&gt;</code>"
   },
   {
-    "id": "31",
-    "guid": "5f969840-40f3-4a1c-be95-44d23c6ae9cd",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "example": "<as-dot-matrix-clock size=\"--as-size-xxl\" digit-color=\"--as-color-accent-strong\" digit-bg=\"--as-color-status-warning-strong\"></as-dot-matrix-clock>",
@@ -522,8 +406,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-dot-matrix-clock size=\"--as-size-xxl\" digit-color=\"--as-color-accent-strong\" digit-bg=\"--as-color-status-warning-strong\"&gt;&lt;/as-dot-matrix-clock&gt;</code>"
   },
   {
-    "id": "32",
-    "guid": "317e27a3-073c-4e7c-a368-f0932a1966ad",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "example": "<as-dot-matrix-clock size=\"40px\" digit-bg=\"--as-color-background-nav-weak\" digit-color=\"--as-color-status-warning-strong\"></as-dot-matrix-clock>",
@@ -531,8 +413,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-dot-matrix-clock size=\"40px\" digit-bg=\"--as-color-background-nav-weak\" digit-color=\"--as-color-status-warning-strong\"&gt;&lt;/as-dot-matrix-clock&gt;</code>"
   },
   {
-    "id": "29",
-    "guid": "5de2b052-2027-4674-bf8a-e403db841fa4",
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "example": "<as-carousel style=\"margin-block: var(--as-space-l);\" hidden gap=\"14\" speed=\"400\" delay=\"3\" slideid=\"item\"><br><ul><br>  <li item>Slide 0</li><br>  <li item>Slide 1</li><br>  <li item>Slide 2</li><br>  <li item>Slide 3</li><br>  <li item>Slide 4</li><br>  <li item>Slide 5</li><br>  <li item>Slide 6</li><br>  <li item>Slide 7</li><br>  <li item>Slide 8</li><br>  <li item>Slide 9</li><br>  <li item>Slide 10</li><br>  <li item>Slide 11</li><br></ul></as-carousel>",
@@ -540,8 +420,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-carousel hidden gap=\"14\" speed=\"400\" delay=\"3\" slideid=\"item\"&gt;[slides]&lt;/as-carousel&gt;</code>"
   },
   {
-    "id": "27",
-    "guid": "9fca92b5-f364-4d6f-876d-979eb3ad395b",
     "componentName": "Graph",
     "componentSlug": "graph",
     "example": "<as-graph controls markers data-data=\"{&quot;palette&quot;:[&quot;#a6cee3&quot;,&quot;#1f78b4&quot;,&quot;#b2df8a&quot;,&quot;#33a02c&quot;,&quot;#fb9a99&quot;,&quot;#e31a1c&quot;,&quot;#fdbf6f&quot;,&quot;#ff7f00&quot;,&quot;#cab2d6&quot;,&quot;#6a3d9a&quot;,&quot;#ffff99&quot;,&quot;#b15928&quot;],&quot;resolution&quot;:7,&quot;step&quot;:3,&quot;charttype&quot;:1,&quot;title&quot;:&quot;Energy consumption&quot;,&quot;xtitle&quot;:&quot;Period&quot;,&quot;ytitle&quot;:&quot;Consumption in [kWh]&quot;,&quot;data&quot;:[{&quot;label&quot;:&quot;2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:0,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;01-2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:1,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;Week 1 - 2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:2,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;01-01-2024&quot;,&quot;value&quot;:59.79,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:3,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;00:00&quot;,&quot;value&quot;:4.48,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;01:00&quot;,&quot;value&quot;:0.84,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;02:00&quot;,&quot;value&quot;:4.85,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;03:00&quot;,&quot;value&quot;:4,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;04:00&quot;,&quot;value&quot;:1.91,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;05:00&quot;,&quot;value&quot;:3.18,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;06:00&quot;,&quot;value&quot;:0.68,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;07:00&quot;,&quot;value&quot;:1.39,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;08:00&quot;,&quot;value&quot;:4,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;09:00&quot;,&quot;value&quot;:0.55,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;10:00&quot;,&quot;value&quot;:1.55,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;11:00&quot;,&quot;value&quot;:1.16,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;12:00&quot;,&quot;value&quot;:1.61,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;13:00&quot;,&quot;value&quot;:3.88,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;14:00&quot;,&quot;value&quot;:5,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;15:00&quot;,&quot;value&quot;:1.51,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;16:00&quot;,&quot;value&quot;:3.28,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;17:00&quot;,&quot;value&quot;:0.52,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;18:00&quot;,&quot;value&quot;:0.76,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;19:00&quot;,&quot;value&quot;:4.18,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;20:00&quot;,&quot;value&quot;:4.47,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;21:00&quot;,&quot;value&quot;:1.3,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;22:00&quot;,&quot;value&quot;:4.13,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;23:00&quot;,&quot;value&quot;:0.56,&quot;unit&quot;:&quot;kWh&quot;}]}},{&quot;label&quot;:&quot;02-01-2024&quot;,&quot;value&quot;:68.06,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:3,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;00:00&quot;,&quot;value&quot;:2.39,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;01:00&quot;,&quot;value&quot;:3.63,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;02:00&quot;,&quot;value&quot;:0.67,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;03:00&quot;,&quot;value&quot;:1.36,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;04:00&quot;,&quot;value&quot;:1.57,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;05:00&quot;,&quot;value&quot;:3.43,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;06:00&quot;,&quot;value&quot;:3.42,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;07:00&quot;,&quot;value&quot;:4.84,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;08:00&quot;,&quot;value&quot;:2.19,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;09:00&quot;,&quot;value&quot;:4.62,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;10:00&quot;,&quot;value&quot;:2.72,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;11:00&quot;,&quot;value&quot;:1.11,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;12:00&quot;,&quot;value&quot;:2.13,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;13:00&quot;,&quot;value&quot;:1.01,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;14:00&quot;,&quot;value&quot;:2.72,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;15:00&quot;,&quot;value&quot;:3,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;16:00&quot;,&quot;value&quot;:3.05,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;17:00&quot;,&quot;value&quot;:2,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;18:00&quot;,&quot;value&quot;:3.67,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;19:00&quot;,&quot;value&quot;:2.8,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;20:00&quot;,&quot;value&quot;:1.47,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;21:00&quot;,&quot;value&quot;:4.9,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;22:00&quot;,&quot;value&quot;:4.65,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;23:00&quot;,&quot;value&quot;:4.71,&quot;unit&quot;:&quot;kWh&quot;}]}}]}}]}}]}}]}\"></as-graph>",
@@ -549,8 +427,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-graph controls markers data-data=\"[data Object]\"&gt;&lt;/as-graph&gt;</code>"
   },
   {
-    "id": "28",
-    "guid": "5ba99456-092c-4402-8120-b99e12ab22be",
     "componentName": "Graph",
     "componentSlug": "graph",
     "example": "<as-graph controls markers data-data=\"{&quot;palette&quot;:[&quot;#a6cee3&quot;,&quot;#1f78b4&quot;,&quot;#b2df8a&quot;,&quot;#33a02c&quot;,&quot;#fb9a99&quot;,&quot;#e31a1c&quot;,&quot;#fdbf6f&quot;,&quot;#ff7f00&quot;,&quot;#cab2d6&quot;,&quot;#6a3d9a&quot;,&quot;#ffff99&quot;,&quot;#b15928&quot;],&quot;resolution&quot;:7,&quot;step&quot;:3,&quot;charttype&quot;:2,&quot;title&quot;:&quot;Energy consumption&quot;,&quot;xtitle&quot;:&quot;Period&quot;,&quot;ytitle&quot;:&quot;Consumption in [kWh]&quot;,&quot;data&quot;:[{&quot;label&quot;:&quot;2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:0,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;01-2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:1,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;Week 1 - 2024&quot;,&quot;value&quot;:127.85,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:2,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;01-01-2024&quot;,&quot;value&quot;:59.79,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:3,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;00:00&quot;,&quot;value&quot;:4.48,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;01:00&quot;,&quot;value&quot;:0.84,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;02:00&quot;,&quot;value&quot;:4.85,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;03:00&quot;,&quot;value&quot;:4,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;04:00&quot;,&quot;value&quot;:1.91,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;05:00&quot;,&quot;value&quot;:3.18,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;06:00&quot;,&quot;value&quot;:0.68,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;07:00&quot;,&quot;value&quot;:1.39,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;08:00&quot;,&quot;value&quot;:4,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;09:00&quot;,&quot;value&quot;:0.55,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;10:00&quot;,&quot;value&quot;:1.55,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;11:00&quot;,&quot;value&quot;:1.16,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;12:00&quot;,&quot;value&quot;:1.61,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;13:00&quot;,&quot;value&quot;:3.88,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;14:00&quot;,&quot;value&quot;:5,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;15:00&quot;,&quot;value&quot;:1.51,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;16:00&quot;,&quot;value&quot;:3.28,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;17:00&quot;,&quot;value&quot;:0.52,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;18:00&quot;,&quot;value&quot;:0.76,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;19:00&quot;,&quot;value&quot;:4.18,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;20:00&quot;,&quot;value&quot;:4.47,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;21:00&quot;,&quot;value&quot;:1.3,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;22:00&quot;,&quot;value&quot;:4.13,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;23:00&quot;,&quot;value&quot;:0.56,&quot;unit&quot;:&quot;kWh&quot;}]}},{&quot;label&quot;:&quot;02-01-2024&quot;,&quot;value&quot;:68.06,&quot;unit&quot;:&quot;kWh&quot;,&quot;level&quot;:3,&quot;drilldown&quot;:{&quot;data&quot;:[{&quot;label&quot;:&quot;00:00&quot;,&quot;value&quot;:2.39,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;01:00&quot;,&quot;value&quot;:3.63,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;02:00&quot;,&quot;value&quot;:0.67,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;03:00&quot;,&quot;value&quot;:1.36,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;04:00&quot;,&quot;value&quot;:1.57,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;05:00&quot;,&quot;value&quot;:3.43,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;06:00&quot;,&quot;value&quot;:3.42,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;07:00&quot;,&quot;value&quot;:4.84,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;08:00&quot;,&quot;value&quot;:2.19,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;09:00&quot;,&quot;value&quot;:4.62,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;10:00&quot;,&quot;value&quot;:2.72,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;11:00&quot;,&quot;value&quot;:1.11,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;12:00&quot;,&quot;value&quot;:2.13,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;13:00&quot;,&quot;value&quot;:1.01,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;14:00&quot;,&quot;value&quot;:2.72,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;15:00&quot;,&quot;value&quot;:3,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;16:00&quot;,&quot;value&quot;:3.05,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;17:00&quot;,&quot;value&quot;:2,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;18:00&quot;,&quot;value&quot;:3.67,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;19:00&quot;,&quot;value&quot;:2.8,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;20:00&quot;,&quot;value&quot;:1.47,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;21:00&quot;,&quot;value&quot;:4.9,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;22:00&quot;,&quot;value&quot;:4.65,&quot;unit&quot;:&quot;kWh&quot;},{&quot;label&quot;:&quot;23:00&quot;,&quot;value&quot;:4.71,&quot;unit&quot;:&quot;kWh&quot;}]}}]}}]}}]}}]}\"></as-graph>",
@@ -558,8 +434,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-graph controls markers data-data=\"[data Object]\"&gt;&lt;/as-graph&gt;</code>"
   },
   {
-    "id": "25",
-    "guid": "69b6f914-cdb0-49b4-9585-fd47d4b9dee1",
     "componentName": "SVG to Base64",
     "componentSlug": "svg-to-base64",
     "example": "<as-svg-to-base></as-svg-to-base>",
@@ -567,8 +441,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-svg-to-base&gt;&lt;/as-svg-to-base&gt;</code>"
   },
   {
-    "id": "24",
-    "guid": "6b021512-b036-499a-9f45-f612527e7a16",
     "componentName": "Contrast checker",
     "componentSlug": "contrast-checker",
     "example": "<as-contrast-checker></as-contrast-checker>",
@@ -576,8 +448,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-contrast-checker&gt;&lt;/as-contrast-checker&gt;</code>"
   },
   {
-    "id": "62",
-    "guid": "b7a58ddd-ebdd-4cd6-a162-cec84fd04611",
     "componentName": "Tab",
     "componentSlug": "tab",
     "example": "<as-tab>Tab name</as-tab>",
@@ -585,8 +455,6 @@
     "codeToken": "<code class=\"token icon\">&lt;as-tab&gt;Tab name&lt;/as-tab&gt;</code>"
   },
   {
-    "id": "63",
-    "guid": "41316e7a-8986-4a75-bdc4-41accd4e1d80",
     "componentName": "Tab",
     "componentSlug": "tab",
     "example": "<as-tab icon-name=\"plus\">Tab name with icon</as-tab>",

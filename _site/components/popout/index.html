@@ -514,7 +514,7 @@
       </as-tab-panel>
     
     
-      <as-tab icon-name="list-ul">Properties (5)</as-tab>
+      <as-tab icon-name="list-ul">Properties (6)</as-tab>
       <as-tab-panel>
         <div style="display: flex; justify-content: flex-end;">
           <as-table-actions data-table=".properties"></as-table-actions>
@@ -532,32 +532,62 @@
               
                 <tr>
                   <td>popout-position</td>
-                  <td><b>Required:</b> Represents popout position relative to the toggle button. Values are: top, center, bottom.</td>
+                  <td>
+                    
+                    
+                      <b>Required:</b>
+                    Represents popout position relative to the toggle button. Values are: top, center, bottom.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>popout-align</td>
-                  <td><b>Required:</b> Represents popout alignment relative to the toggle button. Values are:&nbsp;<b>left,&nbsp;right,&nbsp;span-left,&nbsp;span-right,&nbsp;span-all,&nbsp;span-top,&nbsp;span-bottom,&nbsp;center</b>. Last three values are valid only with popout-position: center</td>
+                  <td>
+                    
+                    
+                      <b>Required:</b>
+                    Represents popout alignment relative to the toggle button. Values are:&nbsp;<b>left,&nbsp;right,&nbsp;span-left,&nbsp;span-right,&nbsp;span-all,&nbsp;span-top,&nbsp;span-bottom,&nbsp;center</b>. Last three values are valid only with popout-position: center</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>popout-id</td>
-                  <td><b>Optional:</b> When present is used to tie button and popout element with custom ID, defaults to dynamically generated random ID.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    When present is used to tie button and popout element with custom ID, defaults to dynamically generated random ID.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>button-text</td>
-                  <td><b>Optional:</b> When present defines text used on the popout toggle button, defaults to&nbsp;<b>Open popou</b>t.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    When present defines text used on the popout toggle button, defaults to&nbsp;<b>Open popou</b>t.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>button-class</td>
-                  <td><b>Optional:</b> When present defines class used on the popout toggle button, defaults to&nbsp;<b>btn</b>.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    When present defines class used on the popout toggle button, defaults to&nbsp;<b>btn</b>.</td>
                   <td>string</td>
+                </tr>
+              
+                <tr>
+                  <td>breakpoint</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    When present defines breakpoint in pixels below which the popout is displayed inline. Defaults to <b>0</b>.</td>
+                  <td>number</td>
                 </tr>
               
             </tbody>

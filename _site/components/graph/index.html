@@ -527,67 +527,111 @@
               
                 <tr>
                   <td>data-data</td>
-                  <td><b>Required:</b> parameter in a form of an JSON object formatted as string. Contains some additional settings and actual data points to be displayed within graph component.</td>
+                  <td>
+                    
+                    
+                      <b>Required:</b>
+                    parameter in a form of an JSON object formatted as string. Contains some additional settings and actual data points to be displayed within graph component.</td>
                   <td>object</td>
                 </tr>
               
                 <tr>
                   <td>data</td>
-                  <td><b>Required:</b> holds data point informationExample of data point object:<code class="icon token">{<br/>&nbsp; "label":"2024",<br/>&nbsp; "value":127.85,<br/>&nbsp; "unit":"kWh",<br/>&nbsp; "level":0,<br/>&nbsp; "drilldown": {"data":{[...]}},<br/>}</code>Notice <b>drilldown</b> key, that if present, can hold more detailed data about the current data points, e.g. data divided into weeks data points. Similarly, weak data point can hold daily data, then hourly data and so on. There's no limit on the number of data levels present.</td>
+                  <td>
+                    
+                    
+                      <b>Required:</b>
+                    holds data point informationExample of data point object:<code class="icon token">{<br/>&nbsp; "label":"2024",<br/>&nbsp; "value":127.85,<br/>&nbsp; "unit":"kWh",<br/>&nbsp; "level":0,<br/>&nbsp; "drilldown": {"data":{[...]}},<br/>}</code>Notice <b>drilldown</b> key, that if present, can hold more detailed data about the current data points, e.g. data divided into weeks data points. Similarly, weak data point can hold daily data, then hourly data and so on. There's no limit on the number of data levels present.</td>
                   <td>array of objects</td>
                 </tr>
               
                 <tr>
                   <td>resolution</td>
-                  <td><b>Optional:</b> key in data-data object</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object</td>
                   <td>number</td>
                 </tr>
               
                 <tr>
                   <td>step</td>
-                  <td><b>Optional:</b> key in data-data object</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object</td>
                   <td>number</td>
                 </tr>
               
                 <tr>
                   <td>charttype</td>
-                  <td><b>Optional:</b> key in data-data object,&nbsp;if present defines initial chart type to use. Chart types are as follows:<br/>1. Columns chart<br/>2. Pie chart</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object,&nbsp;if present defines initial chart type to use. Chart types are as follows:<br/>1. Columns chart<br/>2. Pie chart</td>
                   <td>number</td>
                 </tr>
               
                 <tr>
                   <td>title</td>
-                  <td><b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph title.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object,&nbsp;if present defines chart / graph title.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>xtitle</td>
-                  <td><b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph X axis title.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object,&nbsp;if present defines chart / graph X axis title.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>ytitle</td>
-                  <td><b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph Y axis title.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object,&nbsp;if present defines chart / graph Y axis title.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>palette</td>
-                  <td><b>Optional:</b> key in data-data object to hold table with RGB colours used within graph component to colour data points. It can contain from one to Infinite colours. Data points are coloured in cycle if number of colours is not equal to maximum number of data points within data level.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    key in data-data object to hold table with RGB colours used within graph component to colour data points. It can contain from one to Infinite colours. Data points are coloured in cycle if number of colours is not equal to maximum number of data points within data level.</td>
                   <td>array</td>
                 </tr>
               
                 <tr>
                   <td>controls</td>
-                  <td><b>Optional:</b> when present graph will render control buttons that allow to change how many data points are displayed at once, allow adding &amp; removing visible data points, move between point and go bac one level if drill down data are present.</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    when present graph will render control buttons that allow to change how many data points are displayed at once, allow adding &amp; removing visible data points, move between point and go bac one level if drill down data are present.</td>
                   <td>string</td>
                 </tr>
               
                 <tr>
                   <td>markers</td>
-                  <td><b>Optional:</b> when present graph type of <b>Pie chart</b> will display labels and drill down icon (a + sign).</td>
+                  <td>
+                    
+                      <b>Optional:</b>
+                    
+                    when present graph type of <b>Pie chart</b> will display labels and drill down icon (a + sign).</td>
                   <td>string</td>
                 </tr>
               

@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
             broadcastEvent(name, detail = {}) {
                 const cEvent = (this.isEmpty(detail)) ? new CustomEvent(name, { bubbles: true }) : new CustomEvent(name, { detail: detail, bubbles: true })
                 this.dispatchEvent(cEvent)
-                console.log(cEvent)
+                // console.log(cEvent)
             }
 
             getDirectRows() {

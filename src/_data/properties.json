@@ -1,1146 +1,842 @@
 [
   {
-    "id": "1",
-    "guid": "7cbd1df9-4f6d-446d-b767-5a597b17c8e8",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "name",
     "description": "Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Name of the icon either as CSS var (e.g. --as-icon-document-solid) or without --as-icon- prefix. Name of the icon must be defined as CSS variable and contain SVG code as base64 string."
+    "optional": "No"
   },
   {
-    "id": "2",
-    "guid": "4a691017-4483-4ecb-b618-9d2faab53375",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "size",
     "description": "Size of the icon component. Defaults to size \"m\"",
     "propertyType": "xs | s | m | default | l | xl | xxl | xxxl",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Size of the icon component. Defaults to size \"m\""
+    "optional": "Yes"
   },
   {
-    "id": "3",
-    "guid": "6d70346b-2070-4477-9d05-a9d4d528a848",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "color",
     "description": "Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Colour of the icon. Colour can be any valid colour by name, hex value or passed as CSS var. Defaults to&nbsp;<b>--as-color-text</b>"
+    "optional": "Yes"
   },
   {
-    "id": "4",
-    "guid": "476fdb6c-e8ed-4879-8085-71341840e131",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "label",
     "description": "An accessible label for the icon. If no label is supplied, the icon is hidden from assistive technology.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> An accessible label for the icon. If no label is supplied, the icon is hidden from assistive technology."
+    "optional": "Yes"
   },
   {
-    "id": "5",
-    "guid": "05f6f267-97c9-4e94-95ec-367b502a135c",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "flip-x",
     "description": "Flips icon image horizontally.&nbsp;Can be used together with [flip-y] property.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Flips icon image horizontally.&nbsp;Can be used together with [flip-y] property."
+    "optional": "Yes"
   },
   {
-    "id": "6",
-    "guid": "4d249b25-fdb6-45e1-a421-234fd2531c10",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "flip-y",
     "description": "Flips icon image vertically. Can be used together with [flip-x] property.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Flips icon image vertically. Can be used together with [flip-x] property."
+    "optional": "Yes"
   },
   {
-    "id": "7",
-    "guid": "a929b5a2-2903-410d-801d-aa1bddfe0a97",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "rotate",
     "description": "Rotates icon by whatever angle is specified. Numeric value can be in [deg], [turns] or [rad]. Can be a negative value. Unit must be specified.",
     "propertyType": "number + unit",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Rotates icon by whatever angle is specified. Numeric value can be in [deg], [turns] or [rad]. Can be a negative value. Unit must be specified."
+    "optional": "Yes"
   },
   {
-    "id": "8",
-    "guid": "19959705-0a5e-4f81-9da3-ad0982036b57",
     "componentName": "Icon",
     "componentSlug": "icon",
     "name": "image",
     "description": "When present renders icon as image element. Useful when we SVG's we hold as CSS variables were multi-colour initially.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present renders icon as image element. Useful when we SVG's we hold as CSS variables were multi-colour initially."
+    "optional": "Yes"
   },
   {
-    "id": "9",
-    "guid": "a58ab29c-16a4-4771-9a4c-2e46ab24e7a4",
     "componentName": "Select Multiple",
     "componentSlug": "select-multiple",
     "name": "locale",
     "description": "Pipe-delimited string, when present defines component descriptive texts, defaults to&nbsp;<b>Select multiple options|Search...|more</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Pipe-delimited string, when present defines component descriptive texts, defaults to&nbsp;<b>Select multiple options|Search...|more</b>"
+    "optional": "Yes"
   },
   {
-    "id": "10",
-    "guid": "0e166006-38e0-49d1-873c-0e616b39b3aa",
     "componentName": "Select 2 Range",
     "componentSlug": "select-2-range",
     "name": "size",
     "description": "value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value."
+    "optional": "Yes"
   },
   {
-    "id": "11",
-    "guid": "d375b84c-799b-4d7a-be83-e58ec19b25ea",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "popout-position",
     "description": "Represents popout position relative to the toggle button. Values are: top, center, bottom.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Represents popout position relative to the toggle button. Values are: top, center, bottom."
+    "optional": "No"
   },
   {
-    "id": "12",
-    "guid": "2355bb49-0b8f-4aa7-ae13-8b496ccfe1a7",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "popout-align",
     "description": "Represents popout alignment relative to the toggle button. Values are:&nbsp;<b>left,&nbsp;right,&nbsp;span-left,&nbsp;span-right,&nbsp;span-all,&nbsp;span-top,&nbsp;span-bottom,&nbsp;center</b>. Last three values are valid only with popout-position: center",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Represents popout alignment relative to the toggle button. Values are:&nbsp;<b>left,&nbsp;right,&nbsp;span-left,&nbsp;span-right,&nbsp;span-all,&nbsp;span-top,&nbsp;span-bottom,&nbsp;center</b>. Last three values are valid only with popout-position: center"
+    "optional": "No"
   },
   {
-    "id": "13",
-    "guid": "88537a92-0d46-4240-aadd-f1f80d4aac62",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "popout-id",
     "description": "When present is used to tie button and popout element with custom ID, defaults to dynamically generated random ID.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present is used to tie button and popout element with custom ID, defaults to dynamically generated random ID."
+    "optional": "Yes"
   },
   {
-    "id": "14",
-    "guid": "78cd1b6d-c5c8-49a9-82eb-cb3cf4a4d152",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "button-text",
     "description": "When present defines text used on the popout toggle button, defaults to&nbsp;<b>Open popou</b>t.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines text used on the popout toggle button, defaults to&nbsp;<b>Open popou</b>t."
+    "optional": "Yes"
   },
   {
-    "id": "15",
-    "guid": "226929e3-bc68-44f1-b126-41c1659f6304",
     "componentName": "Popout",
     "componentSlug": "popout",
     "name": "button-class",
     "description": "When present defines class used on the popout toggle button, defaults to&nbsp;<b>btn</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines class used on the popout toggle button, defaults to&nbsp;<b>btn</b>."
+    "optional": "Yes"
   },
   {
-    "id": "16",
-    "guid": "70bcd322-bbbc-4fa7-8f42-963c1d920298",
+    "componentName": "Popout",
+    "componentSlug": "popout",
+    "name": "breakpoint",
+    "description": "When present defines breakpoint in pixels below which the popout is displayed inline. Defaults to <b>0</b>.",
+    "propertyType": "number",
+    "optional": "Yes"
+  },
+  {
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "breakpoint",
     "description": "Defines mobile breakpoint in pixels, defaults to 520.",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Defines mobile breakpoint in pixels, defaults to 520."
+    "optional": "Yes"
   },
   {
-    "id": "17",
-    "guid": "058f34b5-786d-4383-aebb-5a308a62238f",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "heading-class",
     "description": "Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-heading</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-heading</b>."
+    "optional": "Yes"
   },
   {
-    "id": "18",
-    "guid": "b6cabee7-0873-42b6-adb4-989e8de9c823",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "body-class",
     "description": "Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-body</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Panel to work should contain minimum two elements inside, one for panel heading and one for panel body. Defaults to&nbsp;<b>panel-body</b>."
+    "optional": "Yes"
   },
   {
-    "id": "19",
-    "guid": "6077a6df-0919-46c9-97fd-90bcfe7aa015",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "icon-name",
     "description": "When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present icon name is passed to &lt;as-icon&gt; component within panel structure. Default icon view is defined for folded-in layout of the component. Defaults to&nbsp;<b>--as-icon-plus</b>."
+    "optional": "Yes"
   },
   {
-    "id": "20",
-    "guid": "0b052d03-d782-4818-8fc0-d4319af41a37",
     "componentName": "Panel",
     "componentSlug": "panel",
     "name": "rotate",
     "description": "When present defines direction and angle of the icon rotation when component is toggled between states (fold-in &amp; fold out). Defaults to&nbsp;<b>-45deg</b>.",
     "propertyType": "direction+value+unit",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines direction and angle of the icon rotation when component is toggled between states (fold-in &amp; fold out). Defaults to&nbsp;<b>-45deg</b>."
+    "optional": "Yes"
   },
   {
-    "id": "53",
-    "guid": "d06cbd7a-3a75-4c07-a98e-6d256c279b70",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "sort",
     "description": "If present sorting functionality is enabled.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> If present sorting functionality is enabled."
+    "optional": "Yes"
   },
   {
-    "id": "54",
-    "guid": "8895bd73-e85e-4090-8611-0a264d246a7a",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "filter",
     "description": "If present filtering functionality is enabled.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> If present filtering functionality is enabled."
+    "optional": "Yes"
   },
   {
-    "id": "55",
-    "guid": "fde0cb85-45f5-4df7-8f00-19a791404ae9",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "columns",
     "description": "Coma separated list of column names to replace existing table &lt;THEAD&gt; cell labels, in the order written. If there are no &lt;THEAD&gt; on the table this parameter must be provided.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Coma separated list of column names to replace existing table &lt;THEAD&gt; cell labels, in the order written. If there are no &lt;THEAD&gt; on the table this parameter must be provided."
+    "optional": "Yes"
   },
   {
-    "id": "56",
-    "guid": "a05f9498-ecad-4f8f-ac77-19a635d498d8",
     "componentName": "Table Search & Sort",
     "componentSlug": "table-search-sort",
     "name": "omit",
     "description": "Coma separated list of column indexes to be omitted when enabling sorting &amp; filtering functionality. Starts from 0",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Coma separated list of column indexes to be omitted when enabling sorting &amp; filtering functionality. Starts from 0"
+    "optional": "Yes"
   },
   {
-    "id": "66",
-    "guid": "f0dbe9e4-27a4-416f-ba6f-d47bba6634fa",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "data-table",
     "description": "ID or class name of the table to attach actions to.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> ID or class name of the table to attach actions to."
+    "optional": "No"
   },
   {
-    "id": "81",
-    "guid": "8446a670-4609-41c0-85ae-0d73763d89cb",
     "componentName": "Table Actions",
     "componentSlug": "table-actions",
     "name": "button-text",
     "description": "When present defines table Actions component button text. Defaults to <b>Options</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines table Actions component button text. Defaults to <b>Options</b>."
+    "optional": "Yes"
   },
   {
-    "id": "100",
-    "guid": "9d644150-3db2-4fa7-983b-78e47ba7c4ff",
     "componentName": "Tab Group",
     "componentSlug": "tab-group",
     "name": "selected",
     "description": "When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present within &lt;as-tab&gt; declaration marks active tab. If no of the &lt;as-tab&gt; elements has selected attribute by default first tab is set to selected."
+    "optional": "Yes"
   },
   {
-    "id": "105",
-    "guid": "424ca031-5600-4fa6-870d-738809d83919",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "value-missing",
     "description": "defaults to <b>\"This field is required\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field is required\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "106",
-    "guid": "7694fb83-c117-46b7-b66f-0661c07ca259",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "too-long",
     "description": "defaults to <b>\"This field is too long\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field is too long\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "107",
-    "guid": "7c50708d-dd33-4be2-8c1e-c6718420928a",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "too-short",
     "description": "defaults to <b>\"This field is too short\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field is too short\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "108",
-    "guid": "baca19cd-62fc-4fc6-b2d0-234a565755bf",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "range-overflow",
     "description": "defaults to <b>\"This field has a number that is too big\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field has a number that is too big\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "109",
-    "guid": "a99ea658-4353-4928-ad0a-a17183fed464",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "range-underflow",
     "description": "defaults to <b>\"This field has a number that is too small\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field has a number that is too small\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "110",
-    "guid": "bf141095-dcf9-489c-b1fe-bab3a4f8e371",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "type-mismatch",
     "description": "defaults to <b>\"This field is the wrong type\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This field is the wrong type\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "111",
-    "guid": "293dbd93-a9b0-4f08-8e72-5a8dee2d8941",
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
     "name": "pattern-mismatch",
     "description": "defaults to <b>\"This fields value does not match the pattern\"</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defaults to <b>\"This fields value does not match the pattern\"</b>"
+    "optional": "Yes"
   },
   {
-    "id": "102",
-    "guid": "3dbc29d0-cb1a-49b6-8417-d0d241ee43df",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "data-input",
     "description": "ID or class name of the textarea or input element to perform count on.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> ID or class name of the textarea or input element to perform count on."
+    "optional": "No"
   },
   {
-    "id": "103",
-    "guid": "6da9c33d-b1b7-4506-a287-bb6d970b0d10",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "no-messages",
     "description": "hides messages count.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> hides messages count."
+    "optional": "Yes"
   },
   {
-    "id": "104",
-    "guid": "c8d83283-db1e-4e3f-8eb8-e06794243a38",
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "no-count",
     "description": "hides characters count.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> hides characters count."
+    "optional": "Yes"
   },
   {
-    "id": "99",
-    "guid": "4a0dedec-3f88-4660-a4e7-31a8adf72607",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "name": "labels",
     "description": "Coma separated list that defines button labels for show &amp; hide states. Defaults are <b>Show, Hide</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Coma separated list that defines button labels for show &amp; hide states. Defaults are <b>Show, Hide</b>"
+    "optional": "Yes"
   },
   {
-    "id": "101",
-    "guid": "fa5cd0bd-9680-4edd-a049-c9720a63f0c6",
     "componentName": "Show / Hide Password",
     "componentSlug": "show-hide-password",
     "name": "icons",
     "description": "Coma separated list of CSS variable names of icons to be displayed instead of text labels. Text labels are instead used as aria-label values for the icons. Icon names  order in the parameter is \"<b>show, hide</b>\"",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Coma separated list of CSS variable names of icons to be displayed instead of text labels. Text labels are instead used as aria-label values for the icons. Icon names  order in the parameter is \"<b>show, hide</b>\""
+    "optional": "Yes"
   },
   {
-    "id": "93",
-    "guid": "7f0ffdf8-f33d-483a-9fb3-e3a83e3be1d8",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "yearspan",
     "description": "When present allow to define number of years that will be available within calendar year select that stretch into past and future plus current year. Defaults to <b>20</b>.",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present allow to define number of years that will be available within calendar year select that stretch into past and future plus current year. Defaults to <b>20</b>."
+    "optional": "Yes"
   },
   {
-    "id": "94",
-    "guid": "a7341ba2-f997-42cf-a95b-47549cc2969b",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "breakpoint",
     "description": "Allows to define viewport breakpoint in pixels below which date picker component will turn off calendar and calendar buton and make text input a <b>type=\"date\"</b> to allow system date pickers to work. Above breakpoint date picker returns to default behaviour.<br/><br/>You can \"hack\" displaying one or the other by setting up breakpoint to 0 to always show component's calendar or to be high value (e.g. 20000) to make sure date picker fall back to system default. Defaults to <b>800</b>",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Allows to define viewport breakpoint in pixels below which date picker component will turn off calendar and calendar buton and make text input a <b>type=\"date\"</b> to allow system date pickers to work. Above breakpoint date picker returns to default behaviour.<br/><br/>You can \"hack\" displaying one or the other by setting up breakpoint to 0 to always show component's calendar or to be high value (e.g. 20000) to make sure date picker fall back to system default. Defaults to <b>800</b>"
+    "optional": "Yes"
   },
   {
-    "id": "95",
-    "guid": "b3d55dda-93ac-477b-9151-8fe7642a5aee",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "locale",
     "description": "When present allow to overwrite page lang attribute settings. This is used to generate month names in calendar month select and day names. If date picker locale attribute is not present or no lang attribute is present it <b>defaults to 'en'</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present allow to overwrite page lang attribute settings. This is used to generate month names in calendar month select and day names. If date picker locale attribute is not present or no lang attribute is present it <b>defaults to 'en'</b>."
+    "optional": "Yes"
   },
   {
-    "id": "96",
-    "guid": "aca2d589-dde4-4539-8595-e8e5190fdbea",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "placeholder",
     "description": "This is placeholder of the input field. Can be passed within input field attributes, or in this case within component attributes. If non of these are present it <b>defaults to current date</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> This is placeholder of the input field. Can be passed within input field attributes, or in this case within component attributes. If non of these are present it <b>defaults to current date</b>."
+    "optional": "Yes"
   },
   {
-    "id": "97",
-    "guid": "f5a6026f-f935-4ca6-9f74-36023d365cb7",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "reverse",
     "description": "Internally date picker component operates on date in ISO format (YYYY-DD-MMT00:00) but if for some reason date display is needed in DD-MM-YYYY format then reverse attribute can be used to make it so.",
     "propertyType": "param",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Internally date picker component operates on date in ISO format (YYYY-DD-MMT00:00) but if for some reason date display is needed in DD-MM-YYYY format then reverse attribute can be used to make it so."
+    "optional": "Yes"
   },
   {
-    "id": "98",
-    "guid": "05a3abba-b0b8-4d44-ab71-85f64460f3f3",
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "disabled",
     "description": "when present disables date picker from user input entirely.",
     "propertyType": "param",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present disables date picker from user input entirely."
+    "optional": "Yes"
   },
   {
-    "id": "89",
-    "guid": "de96a1a1-4814-4a13-86dc-62a019bae0a3",
     "componentName": "Command menu",
     "componentSlug": "command-menu",
     "name": "options",
     "description": "Name of the JS variable that holds array of options objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Example of option object:<br/><code class=\"icon token\">{<br/>title: \"Mine aftaler\",<br/>keywords: \"alle mine aftaler\",<br/>shortcut: \"Alt+A\",<br/>section: \"Sager\",<br/>handler: () =&gt; {<br/>setTimeout(() =&gt; location.href = \"https://google.com\"}, 100)<br/>}<br/>}</code><br/>Command menu allow to search by typing option name. Search is performed on text from <b>title</b> and <b>keywords</b> keys",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Name of the JS variable that holds array of options objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Example of option object:<br/><code class=\"icon token\">{<br/>title: \"Mine aftaler\",<br/>keywords: \"alle mine aftaler\",<br/>shortcut: \"Alt+A\",<br/>section: \"Sager\",<br/>handler: () =&gt; {<br/>setTimeout(() =&gt; location.href = \"https://google.com\"}, 100)<br/>}<br/>}</code><br/>Command menu allow to search by typing option name. Search is performed on text from <b>title</b> and <b>keywords</b> keys"
+    "optional": "No"
   },
   {
-    "id": "90",
-    "guid": "e46b704e-72cb-4666-9380-2f4f8fd47b2a",
     "componentName": "Command menu",
     "componentSlug": "command-menu",
     "name": "locale",
     "description": "Name of the JS variable that holds locale objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Locale object:<br/><code class=\"icon token\">{<br/> navigate: \"Navigate\",<br/> select: \"Select\",<br/> dismiss: \"Dismiss\",<br/> drag: \"Hold &amp; drag\",<br/> reset: \"Reset\",<br/> open: \"Menu\",<br/> placeholder: \"Type a command or search...\",<br/> nohits: \"No results for\",<br/> hint: \"Search tips: some search terms require an exact match. Try typing the entire command name, or use a different word or phrase.\"<br/>}</code>",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Name of the JS variable that holds locale objects. Can be defined anywhere, as long as it is accessible on the page with Command menu component.<br/><br/>Locale object:<br/><code class=\"icon token\">{<br/> navigate: \"Navigate\",<br/> select: \"Select\",<br/> dismiss: \"Dismiss\",<br/> drag: \"Hold &amp; drag\",<br/> reset: \"Reset\",<br/> open: \"Menu\",<br/> placeholder: \"Type a command or search...\",<br/> nohits: \"No results for\",<br/> hint: \"Search tips: some search terms require an exact match. Try typing the entire command name, or use a different word or phrase.\"<br/>}</code>"
+    "optional": "No"
   },
   {
-    "id": "92",
-    "guid": "3888c0cf-1660-4bf9-9662-fc83fc672649",
     "componentName": "Command menu",
     "componentSlug": "command-menu",
     "name": "keys",
     "description": "Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks)",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks)"
+    "optional": "No"
   },
   {
-    "id": "77",
-    "guid": "8c6a8053-ac66-4f89-b210-1751ae6b34e2",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "action",
     "description": "defines actual action link to perform search. Must include URL param for search term at the end of the string. Link must be an actual page that can perform search.<br/>Example:<br/><br/><code class=\"token icon\">action=search&amp;searchmethod=0&amp;search=</code>",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> defines actual action link to perform search. Must include URL param for search term at the end of the string. Link must be an actual page that can perform search.<br/>Example:<br/><br/><code class=\"token icon\">action=search&amp;searchmethod=0&amp;search=</code>"
+    "optional": "No"
   },
   {
-    "id": "78",
-    "guid": "3ef78f27-e743-4efa-8374-6e2ccfa0b174",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "search-page-id",
     "description": "defines search page ID",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> defines search page ID"
+    "optional": "No"
   },
   {
-    "id": "79",
-    "guid": "bc745fb7-a05c-4f2a-9aba-9201a953d521",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "method",
     "description": "defines form method, defaults to <b>post</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines form method, defaults to <b>post</b>."
+    "optional": "Yes"
   },
   {
-    "id": "80",
-    "guid": "3f0b564c-60fa-43d1-adc9-ebeefb7f820b",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "keys",
     "description": "Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks), defaults to '<b>Meta+U</b>'",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Define keyboard shortcut to open command menu dialog. Can be any combination, though safest is using Meta key + another key. Meta is Command or Windows or any other meta modifier key (e.g. on Chromebooks), defaults to '<b>Meta+U</b>'"
+    "optional": "Yes"
   },
   {
-    "id": "82",
-    "guid": "db9c88c4-fbfe-4d05-a4e0-42f64883838e",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "placeholder",
     "description": "defines form method, defaults to <b>post</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines form method, defaults to <b>post</b>."
+    "optional": "Yes"
   },
   {
-    "id": "83",
-    "guid": "70db1823-9b57-46db-879f-45599f85fba2",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "nohits",
     "description": "defines text for when typing the search term does not return any recent search, defaults to <b>No recent search queries matches...</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text for when typing the search term does not return any recent search, defaults to <b>No recent search queries matches...</b>"
+    "optional": "Yes"
   },
   {
-    "id": "84",
-    "guid": "3beedede-87d9-4598-9fc1-8ecf53b3b04f",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "hint",
     "description": "defines text shown when typing the search term does not return any recent search, defaults to <b>Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text shown when typing the search term does not return any recent search, defaults to <b>Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.</b>"
+    "optional": "Yes"
   },
   {
-    "id": "85",
-    "guid": "9a4e60d1-7fe0-463d-89a8-48030a6e0b49",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "navigate",
     "description": "defines text shown in footer for the first info icon, defaults to <b>Navigate</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text shown in footer for the first info icon, defaults to <b>Navigate</b>."
+    "optional": "Yes"
   },
   {
-    "id": "86",
-    "guid": "63cc8658-3209-4d64-814b-127f0e138dca",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "enter",
     "description": "defines text shown in footer for the second info icon, defaults to <b>Select</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text shown in footer for the second info icon, defaults to <b>Select</b>."
+    "optional": "Yes"
   },
   {
-    "id": "87",
-    "guid": "e3f461fa-c377-4253-bf85-dcbb33616329",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "dismiss",
     "description": "defines text shown in footer for the third info icon, defaults to <b>Dismiss</b>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text shown in footer for the third info icon, defaults to <b>Dismiss</b>."
+    "optional": "Yes"
   },
   {
-    "id": "88",
-    "guid": "97576139-ad57-41e6-9d2e-d09e4cf02f45",
     "componentName": "Search menu",
     "componentSlug": "search-menu",
     "name": "drag",
     "description": "defines text shown in footer for the fourth info icon, defaults to <b>Hold &amp; drag.</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines text shown in footer for the fourth info icon, defaults to <b>Hold &amp; drag.</b>"
+    "optional": "Yes"
   },
   {
-    "id": "74",
-    "guid": "ba784290-8007-40b9-9176-f85efb05f914",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "position",
     "description": "value that marks the position from which drawer will show. defaults to 'bottom'",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value that marks the position from which drawer will show. defaults to 'bottom'"
+    "optional": "Yes"
   },
   {
-    "id": "75",
-    "guid": "c18ce74c-353d-46d6-bd5c-b2c68b3ef1fe",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "button-text",
     "description": "text on the button that opens up drawer",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> text on the button that opens up drawer"
+    "optional": "Yes"
   },
   {
-    "id": "76",
-    "guid": "2e23b55f-312d-47b2-81bb-66100e468e71",
     "componentName": "Drawer",
     "componentSlug": "drawer",
     "name": "transition-time",
     "description": "defines drawer opening/close transition time, defaults to 400ms",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines drawer opening/close transition time, defaults to 400ms"
+    "optional": "Yes"
   },
   {
-    "id": "57",
-    "guid": "2549a19b-5423-460c-9962-bd718db4bcd9",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "size",
     "description": "value defines size of the gauge in EM units, default value is <b>3</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines size of the gauge in EM units, default value is <b>3</b>"
+    "optional": "Yes"
   },
   {
-    "id": "58",
-    "guid": "9c89cd7a-235a-41b3-9b3a-ea16786b24c8",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "showmax",
     "description": "if present gauge is displaying <b>max</b> value defined within max parameter",
     "propertyType": "param",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> if present gauge is displaying <b>max</b> value defined within max parameter"
+    "optional": "Yes"
   },
   {
-    "id": "59",
-    "guid": "1d5074f4-450e-45e0-8f34-da24df5a00d7",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "thumb",
     "description": "value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines thumb colour, if omitted it defaults to <b>--as-color-status-success</b>"
+    "optional": "Yes"
   },
   {
-    "id": "60",
-    "guid": "60df3f73-f34f-41ef-a6b7-95b2e6845369",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "track",
     "description": "value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines track colour, if omitted it defaults to <b>--as-color-text-neutral</b>"
+    "optional": "Yes"
   },
   {
-    "id": "61",
-    "guid": "eca0e011-fe50-41d8-9dd5-caf8b8ad2f23",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "bg",
     "description": "value defines background colour of the gauge element colour, if omitted it defaults to <b>transparent</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value defines background colour of the gauge element colour, if omitted it defaults to <b>transparent</b>"
+    "optional": "Yes"
   },
   {
-    "id": "62",
-    "guid": "fde88164-93d1-412e-9d54-1ced55a011bd",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "reverse",
     "description": "if present it animates value thumb counterclockwise.",
     "propertyType": "param",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> if present it animates value thumb counterclockwise."
+    "optional": "Yes"
   },
   {
-    "id": "63",
-    "guid": "211f0a43-baf9-47ff-8ddc-fa3dfde0e066",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "half",
     "description": "if present gauge is displayed as half circle.",
     "propertyType": "param",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> if present gauge is displayed as half circle."
+    "optional": "Yes"
   },
   {
-    "id": "64",
-    "guid": "494f9985-6d03-492a-a895-172e50fa61b1",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "delay",
     "description": "defines delay before animation of the thumb value starts, in milliseconds. If omitted it defaults to <b>1000</b>. For no delay and instant animation start use <b>0</b> as param value.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines delay before animation of the thumb value starts, in milliseconds. If omitted it defaults to <b>1000</b>. For no delay and instant animation start use <b>0</b> as param value."
+    "optional": "Yes"
   },
   {
-    "id": "65",
-    "guid": "e7518363-80ff-42c5-856b-cc200691aa7d",
     "componentName": "Gauge",
     "componentSlug": "gauge",
     "name": "speed",
     "description": "defines time in which thumb reaches set value, in seconds. If omitted it defaults to <b>1</b>. To make gauge thumb appear instantly use <b>0</b> as param value.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> defines time in which thumb reaches set value, in seconds. If omitted it defaults to <b>1</b>. To make gauge thumb appear instantly use <b>0</b> as param value."
+    "optional": "Yes"
   },
   {
-    "id": "49",
-    "guid": "4796ca44-c6e7-45d6-b8cc-7766b2fd31c6",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "name": "datetime",
     "description": "date &amp; time can be inserted as attribute value.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> date &amp; time can be inserted as attribute value."
+    "optional": "Yes"
   },
   {
-    "id": "50",
-    "guid": "26ea4124-7a7b-489d-8b19-d40dd3de6683",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "name": "notime",
     "description": "when present date time value displays only date part.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present date time value displays only date part."
+    "optional": "Yes"
   },
   {
-    "id": "51",
-    "guid": "5d05c69e-ea29-4306-b7da-a68a917fafe4",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "name": "update",
     "description": "numeric value in minutes on how often relative time text should update with a new value. Omitted means no relative time updates.",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> numeric value in minutes on how often relative time text should update with a new value. Omitted means no relative time updates."
+    "optional": "Yes"
   },
   {
-    "id": "52",
-    "guid": "eed0d854-33bc-4e88-806a-e8070d25cbb4",
     "componentName": "Relative Time",
     "componentSlug": "relative-time",
     "name": "disabled",
     "description": "when attribute is present actual date is displayed as default. Users can still click on the component to get relative time value.",
     "propertyType": "none",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when attribute is present actual date is displayed as default. Users can still click on the component to get relative time value."
+    "optional": "Yes"
   },
   {
-    "id": "42",
-    "guid": "38b441dc-d3f0-447a-b185-273fe2b19c92",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "target-element",
     "description": "Pipe '|' separated element list to toggle classes on. Accept any proper CSS selector.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Pipe '|' separated element list to toggle classes on. Accept any proper CSS selector."
+    "optional": "No"
   },
   {
-    "id": "43",
-    "guid": "41fa76a7-15c0-4bc2-82de-9e4d3288b2ef",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "target-class",
     "description": "Pipe '|' separated&nbsp;class names (with or without leading dot) to be toggled on target-element elements.",
     "propertyType": "string",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> Pipe '|' separated&nbsp;class names (with or without leading dot) to be toggled on target-element elements."
+    "optional": "No"
   },
   {
-    "id": "44",
-    "guid": "25cc5a6c-bfc8-43aa-be10-d63b4ef2e175",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "target-state",
     "description": "when <b>true</b> target-element initiates with target-class applied.",
     "propertyType": "boolean",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when <b>true</b> target-element initiates with target-class applied."
+    "optional": "Yes"
   },
   {
-    "id": "45",
-    "guid": "38901096-ad13-4adc-a4d0-aebbea95e648",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "button-text",
     "description": "text for the button",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> text for the button"
+    "optional": "Yes"
   },
   {
-    "id": "46",
-    "guid": "fc9055ce-4754-4048-9812-570d137a9be3",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "button-class",
     "description": "Space separated class names list to be used on the generated button",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> Space separated class names list to be used on the generated button"
+    "optional": "Yes"
   },
   {
-    "id": "47",
-    "guid": "cf8edb3b-0922-4277-84ee-f47badef60bf",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "icon-name",
     "description": "icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> icon name, when present generated button will contain trailing &lt;as-icon&gt; element displaying icon passed as attribute value. See icons <a href=\"/Design-Tokens/Icons\" class=\"inlinelink\">here</a>."
+    "optional": "Yes"
   },
   {
-    "id": "48",
-    "guid": "762434c5-9cbf-4a1c-a614-0a3b05823d4d",
     "componentName": "Class Toggle",
     "componentSlug": "class-toggle",
     "name": "icon-rotate",
     "description": "when present it will rotate icon when target-element has target-class applied.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present it will rotate icon when target-element has target-class applied."
+    "optional": "Yes"
   },
   {
-    "id": "39",
-    "guid": "50a8373d-3f7b-4aed-aa00-4864d69ed52c",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "name": "size",
     "description": "value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> value used to calculate dot &amp; gap size. Dot size is 20% and gap size is 25% of the value."
+    "optional": "Yes"
   },
   {
-    "id": "40",
-    "guid": "b1cf92d2-919c-4a54-8357-3ad4129c0ebc",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "name": "digit-bg",
     "description": "digit dot background",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> digit dot background"
+    "optional": "Yes"
   },
   {
-    "id": "41",
-    "guid": "90f8a54c-df20-4468-9d7f-1584a41c7eb6",
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "name": "digit-color",
     "description": "digit character color",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> digit character color"
+    "optional": "Yes"
   },
   {
-    "id": "35",
-    "guid": "c4ea4626-87b5-456b-b4bf-1283b4e0217d",
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "name": "slideid",
     "description": "parameter name used as slide element identifier, defaults to <b>item</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> parameter name used as slide element identifier, defaults to <b>item</b>"
+    "optional": "Yes"
   },
   {
-    "id": "36",
-    "guid": "b963b1ce-5dcd-4942-be36-b67eb93422d7",
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "name": "speed",
     "description": "define slide animation speed in [ms], defaults to <b>400</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> define slide animation speed in [ms], defaults to <b>400</b>"
+    "optional": "Yes"
   },
   {
-    "id": "37",
-    "guid": "ee119690-2011-4ea3-93d9-d96c1e57f83f",
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "name": "delay",
     "description": "define slide animation delay in [ms], defaults to <b>3</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> define slide animation delay in [ms], defaults to <b>3</b>"
+    "optional": "Yes"
   },
   {
-    "id": "38",
-    "guid": "16a3fefd-ac25-433a-92d8-46bfcf23e1ae",
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "name": "gap",
     "description": "reflects gap between slides, should match CSS gap property, defaults to <b>14</b>",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> reflects gap between slides, should match CSS gap property, defaults to <b>14</b>"
+    "optional": "Yes"
   },
   {
-    "id": "24",
-    "guid": "c8e7af01-4f7d-4be7-aa55-56c821b1985e",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "data-data",
     "description": "parameter in a form of an JSON object formatted as string. Contains some additional settings and actual data points to be displayed within graph component.",
     "propertyType": "object",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> parameter in a form of an JSON object formatted as string. Contains some additional settings and actual data points to be displayed within graph component."
+    "optional": "No"
   },
   {
-    "id": "25",
-    "guid": "d140a772-3bfc-4f75-9360-6bf0d03efa23",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "data",
     "description": "holds data point informationExample of data point object:<code class=\"icon token\">{<br/>&nbsp; \"label\":\"2024\",<br/>&nbsp; \"value\":127.85,<br/>&nbsp; \"unit\":\"kWh\",<br/>&nbsp; \"level\":0,<br/>&nbsp; \"drilldown\": {\"data\":{[...]}},<br/>}</code>Notice <b>drilldown</b> key, that if present, can hold more detailed data about the current data points, e.g. data divided into weeks data points. Similarly, weak data point can hold daily data, then hourly data and so on. There's no limit on the number of data levels present.",
     "propertyType": "array of objects",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> holds data point informationExample of data point object:<code class=\"icon token\">{<br/>&nbsp; \"label\":\"2024\",<br/>&nbsp; \"value\":127.85,<br/>&nbsp; \"unit\":\"kWh\",<br/>&nbsp; \"level\":0,<br/>&nbsp; \"drilldown\": {\"data\":{[...]}},<br/>}</code>Notice <b>drilldown</b> key, that if present, can hold more detailed data about the current data points, e.g. data divided into weeks data points. Similarly, weak data point can hold daily data, then hourly data and so on. There's no limit on the number of data levels present."
+    "optional": "No"
   },
   {
-    "id": "26",
-    "guid": "4c18f65d-5e83-4fd1-86eb-3e778d92dfa2",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "resolution",
     "description": "key in data-data object",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object"
+    "optional": "Yes"
   },
   {
-    "id": "27",
-    "guid": "3afaf4d6-f7ca-403d-87df-a05bdc54a649",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "step",
     "description": "key in data-data object",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object"
+    "optional": "Yes"
   },
   {
-    "id": "28",
-    "guid": "93a8f694-02b2-4e6e-bb20-016daca0c907",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "charttype",
     "description": "key in data-data object,&nbsp;if present defines initial chart type to use. Chart types are as follows:<br/>1. Columns chart<br/>2. Pie chart",
     "propertyType": "number",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object,&nbsp;if present defines initial chart type to use. Chart types are as follows:<br/>1. Columns chart<br/>2. Pie chart"
+    "optional": "Yes"
   },
   {
-    "id": "29",
-    "guid": "44257e38-eed1-4a60-8e64-4cc3ec61ba65",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "title",
     "description": "key in data-data object,&nbsp;if present defines chart / graph title.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph title."
+    "optional": "Yes"
   },
   {
-    "id": "30",
-    "guid": "bce1bcfc-b921-41fc-a26e-dff9448a0766",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "xtitle",
     "description": "key in data-data object,&nbsp;if present defines chart / graph X axis title.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph X axis title."
+    "optional": "Yes"
   },
   {
-    "id": "31",
-    "guid": "75150f1a-e82a-4e75-b092-f6d6a7243ff4",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "ytitle",
     "description": "key in data-data object,&nbsp;if present defines chart / graph Y axis title.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object,&nbsp;if present defines chart / graph Y axis title."
+    "optional": "Yes"
   },
   {
-    "id": "32",
-    "guid": "2a33196d-6ae1-4b00-8773-e5bc768f33b4",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "palette",
     "description": "key in data-data object to hold table with RGB colours used within graph component to colour data points. It can contain from one to Infinite colours. Data points are coloured in cycle if number of colours is not equal to maximum number of data points within data level.",
     "propertyType": "array",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> key in data-data object to hold table with RGB colours used within graph component to colour data points. It can contain from one to Infinite colours. Data points are coloured in cycle if number of colours is not equal to maximum number of data points within data level."
+    "optional": "Yes"
   },
   {
-    "id": "33",
-    "guid": "f6194c44-f5b8-4019-9e16-8adf6516080f",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "controls",
     "description": "when present graph will render control buttons that allow to change how many data points are displayed at once, allow adding &amp; removing visible data points, move between point and go bac one level if drill down data are present.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present graph will render control buttons that allow to change how many data points are displayed at once, allow adding &amp; removing visible data points, move between point and go bac one level if drill down data are present."
+    "optional": "Yes"
   },
   {
-    "id": "34",
-    "guid": "9cd65604-52ca-4df7-8b68-cec0c78e47c7",
     "componentName": "Graph",
     "componentSlug": "graph",
     "name": "markers",
     "description": "when present graph type of <b>Pie chart</b> will display labels and drill down icon (a + sign).",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> when present graph type of <b>Pie chart</b> will display labels and drill down icon (a + sign)."
+    "optional": "Yes"
   },
   {
-    "id": "21",
-    "guid": "6eb0f4ec-2d31-4184-a83b-d7c0908b7bfb",
     "componentName": "Pagination",
     "componentSlug": "pagination",
     "name": "data-total",
     "description": "this holds total number of records returned on list page from Overview &gt; Main layout &gt; Counter text &gt; {x} value and should be typed as is <code class=\"token icon\" style=\"display: inline-flex;\">data-total=\"{x}\"</code>",
     "propertyType": "number",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> this holds total number of records returned on list page from Overview &gt; Main layout &gt; Counter text &gt; {x} value and should be typed as is <code class=\"token icon\" style=\"display: inline-flex;\">data-total=\"{x}\"</code>"
+    "optional": "No"
   },
   {
-    "id": "22",
-    "guid": "cd54f562-515f-49c4-aed7-ca25fa69a944",
     "componentName": "Pagination",
     "componentSlug": "pagination",
     "name": "data-page-size",
     "description": "this holds number of records per page and MUST match&nbsp;Overview &gt; Main layout &gt; Overview &gt; Max. number per page value",
     "propertyType": "number",
-    "optional": "No",
-    "descriptionText": "<b>Required:</b> this holds number of records per page and MUST match&nbsp;Overview &gt; Main layout &gt; Overview &gt; Max. number per page value"
+    "optional": "No"
   },
   {
-    "id": "23",
-    "guid": "58517bf2-3f39-46db-af27-4cf0eb6e1c76",
     "componentName": "Pagination",
     "componentSlug": "pagination",
     "name": "data-pagination-text",
     "description": "pipe separated list of text with pagination info, defaults to \"Page|of|from|records|Previous|Next\"",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> pipe separated list of text with pagination info, defaults to \"Page|of|from|records|Previous|Next\""
+    "optional": "Yes"
   },
   {
-    "id": "91",
-    "guid": "c1787837-f524-4c48-9199-66831896b6f1",
     "componentName": "Tab",
     "componentSlug": "tab",
     "name": "icon-name",
     "description": "When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules.",
     "propertyType": "string",
-    "optional": "Yes",
-    "descriptionText": "<b>Optional:</b> When present defines name of the &lt;AS-ICON&gt; element created on the left of tab name. Name follow Icon component rules."
+    "optional": "Yes"
   }
 ]

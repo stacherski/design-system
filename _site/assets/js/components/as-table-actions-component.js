@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             broadcastEvent(name, detail = {}) {
                 const cEvent = (this.isEmpty(detail)) ? new CustomEvent(name) : new CustomEvent(name, { detail: detail })
                 this.dispatchEvent(cEvent)
-                console.log(cEvent)
+                // console.log(cEvent)
             }
 
         }

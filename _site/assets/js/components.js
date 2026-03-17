@@ -2527,6 +2527,7 @@ var require_as_popout_component = __commonJS({
             this.settings.buttonClass = this.getAttribute("button-class") || "btn";
             this.settings.buttonIcon = this.getAttribute("button-icon") || "dot";
             this.settings.hasIcon = this.hasAttribute("button-icon");
+            this.settings.breakpoint = this.getAttribute("breakpoint") || "0";
             this.settings.content = Array.from(this.childNodes);
             if (this.ready)
               return;
@@ -2538,15 +2539,33 @@ var require_as_popout_component = __commonJS({
             this.removeAttribute("hidden");
             this.innerHTML = `
                     <button style="anchor-name: --${this.popoutId}" popovertarget="${this.popoutId}" class="${this.settings.buttonClass}">${this.settings.buttonText}${this.settings.hasIcon ? "<as-icon name=" + this.settings.buttonIcon + "></as-icon>" : ""}</button>
-                    <div popover id="${this.popoutId}" style="position-anchor: --${this.popoutId};"></div>
+                    <div hidden pop popover id="${this.popoutId}" style="position-anchor: --${this.popoutId};"></div>
                 `;
-            this.querySelector("[popover]").addEventListener("toggle", (e) => {
+            this.querySelector("[popovertarget]").addEventListener("click", (e) => {
+              this.settings.isInline = this.isBelowBreakpoint();
+              const popover2 = this.querySelector("[pop]");
+              this.setHidden(popover2);
+              if (this.settings.isInline)
+                popover2.removeAttribute("popover");
+            });
+            window.addEventListener("resize", (e) => {
+              this.settings.isInline = this.isBelowBreakpoint();
+            });
+            this.querySelector("[pop]").addEventListener("toggle", (e) => {
               e.newState === "open" ? this.broadcastEvent("as-popout:toggle", { id: this.popoutId, state: "open" }) : this.broadcastEvent("as-popout:toggle", { id: this.popoutId, state: "close" });
+              if (e.newState === "closed")
+                e.target.setAttribute("hidden", "");
             });
             this.broadcastEvent("as-popout:created", { id: this.popoutId });
-            const popover = this.querySelector("[popover]");
+            const popover = this.querySelector("[pop]");
             this.settings.content.forEach((node) => popover.appendChild(node));
             this.ready = true;
+          }
+          setHidden(el) {
+            el.hasAttribute("hidden") ? el.removeAttribute("hidden") : el.setAttribute("hidden", "");
+          }
+          isBelowBreakpoint() {
+            return window.innerWidth < this.settings.breakpoint;
           }
           isEmpty(obj) {
             for (const prop in obj) {
@@ -3924,7 +3943,6 @@ var require_as_table_actions_component = __commonJS({
           broadcastEvent(name, detail = {}) {
             const cEvent = this.isEmpty(detail) ? new CustomEvent(name) : new CustomEvent(name, { detail });
             this.dispatchEvent(cEvent);
-            console.log(cEvent);
           }
         }
         window.customElements.define("as-table-actions", ASTableActions);
@@ -4177,7 +4195,6 @@ var require_as_table_sort_component = __commonJS({
           broadcastEvent(name, detail = {}) {
             const cEvent = this.isEmpty(detail) ? new CustomEvent(name, { bubbles: true }) : new CustomEvent(name, { detail, bubbles: true });
             this.dispatchEvent(cEvent);
-            console.log(cEvent);
           }
           getDirectRows() {
             return Array.from(this.table.tBodies[0]?.rows ?? []);
