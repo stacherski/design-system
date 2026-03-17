@@ -1,9 +1,7 @@
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const fs = require('fs')
-const path = require('path')
 const esbuild = require('esbuild')
-const componentsDir = "src/assets/js/components"
 
 module.exports = function (eleventyConfig) {
   // Plugins
