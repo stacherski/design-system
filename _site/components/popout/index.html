@@ -478,7 +478,7 @@
 
   <as-tab-group>
     
-      <as-tab icon-name="inbox" selected>Examples (3)</as-tab>
+      <as-tab icon-name="inbox" selected>Examples (4)</as-tab>
       <as-tab-panel>
         <div style="display: flex; justify-content: flex-end;">
           <as-table-actions data-table=".examples"></as-table-actions>
@@ -506,6 +506,11 @@
                 <tr>
                   <td><as-popout popout-id="filters-test" button-text="Toggle filters" button-class="btn" popout-position="bottom" popout-align="span-right"><br><div style="display: flex; gap: var(--as-space-xs);"><div class="data-line"><label for="form-status">Status</label><as-select><select id="form-status" name="form-status"><option>All</option><option value="1">Active</option><option value="2">Closed</option><option value="3">Deleted</option></select></as-select></div><br><div class="data-line"><label for="form-admin">Administrator</label><as-select><select id="form-admin" name="form-admin"><option>All</option><option value="1">Andrzej Stacherski</option><option value="2">Yahor Siarhei</option><option value="3">Szymon Strutyński</option><option value="4">Pia Kristensen</option></select></as-select></div><br><div class="data-line"><label for="form-date">Date</label><as-date-picker><input id="form-date" type="text" placeholder="YYYY-MM-DD" value="2025-11-05"/></as-date-picker></div><br><div class="data-line"><button style="align-self: end;" class="btn"><as-icon name="search"></as-icon> Search</button></div></div></as-popout><br><style>as-popout[popout-id="filters-test"] > [popover]{    max-width: unset;    width: fit-content;}</style></td>
                   <td><code class="token icon">&lt;as-popout popout-id="filters-test" button-text="Select action" button-class="btn" popout-position="bottom" popout-align="span-right"&gt;[content]&lt;/as-popout&gt;</code></td>
+                </tr>
+              
+                <tr>
+                  <td><as-popout breakpoint="800"hidden popout-id="mypopout2" button-text="Toggle" button-class="btn" popout-position="bottom" popout-align="span-right"><p>Popout content that is longer and can be displayed as inline.</p></as-popout></td>
+                  <td><code class="token icon">&lt;as-popout breakpoint="800"hidden popout-id="mypopout2" button-text="Toggle" button-class="btn" popout-position="bottom" popout-align="span-right"&gt;[content]&lt;/as-popout&gt;</code></td>
                 </tr>
               
             </tbody>

@@ -140,6 +140,13 @@
     "codeToken": "<code class=\"token icon\">&lt;as-popout popout-id=\"filters-test\" button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
   {
+    "componentName": "Popout",
+    "componentSlug": "popout",
+    "example": "<as-popout breakpoint=\"800\"hidden popout-id=\"mypopout2\" button-text=\"Toggle\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><p>Popout content that is longer and can be displayed as inline.</p></as-popout>",
+    "code": "<as-popout breakpoint=\"800\"hidden popout-id=\"mypopout2\" button-text=\"Toggle\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\">[content]</as-popout>",
+    "codeToken": "<code class=\"token icon\">&lt;as-popout breakpoint=\"800\"hidden popout-id=\"mypopout2\" button-text=\"Toggle\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
+  },
+  {
     "componentName": "Panel",
     "componentSlug": "panel",
     "example": "<as-panel id=\"test\"><div class=\"panel\"><div class=\"panel-heading\">Panel heading</div><div class=\"panel-body columns\"><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div><div><p>Vivamus risus nunc, tempus vel tempus vitae, rhoncus vitae dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus a erat pulvinar, consectetur velit et, scelerisque erat. Curabitur ligula nunc, consequat vitae nisl sit amet, hendrerit varius quam. Integer gravida cursus lacinia. Aenean mauris mi, vestibulum ac sodales et, posuere a mi. Suspendisse sodales lectus quis faucibus tincidunt.</p></div></div></div></as-panel><br>",

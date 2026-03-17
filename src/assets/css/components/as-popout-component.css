@@ -36,6 +36,35 @@ as-popout>[popover]:popover-open {
     }
 }
 
+as-popout>[pop]:not([popover]) {
+    transition: all var(--as-time-xs) ease-out;
+    transition-behavior: allow-discrete;
+    transform: translateY(var(--as-space-m));
+    transition-delay: 10ms;
+    scale: 0.95;
+    opacity: 0;
+    margin-block-start: var(--as-space-s);
+    border-radius: var(--as-border-radius-s);
+    border: var(--as-size-thin) solid var(--as-color-border-panel);
+    background-color: var(--as-color-background);
+    padding: var(--as-space-s);
+    box-shadow: var(--as-box-shadow);
+    /* max-width: calc(10 * var(--as-size-l)); */
+    width: auto;
+}
+
+as-popout>[pop]:not([popover], [hidden]) {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+
+    @starting-style {
+        transform: translateY(var(--as-space-m));
+        opacity: 0;
+        scale: .95;
+    }
+}
+
 as-popout[popout-position="bottom"]>[popover]:popover-open {
     margin-block-start: var(--as-space-s);
 }

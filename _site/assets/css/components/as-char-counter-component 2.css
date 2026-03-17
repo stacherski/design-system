@@ -1,0 +1,24 @@
+as-char-counter {
+    display: inline-flex;
+    gap: var(--as-space-m);
+    padding-inline: var(--as-space-s);
+    padding-block: var(--as-space-s);
+    border-radius: var(--as-border-radius);
+    background-color: var(--as-color-background-nav-weak);
+    font-size: var(--as-font-size-m);
+}
+
+as-char-counter>div {
+    display: flex;
+    gap: var(--as-space-xs);
+    align-items: center;
+
+    &span {
+        line-height: var(--as-line-height-none);
+    }
+}
+
+as-char-counter[no-messages]>div:last-child,
+as-char-counter[no-count]>div:first-child {
+    display: none;
+}
