@@ -91,9 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                 this.broadcastEvent('as-table-sort:filtered', { id: this.componentId, action: 'filtered', column: this.tableHeadings[index].textContent, searchword: heading.searchWord })
                             })
                             input.addEventListener('search', e => {
+                                e.preventDefault()
                                 heading.searchWord = e.target.value
                                 this.filterTable()
-
+                            })
+                            input.addEventListener('submit', e => {
+                                e.preventDefault()
                             })
                             searchPanel.append(input)
                             heading.append(searchPanel)

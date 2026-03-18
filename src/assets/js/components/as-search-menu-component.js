@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.index = -1
                 }
 
-                if (isKey('Enter')) {
+                if (isKey('Enter') && this.contains(document.activeElement)) {
                     if (evt.target.textContent)
                         this.search.value = evt.target.textContent
                     else
