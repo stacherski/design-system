@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Search
+permalink: /search/
+---
+
+<script src="/pagefind/pagefind-ui.js" defer></script>
+<script type="module"src="/assets/js/pagefind-setup.js" defer></script>
+<article>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <p>Pagefind powered site-wide search page</p>
+    <br/>
+
+    <form id="search-form" method="GET" action="/search/">
+        <div class="data-line">
+            <label for="search-input">Search</label>
+            <input type="text" name ="search" id="search-input" placeholder="Search..."/>
+        </div>
+    </form>
+    <div id="search-results"></div>
+</article>

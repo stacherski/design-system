@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="/assets/css/components.css"/>
     <script defer src="/assets/js/main.js"></script>
     <script defer src="/assets/js/components.js"></script>
+    {# Pagefind UI #}
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script defer src="/pagefind/pagefind-ui.js"></script>
   </head>
   <body>
     <div layout>
-      <nav>
+      <nav data-pagefind-ignore>
         <div class="search">
-          <as-search-menu method="post" action="action=search&amp;searchmethod=0&amp;search=" search-page-id="267" placeholder="Search site for..." keys="Meta+U" ></as-search-menu>
+          <as-search-menu method="GET" action="/search/" placeholder="Search site for..." keys="Meta+U" ></as-search-menu>
         </div>
 
         {% include "partials/sidebar.njk" %}
@@ -23,12 +26,12 @@
         </div>
       </nav>
 
-      <section content>
+      <section content data-pagefind-body>
         {{ content | safe }}
       </section>
     </div>
 
-    <div class="menu-btn">
+    <div class="menu-btn" data-pagefind-ignore>
       <as-class-toggle target-element="[layout] nav|.menu-overlay" target-class="navopen|overlayopen" button-class="btn btn-transparent" icon-name="bars"></as-class-toggle>
     </div>
     <div class="menu-overlay"></div>

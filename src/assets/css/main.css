@@ -21,3 +21,8 @@
   src: url('/assets/fonts/db0dc6f6-4e11-4888-bc50-e6a16720d77f.woff') format('woff');
   font-display: swap
 }
+
+.pagefind-ui__form.pagefind-ui__form::before {
+  display: none !important;
+  content: '';
+}

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.active = false
 
                 this.method = this.getAttribute('method') || 'post'
-                this.action = this.getAttribute('action') || '/components/search-menu?action=search&searchmethod=0&search='
+                this.action = this.getAttribute('action') || '/search/?search='
                 this.placeholder = this.getAttribute('placeholder') || 'Search for...'
                 this.navigate = this.getAttribute('navigate') || 'Navigate'
                 this.enter = this.getAttribute('enter') || 'Select'
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.drag = this.getAttribute('drag') || 'Hold & drag'
                 this.hint = this.getAttribute('hint') || 'Search tips: some search terms require an exact match. Try typing the entire sentence, or use a different word or phrase.'
                 this.nohits = this.getAttribute('nohits') || 'No recent search matches your query, but... there\'s no timelike present to search for something!'
-                this.recentSearches = JSON.parse(sessionStorage.getItem('asRecentSearches')) || [];
+                this.recentSearches = JSON.parse(localStorage.getItem('asRecentSearches')) || [];
                 this.filteredSearches = [...this.recentSearches]
                 // initialize
                 this.init()
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.btns.clear = this.querySelector('[btn-clear]')
 
                 this.form = this.querySelector('form')
-                this.search = this.querySelector('[type="search"]')
+                this.search = this.querySelector(':scope [type="search"]')
             }
 
             registerDrag() {
@@ -97,29 +97,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
 
-            calculatePosition() {
-                console.log(this.popoverWrapper.getBoundingClientRect())
-            }
-
             registerKeys() {
                 this.addEventListener('focusin', () => this.active = true)
                 this.addEventListener('focusout', () => this.active = false)
 
                 const keyMap = []
                 document.addEventListener('keydown', e => {
-                    //if (!this.active) return
-                    console.log('key', e.code)
                     keyMap.push(e.code.replace('Left', '').replace('Right', '').replace('Key', '').replace('Digit', ''))
                     this.decodeCommand(keyMap, e)
                 })
 
                 document.addEventListener('keyup', e => {
-                    //if (!this.active) return
                     keyMap.splice(0, keyMap.length)
                 })
 
                 this.search.addEventListener('input', e => this.filterCommands(e.target.value))
-                this.form.addEventListener('submit', e => this.saveSearch)
+                this.form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    this.saveSearch()
+                })
                 if (this.btns.clear)
                     this.btns.clear.addEventListener('click', e => this.clearSearches())
             }
@@ -131,19 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
             saveSearch() {
                 if (this.search.value !== '') {
                     this.recentSearches.push({ searchTerm: `${this.search.value}` })
-                    sessionStorage.setItem('asRecentSearches', JSON.stringify(this.uniqueArray(this.recentSearches)))
+                    localStorage.setItem('asRecentSearches', JSON.stringify(this.uniqueArray(this.recentSearches)))
                 }
                 this.form.submit()
             }
 
             clearSearches() {
                 this.filteredSearches = this.recentSearches = []
-
-                sessionStorage.setItem('asRecentSearches', JSON.stringify(this.recentSearches))
+                localStorage.setItem('asRecentSearches', JSON.stringify(this.recentSearches))
                 this.render()
             }
 
             filterCommands(searchText) {
+                console.log('Filtering commands...', searchText)
                 this.filteredSearches = this.recentSearches.filter(option => {
                     return option.searchTerm.includes(searchText.toLowerCase())
                 })
@@ -161,7 +157,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (isKey('Enter')) {
-                    this.search.value = evt.target.textContent
+                    if (evt.target.textContent)
+                        this.search.value = evt.target.textContent
+                    else
+                        this.search.value = this.search.value
                     this.saveSearch()
                 }
                 // close when Esc key is pressed
@@ -212,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         c.textContent = heading.searchTerm
                         c.addEventListener('click', () => {
                             this.search.value = heading.searchTerm
-                            this.saveSearch()
-                            //this.form.submit()
+                            // this.saveSearch()
+                            this.form.submit()
                         })
                         sec.append(c)
 
