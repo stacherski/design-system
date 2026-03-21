@@ -1,5 +1,6 @@
 ---
 layout: layouts/base.njk
+
 ---
 
 {% set componentExamples = examples | byComponent(component.name) %}
@@ -13,13 +14,14 @@ layout: layouts/base.njk
 
   <article>
     {% if component.description %}
-      <div class="component-page__description">{{ component.description | safe }}</div>
+      <p>{{ component.description | safe }}</p>
     {% endif %}
   </article>
 
   <as-tab-group>
     {% if componentExamples.length %}
-      <as-tab icon-name="inbox" selected>Examples ({{ componentExamples.length }})</as-tab>
+      <as-tab icon-name="inbox" selected
+      >Examples ({{ componentExamples.length }})</as-tab>
       <as-tab-panel>
         <div style="display: flex; justify-content: flex-end;">
           <as-table-actions data-table=".examples"></as-table-actions>
@@ -45,7 +47,8 @@ layout: layouts/base.njk
       </as-tab-panel>
     {% endif %}
     {% if componentProps.length %}
-      <as-tab icon-name="list-ul">Properties ({{ componentProps.length }})</as-tab>
+      <as-tab icon-name="list-ul"
+      >Properties ({{ componentProps.length }})</as-tab>
       <as-tab-panel>
         <div style="display: flex; justify-content: flex-end;">
           <as-table-actions data-table=".properties"></as-table-actions>
@@ -69,7 +72,8 @@ layout: layouts/base.njk
                     {% endif %}
                     {% if prop.optional == 'No' %}
                       <b>Required:</b>
-                    {% endif %}{{ prop.description | safe }}</td>
+                    {% endif %}{{ prop.description | safe }}
+                  </td>
                   <td>{{ prop.propertyType }}</td>
                 </tr>
               {% endfor %}
@@ -111,14 +115,22 @@ layout: layouts/base.njk
       <ul>
         {% if component.componentJS %}
           <li>
-            <a class="btn btn-transparent" download="{{ component.componentJS }}" href="/assets/js/components/{{ component.componentJS }}">
+            <a
+              class="btn btn-transparent"
+              download="{{ component.componentJS }}"
+              href="/assets/js/components/{{ component.componentJS }}"
+            >
               <as-icon name="document-lines"></as-icon>
               {{ component.componentJS }}</a>
           </li>
         {% endif %}
         {% if component.componentCSS %}
           <li>
-            <a class="btn btn-transparent" download="{{ component.componentCSS }}" href="/assets/css/components/{{ component.componentCSS }}">
+            <a
+              class="btn btn-transparent"
+              download="{{ component.componentCSS }}"
+              href="/assets/css/components/{{ component.componentCSS }}"
+            >
               <as-icon name="document-lines"></as-icon>
               {{ component.componentCSS }}</a>
           </li>
@@ -126,5 +138,4 @@ layout: layouts/base.njk
       </ul>
     </as-tab-panel>
   </as-tab-group>
-
 </article>
