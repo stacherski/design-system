@@ -352,6 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!force && mode === this.mode)
                 return
             this.mode = mode
+            this.setAttribute('mode', mode)
             if (mode === 'mobile') {
                 this.panel.hidePopover()
                 this.trigger.hidden = true

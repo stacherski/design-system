@@ -11,11 +11,14 @@ as-date-picker {
     --gap: var(--as-space-xs);
     position: relative;
     display: block;
+    /* keeps the field wide enough for a date and the button when a flex parent would shrink it */
+    min-inline-size: calc(8 * var(--as-size-l));
 }
 
 /* room for the calendar button inside the field */
-as-date-picker input {
-    padding-inline-end: calc(var(--as-size-l) + var(--as-space-s));
+/* the base input rule reads padding from --padding-inline, so the room for the button is set there (start end) */
+as-date-picker[mode="desktop"] input {
+    --padding-inline: var(--as-space-m) calc(var(--as-size-l) + var(--as-space-s));
 }
 
 /* calendar button inside the field */

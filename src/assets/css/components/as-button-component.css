@@ -1,3 +1,7 @@
+as-button[hidden] {
+    display: none;
+}
+
 as-button {
     display: inline-flex;
     vertical-align: middle;
