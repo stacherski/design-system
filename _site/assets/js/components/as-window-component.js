@@ -1,1 +1,0 @@
-window.AS = window.AS || {}
