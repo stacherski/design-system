@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.settings.button = this.getAttribute('button-text') || 'Open drawer'
                 this.settings.closeButton = this.getAttribute('close-text') || 'Close'
                 this.settings.delay = this.getAttribute('delay') || 10
-                this.settings.transitionTime = this.getAttribute('transition-time') || 400
+                this.settings.transitionTime = this.getAttribute('transition-time') || 500
                 ///
                 this.settings.content = this.innerHTML
                 this.broadcastEvent('as-drawer:created', { id: this.drawerId, position: this.settings.position })

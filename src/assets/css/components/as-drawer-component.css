@@ -3,7 +3,7 @@ body[freeze] {
 }
 
 .as-drawer {
-    --as-drawer-transition-time: 400ms;
+    --as-drawer-transition-time: var(--as-time-m);
     position: fixed;
     z-index: var(--as-index-modal);
     transition-duration: var(--as-drawer-transition-time);

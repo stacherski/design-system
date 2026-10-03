@@ -184,7 +184,7 @@ as-date-picker>[popover] {
     transition: all var(--as-time-xs) ease-out;
     transition-behavior: allow-discrete;
     transform: translateY(calc(1 * var(--as-space-m)));
-    transition-delay: 10ms;
+    transition-delay: var(--as-time-xs);
     opacity: 0;
     scale: .95;
     max-width: var(--max-width);

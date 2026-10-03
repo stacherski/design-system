@@ -504,7 +504,7 @@ body[freeze] {
 }
 
 .as-drawer {
-    --as-drawer-transition-time: 400ms;
+    --as-drawer-transition-time: var(--as-time-m);
     position: fixed;
     z-index: var(--as-index-modal);
     transition-duration: var(--as-drawer-transition-time);
@@ -1155,7 +1155,7 @@ as-badge.success,
 }
 
 .toast-wrapper .toast {
-    --delay: 2.7s;
+    --delay: var(--as-time-l);
     max-width: var(--as-space-sidebar);
     width: auto;
     max-width: calc(20 * var(--as-size));

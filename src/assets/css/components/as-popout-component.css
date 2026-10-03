@@ -12,7 +12,7 @@ as-popout>[popover] {
     /*position-try-order: most-height, most-width;*/
     transition-behavior: allow-discrete;
     transform: translateY(var(--as-space-m));
-    transition-delay: 10ms;
+    transition-delay: var(--as-time-xs);
     scale: 0.95;
     opacity: 0;
     border-radius: var(--as-border-radius-s);
@@ -40,7 +40,7 @@ as-popout>[pop]:not([popover]) {
     transition: all var(--as-time-xs) ease-out;
     transition-behavior: allow-discrete;
     transform: translateY(var(--as-space-m));
-    transition-delay: 10ms;
+    transition-delay: var(--as-time-xs);
     scale: 0.95;
     opacity: 0;
     margin-block-start: var(--as-space-s);

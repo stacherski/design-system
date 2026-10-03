@@ -329,6 +329,20 @@
     "exampleValue": "{id: \"a\", tab: \"b1\"}"
   },
   {
+    "componentName": "Tab Panel",
+    "componentSlug": "tab-panel",
+    "name": "as-tab-panel:shown",
+    "description": "Fired when the panel becomes visible because its tab was selected. Has detail object.",
+    "exampleValue": "{id: \"panel-a-0\"}"
+  },
+  {
+    "componentName": "Tab Panel",
+    "componentSlug": "tab-panel",
+    "name": "as-tab-panel:hidden",
+    "description": "Fired when the panel is hidden because another tab was selected. Has detail object.",
+    "exampleValue": "{id: \"panel-a-0\"}"
+  },
+  {
     "componentName": "Character Counter",
     "componentSlug": "character-counter",
     "name": "as-char-counter:created",

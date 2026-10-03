@@ -211,7 +211,7 @@
   },
   {
     "name": "Tab",
-    "description": "Component used solely within Tab Group component.",
+    "description": "Component used solely within Tab Group component. Pairs with a Tab Panel by order.",
     "slug": "tab",
     "examplesCount": 2,
     "propertiesCount": 1,
@@ -220,12 +220,22 @@
   },
   {
     "name": "Tab Group",
-    "description": "Tabs is a view often used in record details to display related information and actions. The only working component there is the &lt;as-tab-group&gt; which holds all the logic. Elements inside &lt;as-tab&gt; &amp; &lt;as-tab-panel&gt; are only there as placeholders (though tabs logic uses these), these might be added later as full-blown components.",
+    "description": "Tabs is a view often used in record details to display related information and actions. The &lt;as-tab-group&gt; holds the selection logic: it wraps the &lt;as-tab&gt; elements in a tablist, pairs each with the &lt;as-tab-panel&gt; at the same position and keeps ARIA attributes, roving tabindex and keyboard navigation in sync.",
     "slug": "tab-group",
     "examplesCount": 1,
     "propertiesCount": 1,
     "eventsCount": 2,
     "componentJS": "as-tab-group-component.js",
+    "componentCSS": "as-tab-group-component.css"
+  },
+  {
+    "name": "Tab Panel",
+    "description": "Component used solely within Tab Group component. Holds the content of a single tab, owns its tabpanel role and reports when it is shown or hidden.",
+    "slug": "tab-panel",
+    "examplesCount": 1,
+    "propertiesCount": 0,
+    "eventsCount": 2,
+    "componentJS": "as-tab-panel-component.js",
     "componentCSS": "as-tab-group-component.css"
   },
   {
