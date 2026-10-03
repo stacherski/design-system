@@ -64,12 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
             connectedCallback() {
                 this.#input = this.querySelector('input,textarea')
 
-                this.#errorMessage = document.createElement('span')
-                this.#errorMessage.setAttribute('error-message', '')
-                this.#errorMessage.setAttribute('aria-live', 'polite')
-                this.#errorMessage.id = `${this.#input?.id || crypto.randomUUID()}-error`
-                this.#input?.setAttribute('aria-describedby', [this.#input.getAttribute('aria-describedby'), this.#errorMessage.id].filter(Boolean).join(' '))
-                this.append(this.#errorMessage)
+                // build the error element once, but bind events on every connect (they are removed on disconnect)
+                if (!this.#errorMessage) {
+                    this.#errorMessage = document.createElement('span')
+                    this.#errorMessage.setAttribute('error-message', '')
+                    this.#errorMessage.setAttribute('aria-live', 'polite')
+                    this.#errorMessage.id = `${this.#input?.id || crypto.randomUUID()}-error`
+                    this.#input?.setAttribute('aria-describedby', [this.#input.getAttribute('aria-describedby'), this.#errorMessage.id].filter(Boolean).join(' '))
+                    this.append(this.#errorMessage)
+                }
 
                 this.#bindEvents()
             }

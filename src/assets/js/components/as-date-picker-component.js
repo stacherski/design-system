@@ -1,7 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-date-picker') === undefined) {
         class ASDatePickerElement extends HTMLElement {
+            // window/document listeners are tracked so they only live while the element is connected
+            addGlobal(target, type, fn) {
+                // the same function reference is only ever registered once
+                this._globals ??= []
+                if (!this._globals.some(g => g[0] === target && g[1] === type && g[2] === fn))
+                    this._globals.push([target, type, fn])
+                target.addEventListener(type, fn)
+            }
+
+            attachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.addEventListener(type, fn))
+            }
+
+            detachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.removeEventListener(type, fn))
+            }
+
+            disconnectedCallback() {
+                this.detachGlobals()
+            }
+
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready) {
+                    this.attachGlobals()
+                    return
+                }
+                this.ready = true
+
                 queueMicrotask(() => {
                     this.datePickerId = crypto.randomUUID()
                     this.breakpoint = this.getAttribute('breakpoint') || 800
@@ -282,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.input.addEventListener('change', this.mobileDatePicker.bind(this))
                 this.calendarWrapper.addEventListener('keydown', this.selectDayWithArrows.bind(this))
 
-                window.addEventListener('resize', () => this.toggleInputType())
+                this.addGlobal(window, 'resize', this._onResize ??= () => this.toggleInputType())
             }
 
             mobileDatePicker() {

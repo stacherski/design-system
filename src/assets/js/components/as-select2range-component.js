@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-select2range') === undefined) {
         class ASSelect2Range extends HTMLElement {
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready)
+                    return
+                this.ready = true
+
                 // Initialize
                 this.init()
             }

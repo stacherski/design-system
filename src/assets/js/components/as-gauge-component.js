@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-gauge') === undefined) {
         class ASGauge extends HTMLElement {
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready)
+                    return
+                this.ready = true
+
                 /// default options
                 this.settings = {}
                 this.settings.value = this.getAttribute('val') || this.textContent || 50

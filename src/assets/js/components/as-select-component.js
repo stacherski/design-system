@@ -5,8 +5,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 super()
                 this.ready = false
             }
+            // window/document listeners are tracked so they only live while the element is connected
+            addGlobal(target, type, fn) {
+                // the same function reference is only ever registered once
+                this._globals ??= []
+                if (!this._globals.some(g => g[0] === target && g[1] === type && g[2] === fn))
+                    this._globals.push([target, type, fn])
+                target.addEventListener(type, fn)
+            }
+
+            attachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.addEventListener(type, fn))
+            }
+
+            detachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.removeEventListener(type, fn))
+            }
+
+            disconnectedCallback() {
+                this.detachGlobals()
+            }
+
             connectedCallback() {
-                this.selectId = crypto.randomUUID()
+                // keep the id across re-connects, the popover and aria-controls point at it
+                this.selectId ??= crypto.randomUUID()
                 this.setAttribute('id', this.selectId)
                 this.body = document.querySelector('body')
                 this.select = this.querySelector('select')
@@ -16,8 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.ready = true
                     return
                 }
-                if (this.ready)
+                if (this.ready) {
+                    this.attachGlobals()
                     return
+                }
                 this.init()
             }
 
@@ -32,6 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.tsSelectWrapper.remove()
                     this.tsSelectDropdown.remove()
                     this.icon.remove()
+                    // init() bails out when ready, rebuild the UI from the updated <select>
+                    this.ready = false
                     this.init()
                     this.removeAttribute('updated')
                     this.setSelectTriggerValue()
@@ -104,13 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.tsSelectTrigger.addEventListener('input', e => this.forSelectTrigger(e))
 
-                this.addEventListener('keydown', e => {
+                // same reference on every rebuild, so it is only registered once
+                this.addEventListener('keydown', this._onKeydown ??= e => {
                     this.setIndex()
                     this.handleKey(e)
                 })
                 const calcEvents = ['resize', 'orientationchange', 'scroll']
                 calcEvents.forEach(event =>
-                    window.addEventListener(event, this.calculateSelectDropdownPosition.bind(this))
+                    this.addGlobal(window, event, this._onCalc ??= () => this.calculateSelectDropdownPosition())
                 )
 
                 this.tsSelectDropdown.addEventListener('toggle', e => {

@@ -2,7 +2,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-command-menu') === undefined) {
         class ASCommandMenu extends HTMLElement {
 
+            // window/document listeners are tracked so they only live while the element is connected
+            addGlobal(target, type, fn) {
+                // the same function reference is only ever registered once
+                this._globals ??= []
+                if (!this._globals.some(g => g[0] === target && g[1] === type && g[2] === fn))
+                    this._globals.push([target, type, fn])
+                target.addEventListener(type, fn)
+            }
+
+            attachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.addEventListener(type, fn))
+            }
+
+            detachGlobals() {
+                this._globals?.forEach(([target, type, fn]) => target.removeEventListener(type, fn))
+            }
+
+            disconnectedCallback() {
+                this.detachGlobals()
+            }
+
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready) {
+                    this.attachGlobals()
+                    return
+                }
+                this.ready = true
+
                 // command menu ID
                 this.commandMenuId = this.getAttribute("id") || crypto.randomUUID()
                 if (!this.getAttribute("id"))
@@ -75,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.offsetY = (e.clientY - pop.top)
                 })
 
-                document.addEventListener('pointermove', e => {
+                this.addGlobal(document, 'pointermove', this._onPointerMove ??= e => {
                     if (this.isDragged) {
                         this.popoverWrapper.style.pointerEvents = 'none'
                         this.popoverWrapper.style.setProperty('--left', `${e.clientX - this.offsetX}px`)
@@ -83,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 })
 
-                document.addEventListener('pointerup', e => {
+                this.addGlobal(document, 'pointerup', this._onPointerUp ??= e => {
                     this.popoverWrapper.attributeStyleMap.delete('transition')
                     this.popoverWrapper.attributeStyleMap.delete('opacity')
                     this.popoverWrapper.attributeStyleMap.delete('pointer-events')
@@ -99,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             registerKeys() {
                 const keyMap = []
-                document.addEventListener('keydown', e => {
+                this.addGlobal(document, 'keydown', this._onKeyDown ??= e => {
                     keyMap.push(e.code.replace('Left', '').replace('Right', '').replace('Key', '').replace('Digit', ''))
                     this.decodeCommand(keyMap, e)
                 })
 
-                document.addEventListener('keyup', e => keyMap.splice(0, keyMap.length))
+                this.addGlobal(document, 'keyup', this._onKeyUp ??= e => keyMap.splice(0, keyMap.length))
 
                 this.search.addEventListener('input', e => this.filterCommands(e.target.value))
             }

@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-svg-to-base') === undefined) {
         class ASSVG2Base64Element extends HTMLElement {
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready)
+                    return
+                this.ready = true
+
                 this.innerHTML = `
                     <div class="data-line">
                         <label>SVG file</label>

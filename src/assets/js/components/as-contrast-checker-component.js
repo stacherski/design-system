@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.customElements.get('as-contrast-checker') === undefined) {
         class ASContrastChecker extends HTMLElement {
             connectedCallback() {
+                // build once: connectedCallback also runs when the element is moved
+                if (this.ready)
+                    return
+                this.ready = true
+
                 this.text = this.getAttribute('text') || this.innerText || 'Lorem ipsum dolor sit amet'
 
                 this.contrastCheckerId = this.getAttribute("id") || "default";

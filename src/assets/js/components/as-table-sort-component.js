@@ -117,14 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 //const btns = this.querySelectorAll('button[sort]')
                 const btns = this.table.tHead.querySelectorAll('button[sort]')
                 btns.forEach(btn => {
-                    btn.firstChild.setAttribute('new-name', '--as-icon-arrows-up-down')
+                    btn.firstChild.setAttribute('name', '--as-icon-arrows-up-down')
                 })
                 const asc = this.tableHeadings[index].asc = !this.tableHeadings[index].asc
 
                 if (asc)
-                    btn.firstChild.setAttribute('new-name', '--as-icon-sort-up')
+                    btn.firstChild.setAttribute('name', '--as-icon-sort-up')
                 else
-                    btn.firstChild.setAttribute('new-name', '--as-icon-sort-down')
+                    btn.firstChild.setAttribute('name', '--as-icon-sort-down')
                 btn.setAttribute('active', '')
                 //let rows = [...this.querySelectorAll('table tbody tr')]
 
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         heading.asc = undefined
                         const btn = heading.querySelector('button')
                         //btn.textContent = '↑↓'
-                        btn.firstChild.setAttribute('new-name', '--as-icon-arrows-up-down')
+                        btn.firstChild.setAttribute('name', '--as-icon-arrows-up-down')
                     }
                 })
                 this.hasSorts = false

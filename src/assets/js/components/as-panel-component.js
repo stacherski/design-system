@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 super()
                 this.ready = false
+                this._onResize = e => this.resizeContent(e)
             }
 
             connectedCallback() {
@@ -20,9 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.settings.rotate = this.getAttribute('rotate') || '-45deg'
                 ///
 
+                if (!this.ready)
+                    this.init()
+                // global listener lives only while connected
                 if (this.ready)
-                    return
-                this.init()
+                    window.addEventListener('resize', this._onResize)
+            }
+
+            disconnectedCallback() {
+                window.removeEventListener('resize', this._onResize)
             }
 
             init() {
@@ -65,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         this.toggleContent()
                     }
                 })
-                window.addEventListener('resize', (e) => this.resizeContent(e))
             }
 
             resizeContent(e) {

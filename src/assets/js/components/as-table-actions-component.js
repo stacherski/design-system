@@ -181,10 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 navigator.clipboard.writeText(text)
                     .then(() => {
-                        this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-checkmark')
+                        this.buttonCOPY.firstChild.setAttribute('name', '--as-icon-checkmark')
                         //buttonCOPY.classList.add('active')
                         setTimeout(() => {
-                            this.buttonCOPY.firstChild.setAttribute('new-name', '--as-icon-clone')
+                            this.buttonCOPY.firstChild.setAttribute('name', '--as-icon-clone')
                             this.buttonCOPY.classList.remove('active')
                         }, 1000)
                     })
