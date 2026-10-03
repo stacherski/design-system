@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             success: 'btn-success'
         }
         // attributes forwarded as they are to the native <button>
-        const FORWARDED = ['popovertarget', 'popovertargetaction', 'name', 'value', 'form']
+        const FORWARDED = ['popovertarget', 'popovertargetaction', 'name', 'value', 'form', 'aria-controls']
 
         class ASButton extends HTMLElement {
             constructor() {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             static get observedAttributes() {
-                return ['icon-name', 'icon-position', 'variant', 'size', 'label', 'type', 'disabled', 'loading', 'href', 'target', 'button-class', ...FORWARDED]
+                return ['icon-name', 'icon-position', 'icon-flip', 'variant', 'size', 'label', 'type', 'disabled', 'loading', 'href', 'target', 'button-class', ...FORWARDED]
             }
 
             connectedCallback() {
@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.ready)
                     return
                 this.ready = true
+                // a text set before the element was upgraded would shadow the accessor below
+                if (Object.hasOwn(this, 'text')) {
+                    const value = this.text
+                    delete this.text
+                    this.text = value
+                }
                 this.build()
                 this.broadcastEvent('as-button:created', { id: this.id })
             }
@@ -41,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
             build() {
                 // the element content becomes the button text
                 const nodes = [...this.childNodes]
-                this.text = null
-                if (nodes.some(n => n.nodeType !== Node.TEXT_NODE || n.textContent.trim())) {
-                    this.text = document.createElement('span')
-                    this.text.append(...nodes)
+                this.textEl = this.textEl || null
+                if (!this.textEl && nodes.some(n => n.nodeType !== Node.TEXT_NODE || n.textContent.trim())) {
+                    this.textEl = document.createElement('span')
+                    this.textEl.append(...nodes)
                 }
 
                 this.control = null
@@ -68,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // classes
                 const variant = this.getAttribute('variant') || 'primary'
                 const classes = ['btn', VARIANTS[variant], ...(this.getAttribute('button-class') || '').split(/\s+/)]
-                control.className = classes.filter(Boolean).join(' ')
+                control.className = [...new Set(classes.filter(Boolean))].join(' ')
 
                 // size
                 const size = this.getAttribute('size')
@@ -104,6 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.icon.setAttribute('name', iconName)
                     // button size m / l carries over to the icon
                     size === 'm' || size === 'l' ? this.icon.setAttribute('size', size) : this.icon.removeAttribute('size')
+                    // icon-flip: x, y or xy mirrors the icon
+                    const flip = this.getAttribute('icon-flip') || ''
+                    this.icon.toggleAttribute('flip-x', flip.includes('x'))
+                    this.icon.toggleAttribute('flip-y', flip.includes('y'))
                 } else if (this.icon) {
                     this.icon.remove()
                     this.icon = null
@@ -111,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // content order: icon + text, icon position decides which comes first
                 const end = this.getAttribute('icon-position') === 'end'
-                control.replaceChildren(...[end ? this.text : this.icon, end ? this.icon : this.text].filter(Boolean))
+                control.replaceChildren(...[end ? this.textEl : this.icon, end ? this.icon : this.textEl].filter(Boolean))
 
-                if (!this.text && !label && !this.hasAttribute('aria-label'))
+                if (!this.textEl && !label && !this.hasAttribute('aria-label'))
                     console.warn('as-button without text needs a label attribute to have an accessible name', this)
             }
 
@@ -124,6 +134,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     return
                 }
                 this.broadcastEvent('as-button:click', { id: this.id })
+            }
+
+            // button text, for components that update it from script
+            get text() {
+                return this.textEl?.textContent ?? ''
+            }
+
+            set text(value) {
+                if (!this.textEl)
+                    this.textEl = document.createElement('span')
+                this.textEl.textContent = value
+                if (this.control)
+                    this.sync()
+            }
+
+            get disabled() {
+                return this.hasAttribute('disabled')
+            }
+
+            set disabled(value) {
+                this.toggleAttribute('disabled', !!value)
             }
 
             // delegate to the native control

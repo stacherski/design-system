@@ -91,21 +91,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.controlsHTML = `
                         <div class="controls">
                             <div>
-                                <button class="btn up" tabindex="0">↩ UP 1 LEVEL</button>
+                                <as-button class="up">↩ UP 1 LEVEL</as-button>
                             </div>
                             <div>
-                                <button class="btn prevone" tabindex="0">LEFT</button>
-                                <button class="btn prev" tabindex="0">PREV</button>
+                                <as-button class="prevone">LEFT</as-button>
+                                <as-button class="prev">PREV</as-button>
                             </div>
                             <div>
-                                <button class="btn minusone" tabindex="0">-1</button>
+                                <as-button class="minusone">-1</as-button>
                                 <div class="select">
                                     <label for="resolution_${this.graphId}">Chart size</label>
                                     <as-select>
                                         <select id="resolution_${this.graphId}" class="resolution"></select>
                                     </as-select>
                                 </div>
-                                <button class="btn plusone" tabindex="0">+1</button>
+                                <as-button class="plusone">+1</as-button>
                             </div>
                             <div>
                                 <div class="select">
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </div>
                             </div>
                             <div>
-                                <button class="btn next" tabindex="0">NEXT</button>
-                                <button class="btn nextone" tabindex="0">RIGHT</button>
+                                <as-button class="next">NEXT</as-button>
+                                <as-button class="nextone">RIGHT</as-button>
                             </div>
                         </div>
                     `
@@ -247,8 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             this.updateButtonStates();
 
-            this.btnPrev.textContent = 'PREV ' + this.resolution
-            this.btnNext.textContent = 'NEXT ' + this.resolution
+            this.btnPrev.text = 'PREV ' + this.resolution
+            this.btnNext.text = 'NEXT ' + this.resolution
 
             //this.remainder = this.data.length%this.resolution
             this.current = this.querySelector('.current')
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //enable/disable level up button
             (!this.level) ? this.btnUp.setAttribute('disabled', '') : this.btnUp.removeAttribute('disabled')
             //update button label
-            this.btnUp.textContent = `↩ ${(this.prevData[this.level - 1]) ? this.prevData[this.level - 1].label : 'BACK'}`
+            this.btnUp.text = `↩ ${(this.prevData[this.level - 1]) ? this.prevData[this.level - 1].label : 'BACK'}`
 
             //update resolution selector
             this.resolutionSelect.innerHTML = ''
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (this.chartType === 3) {
                 this.btnUp.setAttribute('disabled', '');
-                this.btnUp.textContent = '↩BACK'
+                this.btnUp.text = '↩BACK'
             }
         }
 
@@ -586,8 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             /// update buttons labels with remaining bars to show
             if (this.controls) {
-                this.btnPrev.textContent = 'PREV ' + this.calculateRemainingPrev()
-                this.btnNext.textContent = 'NEXT ' + this.calculateRemainingNext()
+                this.btnPrev.text = 'PREV ' + this.calculateRemainingPrev()
+                this.btnNext.text = 'NEXT ' + this.calculateRemainingNext()
             }
 
             const maxY = this.getYAxisMaxValue()
@@ -784,8 +784,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             /// update buttons labels with remaining bars to show
             if (this.controls) {
-                this.btnPrev.textContent = 'PREV ' + this.calculateRemainingPrev()
-                this.btnNext.textContent = 'NEXT ' + this.calculateRemainingNext()
+                this.btnPrev.text = 'PREV ' + this.calculateRemainingPrev()
+                this.btnNext.text = 'NEXT ' + this.calculateRemainingNext()
             }
 
             // clean up chart area

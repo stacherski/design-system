@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <label>CSS variable name</label>
                         <input type="text" placeholder="--as-icon-telephone">
                     </div>
-                    <button class="btn" type="button">Generate</button>
+                    <as-button>Generate</as-button>
                     <div class="data-list">
                         <label>Icon preview</label>
                         <div class="preview" aria-label="Icon preview"></div>
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.fileInput = this.querySelector('input[type="file"]')
                 this.textarea = this.querySelector('textarea')
                 this.nameInput = this.querySelector('input[type="text"]')
-                this.button = this.querySelector('button')
+                this.button = this.querySelector('as-button')
                 this.output = this.querySelector('code')
                 this.preview = this.querySelector('.preview')
 

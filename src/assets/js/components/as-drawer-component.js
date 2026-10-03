@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             render() {
                 // render Drawer structure
                 this.innerHTML = `
-                    <button opendrawer class="btn btn__solid_primary">${this.settings.button}</button>
-                    <div hidden class="as-drawer ${this.settings.position}" role="dialog" aria-modal="true" aria-label="${this.getAttribute('label') || this.settings.button}" data-id="${this.drawerId}">${this.settings.content}<button type="button" class="btn" closedrawer><as-icon name="--as-icon-times-solid"></as-icon> ${this.settings.closeButton}</button></div>
+                    <as-button opendrawer>${this.settings.button}</as-button>
+                    <div hidden class="as-drawer ${this.settings.position}" role="dialog" aria-modal="true" aria-label="${this.getAttribute('label') || this.settings.button}" data-id="${this.drawerId}">${this.settings.content}<as-button closedrawer icon-name="--as-icon-times-solid">${this.settings.closeButton}</as-button></div>
                 `
                 this.style.setProperty('--as-drawer-transition-time', `${this.settings.transitionTime}ms`)
-                this.openbutton = this.querySelector('button[opendrawer]')
-                this.closebutton = this.querySelector('button[closedrawer]')
+                this.openbutton = this.querySelector('as-button[opendrawer]')
+                this.closebutton = this.querySelector('as-button[closedrawer]')
                 this.drawer = this.querySelector('.as-drawer')
 
                 this.body = document.querySelector('body')

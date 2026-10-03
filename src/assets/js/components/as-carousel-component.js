@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="slider">
                     ${content}
                     <div class="controls">
-                        <button class="btn"><as-icon name="arrow-right" flip-x></as-icon>Prev</button>
-                        <button class="btn">Next<as-icon name="arrow-right"></as-icon></button>
+                        <as-button icon-name="arrow-right" icon-flip="x">Prev</as-button>
+                        <as-button icon-name="arrow-right" icon-position="end">Next</as-button>
                     </div>
                 </div>
-                <button class="btn" id="playpause">Play</button>
+                <as-button id="playpause">Play</as-button>
             `
 
             this.sliderRoot = this.querySelector('div.slider')
             this.slider = this.sliderRoot.querySelector('ul')
             this.playpausebutton = this.querySelector('#playpause')
-            this.prevbutton = this.querySelector('.controls button:first-child')
-            this.nextbutton = this.querySelector('.controls button:last-child')
+            this.prevbutton = this.querySelector('.controls as-button:first-child')
+            this.nextbutton = this.querySelector('.controls as-button:last-child')
 
             this.init()
         }
@@ -67,6 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         attributeChangedCallback() {
+            // attributes are also reported while the element is upgraded, before connectedCallback has built the slider
+            if (!this.slider)
+                return
+            this.gap = Number(this.getAttribute('gap')) || 16
+            this.delay = Number(this.getAttribute('delay')) || 3
+            this.speed = Number(this.getAttribute('speed')) || 200
             this.resize()
         }
 
@@ -102,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (this.autorotate) {
                 this.autostart = setTimeout(() => this.autoplay(), this.delay * 1000)
-                this.playpausebutton.textContent = 'Pause'
+                this.playpausebutton.text = 'Pause'
             }
         }
 
@@ -127,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.autorotate = false
             clearInterval(this.rotateInterval)
             clearTimeout(this.autostart)
-            this.playpausebutton.textContent = 'Play'
+            this.playpausebutton.text = 'Play'
             this.dispatchEvent(new CustomEvent('as-carousel:pause', { bubbles: true }))
         }
 
@@ -231,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoRotate(dir, delay) {
             this.step(dir)
             this.rotateInterval = setInterval(() => this.step(dir), delay * 1000)
-            this.playpausebutton.textContent = 'Pause'
+            this.playpausebutton.text = 'Pause'
         }
 
         moveSlide(dir) {

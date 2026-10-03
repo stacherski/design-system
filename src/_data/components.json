@@ -10,6 +10,16 @@
     "componentCSS": "as-button-component.css"
   },
   {
+    "name": "Button Group",
+    "description": "Joins buttons into one segmented control. Direct children (or elements wrapping a button, such as a popout) share borders, and only the outer corners stay rounded. Adds <code>role=\"group\"</code> for assistive technology.",
+    "slug": "button-group",
+    "examplesCount": 4,
+    "propertiesCount": 2,
+    "eventsCount": 0,
+    "componentJS": "as-button-group-component.js",
+    "componentCSS": "as-button-group-component.css"
+  },
+  {
     "name": "Carousel / Slider",
     "description": "Carousel component turns a list of elements into a looped carousel / slider with next/prev control buttons, play/pause button and some configuring parameters.",
     "slug": "carousel-slider",

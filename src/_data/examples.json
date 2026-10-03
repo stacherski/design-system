@@ -70,6 +70,34 @@
     "codeToken": "<code class=\"token icon\">&lt;as-button id=\"demo-button\"&gt;Click me&lt;/as-button&gt;</code>"
   },
   {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "example": "<as-button-group label=\"Actions\"><button class=\"btn\">First button</button><button class=\"btn\">Second-last button</button><button class=\"btn btn-outline\">Last button</button></as-button-group>",
+    "code": "<as-button-group label=\"Actions\">[.btn or element > .btn]</as-button-group>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button-group label=\"Actions\"&gt;[.btn or element &gt; .btn]&lt;/as-button-group&gt;</code>"
+  },
+  {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "example": "<as-button-group label=\"Pages\"><as-button variant=\"outline\">Previous</as-button><as-button variant=\"outline\">1</as-button><as-button variant=\"outline\">2</as-button><as-button variant=\"outline\" icon-name=\"arrow-right\" icon-position=\"end\">Next</as-button></as-button-group>",
+    "code": "<as-button-group><as-button variant=\"outline\">Previous</as-button><as-button variant=\"outline\">Next</as-button></as-button-group>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button-group&gt;&lt;as-button variant=\"outline\"&gt;Previous&lt;/as-button&gt;&lt;as-button variant=\"outline\"&gt;Next&lt;/as-button&gt;&lt;/as-button-group&gt;</code>"
+  },
+  {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "example": "<as-button-group vertical label=\"Menu\"><button class=\"btn btn-outline\">Overview</button><button class=\"btn btn-outline\">Details</button><button class=\"btn btn-outline\">History</button></as-button-group>",
+    "code": "<as-button-group vertical>[.btn or element > .btn]</as-button-group>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button-group vertical&gt;[.btn or element &gt; .btn]&lt;/as-button-group&gt;</code>"
+  },
+  {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "example": "<as-button-group vertical label=\"Case actions\"><as-popout popout-id=\"group-finish\" button-text=\"Finish\" button-icon=\"--as-icon-caret-down\" button-class=\"btn btn-outline\" popout-position=\"bottom\" popout-align=\"span-right\"><div style=\"display: grid; gap: var(--as-space-xs);\"><div><a class=\"btn btn-transparent\">Completed</a></div><div><a class=\"btn btn-transparent\">Cancelled</a></div></div></as-popout><as-popout popout-id=\"group-actions\" button-text=\"Actions\" button-icon=\"--as-icon-caret-down\" button-class=\"btn btn-outline\" popout-position=\"bottom\" popout-align=\"span-right\"><div style=\"display: grid; gap: var(--as-space-xs);\"><div><a class=\"btn btn-transparent\">Edit</a></div><div><a class=\"btn btn-transparent\">Archive</a></div></div></as-popout></as-button-group>",
+    "code": "<as-button-group vertical><as-popout button-class=\"btn btn-outline\" ...>[content]</as-popout></as-button-group>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button-group vertical&gt;&lt;as-popout button-class=\"btn btn-outline\" ...&gt;[content]&lt;/as-popout&gt;&lt;/as-button-group&gt;</code>"
+  },
+  {
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"pen\" size=\"xxxl\" color=\"--as-color-status-error\" label=\"There's been an error\"></as-icon>",
@@ -121,35 +149,35 @@
   {
     "componentName": "Toast",
     "componentSlug": "toast",
-    "example": "<button class=\"btn\" onclick=\"new Toast('This is neutral message.')\">Neutral</button>",
+    "example": "<as-button onclick=\"new Toast('This is neutral message.')\">Neutral</as-button>",
     "code": "new Toast('This is neutral message.')",
     "codeToken": "<code class=\"token icon\">new Toast('This is neutral message.')</code>"
   },
   {
     "componentName": "Toast",
     "componentSlug": "toast",
-    "example": "<button class=\"btn\" onclick=\"new Toast('This is info message.',{type:'info'})\"><as-icon name=\"--as-icon-user-tie\"></as-icon>Info</button>",
+    "example": "<as-button onclick=\"new Toast('This is info message.',{type:'info'})\"><as-icon name=\"--as-icon-user-tie\"></as-icon>Info</as-button>",
     "code": "new Toast('This is info message.',{type:'info'})",
     "codeToken": "<code class=\"token icon\">new Toast('This is info message.',{type:'info'})</code>"
   },
   {
     "componentName": "Toast",
     "componentSlug": "toast",
-    "example": "<button class=\"btn\" onclick=\"new Toast('This is warning message.',{type:'warning'})\"><as-icon name=\"--as-icon-exclamation\"></as-icon>Warning</button>",
+    "example": "<as-button onclick=\"new Toast('This is warning message.',{type:'warning'})\"><as-icon name=\"--as-icon-exclamation\"></as-icon>Warning</as-button>",
     "code": "new Toast('This is warning message.',{type:'warning'})\"",
     "codeToken": "<code class=\"token icon\">new Toast('This is warning message.',{type:'warning'})\"</code>"
   },
   {
     "componentName": "Toast",
     "componentSlug": "toast",
-    "example": "<button class=\"btn\" onclick=\"new Toast('This is error message.',{type:'error',sticky:true})\"><as-icon image name=\"--as-icon-shutter\" size=\"default\"></as-icon>Error</button>",
+    "example": "<as-button onclick=\"new Toast('This is error message.',{type:'error',sticky:true})\"><as-icon image name=\"--as-icon-shutter\" size=\"default\"></as-icon>Error</as-button>",
     "code": "new Toast('This is error message.',{type:'error',sticky:true})\"",
     "codeToken": "<code class=\"token icon\">new Toast('This is error message.',{type:'error',sticky:true})\"</code>"
   },
   {
     "componentName": "Toast",
     "componentSlug": "toast",
-    "example": "<button class=\"btn\" onclick=\"new Toast('This is success message.',{type:'success',timeout:10000})\"><as-icon name=\"pie-chart\"></as-icon>Success</button>",
+    "example": "<as-button onclick=\"new Toast('This is success message.',{type:'success',timeout:10000})\"><as-icon name=\"pie-chart\"></as-icon>Success</as-button>",
     "code": "new Toast('This is success message.',{type:'success',timeout:10000})\"",
     "codeToken": "<code class=\"token icon\">new Toast('This is success message.',{type:'success',timeout:10000})\"</code>"
   },
@@ -198,14 +226,14 @@
   {
     "componentName": "Popout",
     "componentSlug": "popout",
-    "example": "<as-popout hidden button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><div style=\"display: grid; gap: var(--as-space-xs);\"><button class=\"btn\" onclick=\"new Toast('Case closed!',{type:'info'})\">Close case<as-icon name=\"plus\" rotate=\"45deg\"></as-icon></button><button class=\"btn\" onclick=\"new Toast('Case archived!',{type:'warning'})\">Archive case<as-icon name=\"times-solid\"></as-icon></button><button class=\"btn\" onclick=\"new Toast('Case deleted!',{type:'success', sticky: true})\">Delete case<as-icon name=\"trashcan\"></as-icon></button></div></as-popout>",
+    "example": "<as-popout hidden button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><div style=\"display: grid; gap: var(--as-space-xs);\"><as-button onclick=\"new Toast('Case closed!',{type:'info'})\">Close case<as-icon name=\"plus\" rotate=\"45deg\"></as-icon></as-button><as-button onclick=\"new Toast('Case archived!',{type:'warning'})\">Archive case<as-icon name=\"times-solid\"></as-icon></as-button><as-button onclick=\"new Toast('Case deleted!',{type:'success', sticky: true})\">Delete case<as-icon name=\"trashcan\"></as-icon></as-button></div></as-popout>",
     "code": "<as-popout button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\">[content]</as-popout>",
     "codeToken": "<code class=\"token icon\">&lt;as-popout button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
   {
     "componentName": "Popout",
     "componentSlug": "popout",
-    "example": "<as-popout popout-id=\"filters-test\" button-text=\"Toggle filters\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><br><div style=\"display: flex; gap: var(--as-space-xs);\"><div class=\"data-line\"><label for=\"form-status\">Status</label><as-select><select id=\"form-status\" name=\"form-status\"><option>All</option><option value=\"1\">Active</option><option value=\"2\">Closed</option><option value=\"3\">Deleted</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-admin\">Administrator</label><as-select><select id=\"form-admin\" name=\"form-admin\"><option>All</option><option value=\"1\">Andrzej Stacherski</option><option value=\"2\">Yahor Siarhei</option><option value=\"3\">Szymon Strutyński</option><option value=\"4\">Pia Kristensen</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-date\">Date</label><as-date-picker><input id=\"form-date\" type=\"text\" placeholder=\"YYYY-MM-DD\" value=\"2025-11-05\"/></as-date-picker></div><br><div class=\"data-line\"><button style=\"align-self: end;\" class=\"btn\"><as-icon name=\"search\"></as-icon> Search</button></div></div></as-popout><br><style>as-popout[popout-id=\"filters-test\"] > [popover]{    max-width: unset;    width: fit-content;}</style>",
+    "example": "<as-popout popout-id=\"filters-test\" button-text=\"Toggle filters\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"><br><div style=\"display: flex; gap: var(--as-space-xs);\"><div class=\"data-line\"><label for=\"form-status\">Status</label><as-select><select id=\"form-status\" name=\"form-status\"><option>All</option><option value=\"1\">Active</option><option value=\"2\">Closed</option><option value=\"3\">Deleted</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-admin\">Administrator</label><as-select><select id=\"form-admin\" name=\"form-admin\"><option>All</option><option value=\"1\">Andrzej Stacherski</option><option value=\"2\">Yahor Siarhei</option><option value=\"3\">Szymon Strutyński</option><option value=\"4\">Pia Kristensen</option></select></as-select></div><br><div class=\"data-line\"><label for=\"form-date\">Date</label><as-date-picker><input id=\"form-date\" type=\"text\" placeholder=\"YYYY-MM-DD\" value=\"2025-11-05\"/></as-date-picker></div><br><div class=\"data-line\"><as-button style=\"align-self: end;\"><as-icon name=\"search\"></as-icon> Search</as-button></div></div></as-popout><br><style>as-popout[popout-id=\"filters-test\"] > [popover]{    max-width: unset;    width: fit-content;}</style>",
     "code": "<as-popout popout-id=\"filters-test\" button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\">[content]</as-popout>",
     "codeToken": "<code class=\"token icon\">&lt;as-popout popout-id=\"filters-test\" button-text=\"Select action\" button-class=\"btn\" popout-position=\"bottom\" popout-align=\"span-right\"&gt;[content]&lt;/as-popout&gt;</code>"
   },
@@ -254,7 +282,7 @@
   {
     "componentName": "Form Validation",
     "componentSlug": "form-validation",
-    "example": "<div style=\"display: grid; gap: var(--as-space-m);\" class=\"form\"><form><as-form-validation type-mismatch=\"Dette felt er af den forkerte type\" class=\"data-line\"><label for=\"myemail\">Email</label><input id=\"myemail\" type=\"email\" required//></as-form-validation><as-form-validation class=\"data-line\"><label for=\"mytextarea\">My textarea (min length 20 characters)</label><textarea id=\"mytextarea\" minlength=\"20\"></textarea></as-form-validation><button class=\"btn\" type=\"submit\">Submit</button></form></div><br><script>document.addEventListener('as-form-validation:error', e=>{    new Toast(`${e.detail.fieldid} -> ${e.detail.message}`)});document.addEventListener('as-form-validation:success', e=>{    new Toast(`${e.detail.fieldid} validated successfully!`)})</script>",
+    "example": "<div style=\"display: grid; gap: var(--as-space-m);\" class=\"form\"><form><as-form-validation type-mismatch=\"Dette felt er af den forkerte type\" class=\"data-line\"><label for=\"myemail\">Email</label><input id=\"myemail\" type=\"email\" required//></as-form-validation><as-form-validation class=\"data-line\"><label for=\"mytextarea\">My textarea (min length 20 characters)</label><textarea id=\"mytextarea\" minlength=\"20\"></textarea></as-form-validation><as-button type=\"submit\">Submit</as-button></form></div><br><script>document.addEventListener('as-form-validation:error', e=>{    new Toast(`${e.detail.fieldid} -> ${e.detail.message}`)});document.addEventListener('as-form-validation:success', e=>{    new Toast(`${e.detail.fieldid} validated successfully!`)})</script>",
     "code": "<as-form-validation type-mismatch=\"Dette felt er af den forkerte type\">[form input / form textarea]</as-form-validation>",
     "codeToken": "<code class=\"token icon\">&lt;as-form-validation type-mismatch=\"Dette felt er af den forkerte type\"&gt;[form input / form textarea]&lt;/as-form-validation&gt;</code>"
   },

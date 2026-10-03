@@ -768,6 +768,22 @@
     "optional": "Yes"
   },
   {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "name": "vertical",
+    "description": "When present stacks the buttons vertically, with the rounded corners kept on the first and last button only.",
+    "propertyType": "boolean",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button Group",
+    "componentSlug": "button-group",
+    "name": "label",
+    "description": "Accessible name of the group, set as <code>aria-label</code>. The component adds <code>role=\"group\"</code> so assistive technology announces the buttons as one related set.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "name": "size",

@@ -47,6 +47,11 @@ as-carousel>div>.controls {
     transform: translateY(-50%);
 }
 
+as-carousel>div>.controls as-button {
+    appearance: none;
+    cursor: pointer;
+}
+
 as-carousel>div>.controls button {
     appearance: none;
     cursor: pointer;

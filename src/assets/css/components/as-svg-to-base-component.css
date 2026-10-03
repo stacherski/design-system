@@ -17,7 +17,7 @@ as-svg-to-base input[type="text"] {
     inline-size: 100%;
 }
 
-as-svg-to-base button {
+as-svg-to-base as-button {
     margin-block: var(--as-space-l);
 }
 

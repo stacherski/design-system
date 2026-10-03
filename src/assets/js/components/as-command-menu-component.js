@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             init() {
                 this.innerHTML =
                     `
-                    <button class="${this.buttonClass}" btn-menu popovertarget="menu-${this.commandMenuId}">${this.locale.open} (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</button>
+                    <as-button button-class="${this.buttonClass}" btn-menu popovertarget="menu-${this.commandMenuId}">${this.locale.open} (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</as-button>
                     <dialog id="menu-${this.commandMenuId}" popover>
                         <input type="search" placeholder="${this.locale.placeholder}"/>
                         <section></section>

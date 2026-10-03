@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             init() {
                 this.innerHTML = `
-                    <button class="${this.buttonClass}">${this.buttonText}${this.iconName ? '<as-icon name="' + this.iconName + '"></as-icon>' : ''}</button>
+                    <as-button button-class="${this.buttonClass}"${this.iconName ? ` icon-name="${this.iconName}" icon-position="end"` : ''}>${this.buttonText}</as-button>
                 `
                 setTimeout(() => {
-                    this.button = this.querySelector('button')
+                    this.button = this.querySelector('as-button')
                     this.button.addEventListener('click', this.toggleClasses.bind(this))
-                    this.icon = this.button.querySelector('as-icon')
+                    this.icon = this.button.icon
                     this.toggleClasses()
                 }, 1)
 

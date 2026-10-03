@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.removeAttribute('hidden')
                 // render Popout structure
                 this.innerHTML = `
-                    <button style="anchor-name: --${this.popoutId}" popovertarget="${this.popoutId}" class="${this.settings.buttonClass}">${this.settings.buttonText}${this.settings.hasIcon ? '<as-icon name=' + this.settings.buttonIcon + '></as-icon>' : ''}</button>
+                    <as-button style="anchor-name: --${this.popoutId}" popovertarget="${this.popoutId}" button-class="${this.settings.buttonClass}"${this.settings.hasIcon ? ` icon-name="${this.settings.buttonIcon}" icon-position="end"` : ''}>${this.settings.buttonText}</as-button>
                     <div hidden pop popover id="${this.popoutId}" style="position-anchor: --${this.popoutId};"></div>
                 `
 

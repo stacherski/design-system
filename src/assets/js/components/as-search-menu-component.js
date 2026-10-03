@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             init() {
                 this.innerHTML =
                     `
-                    <button class="btn" btn-menu popovertarget="menu-${this.searchMenuId}">Search (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</button>
+                    <as-button btn-menu popovertarget="menu-${this.searchMenuId}">Search (${this.isMac ? '⌘' : '⊞'}+${this.keys[1]})</as-button>
                     <dialog id="menu-${this.searchMenuId}" popover>
                         <form method="${this.method}" action="${this.action}">
                             <input type="search" name="search" placeholder="${this.placeholder}"/>
                         </form>
-                        ${this.recentSearches.length ? '<div class="recent">Recent searches <button btn-clear class="btn">Clear</button></div>' : ''}
+                        ${this.recentSearches.length ? '<div class="recent">Recent searches <as-button btn-clear>Clear</as-button></div>' : ''}
                         <section></section>
                         <footer>
                             <ul>

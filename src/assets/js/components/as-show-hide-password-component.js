@@ -22,19 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.broadcastEvent('as-show-hide-password:error', { fieldid: null })
                     throw new Error('Input is not of type password')
                 }
-                this.showhide = document.createElement('button')
-                this.showhide.setAttribute('type', 'button')
+                this.showhide = document.createElement('as-button')
                 if (this.password.id)
                     this.showhide.setAttribute('aria-controls', this.password.id)
-                this.showhide.classList.add('btn')
                 if (this.icons) {
-                    this.icon = document.createElement('as-icon')
-                    this.icon.setAttribute('name', this.icons[0])
-                    // icon stays decorative; the button carries the accessible name
-                    this.showhide.setAttribute('aria-label', this.buttonLabels[0])
-                    this.showhide.append(this.icon)
+                    // icon stays decorative; the label is the accessible name
+                    this.showhide.setAttribute('icon-name', this.icons[0])
+                    this.showhide.setAttribute('label', this.buttonLabels[0])
                 } else
-                    this.showhide.textContent = this.buttonLabels[0]
+                    this.showhide.text = this.buttonLabels[0]
 
                 this._onClick = e => this.showhidepass(e)
                 this.showhide.addEventListener('click', this._onClick)
@@ -46,18 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (this.password.type == 'password') {
                     this.password.type = 'text'
                     if (this.icons) {
-                        this.icon.setAttribute('name', this.icons[1])
-                        this.showhide.setAttribute('aria-label', this.buttonLabels[1])
+                        this.showhide.setAttribute('icon-name', this.icons[1])
+                        this.showhide.setAttribute('label', this.buttonLabels[1])
                     } else
-                        this.showhide.textContent = this.buttonLabels[1]
+                        this.showhide.text = this.buttonLabels[1]
                     this.broadcastEvent('as-show-hide-password:show', { fieldid: this.password.id })
                 } else {
                     this.password.type = 'password'
                     if (this.icons) {
-                        this.icon.setAttribute('name', this.icons[0])
-                        this.showhide.setAttribute('aria-label', this.buttonLabels[0])
+                        this.showhide.setAttribute('icon-name', this.icons[0])
+                        this.showhide.setAttribute('label', this.buttonLabels[0])
                     } else
-                        this.showhide.textContent = this.buttonLabels[0]
+                        this.showhide.text = this.buttonLabels[0]
                     this.broadcastEvent('as-show-hide-password:hide', { fieldid: this.password.id })
                 }
                 this.showhide.toggleAttribute('hide')

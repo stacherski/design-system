@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.innerHTML = `
                     <as-popout popout-id="pop_${this.tableActionsId}" button-text="${this.settings.button}" button-icon="--as-icon-dots" popout-position="bottom" popout-align="span-left">
                     <div style="display: grid; gap: var(--as-space-xs);">
-                        <button class="btn" data-action="csv" title="Download as CSV"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download CSV</button>
-                        <button class="btn" data-action="excel" title="Download as Excel"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download XLS</button>
-                        <button class="btn" data-action="md" title="Download as Markdown"><as-icon name="--as-icon-paperclip" size="m"></as-icon>Download MD</button>
-                        <button class="btn" data-action="copy" title="Copy"><as-icon name="--as-icon-clone" size="m"></as-icon>Copy as text</button>
+                        <as-button data-action="csv" title="Download as CSV" icon-name="--as-icon-paperclip" size="m">Download CSV</as-button>
+                        <as-button data-action="excel" title="Download as Excel" icon-name="--as-icon-paperclip" size="m">Download XLS</as-button>
+                        <as-button data-action="md" title="Download as Markdown" icon-name="--as-icon-paperclip" size="m">Download MD</as-button>
+                        <as-button data-action="copy" title="Copy" icon-name="--as-icon-clone" size="m">Copy as text</as-button>
                     </div>
                     </as-popout>
                 `
@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.addEventListener('as-popout:created', e => {
                     setTimeout(() => {
                         if (e.detail.id === `pop_${this.tableActionsId}`) {
-                            this.buttonMD = this.querySelector('button[data-action="md"]')
-                            this.buttonCSV = this.querySelector('button[data-action="csv"]')
-                            this.buttonEXCEL = this.querySelector('button[data-action="excel"]')
-                            this.buttonCOPY = this.querySelector('button[data-action="copy"]')
+                            this.buttonMD = this.querySelector('as-button[data-action="md"]')
+                            this.buttonCSV = this.querySelector('as-button[data-action="csv"]')
+                            this.buttonEXCEL = this.querySelector('as-button[data-action="excel"]')
+                            this.buttonCOPY = this.querySelector('as-button[data-action="copy"]')
 
                             this.buttonMD.addEventListener('click', e => this.downloadMD(e))
                             this.buttonCSV.addEventListener('click', e => this.downloadCSV(e))
@@ -181,10 +181,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 navigator.clipboard.writeText(text)
                     .then(() => {
-                        this.buttonCOPY.firstChild.setAttribute('name', '--as-icon-checkmark')
+                        this.buttonCOPY.setAttribute('icon-name', '--as-icon-checkmark')
                         //buttonCOPY.classList.add('active')
                         setTimeout(() => {
-                            this.buttonCOPY.firstChild.setAttribute('name', '--as-icon-clone')
+                            this.buttonCOPY.setAttribute('icon-name', '--as-icon-clone')
                             this.buttonCOPY.classList.remove('active')
                         }, 1000)
                     })

@@ -8,6 +8,11 @@ as-button[loading] .btn {
     opacity: .6;
 }
 
+as-button .btn {
+    /* fills the element when a parent stretches it (grid cell, flex item) */
+    flex: 1 1 auto;
+}
+
 as-button .btn[disabled],
 as-button .btn[aria-disabled="true"] {
     cursor: not-allowed;
