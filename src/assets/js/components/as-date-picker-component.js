@@ -1,427 +1,661 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.customElements.get('as-date-picker') === undefined) {
-        class ASDatePickerElement extends HTMLElement {
-            // window/document listeners are tracked so they only live while the element is connected
-            addGlobal(target, type, fn) {
-                // the same function reference is only ever registered once
-                this._globals ??= []
-                if (!this._globals.some(g => g[0] === target && g[1] === type && g[2] === fn))
-                    this._globals.push([target, type, fn])
-                target.addEventListener(type, fn)
+    if (window.customElements.get('as-date-picker') !== undefined)
+        return
+
+    // Dates are handled as local calendar dates in ISO form (YYYY-MM-DD). Going through toISOString()
+    // would convert to UTC and shift the day around midnight, so dates are built from local parts.
+    const pad = n => String(n).padStart(2, '0')
+    const toISO = (year, month, day) => `${String(year).padStart(4, '0')}-${pad(month + 1)}-${pad(day)}`
+    const fromDate = date => toISO(date.getFullYear(), date.getMonth(), date.getDate())
+    const makeDate = (year, month, day) => {
+        const date = new Date(2000, 0, 1)
+        date.setFullYear(year, month, day)
+        return date
+    }
+    // strict parser: returns a Date only for real calendar dates
+    const parseISO = value => {
+        const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '')
+        if (!match)
+            return null
+        const [year, month, day] = [Number(match[1]), Number(match[2]) - 1, Number(match[3])]
+        const date = makeDate(year, month, day)
+        return date.getFullYear() === year && date.getMonth() === month && date.getDate() === day ? date : null
+    }
+    const addDays = (iso, days) => {
+        const date = parseISO(iso)
+        date.setDate(date.getDate() + days)
+        return fromDate(date)
+    }
+    // keeps the day of month where possible and clamps it to the last day of shorter months (31 Jan + 1 month = 28/29 Feb)
+    const addMonths = (iso, months) => {
+        const date = parseISO(iso)
+        const day = date.getDate()
+        date.setDate(1)
+        date.setMonth(date.getMonth() + months)
+        date.setDate(Math.min(day, new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate()))
+        return fromDate(date)
+    }
+    const today = () => fromDate(new Date())
+
+    class ASDatePickerElement extends HTMLElement {
+        static get observedAttributes() {
+            return ['locale', 'reverse', 'yearspan', 'first-day', 'min', 'max', 'disabled', 'selects', 'placeholder', 'today-text', 'button-label', 'breakpoint']
+        }
+
+        constructor() {
+            super()
+            this.ready = false
+            this.built = false
+            this._value = ''
+            this.mode = null
+        }
+
+        // window/document listeners are tracked so they only live while the element is connected
+        addGlobal(target, type, fn) {
+            // the same function reference is only ever registered once
+            this._globals ??= []
+            if (!this._globals.some(g => g[0] === target && g[1] === type && g[2] === fn))
+                this._globals.push([target, type, fn])
+            target.addEventListener(type, fn)
+        }
+
+        attachGlobals() {
+            this._globals?.forEach(([target, type, fn]) => target.addEventListener(type, fn))
+        }
+
+        detachGlobals() {
+            this._globals?.forEach(([target, type, fn]) => target.removeEventListener(type, fn))
+        }
+
+        connectedCallback() {
+            // build once: connectedCallback also runs when the element is moved
+            if (this.ready) {
+                this.attachGlobals()
+                return
             }
+            this.ready = true
+            queueMicrotask(() => this.init())
+        }
 
-            attachGlobals() {
-                this._globals?.forEach(([target, type, fn]) => target.addEventListener(type, fn))
-            }
+        disconnectedCallback() {
+            this.detachGlobals()
+        }
 
-            detachGlobals() {
-                this._globals?.forEach(([target, type, fn]) => target.removeEventListener(type, fn))
-            }
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (!this.built || oldValue === newValue)
+                return
+            this.configure()
+            this.syncTwin()
+            this.renderField()
+            this.renderCalendar()
+            this.applyMode()
+        }
 
-            disconnectedCallback() {
-                this.detachGlobals()
-            }
+        // value --------------------------------------------------------------------
 
-            connectedCallback() {
-                // build once: connectedCallback also runs when the element is moved
-                if (this.ready) {
-                    this.attachGlobals()
-                    return
-                }
-                this.ready = true
+        // the date as ISO string (YYYY-MM-DD) or an empty string, whatever the display format is
+        get value() {
+            return this._value
+        }
 
-                queueMicrotask(() => {
-                    this.datePickerId = crypto.randomUUID()
-                    this.breakpoint = this.getAttribute('breakpoint') || 800
+        set value(value) {
+            const iso = value ? (parseISO(value) ? value : null) : ''
+            if (iso === null || (iso && !this.inRange(iso)))
+                return
+            this.setValue(iso)
+        }
 
-                    this.locale = this.getAttribute('locale') || document.documentElement.getAttribute('lang') || 'en'
+        inRange(iso) {
+            return (!this.min || iso >= this.min) && (!this.max || iso <= this.max)
+        }
 
-                    this.input = this.querySelector('input')
-                    this.yearSpan = this.hasAttribute('yearspan') ? Number(this.getAttribute('yearspan')) : 20
+        clamp(iso) {
+            if (this.min && iso < this.min) return this.min
+            if (this.max && iso > this.max) return this.max
+            return iso
+        }
 
-                    this.reverse = this.hasAttribute('reverse') || false
-
-                    this.date = this.input.value || new Date().toISOString().split('T')[0]
-
-                    this.placeholder = this.input.getAttribute('placeholder') || this.getAttribute('placeholder') || this.reverse ? this.reverseDate(this.date) : this.date
-                    if (this.reverse) {
-                        this.input.setAttribute('pattern', '[0-9]{2}-[0-9]{2}-[0-9]{4}')
-                        this.input.setAttribute('title', 'DD-MM-YYYY')
-                    }
-                    else {
-                        this.input.setAttribute('pattern', '[0-9]{4}-[0-9]{2}-[0-9]{2}')
-                        this.input.setAttribute('title', 'YYYY-MM-DD')
-                    }
-
-                    if (this.input.value == '')
-                        this.input.setAttribute('placeholder', this.placeholder)
-                    this.render()
-                })
-            }
-            render() {
-                this.icon = document.createElement('button')
-                this.icon.setAttribute('type', 'button')
-                const c = document.createElement('as-icon')
-                c.setAttribute('name', '--as-icon-calendar')
-                c.setAttribute('size', 'l')
-                this.icon.setAttribute('popovertarget', this.datePickerId)
-                this.icon.style.setProperty('anchor-name', `--${this.datePickerId}`)
-                this.icon.append(c)
-                this.append(this.icon)
-
-                this.calendarWrapper = document.createElement('div')
-                this.calendarWrapper.setAttribute('popover', '')
-                this.calendarWrapper.setAttribute('id', this.datePickerId)
-                this.calendarWrapper.style.setProperty('position-anchor', `--${this.datePickerId}`)
-                this.calendarWrapper.style.setProperty('position-anchor', `--${this.datePickerId}`)
-                this.calendarContent = document.createElement('div')
-                this.calendarContent.setAttribute('calendar', '')
-
-                this.yearSelect = this.populateYearSelect(this.yearSpan)
-                this.monthSelect = this.populateMonthSelect()
-
-                this.monthPrev = document.createElement('button')
-                this.monthPrev.setAttribute('month', '')
-                this.monthPrev.setAttribute('size', 'm')
-                this.monthPrev.classList.add('btn')
-                const p = document.createElement('as-icon')
-                p.setAttribute('name', '--as-icon-chevron-left')
-                this.monthPrev.append(p)
-
-                this.monthNext = document.createElement('button')
-                this.monthNext.setAttribute('month', '')
-                this.monthNext.setAttribute('size', 'm')
-                this.monthNext.classList.add('btn')
-                const n = document.createElement('as-icon')
-                n.setAttribute('name', '--as-icon-chevron-right')
-                this.monthNext.append(n)
-
-
-                this.cal = this.renderCalendar(this.date)
-
-                const header = document.createElement('header')
-                header.append(this.monthSelect, this.yearSelect, this.monthPrev, this.monthNext)
-                this.calendarContent.append(header, this.cal)
-
-                this.calendarWrapper.append(this.calendarContent)
-                this.append(this.calendarWrapper)
-
-                this.toggleInputType()
-
-                this.bindEvents()
-
-                this.broadcastEvent('as-date-picker:created', { id: this.datePickerId })
-            }
-
-            populateYearSelect(span = 10) {
-                const fragment = new DocumentFragment
-                const currentYear = new Date().getFullYear()
-                const tsSelect = document.createElement('as-select')
-                tsSelect.setAttribute('year', '')
-                this.selectYear = document.createElement('select')
-                let index = 0
-                for (let y = currentYear - span; y <= currentYear + span; y++) {
-                    const option = document.createElement('option')
-                    option.value = y
-                    option.text = y
-                    option.setAttribute('index', index)
-                    index++
-                    if (y == this.date.split('-')[0])
-                        option.selected = true
-                    this.selectYear.append(option)
-                }
-                tsSelect.append(this.selectYear)
-                fragment.append(tsSelect)
-                return fragment
-            }
-
-            populateMonthSelect() {
-                const fragment = new DocumentFragment
-                const currentMonth = Number(this.date.split('-')[1]) - 1
-                const tsSelect = document.createElement('as-select')
-                tsSelect.setAttribute('month', '')
-                this.selectMonth = document.createElement('select')
-                for (let m = 1; m <= 12; m++) {
-                    const option = document.createElement('option')
-                    option.value = String(m).padStart(2, '0')
-                    option.text = new Date(2000, m - 1, 1).toLocaleString(this.locale, { month: 'long' })
-                    if (m - 1 == currentMonth)
-                        option.selected = true
-                    this.selectMonth.append(option)
-                }
-                tsSelect.append(this.selectMonth)
-                fragment.append(tsSelect)
-                return fragment
-            }
-
-            // render current month
-            renderCalendar(date) {
-                let year = Number(date.split('-')[0])
-                let month = Number(date.split('-')[1]) - 1
-                let day = Number(date.split('-')[2])
-                let today = new Date().toISOString().split('T')[0]
-
-                const fragment = new DocumentFragment
-                const calendar = document.createElement('div')
-                calendar.setAttribute('cal', '')
-
-                for (let i = 0; i <= 6; i++) {
-                    const weekday = document.createElement('div')
-                    weekday.textContent = new Intl.DateTimeFormat(this.locale, { weekday: "narrow" }).format(new Date(2023, 7, i))
-                    calendar.append(weekday)
-                }
-
-                let firstDayOfMonth = new Date(year, month, 1).getDay() - 1 === -1 ? 6 : new Date(year, month, 1).getDay() - 1;
-                let lastDateOfMonth = new Date(year, month + 1, 0).getDate();
-                let lastDayOfMonth = new Date(year, month, lastDateOfMonth).getDay() - 1 == -1 ? 6 : new Date(year, month, lastDateOfMonth).getDay() - 1;
-                let lastDateOfLastMonth = new Date(year, month, 0).getDate();
-
-                // render first week with days from past month
-                for (let i = firstDayOfMonth; i > 0; i--) {
-                    const d = document.createElement('button')
-                    d.setAttribute('prev', '')
-                    d.textContent = lastDateOfLastMonth - i + 1
-                    const date = `${month == 0 ? year - 1 : year}-${month == 0 ? 12 : String(month).padStart(2, '0')}-${String(lastDateOfLastMonth - i + 1).padStart(2, '0')}`
-                    d.addEventListener('click', e => {
-                        e.preventDefault()
-                        this.dayChange(date)
-                    })
-                    calendar.append(d)
-                }
-
-                // render all days within current month
-                for (let i = 1; i <= lastDateOfMonth; i++) {
-                    const d = document.createElement('button')
-                    d.setAttribute('curr', '')
-                    d.textContent = i
-                    const date = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`
-                    if (today === date)
-                        d.setAttribute('today', '')
-                    if (i == day) {
-                        d.setAttribute('selected', '')
-                        d.focus()
-                    }
-                    d.addEventListener('click', e => {
-                        e.preventDefault()
-                        this.dayChange(date)
-                    })
-                    calendar.append(d)
-                }
-
-                // render last week by adding days from next month
-                for (let i = lastDayOfMonth; i < 6; i++) {
-                    const d = document.createElement('button')
-                    d.setAttribute('next', '')
-                    d.textContent = i - lastDayOfMonth + 1
-                    const date = `${month == 11 ? year + 1 : year}-${month == 11 ? String(1).padStart(2, '0') : String(month + 2).padStart(2, '0')}-${String(i - lastDayOfMonth + 1).padStart(2, '0')}`
-                    d.addEventListener('click', e => {
-                        e.preventDefault()
-                        this.dayChange(date)
-                    })
-                    calendar.append(d)
-                }
-
-                fragment.append(calendar)
-
-                return fragment
-            }
-
-            dayChange(date = this.date) {
-                this.selectMonth.selectedIndex = Number(date.split('-')[1] - 1)
-                const yearIndex = [...this.selectYear.options].filter(option => option.value == date.split('-')[0])
-                this.date = date
-                this.input.value = this.reverse ? this.reverseDate(this.date) : this.date
-                this.input.setAttribute('value', this.reverse ? this.reverseDate(this.date) : this.date)
-                this.selectMonth.dispatchEvent(new Event('change', { bubbles: true }))
-                this.calendarContent.querySelector('[cal]').remove()
-                this.calendarContent.append(this.renderCalendar(this.date))
-                this.focusSelected()
-                if (yearIndex.length > 0) {
-                    this.selectYear.selectedIndex = yearIndex[0].index
-                    this.selectYear.dispatchEvent(new Event('change', { bubbles: true }))
-                }
-                this.onKey()
-                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['day'] })
-
-            }
-
-            reverseDate(date) {
-                return date.split('-').reverse().join('-')
-            }
-
-            focusSelected() {
-                queueMicrotask(() => {
-                    this.calendarContent.querySelector('button[selected]').focus()
-                })
-            }
-
-            monthSelectChange() {
-                let date = this.date.split('-')
-                date[1] = this.selectMonth.options[this.selectMonth.selectedIndex].value
-                this.date = date.join('-')
-                this.input.value = this.reverse ? this.reverseDate(this.date) : this.date
-                this.input.setAttribute('value', this.reverse ? this.reverseDate(this.date) : this.date)
-                this.calendarContent.querySelector('[cal]').remove()
-                this.calendarContent.append(this.renderCalendar(this.date))
-                this.focusSelected()
-                this.onKey()
-                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['month'] })
-            }
-
-            yearSelectChange() {
-                let date = this.date.split('-')
-                date[0] = this.selectYear.options[this.selectYear.selectedIndex].value
-                this.date = date.join('-')
-                this.input.value = this.reverse ? this.reverseDate(this.date) : this.date
-                this.input.setAttribute('value', this.reverse ? this.reverseDate(this.date) : this.date)
-                this.calendarContent.querySelector('[cal]').remove()
-                this.calendarContent.append(this.renderCalendar(this.date))
-                this.focusSelected()
-                this.onKey()
-                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: this.date, changed: ['year'] })
-            }
-
-            bindEvents() {
-                this.selectYear.addEventListener('change', this.yearSelectChange.bind(this))
-                this.selectMonth.addEventListener('change', this.monthSelectChange.bind(this))
-                this.monthPrev.addEventListener('click', e => {
-                    e.preventDefault()
-                    const year = Number(this.date.split('-')[0])
-                    const month = Number(this.date.split('-')[1]) - 1
-                    const day = Number(this.date.split('-')[2])
-                    const date = `${month == 0 ? year - 1 : year}-${month == 0 ? 12 : String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-                    this.dayChange(date)
-                })
-
-                this.monthNext.addEventListener('click', e => {
-                    e.preventDefault()
-                    const year = Number(this.date.split('-')[0])
-                    const month = Number(this.date.split('-')[1]) - 1
-                    const day = Number(this.date.split('-')[2])
-                    const date = `${month == 11 ? year + 1 : year}-${month == 11 ? String(1).padStart(2, '0') : String(month + 2).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-                    this.dayChange(date)
-                })
-
-                this.calendarWrapper.addEventListener('toggle', e => {
-                    this.broadcastEvent(`as-date-picker:${e.newState}`, { id: this.datePickerId })
-                })
-
-                this.input.addEventListener('keydown', this.manualDate.bind(this))
-                this.input.addEventListener('change', this.mobileDatePicker.bind(this))
-                this.calendarWrapper.addEventListener('keydown', this.selectDayWithArrows.bind(this))
-
-                this.addGlobal(window, 'resize', this._onResize ??= () => this.toggleInputType())
-            }
-
-            mobileDatePicker() {
-                this.date = this.input.value
-            }
-
-            toggleInputType() {
-                if (window.innerWidth < this.breakpoint) {
-                    this.icon.style.display = 'none'
-                    this.input.setAttribute('type', 'date')
-                    this.input.value = this.date
-                    this.broadcastEvent('as-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'mobile' })
-                }
-                else {
-                    this.icon.style.display = 'inline'
-                    this.input.setAttribute('type', 'text')
-                    this.input.value = this.reverse ? this.reverseDate(this.date) : this.date
-                    this.broadcastEvent('as-date-picker:breakpoint', { id: this.datePickerId, breakpoint: 'desktop' })
-                }
-            }
-
-            onKey() {
-                this.input.dispatchEvent(new Event('keyup', { bubbles: true }))
-            }
-
-            manualDate(e) {
-                let date = e.target.value.length == 10 ? e.target.value : this.date
-                if (e.key == 'Enter')
-                    this.dayChange(date)
-                if (e.key == 'ArrowUp') {
-                    if (e.target.value == '')
-                        return
-                    date = new Date(Date.parse(this.reverse ? this.reverseDate(date) : date) + 86400000).toISOString().split('T')[0]
-                    this.dayChange(date)
-                }
-                if (e.key == 'ArrowDown') {
-                    if (e.target.value == '')
-                        return
-                    date = new Date(Date.parse(this.reverse ? this.reverseDate(date) : date) - 86400000).toISOString().split('T')[0]
-                    this.dayChange(date)
-                }
-            }
-
-            calculateDate(days = 0) {
-                const newDate = new Date(Date.parse(this.date) + days * 86400000).toISOString().split('T')[0]
-                return newDate
-            }
-
-            selectDayWithArrows(e) {
-                const key = e.key
-                const current = document.activeElement
-                if (!current || current.nodeName !== 'BUTTON') return
-
-                const container = this.calendarContent.querySelector('[cal]')
-                const days = Array.from(container.querySelectorAll('button'))
-                const index = days.indexOf(current)
-                if (index === -1) return
-
-                const columns = 7
-
-                let targetIndex = null
-
-                if (key === 'ArrowRight') {
-                    targetIndex = index + 1
-                    this.date = this.calculateDate(1)
-                }
-                if (key === 'ArrowLeft') {
-                    targetIndex = index - 1
-                    this.date = this.calculateDate(-1)
-                }
-                if (key === 'ArrowDown') {
-                    targetIndex = index + columns
-                    this.date = this.calculateDate(columns)
-                }
-                if (key === 'ArrowUp') {
-                    targetIndex = index - columns
-                    this.date = this.calculateDate(-columns)
-                }
-
-                if (targetIndex >= days.length || targetIndex < 0)
-                    this.dayChange()
-
-                if (targetIndex == null) return
-
-                const target = days[targetIndex]
-                if (target) target.focus()
-            }
-
-            isEmpty(obj) {
-                for (const prop in obj) {
-                    if (Object.hasOwn(obj, prop))
-                        return false;
-                }
-                return true;
-            }
-
-            broadcastEvent(name, detail = {}) {
-                const cEvent = (this.isEmpty(detail)) ? new CustomEvent(name, { bubbles: true }) : new CustomEvent(name, { detail: detail, bubbles: true })
-                this.dispatchEvent(cEvent)
+        // single place where the value changes, emit is true for user actions
+        setValue(iso, emit = false) {
+            const previous = this._value
+            this._value = iso
+            this.viewFrom(iso || today())
+            this.renderField()
+            this.syncTwin()
+            this.renderCalendar()
+            this.input.removeAttribute('aria-invalid')
+            this.input.setCustomValidity('')
+            if (emit && previous !== iso) {
+                // real events, so forms and frameworks see the change like a typed one
+                this.input.dispatchEvent(new Event('input', { bubbles: true }))
+                this.input.dispatchEvent(new Event('change', { bubbles: true }))
+                const [py, pm, pd] = previous ? previous.split('-') : []
+                const [ny, nm, nd] = iso ? iso.split('-') : []
+                const changed = []
+                if (py !== ny) changed.push('year')
+                if (pm !== nm) changed.push('month')
+                if (pd !== nd) changed.push('day')
+                this.broadcastEvent('as-date-picker:changed', { id: this.datePickerId, date: iso, changed })
             }
         }
-        window.customElements.define("as-date-picker", ASDatePickerElement)
+
+        // display format <-> ISO
+        format(iso) {
+            return iso && this.reverse ? iso.split('-').reverse().join('-') : iso
+        }
+
+        parseText(text) {
+            const value = text.trim()
+            if (this.reverse) {
+                const match = /^(\d{2})-(\d{2})-(\d{4})$/.exec(value)
+                return match ? `${match[3]}-${match[2]}-${match[1]}` : null
+            }
+            return value
+        }
+
+        // setup --------------------------------------------------------------------
+
+        configure() {
+            this.locale = this.getAttribute('locale') || document.documentElement.getAttribute('lang') || 'en'
+            this.breakpoint = Number(this.getAttribute('breakpoint') ?? 800)
+            this.yearSpan = this.hasAttribute('yearspan') ? Number(this.getAttribute('yearspan')) : 20
+            this.reverse = this.hasAttribute('reverse')
+            this.selects = this.hasAttribute('selects')
+            this.disabled = this.hasAttribute('disabled')
+            this.min = parseISO(this.getAttribute('min')) ? this.getAttribute('min') : ''
+            this.max = parseISO(this.getAttribute('max')) ? this.getAttribute('max') : ''
+            this.todayText = this.getAttribute('today-text') || 'Today'
+            this.buttonLabel = this.getAttribute('button-label') || 'Choose date'
+            this.formatHint = this.reverse ? 'DD-MM-YYYY' : 'YYYY-MM-DD'
+
+            // first day of the week: attribute (0 = Sunday .. 6 = Saturday), else the locale's, else Monday
+            const attr = this.getAttribute('first-day')
+            if (attr !== null && attr !== '' && !Number.isNaN(Number(attr))) {
+                this.firstDay = ((Number(attr) % 7) + 7) % 7
+            } else {
+                try {
+                    const locale = new Intl.Locale(this.locale)
+                    const info = locale.getWeekInfo ? locale.getWeekInfo() : locale.weekInfo
+                    this.firstDay = info ? info.firstDay % 7 : 1
+                } catch (e) {
+                    this.firstDay = 1
+                }
+            }
+
+            this.fullFormat = new Intl.DateTimeFormat(this.locale, { dateStyle: 'full' })
+            this.monthFormat = new Intl.DateTimeFormat(this.locale, { month: 'long', year: 'numeric' })
+            this.monthNameFormat = new Intl.DateTimeFormat(this.locale, { month: 'long' })
+            this.weekdayFormat = new Intl.DateTimeFormat(this.locale, { weekday: 'narrow' })
+        }
+
+        init() {
+            this.input = this.querySelector('input')
+            if (!this.input) {
+                console.warn('as-date-picker expects an <input> inside it', this)
+                return
+            }
+            this.datePickerId = crypto.randomUUID()
+            this.configure()
+
+            // starting value, in the display format or already ISO
+            const initial = this.input.value.trim()
+            const asIso = parseISO(initial) ? initial : parseISO(this.parseText(initial) || '') ? this.parseText(initial) : ''
+            this._value = asIso && this.inRange(asIso) ? asIso : ''
+
+            this.fieldName = this.input.getAttribute('name')
+            // a placeholder written on the input wins over the attribute on the component
+            this.ownPlaceholder = this.input.getAttribute('placeholder')
+            this.build()
+            this.bindEvents()
+            this.viewFrom(this._value || today())
+            this.renderField()
+            this.syncTwin()
+            this.renderCalendar()
+            this.built = true
+            this.applyMode(true)
+            this.broadcastEvent('as-date-picker:created', { id: this.datePickerId })
+        }
+
+        build() {
+            // trigger button
+            this.trigger = document.createElement('as-button')
+            this.trigger.setAttribute('variant', 'transparent')
+            this.trigger.setAttribute('icon-name', '--as-icon-calendar')
+            this.trigger.setAttribute('button-class', 'as-date-picker__trigger')
+            this.trigger.setAttribute('popovertarget', this.datePickerId)
+            this.trigger.setAttribute('aria-haspopup', 'dialog')
+            this.trigger.setAttribute('aria-expanded', 'false')
+            this.trigger.style.setProperty('anchor-name', `--${this.datePickerId}`)
+
+            // calendar popover
+            this.panel = document.createElement('div')
+            this.panel.setAttribute('popover', '')
+            this.panel.setAttribute('role', 'dialog')
+            this.panel.setAttribute('id', this.datePickerId)
+            this.panel.style.setProperty('position-anchor', `--${this.datePickerId}`)
+
+            this.calendar = document.createElement('div')
+            this.calendar.setAttribute('calendar', '')
+
+            this.header = document.createElement('header')
+            this.prevButton = this.makeNavButton('--as-icon-chevron-left', -1)
+            this.nextButton = this.makeNavButton('--as-icon-chevron-right', 1)
+
+            this.weekdays = document.createElement('div')
+            this.weekdays.setAttribute('weekdays', '')
+            this.weekdays.setAttribute('aria-hidden', 'true')
+
+            this.grid = document.createElement('div')
+            this.grid.setAttribute('cal', '')
+            this.grid.setAttribute('role', 'group')
+
+            this.footer = document.createElement('footer')
+            this.todayButton = document.createElement('as-button')
+            this.todayButton.setAttribute('variant', 'outline')
+            this.todayButton.setAttribute('size', 'm')
+            this.todayButton.setAttribute('today-button', '')
+            this.footer.append(this.todayButton)
+
+            this.calendar.append(this.header, this.weekdays, this.grid, this.footer)
+            this.panel.append(this.calendar)
+            this.append(this.trigger, this.panel)
+        }
+
+        makeNavButton(icon, delta) {
+            const button = document.createElement('as-button')
+            button.setAttribute('month', '')
+            button.setAttribute('size', 'm')
+            button.setAttribute('icon-name', icon)
+            button.addEventListener('click', () => this.moveMonth(delta))
+            return button
+        }
+
+        bindEvents() {
+            this.panel.addEventListener('toggle', e => this.onToggle(e))
+            this.panel.addEventListener('keydown', e => this.onGridKey(e))
+            // month / year select changes are internal, they must not look like a change of the field to a form
+            this.panel.addEventListener('change', e => e.stopPropagation())
+            // one listener for all days
+            this.grid.addEventListener('click', e => {
+                const day = e.target.closest('button[data-date]')
+                if (day && !day.disabled)
+                    this.pick(day.dataset.date)
+            })
+            this.todayButton.addEventListener('click', () => {
+                const iso = today()
+                if (this.inRange(iso))
+                    this.pick(iso)
+            })
+
+            this.input.addEventListener('keydown', e => this.onInputKey(e))
+            this.input.addEventListener('change', e => {
+                // events dispatched by this component are not trusted, only the user's own edits are parsed
+                if (e.isTrusted)
+                    this.commitText()
+            })
+            this.input.addEventListener('blur', () => {
+                if (this.mode === 'desktop')
+                    this.commitText()
+            })
+
+            this.addGlobal(window, 'resize', this._onResize ??= () => this.applyMode())
+        }
+
+        // field and mode ---------------------------------------------------------------
+
+        // text shown in the input, plus the hidden ISO twin when the display format differs
+        renderField() {
+            const input = this.input
+            input.toggleAttribute('disabled', this.disabled)
+            input.setAttribute('autocomplete', 'off')
+            if (this.mode === 'mobile') {
+                input.value = this._value
+                this.min ? input.setAttribute('min', this.min) : input.removeAttribute('min')
+                this.max ? input.setAttribute('max', this.max) : input.removeAttribute('max')
+            } else {
+                input.value = this.format(this._value)
+                input.setAttribute('pattern', this.reverse ? '[0-9]{2}-[0-9]{2}-[0-9]{4}' : '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+                input.setAttribute('title', this.formatHint)
+                input.setAttribute('inputmode', 'numeric')
+                input.removeAttribute('min')
+                input.removeAttribute('max')
+                input.setAttribute('placeholder', this.ownPlaceholder || this.getAttribute('placeholder') || this.formatHint)
+            }
+            this.trigger.toggleAttribute('disabled', this.disabled)
+            this.trigger.setAttribute('label', this.buttonLabel)
+            this.panel.setAttribute('aria-label', this.buttonLabel)
+        }
+
+        // submitted value is always ISO: when the display format differs it moves to a hidden twin field
+        syncTwin() {
+            if (this.reverse && this.fieldName) {
+                if (!this.twin) {
+                    this.twin = document.createElement('input')
+                    this.twin.type = 'hidden'
+                    this.twin.name = this.fieldName
+                    this.append(this.twin)
+                }
+                this.input.removeAttribute('name')
+                this.twin.disabled = this.disabled
+                this.twin.value = this._value
+            } else {
+                this.twin?.remove()
+                this.twin = null
+                if (this.fieldName)
+                    this.input.setAttribute('name', this.fieldName)
+            }
+        }
+
+        // below the breakpoint the native date input takes over
+        applyMode(force = false) {
+            const mode = window.innerWidth < this.breakpoint ? 'mobile' : 'desktop'
+            if (!force && mode === this.mode)
+                return
+            this.mode = mode
+            if (mode === 'mobile') {
+                this.panel.hidePopover()
+                this.trigger.hidden = true
+                this.input.setAttribute('type', 'date')
+            } else {
+                this.trigger.hidden = false
+                this.input.setAttribute('type', 'text')
+            }
+            this.renderField()
+            this.broadcastEvent('as-date-picker:breakpoint', { id: this.datePickerId, breakpoint: mode })
+        }
+
+        // typing in the field -------------------------------------------------------------
+
+        commitText() {
+            const text = this.input.value.trim()
+            // nothing typed since the last commit: leave the calendar alone, rebuilding it on blur would swallow a click on a day
+            if (text === (this.mode === 'mobile' ? this._value : this.format(this._value)))
+                return
+            if (text === '') {
+                this.setValue('', true)
+                return
+            }
+            const iso = this.mode === 'mobile' ? text : this.parseText(text)
+            if (!parseISO(iso || '')) {
+                this.markInvalid(`Enter a valid date (${this.formatHint})`)
+                return
+            }
+            if (!this.inRange(iso)) {
+                this.markInvalid(this.min && this.max
+                    ? `Choose a date between ${this.format(this.min)} and ${this.format(this.max)}`
+                    : this.min ? `Choose ${this.format(this.min)} or later` : `Choose ${this.format(this.max)} or earlier`)
+                return
+            }
+            this.setValue(iso, true)
+        }
+
+        markInvalid(message) {
+            this.input.setAttribute('aria-invalid', 'true')
+            this.input.setCustomValidity(message)
+        }
+
+        onInputKey(e) {
+            if (this.disabled)
+                return
+            if (e.key === 'ArrowDown' && e.altKey) {
+                e.preventDefault()
+                if (this.mode === 'desktop')
+                    this.panel.showPopover()
+                return
+            }
+            if (e.key === 'Enter') {
+                this.commitText()
+                return
+            }
+            // up / down step the date by one day, from today when the field is empty
+            if ((e.key === 'ArrowUp' || e.key === 'ArrowDown') && this.mode === 'desktop') {
+                e.preventDefault()
+                const base = this._value || today()
+                const next = this._value ? addDays(base, e.key === 'ArrowUp' ? 1 : -1) : base
+                if (this.inRange(next))
+                    this.setValue(next, true)
+            }
+        }
+
+        // calendar -----------------------------------------------------------------------
+
+        // which month is shown and which day is the roving focus target
+        viewFrom(iso) {
+            const date = parseISO(this.clamp(iso)) || new Date()
+            this.view = { year: date.getFullYear(), month: date.getMonth() }
+            this.focusDate = fromDate(date)
+        }
+
+        pick(iso) {
+            this.setValue(iso, true)
+            this.panel.hidePopover()
+            this.input.focus()
+        }
+
+        // the remembered day when it belongs to the shown month, else the first of the month
+        anchorDate() {
+            const date = parseISO(this.focusDate)
+            const inView = date && date.getMonth() === this.view.month && date.getFullYear() === this.view.year
+            return inView ? this.focusDate : toISO(this.view.year, this.view.month, 1)
+        }
+
+        moveMonth(delta) {
+            const anchor = this.anchorDate()
+            this.showDate(this.clamp(addMonths(anchor, delta)))
+        }
+
+        // shows the month of the date and makes it the focus target
+        showDate(iso, focus = false) {
+            const date = parseISO(iso)
+            this.focusDate = iso
+            this.view = { year: date.getFullYear(), month: date.getMonth() }
+            this.renderCalendar()
+            if (focus)
+                this.grid.querySelector('[tabindex="0"]')?.focus()
+        }
+
+        onToggle(e) {
+            const open = e.newState === 'open'
+            this.trigger.setAttribute('aria-expanded', String(open))
+            if (open) {
+                this.viewFrom(this._value || today())
+                this.renderCalendar()
+                this.grid.querySelector('[tabindex="0"]')?.focus()
+            }
+            this.broadcastEvent(open ? 'as-date-picker:open' : 'as-date-picker:closed', { id: this.datePickerId })
+        }
+
+        onGridKey(e) {
+            const day = e.target.closest?.('button[data-date]')
+            if (!day)
+                return
+            let next
+            const current = day.dataset.date
+            const date = parseISO(current)
+            switch (e.key) {
+                case 'ArrowLeft': next = addDays(current, -1); break
+                case 'ArrowRight': next = addDays(current, 1); break
+                case 'ArrowUp': next = addDays(current, -7); break
+                case 'ArrowDown': next = addDays(current, 7); break
+                case 'Home': next = addDays(current, -((date.getDay() - this.firstDay + 7) % 7)); break
+                case 'End': next = addDays(current, 6 - ((date.getDay() - this.firstDay + 7) % 7)); break
+                case 'PageUp': next = addMonths(current, e.shiftKey ? -12 : -1); break
+                case 'PageDown': next = addMonths(current, e.shiftKey ? 12 : 1); break
+                default: return
+            }
+            e.preventDefault()
+            next = this.clamp(next)
+            if (next === current)
+                return
+            const cell = this.grid.querySelector(`button[data-date="${next}"]`)
+            if (cell && cell.hasAttribute('curr') && !cell.disabled) {
+                // same month: only move the roving focus
+                this.grid.querySelector('[tabindex="0"]')?.setAttribute('tabindex', '-1')
+                cell.setAttribute('tabindex', '0')
+                this.focusDate = next
+                cell.focus()
+            } else {
+                this.showDate(next, true)
+            }
+        }
+
+        renderCalendar() {
+            if (!this.grid)
+                return
+            const { year, month } = this.view
+            const todayIso = today()
+
+            this.renderHeader()
+
+            // weekday names, starting on the first day of the week
+            this.weekdays.replaceChildren(...Array.from({ length: 7 }, (_, i) => {
+                const cell = document.createElement('div')
+                // 2023-08-06 is a Sunday
+                cell.textContent = this.weekdayFormat.format(new Date(2023, 7, 6 + ((this.firstDay + i) % 7)))
+                return cell
+            }))
+
+            const lead = (new Date(year, month, 1).getDay() - this.firstDay + 7) % 7
+            const daysInMonth = new Date(year, month + 1, 0).getDate()
+            const cells = Math.ceil((lead + daysInMonth) / 7) * 7
+
+            const fragment = new DocumentFragment()
+            let hasFocusTarget = false
+            for (let i = 0; i < cells; i++) {
+                const date = new Date(year, month, 1 - lead + i)
+                const iso = fromDate(date)
+                const button = document.createElement('button')
+                button.type = 'button'
+                button.textContent = date.getDate()
+                button.dataset.date = iso
+                button.setAttribute('aria-label', this.fullFormat.format(date))
+                const offset = (date.getFullYear() * 12 + date.getMonth()) - (year * 12 + month)
+                button.setAttribute(offset < 0 ? 'prev' : offset > 0 ? 'next' : 'curr', '')
+                if (iso === todayIso) {
+                    button.setAttribute('today', '')
+                    button.setAttribute('aria-current', 'date')
+                }
+                button.setAttribute('aria-pressed', String(iso === this._value))
+                if (iso === this._value)
+                    button.setAttribute('selected', '')
+                if (!this.inRange(iso))
+                    button.disabled = true
+                const target = iso === this.focusDate && !button.disabled
+                button.setAttribute('tabindex', target ? '0' : '-1')
+                hasFocusTarget ||= target
+                fragment.append(button)
+            }
+            this.grid.setAttribute('aria-label', this.monthFormat.format(new Date(year, month, 1)))
+            this.grid.replaceChildren(fragment)
+            if (!hasFocusTarget) {
+                // the remembered day is not in this grid or not selectable, fall back to the first enabled day of the month
+                this.grid.querySelector('button[curr]:not([disabled])')?.setAttribute('tabindex', '0')
+            }
+
+            // month buttons and today are disabled when nothing can be reached
+            const first = toISO(year, month, 1)
+            const last = toISO(year, month, daysInMonth)
+            this.prevButton.disabled = !!this.min && first <= this.min
+            this.nextButton.disabled = !!this.max && last >= this.max
+            this.prevButton.setAttribute('label', 'Previous month')
+            this.nextButton.setAttribute('label', 'Next month')
+            this.todayButton.text = this.todayText
+            this.todayButton.disabled = !this.inRange(todayIso)
+        }
+
+        renderHeader() {
+            const { year, month } = this.view
+            const label = this.monthFormat.format(new Date(year, month, 1))
+            if (!this.selects) {
+                if (!this.monthLabel) {
+                    this.monthLabel = document.createElement('div')
+                    this.monthLabel.setAttribute('month-label', '')
+                    this.monthLabel.setAttribute('aria-live', 'polite')
+                }
+                this.monthLabel.textContent = label
+                this.header.removeAttribute('selects')
+                this.header.replaceChildren(this.prevButton, this.monthLabel, this.nextButton)
+                this.monthSelectWrap = this.yearSelectWrap = null
+                return
+            }
+
+            // feature flag: month and year selects instead of the plain label
+            this.header.setAttribute('selects', '')
+            if (!this.monthSelectWrap) {
+                this.yearRange = null
+                this.monthSelectWrap = document.createElement('as-select')
+                this.monthSelectWrap.setAttribute('month', '')
+                this.monthSelect = document.createElement('select')
+                this.monthSelect.setAttribute('aria-label', 'Month')
+                for (let m = 0; m < 12; m++) {
+                    const option = document.createElement('option')
+                    option.value = m
+                    option.text = this.monthNameFormat.format(new Date(2000, m, 1))
+                    this.monthSelect.append(option)
+                }
+                this.monthSelectWrap.append(this.monthSelect)
+                this.monthSelect.addEventListener('change', () => {
+                    if (!this._syncing)
+                        this.showDate(this.clamp(addMonths(this.anchorDate(), Number(this.monthSelect.value) - this.view.month)))
+                })
+
+                this.yearSelectWrap = document.createElement('as-select')
+                this.yearSelectWrap.setAttribute('year', '')
+                this.yearSelect = document.createElement('select')
+                this.yearSelect.setAttribute('aria-label', 'Year')
+                this.yearSelectWrap.append(this.yearSelect)
+                this.yearSelect.addEventListener('change', () => {
+                    if (!this._syncing)
+                        this.showDate(this.clamp(addMonths(this.anchorDate(), (Number(this.yearSelect.value) - this.view.year) * 12)))
+                })
+                this.header.replaceChildren(this.monthSelectWrap, this.yearSelectWrap, this.prevButton, this.nextButton)
+            }
+
+            // year range: around today, but always includes the shown year and respects min / max
+            const thisYear = new Date().getFullYear()
+            let from = Math.min(thisYear - this.yearSpan, year)
+            let to = Math.max(thisYear + this.yearSpan, year)
+            if (this.min) from = Math.max(from, Number(this.min.slice(0, 4)))
+            if (this.max) to = Math.min(to, Number(this.max.slice(0, 4)))
+            const rangeKey = `${from}-${to}`
+            if (this.yearRange !== rangeKey) {
+                this.yearRange = rangeKey
+                this.yearSelect.replaceChildren(...Array.from({ length: to - from + 1 }, (_, i) => {
+                    const option = document.createElement('option')
+                    option.value = from + i
+                    option.text = from + i
+                    return option
+                }))
+                // an as-select that is already built needs telling about the new options, one that is not will read them itself
+                if (this.yearSelectWrap.ready)
+                    this.yearSelectWrap.setAttribute('updated', '')
+            }
+
+            // selects mirror the shown month; as-select refreshes its text on a change event
+            this._syncing = true
+            if (this.monthSelect.value !== String(month)) {
+                this.monthSelect.value = month
+                this.monthSelect.dispatchEvent(new Event('change'))
+            }
+            if (this.yearSelect.value !== String(year)) {
+                this.yearSelect.value = year
+                this.yearSelect.dispatchEvent(new Event('change'))
+            }
+            this._syncing = false
+        }
+
+        isEmpty(obj) {
+            for (const prop in obj) {
+                if (Object.hasOwn(obj, prop))
+                    return false;
+            }
+            return true;
+        }
+
+        broadcastEvent(name, detail = {}) {
+            const cEvent = (this.isEmpty(detail)) ? new CustomEvent(name, { bubbles: true }) : new CustomEvent(name, { detail: detail, bubbles: true })
+            this.dispatchEvent(cEvent)
+        }
     }
+    window.customElements.define("as-date-picker", ASDatePickerElement)
 })
-
-
-class ASDatePicker {
-    constructor(el) {
-        const elParent = el.parentNode
-        const picker = document.createElement('as-date-picker')
-        elParent.insertBefore(picker, el)
-        picker.append(el)
-    }
-}

@@ -71,10 +71,10 @@
   },
   {
     "name": "Date Picker",
-    "description": "<p>Date Picker component is used as wrapper to any existing&nbsp;<b>&lt;INPUT type=\"text\"&gt;</b>&nbsp;element and make it a date field with custom calendar date picker.</p><p>Calendar allows to select date using pointer device or with keyboard. When user focus is on the field one can change date by one day by using UP and DOWN arrows.</p><p>To maximise compatibility it automatically turn input field to a <b>type=\"date\"</b> on mobile resolutions.</p>",
+    "description": "<p>Date Picker wraps any existing <b>&lt;INPUT type=\"text\"&gt;</b> element and makes it a date field with a calendar. Dates are ISO (YYYY-MM-DD) everywhere that matters: the <b>value</b> property, the changed event and the submitted form value. <b>reverse</b> only changes how the date is displayed and typed.</p><p>Pick a date with the pointer or the keyboard: arrow keys move by day and week, Home and End to the start and end of the week, Page Up and Page Down by month (with Shift by year). In the field, Up and Down change the date by one day and Alt + Down opens the calendar. A Today button, <b>min</b> / <b>max</b> limits and a locale aware first day of the week are included.</p><p>To maximise compatibility it automatically turns the field into a <b>type=\"date\"</b> on mobile resolutions.</p>",
     "slug": "date-picker",
-    "examplesCount": 3,
-    "propertiesCount": 6,
+    "examplesCount": 6,
+    "propertiesCount": 12,
     "eventsCount": 5,
     "componentJS": "as-date-picker-component.js",
     "componentCSS": "as-date-picker-component.css"

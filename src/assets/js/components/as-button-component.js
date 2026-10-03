@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             success: 'btn-success'
         }
         // attributes forwarded as they are to the native <button>
-        const FORWARDED = ['popovertarget', 'popovertargetaction', 'name', 'value', 'form', 'aria-controls']
+        const FORWARDED = ['popovertarget', 'popovertargetaction', 'name', 'value', 'form', 'aria-controls', 'aria-haspopup', 'aria-expanded']
 
         class ASButton extends HTMLElement {
             constructor() {
@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     return
                 this.ready = true
                 // a text set before the element was upgraded would shadow the accessor below
-                if (Object.hasOwn(this, 'text')) {
-                    const value = this.text
-                    delete this.text
-                    this.text = value
+                for (const prop of ['text', 'disabled']) {
+                    if (Object.hasOwn(this, prop)) {
+                        const value = this[prop]
+                        delete this[prop]
+                        this[prop] = value
+                    }
                 }
                 this.build()
                 this.broadcastEvent('as-button:created', { id: this.id })

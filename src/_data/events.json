@@ -290,28 +290,28 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:breakpoint",
-    "description": "Fires when date picker checks breakpoint value to modify component behaviour. Has detail object.",
+    "description": "Fires when the viewport crosses the breakpoint and the component switches between the calendar and the native date input (also once at start). Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"desktop\"}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", breakpoint: \"mobile\"}"
   },
   {
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:open",
-    "description": "Fires when calendar popout is shown. Has detail object.",
+    "description": "Fires when the calendar is shown. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
   {
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:closed",
-    "description": "Fires when calendar popout is closed. Has detail object.",
+    "description": "Fires when the calendar is closed, by picking a date, Escape or a click outside. Has detail object.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\"}"
   },
   {
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "as-date-picker:changed",
-    "description": "Fires when user picks another date. Has detail object.",
+    "description": "Fires when the date actually changes, from the calendar, the Today button, typing or the arrow keys. <code>detail.date</code> is ISO (YYYY-MM-DD) or an empty string when cleared, <code>detail.changed</code> lists what differs from the previous date: year, month and / or day. The input also receives real <code>input</code> and <code>change</code> events.",
     "exampleValue": "{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"day\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"month\"]}</br></br>{id: \"9a42cd92-e064-4f3d-986f-4166f3708559\", date: \"2025-11-01\", changed: [\"year\"]}"
   },
   {

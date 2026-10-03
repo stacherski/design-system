@@ -338,9 +338,30 @@
   {
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
-    "example": "<as-date-picker disabled reverse locale=\"da-DK\" yearspan=\"30\"><input id=\"mydate\" type=\"text\" value=\"{system.date}\"/></as-date-picker>",
+    "example": "<as-date-picker disabled reverse locale=\"da-DK\" yearspan=\"30\"><input id=\"mydate\" type=\"text\" value=\"2025-11-05\"/></as-date-picker>",
     "code": "<as-date-picker disabled reverse locale=\"da-DK\">[text input]</as-date-picker>",
     "codeToken": "<code class=\"token icon\">&lt;as-date-picker disabled reverse locale=\"da-DK\"&gt;[text input]&lt;/as-date-picker&gt;</code>"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "example": "<as-date-picker locale=\"en-US\" min=\"2025-01-01\" max=\"2030-12-31\"><input id=\"mydate4\" type=\"text\" name=\"arrival\" value=\"2026-03-14\"/></as-date-picker>",
+    "code": "<as-date-picker locale=\"en-US\" min=\"2025-01-01\" max=\"2030-12-31\">[text input]</as-date-picker>",
+    "codeToken": "<code class=\"token icon\">&lt;as-date-picker locale=\"en-US\" min=\"2025-01-01\" max=\"2030-12-31\"&gt;[text input]&lt;/as-date-picker&gt;</code>"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "example": "<as-date-picker selects locale=\"en-GB\" first-day=\"1\" today-text=\"Today\"><input id=\"mydate5\" type=\"text\"/></as-date-picker>",
+    "code": "<as-date-picker selects first-day=\"1\">[text input]</as-date-picker>",
+    "codeToken": "<code class=\"token icon\">&lt;as-date-picker selects first-day=\"1\"&gt;[text input]&lt;/as-date-picker&gt;</code>"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "example": "<form onsubmit=\"event.preventDefault(); new Toast('Submitted: ' + new FormData(this).get('departure'))\" style=\"display:flex;gap:var(--as-space-s);align-items:start\"><as-date-picker reverse locale=\"da-DK\"><input id=\"mydate6\" type=\"text\" name=\"departure\" value=\"2026-03-14\"/></as-date-picker><as-button type=\"submit\">Submit</as-button></form>",
+    "code": "<as-date-picker reverse locale=\"da-DK\"><input name=\"departure\"></as-date-picker> // submitted as ISO",
+    "codeToken": "<code class=\"token icon\">&lt;as-date-picker reverse locale=\"da-DK\"&gt;&lt;input name=\"departure\"&gt;&lt;/as-date-picker&gt; // submitted as ISO</code>"
   },
   {
     "componentName": "Command menu",

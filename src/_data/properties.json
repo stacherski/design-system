@@ -323,7 +323,7 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "yearspan",
-    "description": "When present allow to define number of years that will be available within calendar year select that stretch into past and future plus current year. Defaults to <b>20</b>.",
+    "description": "Number of years before and after the current year available in the year select (see <code>selects</code>). The shown year and <code>min</code> / <code>max</code> are always respected. Defaults to <b>20</b>.",
     "propertyType": "number",
     "optional": "Yes"
   },
@@ -339,7 +339,7 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "locale",
-    "description": "When present allow to overwrite page lang attribute settings. This is used to generate month names in calendar month select and day names. If date picker locale attribute is not present or no lang attribute is present it <b>defaults to 'en'</b>.",
+    "description": "When present overrides the page lang attribute. Used for month and day names, full date labels and, unless <code>first-day</code> is set, the first day of the week. Defaults to the page language, or <b>'en'</b>.",
     "propertyType": "string",
     "optional": "Yes"
   },
@@ -347,7 +347,7 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "placeholder",
-    "description": "This is placeholder of the input field. Can be passed within input field attributes, or in this case within component attributes. If non of these are present it <b>defaults to current date</b>.",
+    "description": "Placeholder of the input field. Can be set on the input itself (it wins) or here on the component. If neither is present it defaults to the date format hint, <b>YYYY-MM-DD</b> or <b>DD-MM-YYYY</b> with <code>reverse</code>.",
     "propertyType": "string",
     "optional": "Yes"
   },
@@ -355,7 +355,7 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "reverse",
-    "description": "Internally date picker component operates on date in ISO format (YYYY-DD-MMT00:00) but if for some reason date display is needed in DD-MM-YYYY format then reverse attribute can be used to make it so.",
+    "description": "Display only. The component always works with ISO dates (YYYY-MM-DD): that is what <code>value</code>, the <code>as-date-picker:changed</code> event and the submitted form value contain. With <code>reverse</code> the field shows and accepts <b>DD-MM-YYYY</b> and the ISO value is submitted through a hidden field that takes over the input's <code>name</code>.",
     "propertyType": "param",
     "optional": "Yes"
   },
@@ -363,8 +363,56 @@
     "componentName": "Date Picker",
     "componentSlug": "date-picker",
     "name": "disabled",
-    "description": "when present disables date picker from user input entirely.",
+    "description": "When present disables the field and the calendar button entirely.",
     "propertyType": "param",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "first-day",
+    "description": "First day of the week as a number, 0 (Sunday) to 6 (Saturday). By default it follows the locale, falling back to Monday.",
+    "propertyType": "number",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "min",
+    "description": "Earliest selectable date, ISO format (YYYY-MM-DD). Earlier days are disabled in the calendar and rejected when typed.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "max",
+    "description": "Latest selectable date, ISO format (YYYY-MM-DD). Later days are disabled in the calendar and rejected when typed.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "selects",
+    "description": "Feature flag. By default the calendar header has a month label with previous / next arrows. With <code>selects</code> it shows month and year selects as well.",
+    "propertyType": "param",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "today-text",
+    "description": "Text of the button that picks today's date. Defaults to <b>Today</b>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Date Picker",
+    "componentSlug": "date-picker",
+    "name": "button-label",
+    "description": "Accessible name of the calendar button and the calendar dialog. Defaults to <b>Choose date</b>.",
+    "propertyType": "string",
     "optional": "Yes"
   },
   {
