@@ -1,5 +1,75 @@
 [
   {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button>Save</as-button>",
+    "code": "<as-button>Save</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button&gt;Save&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button icon-name=\"plus\">Add item</as-button>",
+    "code": "<as-button icon-name=\"plus\">Add item</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button icon-name=\"plus\"&gt;Add item&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button icon-name=\"arrow-right\" icon-position=\"end\">Next</as-button>",
+    "code": "<as-button icon-name=\"arrow-right\" icon-position=\"end\">Next</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button icon-name=\"arrow-right\" icon-position=\"end\"&gt;Next&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<div style=\"display:flex;gap:var(--as-space-s);flex-wrap:wrap\"><as-button>Primary</as-button><as-button variant=\"outline\">Outline</as-button><as-button variant=\"transparent\">Transparent</as-button><as-button variant=\"warning\">Warning</as-button><as-button variant=\"error\">Error</as-button><as-button variant=\"success\">Success</as-button></div>",
+    "code": "<as-button variant=\"outline\">Outline</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button variant=\"outline\"&gt;Outline&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<div style=\"display:flex;gap:var(--as-space-s);align-items:center\"><as-button size=\"m\">Compact</as-button><as-button>Default</as-button><as-button size=\"l\">Large</as-button></div>",
+    "code": "<as-button size=\"m\">Compact</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button size=\"m\"&gt;Compact&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button icon-name=\"--as-icon-times-solid\" label=\"Close\" variant=\"transparent\"></as-button>",
+    "code": "<as-button icon-name=\"--as-icon-times-solid\" label=\"Close\" variant=\"transparent\"></as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button icon-name=\"--as-icon-times-solid\" label=\"Close\" variant=\"transparent\"&gt;&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<div style=\"display:flex;gap:var(--as-space-s)\"><as-button disabled>Disabled</as-button><as-button loading>Saving</as-button></div>",
+    "code": "<as-button disabled>Disabled</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button disabled&gt;Disabled&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button href=\"/components/\" icon-name=\"arrow-right\" icon-position=\"end\" variant=\"outline\">All components</as-button>",
+    "code": "<as-button href=\"/components/\">All components</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button href=\"/components/\"&gt;All components&lt;/as-button&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button-group><as-button>One</as-button><as-button>Two</as-button><as-button>Three</as-button></as-button-group>",
+    "code": "<as-button-group><as-button>One</as-button><as-button>Two</as-button></as-button-group>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button-group&gt;&lt;as-button&gt;One&lt;/as-button&gt;&lt;as-button&gt;Two&lt;/as-button&gt;&lt;/as-button-group&gt;</code>"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "example": "<as-button id=\"demo-button\" icon-name=\"plus\">Click me</as-button><script>document.querySelector(\"#demo-button\").addEventListener(\"as-button:click\", e => { new Toast(\"Button clicked\") })</script>",
+    "code": "<as-button id=\"demo-button\">Click me</as-button>",
+    "codeToken": "<code class=\"token icon\">&lt;as-button id=\"demo-button\"&gt;Click me&lt;/as-button&gt;</code>"
+  },
+  {
     "componentName": "Icon",
     "componentSlug": "icon",
     "example": "<as-icon name=\"pen\" size=\"xxxl\" color=\"--as-color-status-error\" label=\"There's been an error\"></as-icon>",

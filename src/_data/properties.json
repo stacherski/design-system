@@ -664,6 +664,110 @@
     "optional": "Yes"
   },
   {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "icon-name",
+    "description": "Name of the &lt;AS-ICON&gt; shown in the button. Accepts any icon name or token (e.g. <code>plus</code> or <code>--as-icon-plus</code>). Changing it re-renders the icon.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "icon-position",
+    "description": "Where the icon sits relative to the text. Accepts <code>start</code> (default) or <code>end</code>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "variant",
+    "description": "Visual variant mapped to the button classes. Accepts <code>primary</code> (default), <code>outline</code>, <code>transparent</code>, <code>warning</code>, <code>error</code> or <code>success</code>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "size",
+    "description": "Button size. Accepts <code>m</code> (compact) or <code>l</code> (large). The icon follows the same size. Default size when omitted.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "button-class",
+    "description": "Extra space separated classes added to the inner button element.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "label",
+    "description": "Accessible name of the button, set as <code>aria-label</code>. Required for icon-only buttons, a warning is logged when both text and label are missing.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "type",
+    "description": "Native button type: <code>button</code> (default), <code>submit</code> or <code>reset</code>. Note the default is <code>button</code>, not <code>submit</code> as with a plain &lt;button&gt;. Ignored when <code>href</code> is set.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "disabled",
+    "description": "When present disables the button. Links get <code>aria-disabled</code> and leave the tab order.",
+    "propertyType": "boolean",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "loading",
+    "description": "When present marks the button busy (<code>aria-busy</code>) and disables it until removed.",
+    "propertyType": "boolean",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "href",
+    "description": "When present the component renders a link (&lt;a&gt;) styled as a button instead of a &lt;button&gt;.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "target",
+    "description": "Link target, only used together with <code>href</code>. <code>_blank</code> also sets <code>rel=\"noopener noreferrer\"</code>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "popovertarget",
+    "description": "ID of a popover element toggled by the button. Forwarded to the native button, so it works as with a plain &lt;button&gt;. <code>popovertargetaction</code> is forwarded too.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "name",
+    "description": "Forwarded to the native button together with <code>value</code> and <code>form</code>, so the button takes part in form submission.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
     "componentName": "Dot Matrix Clock",
     "componentSlug": "dot-matrix-clock",
     "name": "size",

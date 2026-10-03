@@ -1,5 +1,19 @@
 [
   {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "as-button:created",
+    "description": "Fired when the component has built its button. Has detail object.",
+    "exampleValue": "{id: \"save\"}"
+  },
+  {
+    "componentName": "Button",
+    "componentSlug": "button",
+    "name": "as-button:click",
+    "description": "Fired when the button is clicked and is not disabled or loading. Has detail object. Native click events bubble as usual.",
+    "exampleValue": "{id: \"save\"}"
+  },
+  {
     "componentName": "Select",
     "componentSlug": "select",
     "name": "as-select:created",

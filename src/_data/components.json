@@ -1,5 +1,15 @@
 [
   {
+    "name": "Button",
+    "description": "Button that renders a native button (or a link when <code>href</code> is set) from attributes: icon and its position, variant, size, loading and disabled states. Content of the element becomes the button text.",
+    "slug": "button",
+    "examplesCount": 10,
+    "propertiesCount": 13,
+    "eventsCount": 2,
+    "componentJS": "as-button-component.js",
+    "componentCSS": "as-button-component.css"
+  },
+  {
     "name": "Carousel / Slider",
     "description": "Carousel component turns a list of elements into a looped carousel / slider with next/prev control buttons, play/pause button and some configuring parameters.",
     "slug": "carousel-slider",
