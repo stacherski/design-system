@@ -16,7 +16,7 @@ as-dot-matrix-clock {
             width: calc(.2 * var(--size));
             aspect-ratio: 1/1;
             background-color: var(--digit-bg);
-            transition: background-color .15s ease-out;
+            transition: background-color var(--as-time-xs) ease-out;
         }
 
         &>div:nth-child(2),
@@ -35,7 +35,7 @@ as-dot-matrix-clock {
             width: calc(.2 * var(--size));
             aspect-ratio: 1/1;
             background-color: var(--digit-bg);
-            transition: background-color .15s ease-out;
+            transition: background-color var(--as-time-xs) ease-out;
         }
 
         &[val="0"] {

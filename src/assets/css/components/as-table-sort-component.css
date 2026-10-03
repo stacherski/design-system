@@ -1,7 +1,7 @@
 as-table-sort {
     --input-text-color: var(--as-color-text);
     --input-bg-color: var(--as-color-background-panel);
-    --input-border-color: var(--as-color-border-panel);
+    --input-border-color: var(--as-color-border-input);
     --button-text-color: var(--input-text-color);
     --padding-block: var(--as-space-s);
     --gap: var(--as-space-m);
@@ -33,7 +33,7 @@ as-table-sort th input[type="search"] {
     border-radius: var(--as-border-radius);
     padding: var(--input-padding);
     /*min-width: 15ch;*/
-    transition: all .15s ease;
+    transition: all var(--as-time-xs) ease;
     width: 100%;
     font-size: inherit;
 }

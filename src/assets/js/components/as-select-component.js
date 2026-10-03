@@ -56,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.tsSelectTrigger.setAttribute('popovertarget', this.selectId)
                 //this.tsSelectTrigger.setAttribute('popovertargetaction','toggle')
                 this.tsSelectTrigger.setAttribute('tabindex', 0)
+                this.tsSelectTrigger.setAttribute('role', 'combobox')
+                this.tsSelectTrigger.setAttribute('aria-autocomplete', 'list')
+                this.tsSelectTrigger.setAttribute('aria-haspopup', 'listbox')
+                this.tsSelectTrigger.setAttribute('aria-expanded', 'false')
+                this.tsSelectTrigger.setAttribute('aria-controls', this.selectId)
+                this.setTriggerLabel()
                 this.tsSelectTrigger.style.setProperty('anchor-name', `--${this.selectId}`)
                 this.setSelectTriggerValue()
 
@@ -69,6 +75,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.append(this.tsSelectWrapper)
                 this.ready = true
+            }
+
+            setTriggerLabel() {
+                // the visible input has to be named like the <select> it stands in for
+                const id = this.select.id
+                const label = (id && document.querySelector(`label[for="${CSS.escape(id)}"]`)) || this.select.closest('label')
+                if (this.select.hasAttribute('aria-label'))
+                    this.tsSelectTrigger.setAttribute('aria-label', this.select.getAttribute('aria-label'))
+                else if (this.select.hasAttribute('aria-labelledby'))
+                    this.tsSelectTrigger.setAttribute('aria-labelledby', this.select.getAttribute('aria-labelledby'))
+                else if (label && label.textContent.trim())
+                    this.tsSelectTrigger.setAttribute('aria-label', label.textContent.trim())
+                else
+                    this.tsSelectTrigger.setAttribute('aria-label', this.select.name || 'Select an option')
             }
 
             forSelectTrigger(e) {
@@ -93,7 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.addEventListener(event, this.calculateSelectDropdownPosition.bind(this))
                 )
 
-                this.tsSelectDropdown.addEventListener('toggle', () => {
+                this.tsSelectDropdown.addEventListener('toggle', e => {
+                    // keep aria-expanded true to the popover, which can also close by light dismiss
+                    this.tsSelectTrigger.setAttribute('aria-expanded', e.newState === 'open' ? 'true' : 'false')
                     if (this.tsSelectDropdown.querySelector('[selected]'))
                         this.tsSelectDropdown.querySelector('[selected]').scrollIntoView({ behavior: "instant", block: "center" })
                 })
@@ -134,8 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.index = this.select.selectedIndex = e.target.dataset.index
                 this.querySelectorAll('li').forEach((option, index) => {
                     option.removeAttribute('selected')
-                    if (index == this.select.selectedIndex)
+                    option.setAttribute('aria-selected', 'false')
+                    if (index == this.select.selectedIndex) {
                         option.setAttribute('selected', '')
+                        option.setAttribute('aria-selected', 'true')
+                    }
                 })
                 this.select.dispatchEvent(new Event('change', { bubbles: true }))
                 this.hideDropdown(e)
@@ -184,13 +209,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 // render options
                 const fragment = new DocumentFragment()
                 const tsSelectDropdownList = document.createElement('ul')
+                tsSelectDropdownList.setAttribute('role', 'listbox')
+                tsSelectDropdownList.setAttribute('aria-label', this.tsSelectTrigger.getAttribute('aria-label') || 'Options')
 
                 this.options.map((option) => {
                     const opt = document.createElement('li')
                     opt.textContent = option.text
                     opt.value = option.value
                     opt.setAttribute('data-index', option.index)
-                    opt.setAttribute('tabindex', 0)
+                    opt.setAttribute('tabindex', -1)
+                    opt.setAttribute('role', 'option')
+                    opt.setAttribute('aria-selected', option.index == this.select.options.selectedIndex ? 'true' : 'false')
                     if (option.index == this.select.options.selectedIndex) {
                         opt.setAttribute('selected', '')
                         opt.scrollIntoView({ behavior: "smooth", block: "start" })

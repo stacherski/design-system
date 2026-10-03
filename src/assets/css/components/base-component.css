@@ -114,7 +114,7 @@ body a {
 [layout] nav ul {
     display: grid;
     gap: var(--as-space-xxs);
-    transition: all 1s ease-in-out;
+    transition: all var(--as-time) ease-in-out;
 }
 
 [layout] nav ul li {
@@ -162,25 +162,25 @@ body a {
 }
 
 [layout] nav ul li a:is(:HOVER) {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
     background-color: var(--as-color-background-nav);
     border-inline-start-color: var(--as-color-text-nav);
 }
 
 [layout] nav ul li a:is(:HOVER) span {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
 }
 
 [layout] nav ul li a:is(:FOCUS, :ACTIVE),
 [layout] nav ul li[active]>div.wrapper>a {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
     background-color: var(--as-color-background-nav-strong);
     border-inline-start-color: var(--as-color-text-nav);
 }
 
 [layout] nav ul li a:is(:FOCUS, :ACTIVE) span,
 [layout] nav ul li[active]>div.wrapper>a span {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
 }
 
 [layout] nav ul li[active]>div.wrapper>as-icon {
@@ -585,7 +585,7 @@ body[freeze] {
     background-color: var(--as-color-overlay);
     opacity: 0;
     inset: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity var(--as-time-s) ease-in-out;
     cursor: pointer;
 }
 
@@ -882,8 +882,8 @@ input:is([type="submit"], [type="button"]) {
 }
 
 .btn-warning {
-    --background: var(--as-color-status-warning-strong);
-    --border: var(--as-color-status-warning-strong);
+    --background: var(--as-color-status-warning-text-bg);
+    --border: var(--as-color-status-warning-text-bg);
     --color: var(--as-color-text-button);
 }
 
@@ -1090,7 +1090,7 @@ as-badge.info,
 
 as-badge.warning,
 .badge.warning {
-    --background: var(--as-color-status-warning);
+    --background: var(--as-color-status-warning-text-bg);
     color: var(--as-color-text-button);
 
     &:HOVER {
@@ -1174,7 +1174,7 @@ as-badge.success,
     line-height: var(--as-line-height-default);
     opacity: 1;
     animation-name: fadeout;
-    animation-duration: 1s;
+    animation-duration: var(--as-time);
     animation-delay: var(--delay);
     transition-property: opacity;
 }
@@ -1208,17 +1208,17 @@ as-badge.success,
 }
 
 .toast-wrapper .warning {
-    background-color: var(--as-color-status-warning-weak);
+    background-color: var(--as-color-status-warning-text-bg);
     color: var(--as-color-text-button);
 }
 
 .toast-wrapper .error {
-    background-color: var(--as-color-status-error-weak);
+    background-color: var(--as-color-status-error);
     color: var(--as-color-text-button);
 }
 
 .toast-wrapper .success {
-    background-color: var(--as-color-status-success-weak);
+    background-color: var(--as-color-status-success);
     color: var(--as-color-text-button);
 }
 
@@ -1301,9 +1301,6 @@ as-badge.success,
         overflow: hidden;
         resize: none;
         field-sizing: content;
-        outline-color: transparent;
-        outline-style: solid;
-        outline-width: 0;
         position: relative;
 
         &:is(:FOCUS, :FOCUS-WITHIN, :ACTIVE) {
@@ -1322,7 +1319,6 @@ as-badge.success,
             cursor: pointer;
             user-select: none;
             position: relative;
-            outline: 0;
             min-height: calc(1.3 * var(--pin-width));
             display: flex;
             justify-content: space-between;
@@ -1387,7 +1383,6 @@ as-badge.success,
             cursor: pointer;
             user-select: none;
             position: relative;
-            outline: 0;
             min-height: calc(1.3 * var(--checkmark-width));
             display: flex;
             justify-content: flex-start;
@@ -1449,7 +1444,6 @@ as-badge.success,
             cursor: pointer;
             user-select: none;
             position: relative;
-            outline: 0;
             min-height: calc(1.3 * var(--radio-width));
             display: flex;
             justify-content: flex-start;
@@ -1509,7 +1503,6 @@ as-badge.success,
             cursor: pointer;
             user-select: none;
             position: relative;
-            outline: 0;
             white-space: nowrap;
             background-color: var(--as-color-inactive);
             border-color: var(--as-color-accent);
@@ -1575,7 +1568,6 @@ as-badge.success,
             cursor: pointer;
             user-select: none;
             position: relative;
-            outline: 0;
             white-space: nowrap;
             background-color: var(--as-color-inactive);
             border-color: var(--as-color-accent);

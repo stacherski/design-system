@@ -1,0 +1,67 @@
+as-table-sort {
+    --input-text-color: var(--as-color-text);
+    --input-bg-color: var(--as-color-background-panel);
+    --input-border-color: var(--as-color-border-panel);
+    --button-text-color: var(--input-text-color);
+    --padding-block: var(--as-space-s);
+    --gap: var(--as-space-m);
+    --input-padding: var(--as-space-s);
+    padding: 0;
+    margin: 0;
+}
+
+as-table-sort th>* {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    position: relative;
+}
+
+as-table-sort th button {
+    appearance: none;
+    color: var(--button-text-color);
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    width: 2ch;
+}
+
+as-table-sort th input[type="search"] {
+    color: var(--input-text-color);
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--as-border-radius);
+    padding: var(--input-padding);
+    /*min-width: 15ch;*/
+    transition: all .15s ease;
+    width: 100%;
+    font-size: inherit;
+}
+
+as-table-sort th [searchpanel] {
+    margin-block-start: .25em;
+}
+
+as-table-sort tfoot tr td {
+    /*    color: var(--clr-table-text-inverted);
+        background-color: var(--clr-table-text);*/
+    padding-block: var(--padding-block);
+}
+
+as-table-sort tfoot tr td div {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+}
+
+as-table-sort tfoot button {
+    appearance: none;
+    color: var(--button-text-color);
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    gap: var(--as-space-xs);
+    align-items: center;
+}

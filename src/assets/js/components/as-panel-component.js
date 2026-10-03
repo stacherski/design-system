@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 this.panelHeading.append(this.icon)
 
+                // heading acts as the disclosure button
+                this.panelHeading.setAttribute('role', 'button')
+                this.panelHeading.setAttribute('tabindex', '0')
+                if (this.panelBody) {
+                    if (!this.panelBody.id)
+                        this.panelBody.id = `${this.panelId}-body`
+                    this.panelHeading.setAttribute('aria-controls', this.panelBody.id)
+                }
+
                 this.addListeners()
                 this.rotateIcon()
 
@@ -50,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             addListeners() {
                 this.panelHeading.addEventListener('click', this.toggleContent.bind(this))
+                this.panelHeading.addEventListener('keydown', e => {
+                    if (e.code === 'Enter' || e.code === 'Space') {
+                        e.preventDefault()
+                        this.toggleContent()
+                    }
+                })
                 window.addEventListener('resize', (e) => this.resizeContent(e))
             }
 
@@ -76,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             rotateIcon() {
+                this.panelHeading.setAttribute('aria-expanded', String(!this.hasAttribute('hide')))
                 !this.hasAttribute('hide') ? this.icon.style.setProperty('--rotate', `${this.settings.rotate}`) : this.icon.style.setProperty('--rotate', '0')
             }
 

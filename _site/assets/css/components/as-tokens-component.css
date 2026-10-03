@@ -1,0 +1,169 @@
+:root {
+    /* Default OLD colours */
+    --dark_cornflower_blue: #1E3969;
+    --indigo_dye: #153B50;
+    --cadet_blue: #429EA6;
+    --powder_blue: #C0DCDE;
+    --sea_green_crayola: #16F4D0;
+    --alabaster: #F7F7F7;
+    --ruby_red: #9A031E;
+    --cultured: #EDEDED;
+    --ghost_white: #E2E4ED;
+    --white: #FFFFFF;
+    --pumpkin: #F56F16;
+    /* NEW LOGICAL COLOURS */
+    --as-color-accent: #1e3969;
+    /* Default accent color */
+    --as-color-lightness-factor: 10;
+    /* Adjust lightnes by a factor value in percent to get strong & weak color variants */
+    --as-color-accent-strong: hsl(from var(--as-color-accent) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-accent-weak: hsl(from var(--as-color-accent) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong accent color variants */
+    --as-color-text: #153b50;
+    /* Default text color */
+    --as-color-text-strong: hsl(from var(--as-color-text) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-text-weak: hsl(from var(--as-color-text) h s calc(l + var(--as-color-lightness-factor)));
+    --as-color-text-neutral: hsl(from var(--as-color-text) h 0 calc(l + 5 * var(--as-color-lightness-factor)));
+    /* weak & strong text color variants */
+    --as-color-background: #f7f7f7;
+    /* --as-color-background = --alabaster */
+    --as-color-background-panel: #ffffff;
+    /* --as-color-background-panel = --white */
+    --as-color-border-panel: #E2E4ED;
+    /* --as-color-border-panel = --ghost_white */
+    --as-color-background-button: var(--as-color-accent);
+    /* --as-color-background-button = accent */
+    --as-color-background-button-strong: hsl(from var(--as-color-background-button) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-background-button-weak: hsl(from var(--as-color-background-button) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong button background color variants */
+    --as-color-text-button: #ffffff;
+    /* --as-color-text-button = white */
+    --as-color-text-button-inverted: var(--as-color-background-button);
+    /* --as-color-text-button = white */
+    --as-color-text-nav: #429EA6;
+    /* --as-color-text-nav = --cadet_blue */
+    --as-color-background-nav: #C0DCDE;
+    /* --as-color-background-nav = --powder_blue */
+    --as-color-background-nav-strong: hsl(from var(--as-color-background-nav) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-background-nav-weak: hsl(from var(--as-color-background-nav) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong nav background color variants */
+    --as-color-text-nav-active: #153B50;
+    /* --as-color-background-nav-active = --indygo_dye */
+    --as-color-status-warning: #F56F16;
+    /* --as-color-status-warning = --pumpkin */
+    --as-color-status-warning-strong: hsl(from var(--as-color-status-warning) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-status-warning-weak: hsl(from var(--as-color-status-warning) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong warning color variants */
+    --as-color-status-error: #9A031E;
+    /* --as-color-status-error = --ruby_red */
+    --as-color-status-error-strong: hsl(from var(--as-color-status-error) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-status-error-weak: hsl(from var(--as-color-status-error) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong error color variants */
+    --as-color-status-success: #008800;
+    /* --as-color-status-error = #008800 */
+    --as-color-status-success-strong: hsl(from var(--as-color-status-success) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-status-success-weak: hsl(from var(--as-color-status-success) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong success color variants */
+    --as-color-status-neutral: #cccccc;
+    --as-color-status-neutral-strong: hsl(from var(--as-color-status-neutral) h s calc(l - var(--as-color-lightness-factor)));
+    --as-color-status-neutral-weak: hsl(from var(--as-color-status-neutral) h s calc(l + var(--as-color-lightness-factor)));
+    /* weak & strong success color variants */
+    --as-color-overlay: rgb(from #000000 r g b / .5);
+    /* --as-color-overlay = --as-color-text-strong with 50% opacity */
+    --as-color-shadow: #c0c0c0;
+    /* color used as base to create box shadows color */
+    /* BORDER RADIUS */
+    --as-border-radius-xs: .0625em;
+    /* sharp border radius */
+    --as-border-radius-s: .1875em;
+    /* small border radius */
+    --as-border-radius: .3125em;
+    /* default border radius */
+    --as-border-radius-m: .5em;
+    /* medium border radius */
+    --as-border-radius-l: 1em;
+    /* large border radius */
+    --as-border-radius-pill: 999px;
+    /* for creating pill shaped objects like tags or badges */
+    --as-border-radius-circle: 50%;
+    /* for creating rounded objects, user avatars or similar */
+    /* BOX SHADOW */
+    --as-box-shadow: 0 var(--as-space-xs) var(--as-space-m) rgb(from var(--as-color-shadow) r g b / .5);
+    /* #SIZE */
+    --as-base: 16px;
+    /* adjust THIS variable ONLY */
+    --as-size-thin: 1px;
+    --as-size-xxs: .125rem;
+    --as-size-xs: .25rem;
+    --as-size-s: .375rem;
+    --as-size-m: .75rem;
+    --as-size-default: 1rem;
+    --as-size: var(--as-size-default);
+    --as-size-l: 1.5rem;
+    --as-size-xl: 2rem;
+    --as-size-xxl: 3rem;
+    --as-size-xxxl: 6rem;
+    --as-size-max-rem: 110rem;
+    --as-size-max-px: calc(110 * var(--as-base));
+    /* #SPACING */
+    --as-space-xxs: .0625rem;
+    --as-space-xs: .25rem;
+    --as-space-s: .5rem;
+    --as-space-m: 1rem;
+    --as-space-l: 1.5rem;
+    --as-space-xl: 2.25rem;
+    --as-space-xxl: 3.5rem;
+    --as-space-sidebar: 19rem;
+    --as-space-sidebar-closed: 5rem;
+    --as-space-full-height: 100%;
+    /* #RATIO */
+    --as-ratio-square: 1/1;
+    --as-ratio-horizontal: 16/9;
+    --as-ratio-vertical: 9/16;
+    /* #TIME */
+    --as-time-xs: .125s;
+    --as-time-s: .25s;
+    --as-time-m: .5s;
+    --as-time: 1s;
+    --as-time-l: 2s;
+    --as-time-xl: 5s;
+    /* #TIMING */
+    --as-timing-function-1: ease-in-out;
+    /* #FONT SIZE */
+    --as-font-size-base: var(--as-base);
+    --as-font-size-xxxl: 2.25rem;
+    --as-font-size-xxl: 1.5rem;
+    --as-font-size-xl: 1.25rem;
+    --as-font-size-l: 1rem;
+    --as-font-size-m: .875rem;
+    --as-font-size-s: .75rem;
+    --as-font-size-xs: .6875rem;
+    /* #LINE HEIGHT */
+    --as-line-height-none: 1;
+    --as-line-height-tight: 1.15;
+    --as-line-height-heading: 1.2;
+    --as-line-height-caption: 1.3;
+    --as-line-height: 1.5;
+    --as-line-height-default: var(--as-line-height);
+    --as-line-height-form: 1.25;
+    --as-line-height-base: 1.3;
+    /* Z-INDEX */
+    --as-index-deep: -999999;
+    --as-index-default: 1;
+    --as-index-masked: 100;
+    --as-index-mask: 200;
+    --as-index-sticky: 300;
+    --as-index-navigation: 400;
+    --as-index-top-bar: 500;
+    --as-index-overlay: 600;
+    --as-index-spinner: 700;
+    --as-index-popout: 800;
+    --as-index-toast: 900;
+    --as-index-modal: 1000;
+    /* FONT FAMILY */
+    --as-font-regular: NunitoRegular, system-ui, sans;
+    --as-font-regular-italic: NunitoRegularItalic, system-ui, sans;
+    --as-font-bold: NunitoBold, system-ui, sans;
+    --as-font-bold-italic: NunitoBoldItalic, system-ui, sans;
+    --as-font-mono: monospace;
+}

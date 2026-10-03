@@ -55,7 +55,6 @@ as-select2range input[type=range] {
     margin-inline: 0;
     width: 100%;
     background: unset;
-    outline: none;
 }
 
 as-select2range input[type=range]::-webkit-slider-runnable-track {

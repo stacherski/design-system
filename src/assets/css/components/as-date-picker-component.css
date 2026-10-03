@@ -141,7 +141,7 @@ as-date-picker [cal] :is(div, button) {
     text-align: center;
     aspect-ratio: 1/1;
     font-size: var(--as-font-size-s);
-    transition: border-radius .15s ease-in-out;
+    transition: border-radius var(--as-time-xs) ease-in-out;
 }
 
 as-date-picker [cal] :is([prev], [curr], [next]) {

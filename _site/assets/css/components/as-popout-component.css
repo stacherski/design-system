@@ -1,0 +1,148 @@
+as-popout {
+    display: inline-block;
+}
+
+as-popout>[popover] {
+    inset: unset;
+    margin: 0;
+    position: absolute;
+    z-index: var(--as-index-popout);
+    transition: all var(--as-time-xs) ease-out;
+    /*position-try-fallbacks: flip-block,flip-inline;*/
+    /*position-try-order: most-height, most-width;*/
+    transition-behavior: allow-discrete;
+    transform: translateY(var(--as-space-m));
+    transition-delay: 10ms;
+    scale: 0.95;
+    opacity: 0;
+    border-radius: var(--as-border-radius-s);
+    border: var(--as-size-thin) solid var(--as-color-border-panel);
+    background-color: var(--as-color-background);
+    padding: var(--as-space-s);
+    box-shadow: var(--as-box-shadow);
+    max-width: calc(10 * var(--as-size-l));
+    width: auto;
+}
+
+as-popout>[popover]:popover-open {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+
+    @starting-style {
+        transform: translateY(var(--as-space-m));
+        opacity: 0;
+        scale: .95;
+    }
+}
+
+as-popout>[pop]:not([popover]) {
+    transition: all var(--as-time-xs) ease-out;
+    transition-behavior: allow-discrete;
+    transform: translateY(var(--as-space-m));
+    transition-delay: 10ms;
+    scale: 0.95;
+    opacity: 0;
+    margin-block-start: var(--as-space-s);
+    border-radius: var(--as-border-radius-s);
+    border: var(--as-size-thin) solid var(--as-color-border-panel);
+    background-color: var(--as-color-background);
+    padding: var(--as-space-s);
+    box-shadow: var(--as-box-shadow);
+    /* max-width: calc(10 * var(--as-size-l)); */
+    width: auto;
+}
+
+as-popout>[pop]:not([popover], [hidden]) {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+
+    @starting-style {
+        transform: translateY(var(--as-space-m));
+        opacity: 0;
+        scale: .95;
+    }
+}
+
+as-popout[popout-position="bottom"]>[popover]:popover-open {
+    margin-block-start: var(--as-space-s);
+}
+
+as-popout[popout-position="bottom"][popout-align="left"]>[popover] {
+    position-area: bottom left;
+}
+
+as-popout[popout-position="bottom"][popout-align="right"]>[popover] {
+    position-area: bottom right;
+}
+
+as-popout[popout-position="bottom"][popout-align="span-left"]>[popover] {
+    position-area: bottom span-left;
+}
+
+as-popout[popout-position="bottom"][popout-align="span-right"]>[popover] {
+    position-area: bottom span-right;
+}
+
+as-popout[popout-position="bottom"][popout-align="span-all"]>[popover] {
+    position-area: bottom span-all;
+}
+
+as-popout[popout-position="top"]>[popover]:popover-open {
+    margin-block-end: var(--as-space-s);
+}
+
+as-popout[popout-position="top"][popout-align="left"]>[popover] {
+    position-area: top left;
+}
+
+as-popout[popout-position="top"][popout-align="right"]>[popover] {
+    position-area: top right;
+}
+
+as-popout[popout-position="top"][popout-align="span-left"]>[popover] {
+    position-area: top span-left;
+}
+
+as-popout[popout-position="top"][popout-align="span-right"]>[popover] {
+    position-area: top span-right;
+}
+
+as-popout[popout-position="top"][popout-align="span-all"]>[popover] {
+    position-area: top span-all;
+}
+
+as-popout[popout-position="center"][popout-align="left"]>[popover]:popover-open {
+    position-area: center left;
+    margin-inline-end: var(--as-space-s);
+}
+
+as-popout[popout-position="center"][popout-align="right"]>[popover]:popover-open {
+    position-area: center right;
+    margin-inline-start: var(--as-space-s);
+}
+
+as-popout[popout-position="center"][popout-align="span-left"]>[popover] {
+    position-area: center span-left;
+}
+
+as-popout[popout-position="center"][popout-align="span-right"]>[popover] {
+    position-area: center span-right;
+}
+
+as-popout[popout-position="center"][popout-align="span-all"]>[popover] {
+    position-area: center span-all;
+}
+
+as-popout[popout-position="center"][popout-align="span-top"]>[popover] {
+    position-area: center span-top;
+}
+
+as-popout[popout-position="center"][popout-align="center"]>[popover] {
+    position-area: center center;
+}
+
+as-popout[popout-position="center"][popout-align="span-bottom"]>[popover] {
+    position-area: center span-bottom;
+}

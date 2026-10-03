@@ -12,7 +12,8 @@
     "pagefind": "^1.4.0"
   },
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "test:contrast": "node scripts/contrast-gate.mjs"
   },
   "keywords": [],
   "author": "",

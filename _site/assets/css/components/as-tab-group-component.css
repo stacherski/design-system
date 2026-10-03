@@ -1,0 +1,94 @@
+as-tab-group {
+    width: 100%;
+    --tab-height: var(--as-size-xxl);
+    --padding: var(--as-space-m);
+    --color-divider: var(--as-color-border-panel);
+    --color-active: var(--as-color-accent);
+    --color-active-strong: var(--tc-color-active-strong) --color-tablist-background: var(--as-color-background-panel);
+    display: block;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+as-tab-group [role="tablist"] {
+    display: flex;
+    border-block-end: var(--as-size-thin) solid var(--color-divider);
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--color-tablist-background);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+as-tab-group as-tab {
+    display: inline-flex;
+    padding-inline: var(--padding);
+    height: var(--tab-height);
+    font-family: var(--as-font-bold);
+    line-height: var(--as-line-heght-none);
+    align-content: center;
+    align-items: center;
+    gap: var(--as-space-s);
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+    transition: all var(--as-time-xs) ease;
+    z-index: 9;
+}
+
+as-tab-group as-tab:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-active);
+    bottom: 0;
+    left: 0;
+    transition: all var(--as-time-xs) ease;
+}
+
+as-tab-group as-tab[aria-selected="true"]:after,
+as-tab-group as-tab[selected]:after {
+    height: var(--as-size-xs);
+}
+
+as-tab-group as-tab:HOVER:after,
+as-tab-group as-tab:ACTIVE:after,
+as-tab-group as-tab:FOCUS:after {
+    height: var(--as-size-xs);
+}
+
+as-tab-group as-tab:FOCUS {
+    outline: none;
+}
+
+as-tab-group as-tab-panel:not([hidden]) {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    padding-block: var(--padding);
+    order: 1000;
+    border-block-start: var(--as-size-thin) solid var(--color-divider);
+}
+
+@media screen and (max-width: 800px) {
+    as-tab-group as-tab {
+        display: flex;
+        width: 100%;
+        padding-inline: unset;
+    }
+
+    as-tab-group as-tab:not([selected]) {
+        border-block-end: var(--as-size-thin) solid var(--color-divider);
+    }
+
+    as-tab-group as-tab-panel:not([hidden]) {
+        order: unset;
+    }
+}

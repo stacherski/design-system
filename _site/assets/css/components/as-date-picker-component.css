@@ -1,0 +1,210 @@
+as-date-picker {
+    --border-color: var(--as-color-border-panel);
+    --selected-color: var(--as-color-accent-weak);
+    --text-color: var(--as-color-accent-strong);
+    --highlight-color: var(--as-color-text-nav);
+    --shadow-color: var(--background-color);
+    --background-color: var(--as-color-background-panel);
+    --backdrop-color: transparent;
+    --header-background: var(--as-color-background-nav-weak);
+    --header-button-background: var(--as-color-accent-weak);
+    --header-button-background-hover: var(--as-color-accent);
+    --header-button-text: var(--as-color-text-button);
+    --current-month-button-background: var(--as-color-background-nav-weak);
+    --current-month-button-text: var(--as-color-text-button-inverted);
+    --button-background-hover: var(--highlight-color);
+    --button-color: var(--text-color);
+    --selected-button-background: var(--selected-color);
+    --max-width: calc(12 * var(--as-size-l));
+    --font-size: calc(.5 * var(--font-size-l));
+    position: relative;
+    display: block;
+    font-family: sans-serif;
+}
+
+as-date-picker>* {
+    font-size: var(--font-size);
+}
+
+as-date-picker>button {
+    position: absolute;
+    top: 50%;
+    right: var(--as-space-s);
+    transform: translateY(-50%);
+    appearance: none;
+    background-color: var(--background-color);
+    border: none;
+    width: var(--as-size-l);
+    aspect-ratio: var(--as-ratio-square);
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+}
+
+as-date-picker>button:is(:focus, :hover):before {
+    background-color: var(--selected-color);
+}
+
+as-date-picker>button:focus {
+    outline: 2px dashed var(--highlight-color);
+    outline-offset: 1px;
+}
+
+as-date-picker [calendar] {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: start;
+    gap: var(--as-space-s);
+    padding: var(--as-space-s);
+}
+
+as-date-picker [calendar] header {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--as-space-s);
+    background-color: var(--header-background);
+    padding-inline: var(--as-space-s);
+    padding-block: var(--as-space-s);
+    margin-inline: calc(-1 * var(--as-space-s));
+    margin-block: calc(-1 * var(--as-space-s)) 0;
+    border-radius: var(--as-border-radius-s);
+    box-shadow: unset;
+}
+
+as-date-picker [calendar] header as-select {
+    font-size: var(--font-size) !important;
+}
+
+/*month select*/
+as-date-picker [month] {
+    grid-column: 1/4;
+}
+
+/*year select*/
+as-date-picker [year] {
+    grid-column: 4/6;
+}
+
+/*prev month*/
+as-date-picker button[month]:first-of-type {
+    grid-column: 6/7;
+    line-height: 1;
+}
+
+/*next month*/
+as-date-picker button[month]:last-of-type {
+    grid-column: 7/8;
+    line-height: 1;
+}
+
+/*next / prev month buttons*/
+as-date-picker button[month] {
+    align-self: center;
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--header-button-background);
+    color: var(--header-button-text);
+    align-content: center;
+    text-align: center;
+    aspect-ratio: 1/1;
+    font-size: var(--as-font-size-s);
+    cursor: pointer;
+    line-height: 1;
+}
+
+as-date-picker button[month]:is(:HOVER, :ACTIVE) {
+    background-color: var(--header-button-background-hover);
+}
+
+as-date-picker button[month]:FOCUS {
+    outline: 2px dashed var(--highlight-color);
+    outline-offset: var(--as-size-thin);
+}
+
+as-date-picker [cal] {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--as-space-xs);
+}
+
+as-date-picker [cal] :is(div, button) {
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--inactive-color);
+    color: var(--current-month-color);
+    align-content: center;
+    text-align: center;
+    aspect-ratio: 1/1;
+    font-size: var(--as-font-size-s);
+    transition: border-radius .15s ease-in-out;
+}
+
+as-date-picker [cal] :is([prev], [curr], [next]) {
+    cursor: pointer;
+}
+
+as-date-picker [cal] [curr] {
+    background-color: var(--current-month-button-background);
+    color: var(--current-month-button-text);
+}
+
+as-date-picker [cal] :is([prev], [next]) {
+    color: var(--day-color);
+}
+
+as-date-picker [cal] button[selected] {
+    background-color: var(--selected-day-button-background);
+}
+
+as-date-picker [cal] button[today] {
+    outline: 2px solid var(--highlight-color);
+    outline-offset: 1px;
+}
+
+as-date-picker [cal] :is(button:not([selected])):HOVER {
+    background-color: var(--button-background-hover);
+    color: var(--button-color);
+}
+
+as-date-picker [cal] button:FOCUS {
+    outline: 2px dashed var(--highlight-color);
+    outline-offset: 1px;
+}
+
+as-date-picker>[popover] {
+    inset: unset;
+    margin: 0;
+    position: absolute;
+    z-index: var(--as-index-popout);
+    transition: all var(--as-time-xs) ease-out;
+    transition-behavior: allow-discrete;
+    transform: translateY(calc(1 * var(--as-space-m)));
+    transition-delay: 10ms;
+    opacity: 0;
+    scale: .95;
+    max-width: var(--max-width);
+    width: auto;
+    position-area: bottom span-left;
+    border-radius: var(--as-border-radius-s);
+    background-color: var(--background-color);
+    outline: none;
+    box-shadow: var(--as-box-shadow);
+}
+
+as-date-picker>[popover]:popover-open {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+    margin-block-start: var(--as-space-s);
+
+    @starting-style {
+        transform: translateY(calc(1 * var(--as-space-m)));
+        opacity: 0;
+        scale: .95;
+    }
+}

@@ -11,7 +11,7 @@ if (!window.AS.Toast) {
                 this.toastWrapper = document.createElement('div')
                 this.toastWrapper.classList.add('toast-wrapper')
                 this.toastWrapper.setAttribute('role', 'region')
-                this.toastWrapper.setAttribute('aria-live', 'polite')
+                this.toastWrapper.setAttribute('aria-label', 'Notifications')
                 document.querySelector('body').append(this.toastWrapper)
             }
 
@@ -23,8 +23,8 @@ if (!window.AS.Toast) {
             toast.classList.add('toast')
             toast.classList.add(this.type)
             toast.textContent = this.message
-            toast.setAttribute('role', 'alert')
-            toast.setAttribute('aria-label', this.type)
+            // errors interrupt (assertive); everything else waits its turn (polite)
+            toast.setAttribute('role', this.type === 'error' ? 'alert' : 'status')
 
             toast.style.setProperty('--delay', Math.round(this.timeout / 1000) + 's')
             this.toastWrapper.prepend(toast)
@@ -39,6 +39,8 @@ if (!window.AS.Toast) {
             if (this.sticky) {
                 toast.style.animationName = 'unset'
                 const close = document.createElement('button')
+                close.setAttribute('type', 'button')
+                close.setAttribute('aria-label', 'Close notification')
                 const icon = document.createElement('as-icon')
                 icon.setAttribute('name', 'plus')
                 icon.setAttribute('rotate', '45deg')

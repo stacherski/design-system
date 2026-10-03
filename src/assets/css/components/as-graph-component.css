@@ -10,7 +10,7 @@ as-graph-data {
     --button-bg-color: var(--as-color-text-button);
     --button-text-color: var(--as-color-accent);
     --button-border-width: 0.0625rem;
-    --transition-duration: .3s;
+    --transition-duration: var(--as-time-s);
     --timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
     --color-legend-hover: var(--as-color-background-nav-weak);
     --yAxisSize: 4em;
@@ -78,7 +78,7 @@ as-graph .controls label,
     color: var(--button-text-color);
     cursor: pointer;
     border-radius: 0;
-    transition: box-shadow .15s ease-out;
+    transition: box-shadow var(--as-time-xs) ease-out;
     align-self: end;
 }
 
@@ -105,7 +105,7 @@ as-graph .controls select {
     color: var(--button-text-color);
     cursor: pointer;
     border-radius: 0;
-    transition: box-shadow .15s ease-out;
+    transition: box-shadow var(--as-time-xs) ease-out;
     background-image: var(--_chevron-down);
     background-repeat: no-repeat;
     background-size: 1em auto;
@@ -114,7 +114,6 @@ as-graph .controls select {
 
 as-graph .controls select:HOVER,
 as-graph .controls select:FOCUS {
-    outline: none;
     box-shadow: .25rem .25rem 0 var(--button-text-color);
 }
 
@@ -154,14 +153,13 @@ as-graph-data input[type="checkbox"]+label::before {
     cursor: pointer;
     width: 1em;
     aspect-ratio: 1/1;
-    transition: box-shadow .15s ease-out;
+    transition: box-shadow var(--as-time-xs) ease-out;
 }
 
 as-graph input[type="checkbox"]+label:HOVER::before,
 as-graph input[type="checkbox"]+label:FOCUS::before,
 as-graph-data input[type="checkbox"]+label:HOVER::before,
 as-graph-data input[type="checkbox"]+label:FOCUS::before {
-    outline: none;
     box-shadow: .125rem .125rem 0 var(--button-text-color);
 }
 
@@ -410,7 +408,7 @@ as-graph svg.linechart circle {
 
 as-graph svg.linechart circle {
     cursor: zoom-in;
-    transition: all .3s ease-in-out;
+    transition: all var(--as-time-s) ease-in-out;
 }
 
 as-graph svg.linechart circle:hover {
@@ -586,7 +584,6 @@ as-graph figure ul.legend>*:before {
 as-graph figure ul.legend>*:HOVER,
 as-graph figure ul.legend>*:FOCUS,
 as-graph figure ul.legend>* [active] {
-    outline: none;
 }
 
 as-graph figure ul.legend>*:HOVER:after,
@@ -601,7 +598,7 @@ as-graph figure ul.legend>* [active]:after {
     inset: -.5em;
     background-color: var(--color-legend-hover);
     box-shadow: .125rem .125rem 0 var(--button-text-color);
-    transition: all .15s var(--timimng-function);
+    transition: all var(--as-time-xs) var(--timimng-function);
 }
 
 as-graph figure .chartarea .chart[data-charttype="pie"]>div {
@@ -746,7 +743,6 @@ as-graph figure .chartarea .chart[data-charttype="heatmap"]>as-gauge>div:last-ch
 
 as-graph figure .chartarea .chart[data-charttype="heatmap"]>as-gauge:HOVER>div:last-child,
 as-graph figure .chartarea .chart[data-charttype="heatmap"]>as-gauge:FOCUS>div:last-child {
-    outline: none;
     opacity: 1;
 }
 
@@ -801,7 +797,6 @@ as-graph figure .chartarea .chart[data-charttype="heatmapdeep"]>.drilldown {
 }
 
 as-graph figure .chartarea .chart[data-charttype="heatmapdeep"]>.drilldown:HOVER {
-    outline: none;
     position: relative;
 }
 

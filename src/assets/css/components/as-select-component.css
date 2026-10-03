@@ -11,7 +11,7 @@ as-select:has([popover])>div as-icon {
     position: absolute;
     right: 1ch;
     top: 1ch;
-    transition: rotate .15s ease;
+    transition: rotate var(--as-time-xs) ease;
 }
 
 as-select:has([popover]:popover-open)>div as-icon {
@@ -38,7 +38,6 @@ as-select select {
     padding-inline: var(--as-space-s);
     padding-block: calc(var(--as-space-s) - var(--as-size-thin));
     line-height: 1.5;
-    outline: none;
     position: relative;
     width: 100%;
     font-size: inherit;
@@ -106,7 +105,6 @@ as-select [popover] ul li {
 as-select [popover] ul li:HOVER,
 as-select [popover] ul li:FOCUS {
     background-color: var(--as-color-border-panel);
-    outline: none;
 }
 
 as-select [popover] ul li[selected] {

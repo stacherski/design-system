@@ -1,0 +1,12 @@
+as-form-validation {
+    display: block;
+}
+
+as-form-validation+* {
+    margin-block-start: var(--as-space-m);
+}
+
+as-form-validation [error-message] {
+    font-size: var(--as-font-size-s);
+    color: var(--as-color-status-error);
+}

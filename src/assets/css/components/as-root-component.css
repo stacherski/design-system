@@ -99,7 +99,7 @@ body a {
 [layout] nav ul {
     display: grid;
     gap: var(--as-space-xxs);
-    transition: all 1s ease-in-out;
+    transition: all var(--as-time) ease-in-out;
 }
 
 [layout] nav ul li {
@@ -147,25 +147,25 @@ body a {
 }
 
 [layout] nav ul li a:is(:HOVER) {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
     background-color: var(--as-color-background-nav);
     border-inline-start-color: var(--as-color-text-nav);
 }
 
 [layout] nav ul li a:is(:HOVER) span {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
 }
 
 [layout] nav ul li a:is(:FOCUS, :ACTIVE),
 [layout] nav ul li[active]>div.wrapper>a {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
     background-color: var(--as-color-background-nav-strong);
     border-inline-start-color: var(--as-color-text-nav);
 }
 
 [layout] nav ul li a:is(:FOCUS, :ACTIVE) span,
 [layout] nav ul li[active]>div.wrapper>a span {
-    color: var(--as-color-text-nav);
+    color: var(--as-color-text-nav-active);
 }
 
 [layout] nav ul li[active]>div.wrapper>as-icon {

@@ -4,7 +4,8 @@ as-tab-group {
     --padding: var(--as-space-m);
     --color-divider: var(--as-color-border-panel);
     --color-active: var(--as-color-accent);
-    --color-active-strong: var(--tc-color-active-strong) --color-tablist-background: var(--as-color-background-panel);
+    --color-active-strong: var(--tc-color-active-strong);
+    --color-tablist-background: var(--as-color-background-panel);
     display: block;
     position: relative;
     display: flex;
@@ -12,6 +13,7 @@ as-tab-group {
 }
 
 as-tab-group [role="tablist"] {
+    flex: 0 0 100%;
     display: flex;
     border-block-end: var(--as-size-thin) solid var(--color-divider);
     overflow-x: auto;
@@ -64,10 +66,6 @@ as-tab-group as-tab:FOCUS:after {
     height: var(--as-size-xs);
 }
 
-as-tab-group as-tab:FOCUS {
-    outline: none;
-}
-
 as-tab-group as-tab-panel:not([hidden]) {
     display: block;
     flex-shrink: 0;
@@ -78,6 +76,10 @@ as-tab-group as-tab-panel:not([hidden]) {
 }
 
 @media screen and (max-width: 800px) {
+    as-tab-group [role="tablist"] {
+        flex-direction: column;
+    }
+
     as-tab-group as-tab {
         display: flex;
         width: 100%;

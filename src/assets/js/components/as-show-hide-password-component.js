@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 try {
                     this.password = this.querySelector('[type="password"]')
-                    this.showhide = document.createElement('a')
-                    this.showhide.setAttribute('tabindex', '-1')
+                    this.showhide = document.createElement('button')
+                    this.showhide.setAttribute('type', 'button')
+                    this.showhide.setAttribute('aria-pressed', 'false')
                     this.showhide.classList.add('btn')
                     if (this.icons) {
                         this.icon = document.createElement('as-icon')
@@ -25,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else
                         this.showhide.textContent = this.buttonLabels[0]
 
-                    this._buttonListenerID = this.showhide.addEventListener('click', e => this.showhidepass(e).bind(this))
+                    this._onClick = e => this.showhidepass(e)
+                    this.showhide.addEventListener('click', this._onClick)
                     this.password.after(this.showhide)
                 }
                 catch (error) {
@@ -54,10 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.broadcastEvent('as-show-hide-password:hide', { fieldid: this.password.id })
                 }
                 this.showhide.toggleAttribute('hide')
+                this.showhide.setAttribute('aria-pressed', String(this.password.type === 'text'))
             }
 
-            disconnectedCalback() {
-                this._buttonListenerID = showhide.removeEventListener('click', this.showhidepass.bind(this))
+            disconnectedCallback() {
+                this.showhide?.removeEventListener('click', this._onClick)
             }
 
             isEmpty(obj) {

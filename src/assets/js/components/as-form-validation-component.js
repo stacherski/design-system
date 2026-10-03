@@ -11,14 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             #handleInput() {
                 // remove error message when typing in within input field
-                if (this.#input)
+                if (this.#input) {
                     this.#errorMessage.textContent = ''
+                    this.#input.removeAttribute('aria-invalid')
+                }
             }
 
             #handleBlur() {
                 // if the input field is NOT valid dsplay error messages
                 if (this.#input && !this.#input.validity.valid) {
                     this.#errorMessage.textContent = this.#customErrorMessage[this.#getFirstInvalid(this.#input.validity)];
+                    this.#input.setAttribute('aria-invalid', 'true')
                     this.broadcastEvent('as-form-validation:error', { fieldid: this.#input.id, type: this.#getFirstInvalid(this.#input.validity), message: this.#customErrorMessage[this.#getFirstInvalid(this.#input.validity)] })
                 } else
                     this.broadcastEvent('as-form-validation:success', { fieldid: this.#input.id })
@@ -64,6 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.#errorMessage = document.createElement('span')
                 this.#errorMessage.setAttribute('error-message', '')
                 this.#errorMessage.setAttribute('aria-live', 'polite')
+                this.#errorMessage.id = `${this.#input?.id || crypto.randomUUID()}-error`
+                this.#input?.setAttribute('aria-describedby', [this.#input.getAttribute('aria-describedby'), this.#errorMessage.id].filter(Boolean).join(' '))
                 this.append(this.#errorMessage)
 
                 this.#bindEvents()

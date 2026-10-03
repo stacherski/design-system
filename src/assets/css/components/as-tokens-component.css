@@ -23,14 +23,16 @@
     /* Default text color */
     --as-color-text-strong: hsl(from var(--as-color-text) h s calc(l - var(--as-color-lightness-factor)));
     --as-color-text-weak: hsl(from var(--as-color-text) h s calc(l + var(--as-color-lightness-factor)));
-    --as-color-text-neutral: hsl(from var(--as-color-text) h 0 calc(l + 5 * var(--as-color-lightness-factor)));
+    --as-color-text-neutral: hsl(from var(--as-color-text) h 0 calc(l + 2.4 * var(--as-color-lightness-factor)));
     /* weak & strong text color variants */
     --as-color-background: #f7f7f7;
     /* --as-color-background = --alabaster */
     --as-color-background-panel: #ffffff;
     /* --as-color-background-panel = --white */
     --as-color-border-panel: #E2E4ED;
-    /* --as-color-border-panel = --ghost_white */
+    /* --as-color-border-panel = --ghost_white, decorative dividers only */
+    --as-color-border-input: #949494;
+    /* form control borders, at least 3:1 against panel background */
     --as-color-background-button: var(--as-color-accent);
     /* --as-color-background-button = accent */
     --as-color-background-button-strong: hsl(from var(--as-color-background-button) h s calc(l - var(--as-color-lightness-factor)));
@@ -54,13 +56,15 @@
     --as-color-status-warning-strong: hsl(from var(--as-color-status-warning) h s calc(l - var(--as-color-lightness-factor)));
     --as-color-status-warning-weak: hsl(from var(--as-color-status-warning) h s calc(l + var(--as-color-lightness-factor)));
     /* weak & strong warning color variants */
+    --as-color-status-warning-text-bg: #C2410C;
+    /* darker orange for filled warning surfaces with white text (5.18:1) */
     --as-color-status-error: #9A031E;
     /* --as-color-status-error = --ruby_red */
     --as-color-status-error-strong: hsl(from var(--as-color-status-error) h s calc(l - var(--as-color-lightness-factor)));
     --as-color-status-error-weak: hsl(from var(--as-color-status-error) h s calc(l + var(--as-color-lightness-factor)));
     /* weak & strong error color variants */
     --as-color-status-success: #008800;
-    /* --as-color-status-error = #008800 */
+    /* --as-color-status-success = #008800 */
     --as-color-status-success-strong: hsl(from var(--as-color-status-success) h s calc(l - var(--as-color-lightness-factor)));
     --as-color-status-success-weak: hsl(from var(--as-color-status-success) h s calc(l + var(--as-color-lightness-factor)));
     /* weak & strong success color variants */
@@ -69,7 +73,7 @@
     --as-color-status-neutral-weak: hsl(from var(--as-color-status-neutral) h s calc(l + var(--as-color-lightness-factor)));
     /* weak & strong success color variants */
     --as-color-overlay: rgb(from #000000 r g b / .5);
-    /* --as-color-overlay = --as-color-text-strong with 50% opacity */
+    /* --as-color-overlay = black with 50% opacity */
     --as-color-shadow: #c0c0c0;
     /* color used as base to create box shadows color */
     /* BORDER RADIUS */
@@ -91,7 +95,7 @@
     --as-box-shadow: 0 var(--as-space-xs) var(--as-space-m) rgb(from var(--as-color-shadow) r g b / .5);
     /* #SIZE */
     --as-base: 16px;
-    /* adjust THIS variable ONLY */
+    /* base px size, drives font-size and max-width calculations; rem-based tokens follow the browser root font size */
     --as-size-thin: 1px;
     --as-size-xxs: .125rem;
     --as-size-xs: .25rem;
@@ -129,6 +133,9 @@
     --as-time-xl: 5s;
     /* #TIMING */
     --as-timing-function-1: ease-in-out;
+    /* #FOCUS */
+    --as-focus-ring: var(--as-size-xxs) solid var(--as-color-accent);
+    --as-focus-offset: var(--as-size-xxs);
     /* #FONT SIZE */
     --as-font-size-base: var(--as-base);
     --as-font-size-xxxl: 2.25rem;
@@ -166,4 +173,29 @@
     --as-font-bold: NunitoBold, system-ui, sans;
     --as-font-bold-italic: NunitoBoldItalic, system-ui, sans;
     --as-font-mono: monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --as-time-xs: 0s;
+        --as-time-s: 0s;
+        --as-time-m: 0s;
+        --as-time: 0s;
+        --as-time-l: 0s;
+        --as-time-xl: 0s;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: var(--as-focus-ring);
+    outline-offset: var(--as-focus-offset);
 }

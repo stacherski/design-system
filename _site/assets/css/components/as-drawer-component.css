@@ -1,0 +1,97 @@
+body[freeze] {
+    pointer-events: none;
+}
+
+.as-drawer {
+    --as-drawer-transition-time: 400ms;
+    position: fixed;
+    z-index: var(--as-index-modal);
+    transition-duration: var(--as-drawer-transition-time);
+    transition-timing-function: ease-in-out;
+    background-color: #fff;
+    padding-inline: var(--as-space-l);
+    padding-block: var(--as-space-l);
+}
+
+.as-drawer.top {
+    top: -100%;
+    left: 0;
+    right: 0;
+    transition-property: top;
+}
+
+.as-drawer.top[data-state="open"] {
+    top: 0;
+}
+
+.as-drawer.bottom {
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    transition-property: bottom;
+}
+
+.as-drawer.bottom[data-state="open"] {
+    bottom: 0;
+}
+
+.as-drawer.left {
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    display: inline-block;
+    width: 100%;
+    max-width: 30vw;
+    transition-property: left;
+}
+
+.as-drawer.left[data-state="open"] {
+    left: 0;
+}
+
+.as-drawer.right {
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 30vw;
+    transition-property: right;
+}
+
+.as-drawer.right[data-state="open"] {
+    right: 0;
+}
+
+.as-drawer.center {
+    top: -100%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition-property: top;
+}
+
+.as-drawer.center[data-state="open"] {
+    top: 50%;
+    max-height: 50vh;
+    max-width: 50vw;
+    overflow-y: auto;
+    opacity: 1;
+}
+
+.as-overlay {
+    position: fixed;
+    z-index: var(--as-index-overlay);
+    background-color: var(--as-color-overlay);
+    opacity: 0;
+    inset: 0;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer;
+}
+
+.as-overlay[data-state="open"] {
+    opacity: .5;
+}
+
+.as-drawer button:FOCUS {
+    outline: var(--as-size-xxs) dotted var(--as-color-background-button-weak);
+}

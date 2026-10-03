@@ -20,7 +20,7 @@ as-search-menu [popover] {
     --background-color: var(--as-color-background-panel);
     --width: 500px;
     --height: 400px;
-    --z-index: 1000;
+    --z-index: var(--as-index-modal);
     --border-radius: var(--as-border-radius-m);
     /*--box-shadow: 0 0 var(--as-size-xxl) rgb(0 0 0 /.1);*/
     --box-shadow: var(--as-box-shadow);
@@ -66,7 +66,6 @@ as-search-menu [popover] input[type="search"] {
     position: sticky;
     top: 0;
     inset: 0 0 auto 0;
-    outline: none;
     color: var(--as-color-text-weak);
 }
 
@@ -153,7 +152,6 @@ as-search-menu [popover] section .command:is(:ACTIVE, :FOCUS) {
     --outline-color: var(--as-color-background-button-weak);
 
     color: var(--as-color-text-button-inverted);
-    outline: none;
     border-inline-start-color: var(--outline-color);
     border-inline-start-width: var(--outline-width);
     border-inline-start-style: solid;

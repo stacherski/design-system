@@ -88,7 +88,6 @@ as-select-multiple [search] {
     padding-block: var(--as-space-s);
     border: none;
     border-bottom: 1px solid var(--color-inactive);
-    outline: none;
     color: var(--color-black);
     background-color: var(--color-white);
     z-index: 2;
@@ -120,5 +119,4 @@ as-select-multiple [option] {
 as-select-multiple [option][focused],
 as-select-multiple [option]:hover {
     background-color: var(--as-color-border-panel);
-    outline: none;
 }
