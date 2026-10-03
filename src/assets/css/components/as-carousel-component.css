@@ -1,68 +1,197 @@
+@property --as-carousel-progress {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+}
+
+@keyframes as-carousel-progress {
+    from {
+        --as-carousel-progress: 0;
+    }
+
+    to {
+        --as-carousel-progress: 1;
+    }
+}
+
 as-carousel {
+    --as-carousel-per-view: 1;
+    --as-carousel-per-view-mobile: 1;
+    --as-carousel-per-view-used: var(--as-carousel-per-view);
+    --as-carousel-gap: var(--as-space-m);
+    --as-carousel-bleed: var(--as-space-xs);
+    --as-carousel-control-size: 2.25rem;
+    --as-carousel-control-ink: var(--as-color-text-neutral);
+    --as-carousel-control-ink-hover: var(--as-color-accent);
+    --as-carousel-control-border: var(--as-color-border-input);
+    --as-carousel-control-background: var(--as-color-background-panel);
+    --as-carousel-dot-size: var(--as-space-s);
+    --as-carousel-dot-ink: var(--as-color-border-input);
+    --as-carousel-dot-ink-current: var(--as-color-accent);
+    --as-carousel-ring: var(--as-size-xxs);
     display: block;
 }
 
-as-carousel>div {
-    position: relative;
-    width: 100%;
-    overflow-x: hidden;
+@media (max-width: 47.9375rem) {
+    as-carousel {
+        --as-carousel-per-view-used: var(--as-carousel-per-view-mobile);
+    }
 }
 
-as-carousel>div>*:not(.controls) {
+/* the track scrolls natively and snaps to slides, so touch, trackpad and keyboard all behave */
+as-carousel .as-carousel__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--as-carousel-per-view-used) - 1) * var(--as-carousel-gap)) / var(--as-carousel-per-view-used));
+    gap: var(--as-carousel-gap);
     list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-block: var(--as-carousel-bleed);
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+as-carousel .as-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+as-carousel .as-carousel__track>* {
+    scroll-snap-align: start;
+    min-width: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    as-carousel .as-carousel__track {
+        scroll-behavior: smooth;
+    }
+}
+
+as-carousel .as-carousel__controls {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--as-space-s);
+    margin-block-start: var(--as-space-m);
+}
+
+as-carousel .as-carousel__controls[data-align="start"] {
     justify-content: flex-start;
-    position: relative;
-    z-index: 3;
-    top: 0;
-    width: 100%;
-    transition-timing-function: ease-out;
 }
 
-as-carousel>div>*:not(.controls)>* {
+as-carousel .as-carousel__controls[data-align="center"] {
+    justify-content: center;
+}
+
+as-carousel .as-carousel__controls[data-align="end"] {
+    justify-content: flex-end;
+}
+
+as-carousel .as-carousel__controls[hidden] {
+    display: none;
+}
+
+/* round control buttons */
+as-carousel .as-carousel__control {
+    --background: var(--as-carousel-control-background);
+    --border: var(--as-carousel-control-border);
+    --color: var(--as-carousel-control-ink);
+    width: var(--as-carousel-control-size);
+    height: var(--as-carousel-control-size);
+    padding: 0;
+    border-radius: var(--as-border-radius-circle);
+    background-color: var(--background);
+    border-color: var(--border);
+    color: var(--color);
+    flex: none;
+}
+
+as-carousel .as-carousel__control:hover,
+as-carousel .as-carousel__control:focus-visible {
+    background-color: var(--as-carousel-control-background);
+    border-color: var(--as-carousel-control-ink-hover);
+    color: var(--as-carousel-control-ink-hover);
+    box-shadow: none;
+}
+
+as-carousel .as-carousel__control[disabled] {
+    border-color: var(--as-carousel-control-border);
+    color: var(--as-carousel-control-ink);
+    opacity: .4;
+}
+
+/* play / pause glyph, drawn so it needs no icons */
+as-carousel .as-carousel__glyph {
     display: block;
-    background-color: #800;
-    width: calc(3 * var(--as-size-xxxl));
-    aspect-ratio: 2/1;
-    flex-shrink: 0;
-    color: var(--as-color-text-button);
-    padding: var(--as-space-l);
-    align-content: center;
-    text-align: center;
+    width: .625rem;
+    height: .75rem;
+    background: linear-gradient(90deg, currentColor 0, currentColor 35%, transparent 35%, transparent 65%, currentColor 65%, currentColor 100%);
+}
+
+as-carousel as-button[data-state="paused"] .as-carousel__glyph {
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+/* ring around the play button fills over one slide */
+as-carousel .as-carousel__play {
     position: relative;
-    opacity: 1;
-    border-radius: var(--as-border-radius-l);
+    overflow: visible;
 }
 
-as-carousel>div>.controls {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    gap: var(--as-space-l);
-    width: 100%;
+as-carousel .as-carousel__play::after {
+    content: '';
     position: absolute;
-    z-index: 5;
-    top: 50%;
-    transform: translateY(-50%);
+    inset: calc(-1 * (var(--as-carousel-ring) + var(--as-space-xxs)));
+    border-radius: var(--as-border-radius-circle);
+    background: conic-gradient(var(--as-carousel-dot-ink-current) calc(var(--as-carousel-progress) * 360deg), var(--as-carousel-dot-ink) 0);
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--as-carousel-ring)), #000 calc(100% - var(--as-carousel-ring)));
+    pointer-events: none;
 }
 
-as-carousel>div>.controls as-button {
-    appearance: none;
+as-carousel as-button[data-ticking][data-state="playing"] .as-carousel__play::after {
+    animation: as-carousel-progress var(--as-carousel-delay) linear forwards;
+}
+
+/* dots */
+as-carousel .as-carousel__dots {
+    display: flex;
+    align-items: center;
+    gap: var(--as-space-s);
+}
+
+as-carousel .as-carousel__dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--as-size-l);
+    height: var(--as-size-l);
+    padding: 0;
+    border: 0;
+    background: none;
     cursor: pointer;
 }
 
-as-carousel>div>.controls button {
-    appearance: none;
-    cursor: pointer;
+as-carousel .as-carousel__dot::before {
+    content: '';
+    width: var(--as-carousel-dot-size);
+    height: var(--as-carousel-dot-size);
+    border-radius: var(--as-border-radius-circle);
+    background: var(--as-carousel-dot-ink);
+    transition: background-color var(--as-time-s) ease, transform var(--as-time-s) ease;
 }
 
-as-carousel .slider {
-    margin-block-end: var(--as-space-l);
+as-carousel .as-carousel__dot[aria-current="true"]::before {
+    background: var(--as-carousel-dot-ink-current);
+    transform: scale(1.35);
 }
 
-@media screen and (max-width: 30rem) {
-    as-carousel>div>* :not(.controls)>* {
-        width: calc(100% - 3rem);
+@media (prefers-reduced-motion: reduce) {
+    as-carousel .as-carousel__dot[aria-current="true"]::before {
+        transform: none;
     }
 }

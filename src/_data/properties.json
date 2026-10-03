@@ -810,24 +810,16 @@
   {
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
-    "name": "slideid",
-    "description": "parameter name used as slide element identifier, defaults to <b>item</b>",
+    "name": "per-view",
+    "description": "Number of slides visible at once on larger screens, defaults to <b>1</b>.",
     "propertyType": "string",
     "optional": "Yes"
   },
   {
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
-    "name": "speed",
-    "description": "define slide animation speed in [ms], defaults to <b>400</b>",
-    "propertyType": "string",
-    "optional": "Yes"
-  },
-  {
-    "componentName": "Carousel / Slider",
-    "componentSlug": "carousel-slider",
-    "name": "delay",
-    "description": "define slide animation delay in [ms], defaults to <b>3</b>",
+    "name": "per-view-mobile",
+    "description": "Number of slides visible at once below 768px, defaults to <b>1</b>.",
     "propertyType": "string",
     "optional": "Yes"
   },
@@ -835,7 +827,55 @@
     "componentName": "Carousel / Slider",
     "componentSlug": "carousel-slider",
     "name": "gap",
-    "description": "reflects gap between slides, should match CSS gap property, defaults to <b>14</b>",
+    "description": "Space between slides in [px], defaults to <b>16</b>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "controls",
+    "description": "Navigation controls: <code>arrows</code> (default), <code>dots</code>, <code>both</code> or <code>none</code>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "controls-align",
+    "description": "Alignment of the controls row under the slides: <code>start</code>, <code>center</code> or <code>end</code> (default).",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "loop",
+    "description": "When present the carousel wraps around: Next on the last position goes back to the first and Previous on the first goes to the last. Without it the arrows are disabled at the ends.",
+    "propertyType": "boolean",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "autoplay",
+    "description": "Seconds between automatic slide changes, a bare attribute means <b>5</b>. Adds a play / pause button with a progress ring. Rotation holds while the carousel is hovered or focused, stops when any control is used and is never started for visitors who prefer reduced motion.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "label",
+    "description": "Accessible name of the carousel (<code>aria-label</code>). The component sets <code>role=\"group\"</code> and <code>aria-roledescription=\"carousel\"</code>.",
+    "propertyType": "string",
+    "optional": "Yes"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "slideid",
+    "description": "Attribute that marks slide elements inside the list, defaults to <b>item</b>. When no element has it every child of the list is a slide.",
     "propertyType": "string",
     "optional": "Yes"
   },

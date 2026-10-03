@@ -383,5 +383,33 @@
     "name": "as-form-validation:error",
     "description": "Fired when field validation error. Has detail object",
     "exampleValue": "{fieldid: 'myemail', type: 'valueMissing', message: 'This field is required'}"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "as-carousel:created",
+    "description": "Fired when the carousel is built. Has detail object.",
+    "exampleValue": "{id: \"stories\", slides: 6}"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "as-carousel:change",
+    "description": "Fired when the first visible slide changes, from controls, swipe, keyboard or autoplay. Has detail object.",
+    "exampleValue": "{id: \"stories\", index: 2}"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "as-carousel:play",
+    "description": "Fired when automatic rotation starts. Has detail object.",
+    "exampleValue": "{id: \"stories\"}"
+  },
+  {
+    "componentName": "Carousel / Slider",
+    "componentSlug": "carousel-slider",
+    "name": "as-carousel:pause",
+    "description": "Fired when automatic rotation is paused, by the play / pause button or by using a control. Has detail object.",
+    "exampleValue": "{id: \"stories\"}"
   }
 ]

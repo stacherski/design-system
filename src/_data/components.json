@@ -21,11 +21,11 @@
   },
   {
     "name": "Carousel / Slider",
-    "description": "Carousel component turns a list of elements into a looped carousel / slider with next/prev control buttons, play/pause button and some configuring parameters.",
+    "description": "Carousel turns a list of elements into a swipeable, scroll-snapping carousel. Show one or several slides at once, add arrows or dots, optionally loop and rotate automatically with a play / pause button. Fully keyboard accessible and respects reduced motion.",
     "slug": "carousel-slider",
-    "examplesCount": 1,
-    "propertiesCount": 4,
-    "eventsCount": 0,
+    "examplesCount": 3,
+    "propertiesCount": 9,
+    "eventsCount": 4,
     "componentJS": "as-carousel-component.js",
     "componentCSS": "as-carousel-component.css"
   },
